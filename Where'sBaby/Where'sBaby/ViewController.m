@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic,assign) BOOL isLogin;
 @end
 
 @implementation ViewController
@@ -22,6 +22,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (!self.isLogin){
+        [self.navigationController performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
+    }
 }
 
 @end

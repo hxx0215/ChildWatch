@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SRv-kV-rSL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SRv-kV-rSL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,6 +24,93 @@
             </objects>
             <point key="canvasLocation" x="1356" y="336"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="gLb-5s-M5n">
+            <objects>
+                <viewController id="enV-3i-aa6" customClass="WBWelcomeViewController" customModule="Where_sBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yn3-Mw-Tzx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bet-Bd-63G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xAA-om-6Rr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beijing1.png" translatesAutoresizingMaskIntoConstraints="NO" id="RAS-R7-iKA">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-dI-DzQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="denglu.png"/>
+                                <connections>
+                                    <action selector="LoginClicked:" destination="enV-3i-aa6" eventType="touchUpInside" id="4ti-EN-ZUe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fU-ed-fk6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="zhuce.png"/>
+                                <connections>
+                                    <action selector="registerClicked:" destination="enV-3i-aa6" eventType="touchUpInside" id="CaA-CP-EC0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RAS-R7-iKA" secondAttribute="trailing" id="1H0-c6-9So"/>
+                            <constraint firstItem="Obs-dI-DzQ" firstAttribute="leading" secondItem="xAA-om-6Rr" secondAttribute="leading" constant="70" id="Vp8-Yn-i4L">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="RAS-R7-iKA" firstAttribute="top" secondItem="xAA-om-6Rr" secondAttribute="top" id="gFD-Ve-V6h"/>
+                            <constraint firstItem="RAS-R7-iKA" firstAttribute="leading" secondItem="xAA-om-6Rr" secondAttribute="leading" id="gPz-4D-7Ja"/>
+                            <constraint firstItem="Bet-Bd-63G" firstAttribute="top" secondItem="RAS-R7-iKA" secondAttribute="bottom" id="gvU-bq-KXg"/>
+                            <constraint firstItem="7fU-ed-fk6" firstAttribute="bottom" secondItem="Obs-dI-DzQ" secondAttribute="bottom" id="mLC-q6-SW7"/>
+                            <constraint firstItem="Bet-Bd-63G" firstAttribute="top" secondItem="Obs-dI-DzQ" secondAttribute="bottom" constant="70" id="n4H-2c-trj">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="7fU-ed-fk6" secondAttribute="trailing" constant="70" id="u13-Hp-cxu">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RAS-R7-iKA"/>
+                                <exclude reference="Obs-dI-DzQ"/>
+                                <exclude reference="7fU-ed-fk6"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="gvU-bq-KXg"/>
+                                <exclude reference="n4H-2c-trj"/>
+                                <exclude reference="mLC-q6-SW7"/>
+                                <exclude reference="u13-Hp-cxu"/>
+                                <exclude reference="Vp8-Yn-i4L"/>
+                                <exclude reference="1H0-c6-9So"/>
+                                <exclude reference="gFD-Ve-V6h"/>
+                                <exclude reference="gPz-4D-7Ja"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RAS-R7-iKA"/>
+                                <include reference="Obs-dI-DzQ"/>
+                                <include reference="7fU-ed-fk6"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="gvU-bq-KXg"/>
+                                <include reference="n4H-2c-trj"/>
+                                <include reference="mLC-q6-SW7"/>
+                                <include reference="u13-Hp-cxu"/>
+                                <include reference="Vp8-Yn-i4L"/>
+                                <include reference="1H0-c6-9So"/>
+                                <include reference="gFD-Ve-V6h"/>
+                                <include reference="gPz-4D-7Ja"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HjA-Oc-PGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1356" y="1098.75"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ow3-qe-bpV">
             <objects>
@@ -36,6 +123,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yqb-lQ-Rcd"/>
+                        <segue destination="enV-3i-aa6" kind="presentation" identifier="WelcomSegueIdentifier" id="Z0z-x9-u97"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaT-IS-d5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,4 +131,9 @@
             <point key="canvasLocation" x="529.5" y="336"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beijing1.png" width="1242" height="2208"/>
+        <image name="denglu.png" width="98" height="42"/>
+        <image name="zhuce.png" width="98" height="42"/>
+    </resources>
 </document>
