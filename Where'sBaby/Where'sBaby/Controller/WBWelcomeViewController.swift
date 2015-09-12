@@ -26,6 +26,7 @@ class WBWelcomeViewController: UIViewController {
     }
 
     @IBAction func registerClicked(sender: UIButton) {
+        self.performSegueWithIdentifier("LoginRegisterSegueIdentifier", sender: sender)
     }
     /*
     // MARK: - Navigation

@@ -106,10 +106,92 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="syC-vx-AwR" kind="presentation" id="vpD-I6-57f"/>
+                        <segue destination="TsI-ah-2wM" kind="presentation" identifier="LoginRegisterSegueIdentifier" id="37v-Xc-hhm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjA-Oc-PGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="1098.75"/>
+            <point key="canvasLocation" x="529.5" y="1112.25"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bcU-Cc-PE6">
+            <objects>
+                <viewController id="syC-vx-AwR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lhM-bE-jhl"/>
+                        <viewControllerLayoutGuide type="bottom" id="bQl-ZP-eSE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QjD-Sf-dAg">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0O0-8V-peq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540.5" y="938.25"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8EH-pW-h1U">
+            <objects>
+                <viewController id="TsI-ah-2wM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2uS-zi-Soq"/>
+                        <viewControllerLayoutGuide type="bottom" id="8K5-cg-uxd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fbU-BU-1bp">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beijing2.png" translatesAutoresizingMaskIntoConstraints="NO" id="k77-Yu-yg9">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bei.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-67-9QQ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="k77-Yu-yg9" secondAttribute="trailing" id="5RC-EK-K3S"/>
+                            <constraint firstItem="k77-Yu-yg9" firstAttribute="top" secondItem="fbU-BU-1bp" secondAttribute="top" id="8zW-wa-LBN"/>
+                            <constraint firstItem="6Sb-67-9QQ" firstAttribute="centerX" secondItem="fbU-BU-1bp" secondAttribute="centerX" id="Lby-Zi-Nqh"/>
+                            <constraint firstItem="k77-Yu-yg9" firstAttribute="leading" secondItem="fbU-BU-1bp" secondAttribute="leading" id="Vaj-W5-b81"/>
+                            <constraint firstItem="8K5-cg-uxd" firstAttribute="top" secondItem="k77-Yu-yg9" secondAttribute="bottom" id="XUl-7Q-uXa"/>
+                            <constraint firstItem="6Sb-67-9QQ" firstAttribute="centerY" secondItem="fbU-BU-1bp" secondAttribute="centerY" id="xHn-oP-HnX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="k77-Yu-yg9"/>
+                                <exclude reference="6Sb-67-9QQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5RC-EK-K3S"/>
+                                <exclude reference="8zW-wa-LBN"/>
+                                <exclude reference="Vaj-W5-b81"/>
+                                <exclude reference="Lby-Zi-Nqh"/>
+                                <exclude reference="xHn-oP-HnX"/>
+                                <exclude reference="XUl-7Q-uXa"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="k77-Yu-yg9"/>
+                                <include reference="6Sb-67-9QQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5RC-EK-K3S"/>
+                                <include reference="8zW-wa-LBN"/>
+                                <include reference="Vaj-W5-b81"/>
+                                <include reference="Lby-Zi-Nqh"/>
+                                <include reference="xHn-oP-HnX"/>
+                                <include reference="XUl-7Q-uXa"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVU-aE-UK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540.5" y="1664.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ow3-qe-bpV">
@@ -132,7 +214,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bei.png" width="345" height="427"/>
         <image name="beijing1.png" width="1242" height="2208"/>
+        <image name="beijing2.png" width="1242" height="2208"/>
         <image name="denglu.png" width="98" height="42"/>
         <image name="zhuce.png" width="98" height="42"/>
     </resources>
