@@ -1,0 +1,13 @@
+PODS:
+  - IHKeyboardAvoiding (2.4)
+  - Masonry (0.6.2)
+
+DEPENDENCIES:
+  - IHKeyboardAvoiding
+  - Masonry
+
+SPEC CHECKSUMS:
+  IHKeyboardAvoiding: f470ea004ae9befb3b10ff4db20d37af10f43e59
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+
+COCOAPODS: 0.38.2
