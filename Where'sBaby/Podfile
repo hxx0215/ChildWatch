@@ -6,5 +6,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'Where\'sBaby' do
 pod 'IHKeyboardAvoiding'
 pod 'Masonry'
+pod 'ReactiveCocoa'
 end
 
