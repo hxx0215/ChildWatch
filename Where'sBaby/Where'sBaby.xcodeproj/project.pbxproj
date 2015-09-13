@@ -32,6 +32,9 @@
 		B958904C1BA443F600A2C03E /* shuru2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B958903E1BA443F600A2C03E /* shuru2@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B958904D1BA443F600A2C03E /* zhuce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B958903F1BA443F600A2C03E /* zhuce@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B958904E1BA443F600A2C03E /* zhuce@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890401BA443F600A2C03E /* zhuce@3x.png */; settings = {ASSET_TAGS = (); }; };
+		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
+		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
+		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,12 @@
 		B958903E1BA443F600A2C03E /* shuru2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuru2@3x.png"; sourceTree = "<group>"; };
 		B958903F1BA443F600A2C03E /* zhuce@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@2x.png"; sourceTree = "<group>"; };
 		B95890401BA443F600A2C03E /* zhuce@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@3x.png"; sourceTree = "<group>"; };
+		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
+		D3E734FF1BA5D19200618513 /* NSString+scisky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+scisky.m"; sourceTree = "<group>"; };
+		D3E735011BA5D5CB00618513 /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
+		D3E735021BA5D5CB00618513 /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
 		E53F98EF344B7234FD1BA5B4 /* Pods-Where'sBaby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Where'sBaby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Where'sBaby/Pods-Where'sBaby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +171,7 @@
 				B95890281BA4385300A2C03E /* Controller */,
 				B95890291BA4385300A2C03E /* Dependence */,
 				B958902A1BA4385300A2C03E /* Modal */,
-				B958902B1BA4385300A2C03E /* Networking */,
+				D3E734FA1BA5D12500618513 /* Networking */,
 				B958902C1BA4385300A2C03E /* Resource */,
 				B958902D1BA4385300A2C03E /* Utils */,
 				B958902E1BA4385300A2C03E /* View */,
@@ -220,13 +229,6 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		B958902B1BA4385300A2C03E /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		B958902C1BA4385300A2C03E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +279,20 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		D3E734FA1BA5D12500618513 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D3E734FE1BA5D19200618513 /* NSString+scisky.h */,
+				D3E734FF1BA5D19200618513 /* NSString+scisky.m */,
+				D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */,
+				D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */,
+				D3E735011BA5D5CB00618513 /* LoginRequest.h */,
+				D3E735021BA5D5CB00618513 /* LoginRequest.m */,
+			);
+			name = Networking;
+			path = "Where'sBaby/Networking";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -459,7 +475,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
+				D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */,
 				B95890311BA43BE900A2C03E /* WBWelcomeViewController.swift in Sources */,
+				D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */,
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
 				B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */,

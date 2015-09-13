@@ -351,18 +351,18 @@
                                     <mask key="constraints">
                                         <exclude reference="4QX-K1-RrG"/>
                                         <exclude reference="UQC-sI-4ZU"/>
-                                        <exclude reference="CW0-aR-wua"/>
-                                        <exclude reference="J9b-oF-dFJ"/>
-                                        <exclude reference="Cvs-h9-hq1"/>
-                                        <exclude reference="rle-pB-A6y"/>
-                                        <exclude reference="ZEb-YO-4e7"/>
-                                        <exclude reference="bVU-3o-Plr"/>
-                                        <exclude reference="3Lq-IE-i2j"/>
-                                        <exclude reference="qbr-O5-Izn"/>
                                         <exclude reference="235-ze-BsP"/>
                                         <exclude reference="yEO-Og-uoK"/>
                                         <exclude reference="oFg-2j-eM5"/>
                                         <exclude reference="uvS-pT-AfA"/>
+                                        <exclude reference="ZEb-YO-4e7"/>
+                                        <exclude reference="bVU-3o-Plr"/>
+                                        <exclude reference="3Lq-IE-i2j"/>
+                                        <exclude reference="qbr-O5-Izn"/>
+                                        <exclude reference="Cvs-h9-hq1"/>
+                                        <exclude reference="rle-pB-A6y"/>
+                                        <exclude reference="CW0-aR-wua"/>
+                                        <exclude reference="J9b-oF-dFJ"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -374,18 +374,18 @@
                                     <mask key="constraints">
                                         <include reference="4QX-K1-RrG"/>
                                         <include reference="UQC-sI-4ZU"/>
-                                        <include reference="CW0-aR-wua"/>
-                                        <include reference="J9b-oF-dFJ"/>
-                                        <include reference="Cvs-h9-hq1"/>
-                                        <include reference="rle-pB-A6y"/>
-                                        <include reference="ZEb-YO-4e7"/>
-                                        <include reference="bVU-3o-Plr"/>
-                                        <include reference="3Lq-IE-i2j"/>
-                                        <include reference="qbr-O5-Izn"/>
                                         <include reference="235-ze-BsP"/>
                                         <include reference="yEO-Og-uoK"/>
                                         <include reference="oFg-2j-eM5"/>
                                         <include reference="uvS-pT-AfA"/>
+                                        <include reference="ZEb-YO-4e7"/>
+                                        <include reference="bVU-3o-Plr"/>
+                                        <include reference="3Lq-IE-i2j"/>
+                                        <include reference="qbr-O5-Izn"/>
+                                        <include reference="Cvs-h9-hq1"/>
+                                        <include reference="rle-pB-A6y"/>
+                                        <include reference="CW0-aR-wua"/>
+                                        <include reference="J9b-oF-dFJ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -419,6 +419,7 @@
                                 <exclude reference="P2Y-Sh-2Nr"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="XUl-7Q-uXa"/>
                                 <exclude reference="fHf-tO-FFN"/>
                                 <exclude reference="vHa-XH-wua"/>
                                 <exclude reference="5RC-EK-K3S"/>
@@ -426,7 +427,6 @@
                                 <exclude reference="Vaj-W5-b81"/>
                                 <exclude reference="mEb-0M-Pxg"/>
                                 <exclude reference="s0i-Vv-IHD"/>
-                                <exclude reference="XUl-7Q-uXa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -436,6 +436,7 @@
                                 <include reference="P2Y-Sh-2Nr"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="XUl-7Q-uXa"/>
                                 <include reference="fHf-tO-FFN"/>
                                 <include reference="vHa-XH-wua"/>
                                 <include reference="5RC-EK-K3S"/>
@@ -443,19 +444,20 @@
                                 <include reference="Vaj-W5-b81"/>
                                 <include reference="mEb-0M-Pxg"/>
                                 <include reference="s0i-Vv-IHD"/>
-                                <include reference="XUl-7Q-uXa"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="checkTop" destination="bVU-3o-Plr" id="xRY-AL-FaS"/>
                         <outlet property="checkView" destination="Sco-A5-iQy" id="lFu-bu-ERG"/>
+                        <outlet property="codeTextField" destination="pnG-mb-Kum" id="bH7-f3-ZXq"/>
                         <outlet property="doneTop" destination="235-ze-BsP" id="W9P-bk-8C8"/>
                         <outlet property="forgetButton" destination="iHM-kx-U63" id="Zx0-JR-xB5"/>
                         <outlet property="inputBackView" destination="vsQ-ma-LAA" id="35K-0E-TjH"/>
                         <outlet property="passTextField" destination="Jfe-8o-xvY" id="lvs-7e-a2B"/>
                         <outlet property="passTop" destination="3Lq-IE-i2j" id="4Ek-Gb-8Kl"/>
                         <outlet property="phoneTop" destination="CW0-aR-wua" id="26A-jx-9Ww"/>
+                        <outlet property="userNameTextField" destination="yng-mR-9Bp" id="LcO-Ff-luB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVU-aE-UK0" userLabel="First Responder" sceneMemberID="firstResponder"/>

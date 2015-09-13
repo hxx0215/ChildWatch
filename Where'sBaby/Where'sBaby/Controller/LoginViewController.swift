@@ -21,6 +21,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var doneTop: NSLayoutConstraint!
     @IBOutlet weak var checkView: UIView!
     @IBOutlet weak var inputBackView: UIView!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var forgetButton: UIButton!
     var loginType: LoginType = .Login
@@ -76,6 +78,23 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         self.layoutWithLoginType(self.loginType)
     }
     @IBAction func receiveClicked(sender: UIButton) {
+        sender.setTitle("发送中", forState: .Normal)
+        let dic = ["username":self.userNameTextField.text!,"type":"1"]
+        LoginRequest.GetAuthCodeWithParameters(NSDictionary(dictionary: dic), success: { (AFHTTPRequestOperation operation, AnyObject object) -> Void in
+            let dic:NSDictionary = object as! NSDictionary
+            let state:Int = dic["state"] as! Int
+            if(state==0)
+            {
+                let randomDic:NSDictionary = dic["data"]?.firstObject as! NSDictionary
+                let random:String = randomDic["random"] as! String
+                print(random)
+            }
+            
+            sender.setTitle("获取验证码", forState: .Normal)
+            
+            }) { (AFHTTPRequestOperation operation, NSError error) -> Void in
+               print(error)
+        }
     }
     /*
     // MARK: - Navigation

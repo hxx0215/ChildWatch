@@ -7,5 +7,8 @@ target 'Where\'sBaby' do
 pod 'IHKeyboardAvoiding'
 pod 'Masonry'
 pod 'ReactiveCocoa'
+pod 'MBProgressHUD'
+pod 'JSONKit-NoWarning'
+pod 'AFNetworking'
 end
 
