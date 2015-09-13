@@ -8,6 +8,9 @@
 
 import UIKit
 
+struct LoginSegueIdentifer{
+    static let login = "LoginRegisterSegueIdentifier"
+}
 class WBWelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,20 +25,20 @@ class WBWelcomeViewController: UIViewController {
     }
     
     @IBAction func LoginClicked(sender: UIButton) {
-        
+        self.performSegueWithIdentifier(LoginSegueIdentifer.login, sender: LoginType.Login.rawValue)
     }
 
     @IBAction func registerClicked(sender: UIButton) {
-        self.performSegueWithIdentifier("LoginRegisterSegueIdentifier", sender: sender)
+        self.performSegueWithIdentifier(LoginSegueIdentifer.login, sender: LoginType.Register.rawValue)
     }
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destinationViewController as! LoginViewController
+        vc.loginType = LoginType(rawValue: sender as! String)!
     }
-    */
 
 }
