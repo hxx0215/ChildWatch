@@ -43,6 +43,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
     func layoutWithLoginType(loginType: LoginType){
+        self.userNameTextField.text = "";
+        self.codeTextField.text = "";
+        self.passTextField.text = "";
         switch loginType{
         case .Login:
             self.checkView.hidden = true
@@ -183,8 +186,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 hud.mode = .Text
                 hud.labelText = "登录成功";
                 hud.hide(true, afterDelay: 1.5)
-                self.loginType = .Login
-                self.layoutWithLoginType(self.loginType)
+                self.dismissViewControllerAnimated(true){
+                    
+                }
             }
             else if(state==1)
             {
