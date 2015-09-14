@@ -34,7 +34,7 @@
     return _sharedManager;
 }
 
-- (void)defaultHTTPWithMethod:(NSString *)method WithParameters:(id)parameters  post:(BOOL)bo success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+- (void)defaultHTTPWithMethod:(NSString *)method WithParameters:(id)parameters  post:(BOOL)bo success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     NSString *urlString = [NSString stringWithFormat:@"%@%@",baseURL,method];
     NSDictionary *dicDES = nil;
@@ -52,43 +52,43 @@
     {
         [[BaseHTTPRequestOperationManager sharedManager]GET:urlString parameters:dicDES success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if (responseObject) {
-                success(operation, responseObject);
+                success(responseObject);
             }
             else{
                 NSError *error = [NSError errorWithDomain:kErrorEmpty code:0 userInfo:nil];
-                failure(operation, error);
+                failure(error);
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            failure(operation, error);
+            failure(error);
         }];
     }
     
 }
 
-- (void)defaultPostWithUrl:(NSString *)urlString WithParameters:(id)parameters success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+- (void)defaultPostWithUrl:(NSString *)urlString WithParameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     NSLog(@"%@",parameters);
     [[BaseHTTPRequestOperationManager sharedManager]POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (responseObject) {
             id object = [responseObject objectFromJSONData];
             if (object) {
-                success(operation, object);
+                success(object);
             }
             else
             {
                 NSError *error = [NSError errorWithDomain:kErrorEmpty code:0 userInfo:nil];
-                failure(operation, error);
+                failure(error);
             }
             
         }
         else{
             NSError *error = [NSError errorWithDomain:kErrorEmpty code:0 userInfo:nil];
-            failure(operation, error);
+            failure(error);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error.description);
         NSError *error2 = [NSError errorWithDomain:kErrorConnect code:0 userInfo:nil];
-        failure(operation, error2);
+        failure(error2);
     }];
 }
 

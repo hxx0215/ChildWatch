@@ -80,7 +80,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBAction func receiveClicked(sender: UIButton) {
         sender.setTitle("发送中", forState: .Normal)
         let dic = ["username":self.userNameTextField.text!,"type":"1"]
-        LoginRequest.GetAuthCodeWithParameters(NSDictionary(dictionary: dic), success: { (AFHTTPRequestOperation operation, AnyObject object) -> Void in
+        LoginRequest.GetAuthCodeWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
             let dic:NSDictionary = object as! NSDictionary
             let state:Int = dic["state"] as! Int
             if(state==0)
@@ -92,7 +92,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             
             sender.setTitle("获取验证码", forState: .Normal)
             
-            }) { (AFHTTPRequestOperation operation, NSError error) -> Void in
+            }) { (NSError error) -> Void in
                print(error)
         }
     }
