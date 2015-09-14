@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (scisky)
-+ (NSString *)decodeFromPercentEscapeString: (NSString *) input;
 -(NSString *)AESEncrypt;
 - (BOOL)checkTel;
 + (BOOL)validateIDCardNumber:(NSString *)value;

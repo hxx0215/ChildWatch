@@ -78,23 +78,53 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         self.layoutWithLoginType(self.loginType)
     }
     @IBAction func receiveClicked(sender: UIButton) {
-        sender.setTitle("发送中", forState: .Normal)
-        let dic = ["username":self.userNameTextField.text!,"type":"1"]
-        LoginRequest.GetAuthCodeWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
-            let dic:NSDictionary = object as! NSDictionary
-            let state:Int = dic["state"] as! Int
-            if(state==0)
-            {
-                let randomDic:NSDictionary = dic["data"]?.firstObject as! NSDictionary
-                let random:String = randomDic["random"] as! String
-                print(random)
-            }
-            
-            sender.setTitle("获取验证码", forState: .Normal)
-            
-            }) { (NSError error) -> Void in
-               print(error)
+        let bo = NSString(UTF8String: self.userNameTextField.text!)?.checkTel()
+        if bo==false {
+            let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+            hud.mode = .Text
+            hud.labelText = "请输入正确的手机号码";
+            hud.hide(true, afterDelay: 1.5)
         }
+        else
+        {
+            sender.setTitle("发送中", forState: .Normal)
+            sender.setTitle("发送中", forState: .Highlighted)
+            let dic = ["username":self.userNameTextField.text!,"type":"1"]
+            LoginRequest.GetAuthCodeWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
+                let dic:NSDictionary = object as! NSDictionary
+                let state:Int = dic["state"] as! Int
+                if(state==0)
+                {
+                    let randomDic:NSDictionary = dic["data"]?.firstObject as! NSDictionary
+                    let random:String = randomDic["random"] as! String
+                    print(random)
+                }
+                else if(state==1)
+                {
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+                    hud.mode = .Text
+                    hud.labelText = "用户名已经被注册";
+                    hud.hide(true, afterDelay: 1.5)
+                }
+                else
+                {
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+                    hud.mode = .Text
+                    hud.labelText = "服务器内部错误";
+                    hud.hide(true, afterDelay: 1.5)
+                }
+                
+                sender.setTitle("获取验证码", forState: .Normal)
+                
+                }) { (NSError error) -> Void in
+                    print(error)
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+                    hud.mode = .Text
+                    hud.labelText = error.domain;
+                    hud.hide(true, afterDelay: 1.5)
+            }
+        }
+        
     }
     /*
     // MARK: - Navigation
