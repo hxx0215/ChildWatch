@@ -12,11 +12,9 @@
 
 + (void)UserRegisterWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
-+ (void)GetAuthCodeWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
++ (void)GetAuthCodeWithParameters: (id)parameters type:(int)type success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 + (void)UserLoginWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
-
-+ (void)ForgetPasswordWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 + (void)ResetPassWordWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 @end

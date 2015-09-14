@@ -72,6 +72,16 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
     }
     @IBAction func doneClicked(sender: UIButton) {
+        if self.checkTextFeild(){
+            switch loginType{
+            case .Login:
+                self.doLogin()
+            case .Forget:
+                self.doForget()
+            case .Register:
+                self.doRegister()
+            }
+        }
     }
     @IBAction func fogetClicked(sender: UIButton) {
         self.loginType = .Forget
@@ -90,7 +100,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             sender.setTitle("发送中", forState: .Normal)
             sender.setTitle("发送中", forState: .Highlighted)
             let dic = ["username":self.userNameTextField.text!,"type":"1"]
-            LoginRequest.GetAuthCodeWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
+            var codeType:Int32 = 0;
+            if self.loginType == .Forget{
+                codeType = 1;
+            }
+            LoginRequest.GetAuthCodeWithParameters(NSDictionary(dictionary: dic), type: codeType, success: { (AnyObject object) -> Void in
                 let dic:NSDictionary = object as! NSDictionary
                 let state:Int = dic["state"] as! Int
                 if(state==0)
@@ -103,7 +117,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 {
                     let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
                     hud.mode = .Text
-                    hud.labelText = "用户名已经被注册";
+                    if self.loginType == .Forget{
+                        hud.labelText = "用户不存在";
+                    }
+                    else{
+                        hud.labelText = "用户名已经被注册";
+                    }
                     hud.hide(true, afterDelay: 1.5)
                 }
                 else
@@ -125,6 +144,158 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             }
         }
         
+    }
+    
+    func checkTextFeild()->Bool{
+        let bo = NSString(UTF8String: self.userNameTextField.text!)?.checkTel()
+        if bo==false {
+            let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+            hud.mode = .Text
+            hud.labelText = "请输入正确的手机号码"
+            hud.hide(true, afterDelay: 1.5)
+            return false;
+        }
+        if self.codeTextField.text!.isEmpty&&self.loginType != .Login{
+            let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+            hud.mode = .Text
+            hud.labelText = "请输入验证码"
+            hud.hide(true, afterDelay: 1.5)
+            return false;
+        }
+        if self.passTextField.text!.isEmpty{
+            let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+            hud.mode = .Text
+            hud.labelText = "请输入密码"
+            hud.hide(true, afterDelay: 1.5)
+            return false;
+        }
+        return true;
+    }
+    
+    func doLogin(){
+        let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+        let dic = ["username":self.userNameTextField.text!,"password":self.passTextField.text!]
+        LoginRequest.UserLoginWithParameters(dic, success: { (AnyObject object) -> Void in
+            let dic:NSDictionary = object as! NSDictionary
+            let state:Int = dic["state"] as! Int
+            if(state==0)
+            {
+                hud.mode = .Text
+                hud.labelText = "登录成功";
+                hud.hide(true, afterDelay: 1.5)
+                self.loginType = .Login
+                self.layoutWithLoginType(self.loginType)
+            }
+            else if(state==1)
+            {
+                
+                hud.mode = .Text
+                hud.labelText = "用户名不存在";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            else if(state==4)
+            {
+                
+                hud.mode = .Text
+                hud.labelText = "密码有误";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            else
+            {
+                hud.mode = .Text
+                hud.labelText = "服务器内部错误";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            }) { (NSError error) -> Void in
+                print(error)
+                hud.mode = .Text
+                hud.labelText = error.domain;
+                hud.hide(true, afterDelay: 1.5)
+        }
+    }
+    
+    func doForget(){
+        let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+        let dic = ["username":self.userNameTextField.text!,"password":self.passTextField.text!,"random":self.codeTextField.text!]
+        LoginRequest.ResetPassWordWithParameters(dic, success: { (AnyObject object) -> Void in
+            let dic:NSDictionary = object as! NSDictionary
+            let state:Int = dic["state"] as! Int
+            if(state==0)
+            {
+                hud.mode = .Text
+                hud.labelText = "成功";
+                hud.hide(true, afterDelay: 1.5)
+                self.loginType = .Login
+                self.layoutWithLoginType(self.loginType)
+            }
+            else if(state==1)
+            {
+                
+                hud.mode = .Text
+                hud.labelText = "用户名不存在";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            else if(state==4)
+            {
+                
+                hud.mode = .Text
+                hud.labelText = "验证码有误";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            else
+            {
+                hud.mode = .Text
+                hud.labelText = "服务器内部错误";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            }) { (NSError error) -> Void in
+                print(error)
+                hud.mode = .Text
+                hud.labelText = error.domain;
+                hud.hide(true, afterDelay: 1.5)
+        }
+    }
+    
+    func doRegister(){
+        let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+        let dic = ["username":self.userNameTextField.text!,"password":self.passTextField.text!,"random":self.codeTextField.text!]
+        LoginRequest.UserRegisterWithParameters(dic, success: { (AnyObject object) -> Void in
+            let dic:NSDictionary = object as! NSDictionary
+            let state:Int = dic["state"] as! Int
+            if(state==0)
+            {
+                hud.mode = .Text
+                hud.labelText = "注册成功";
+                hud.hide(true, afterDelay: 1.5)
+                self.loginType = .Login
+                self.layoutWithLoginType(self.loginType)
+            }
+            else if(state==1)
+            {
+                
+                hud.mode = .Text
+                hud.labelText = "用户名已经被注册";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            else if(state==4)
+            {
+                
+                hud.mode = .Text
+                hud.labelText = "验证码有误";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            else
+            {
+                hud.mode = .Text
+                hud.labelText = "服务器内部错误";
+                hud.hide(true, afterDelay: 1.5)
+            }
+            }) { (NSError error) -> Void in
+                print(error)
+                hud.mode = .Text
+                hud.labelText = error.domain;
+                hud.hide(true, afterDelay: 1.5)
+        }
     }
     /*
     // MARK: - Navigation

@@ -13,7 +13,7 @@
 #define kMethodUserGetAuthCode @"/user/getRandomCode"
 #define kMethodUserLogin @"/user/userLogin"
 #define kMethodForgetPassword @"/user/forgetPassword"
-#define kMethodResetPassWord @"/user/resetPassWord"
+#define kMethodResetPassWord @"/user/resetPassword"
 
 @implementation LoginRequest
 + (void)UserRegisterWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
@@ -21,19 +21,20 @@
     [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodUserRegister WithParameters:parameters post:YES success:success failure:failure];
 }
 
-+ (void)GetAuthCodeWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
++ (void)GetAuthCodeWithParameters: (id)parameters type:(int)type  success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
-    [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodUserGetAuthCode WithParameters:parameters post:YES success:success failure:failure];
+    if (type==0) {
+        [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodUserGetAuthCode WithParameters:parameters post:YES success:success failure:failure];
+    }
+    else
+    {
+        [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodForgetPassword WithParameters:parameters post:YES success:success failure:failure];
+    }
 }
 
 + (void)UserLoginWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodUserLogin WithParameters:parameters post:YES success:success failure:failure];
-}
-
-+ (void)ForgetPasswordWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
-{
-    [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodForgetPassword WithParameters:parameters post:YES success:success failure:failure];
 }
 
 + (void)ResetPassWordWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
