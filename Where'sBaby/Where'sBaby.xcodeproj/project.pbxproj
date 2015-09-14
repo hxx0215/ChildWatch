@@ -32,7 +32,7 @@
 		B958904C1BA443F600A2C03E /* shuru2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B958903E1BA443F600A2C03E /* shuru2@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B958904D1BA443F600A2C03E /* zhuce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B958903F1BA443F600A2C03E /* zhuce@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B958904E1BA443F600A2C03E /* zhuce@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890401BA443F600A2C03E /* zhuce@3x.png */; settings = {ASSET_TAGS = (); }; };
-		D384DE431BA6A5DD0078A0C2 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE421BA6A5DD0078A0C2 /* MAMapKit.framework */; };
+		B95B8E321BA6C193008CC426 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95B8E311BA6C193008CC426 /* MAMapKit.framework */; };
 		D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE461BA6A9900078A0C2 /* Security.framework */; };
 		D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */; };
 		D384DE4B1BA6A9CA0078A0C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE4A1BA6A9CA0078A0C2 /* SystemConfiguration.framework */; };
@@ -99,7 +99,7 @@
 		B958903E1BA443F600A2C03E /* shuru2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuru2@3x.png"; sourceTree = "<group>"; };
 		B958903F1BA443F600A2C03E /* zhuce@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@2x.png"; sourceTree = "<group>"; };
 		B95890401BA443F600A2C03E /* zhuce@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@3x.png"; sourceTree = "<group>"; };
-		D384DE421BA6A5DD0078A0C2 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = "Where'sBaby/Frameworks/MAMapKit.framework"; sourceTree = "<group>"; };
+		B95B8E311BA6C193008CC426 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Frameworks/MAMapKit.framework; sourceTree = "<group>"; };
 		D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		D384DE461BA6A9900078A0C2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -123,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95B8E321BA6C193008CC426 /* MAMapKit.framework in Frameworks */,
 				D384DE561BA6AA320078A0C2 /* libstdc++.6.0.9.tbd in Frameworks */,
 				D384DE531BA6AA0E0078A0C2 /* libz.tbd in Frameworks */,
 				D384DE511BA6AA020078A0C2 /* CoreGraphics.framework in Frameworks */,
@@ -131,7 +132,6 @@
 				D384DE4B1BA6A9CA0078A0C2 /* SystemConfiguration.framework in Frameworks */,
 				D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */,
 				D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */,
-				D384DE431BA6A5DD0078A0C2 /* MAMapKit.framework in Frameworks */,
 				A2DCC1055518DEEA635CBA7C /* libPods-Where'sBaby.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +303,7 @@
 		C52591142B71FA3B413470DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B95B8E311BA6C193008CC426 /* MAMapKit.framework */,
 				D384DE541BA6AA180078A0C2 /* libstdc++.tbd */,
 				D384DE521BA6AA0E0078A0C2 /* libz.tbd */,
 				D384DE501BA6AA020078A0C2 /* CoreGraphics.framework */,
@@ -312,7 +313,6 @@
 				D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */,
 				D384DE461BA6A9900078A0C2 /* Security.framework */,
 				D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */,
-				D384DE421BA6A5DD0078A0C2 /* MAMapKit.framework */,
 				56F50D48F51F4C753BB9032F /* libPods-Where'sBaby.a */,
 			);
 			name = Frameworks;
@@ -662,9 +662,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Where'sBaby/Frameworks",
+					"$(PROJECT_DIR)/Where\\'sBaby/Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "Where'sBaby/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -683,9 +685,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Where'sBaby/Frameworks",
+					"$(PROJECT_DIR)/Where\\'sBaby/Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "Where'sBaby/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
