@@ -33,6 +33,7 @@
 		B958904D1BA443F600A2C03E /* zhuce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B958903F1BA443F600A2C03E /* zhuce@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B958904E1BA443F600A2C03E /* zhuce@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890401BA443F600A2C03E /* zhuce@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B95B8E321BA6C193008CC426 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95B8E311BA6C193008CC426 /* MAMapKit.framework */; };
+		D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */; settings = {ASSET_TAGS = (); }; };
 		D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE461BA6A9900078A0C2 /* Security.framework */; };
 		D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */; };
 		D384DE4B1BA6A9CA0078A0C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE4A1BA6A9CA0078A0C2 /* SystemConfiguration.framework */; };
@@ -100,6 +101,8 @@
 		B958903F1BA443F600A2C03E /* zhuce@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@2x.png"; sourceTree = "<group>"; };
 		B95890401BA443F600A2C03E /* zhuce@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@3x.png"; sourceTree = "<group>"; };
 		B95B8E311BA6C193008CC426 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Frameworks/MAMapKit.framework; sourceTree = "<group>"; };
+		D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
+		D374C2861BA851750028456C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		D384DE461BA6A9900078A0C2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,7 @@
 				D384DE511BA6AA020078A0C2 /* CoreGraphics.framework in Frameworks */,
 				D384DE4F1BA6A9F30078A0C2 /* CoreLocation.framework in Frameworks */,
 				D384DE4D1BA6A9EB0078A0C2 /* CoreTelephony.framework in Frameworks */,
+				D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 				D384DE4B1BA6A9CA0078A0C2 /* SystemConfiguration.framework in Frameworks */,
 				D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */,
 				D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */,
@@ -246,6 +250,7 @@
 		B95890291BA4385300A2C03E /* Dependence */ = {
 			isa = PBXGroup;
 			children = (
+				D374C2841BA851750028456C /* UMessage_Sdk_1.1.0 */,
 			);
 			path = Dependence;
 			sourceTree = "<group>";
@@ -316,6 +321,15 @@
 				56F50D48F51F4C753BB9032F /* libPods-Where'sBaby.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D374C2841BA851750028456C /* UMessage_Sdk_1.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */,
+				D374C2861BA851750028456C /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.1.0;
 			sourceTree = "<group>";
 		};
 		D3E734FA1BA5D12500618513 /* Networking */ = {
@@ -403,6 +417,11 @@
 					B9045C031BA0535100090A86 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = G65933C85Y;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B9045C1C1BA0535100090A86 = {
 						CreatedOnToolsVersion = 7.0;
@@ -662,6 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,8 +690,13 @@
 				INFOPLIST_FILE = "Where'sBaby/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Where'sBaby/Dependence/UMessage_Sdk_1.1.0",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hxx.Where-sBaby";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Where'sBaby/Controller/Where'sBaby-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -684,6 +709,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -692,8 +718,13 @@
 				INFOPLIST_FILE = "Where'sBaby/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Where'sBaby/Dependence/UMessage_Sdk_1.1.0",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hxx.Where-sBaby";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Where'sBaby/Controller/Where'sBaby-Bridging-Header.h";
 			};
 			name = Release;
