@@ -186,6 +186,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 hud.mode = .Text
                 hud.labelText = "登录成功";
                 hud.hide(true, afterDelay: 1.5)
+                let res = dic["data"] as! NSArray
+                let f = res.firstObject as! [String:AnyObject]
+                for (key,value) in f{
+                    NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
+                }
                 self.dismissViewControllerAnimated(true){
                     
                 }

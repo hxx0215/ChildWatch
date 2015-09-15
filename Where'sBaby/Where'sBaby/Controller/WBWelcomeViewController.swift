@@ -10,6 +10,7 @@ import UIKit
 
 struct LoginSegueIdentifer{
     static let login = "LoginRegisterSegueIdentifier"
+    static let username = "username"
 }
 class WBWelcomeViewController: UIViewController {
 
@@ -22,6 +23,14 @@ class WBWelcomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if let _ = NSUserDefaults.standardUserDefaults().objectForKey(LoginSegueIdentifer.username){
+            self.dismissViewControllerAnimated(true){
+                
+            }
+        }
     }
     
     @IBAction func LoginClicked(sender: UIButton) {

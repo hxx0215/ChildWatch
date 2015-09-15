@@ -26,7 +26,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (!self.isLogin){
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"username"]){
         [self.navigationController performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
     }
 }
