@@ -692,7 +692,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Where'sBaby/Dependence/UMessage_Sdk_1.1.0",
+					"$(PROJECT_DIR)/Where\\'sBaby/Dependence/UMessage_Sdk_1.1.0",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hxx.Where-sBaby";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -720,7 +720,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Where'sBaby/Dependence/UMessage_Sdk_1.1.0",
+					"$(PROJECT_DIR)/Where\\'sBaby/Dependence/UMessage_Sdk_1.1.0",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hxx.Where-sBaby";
 				PRODUCT_NAME = "$(TARGET_NAME)";
