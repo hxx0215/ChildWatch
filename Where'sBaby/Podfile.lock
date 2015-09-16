@@ -34,15 +34,24 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - IHKeyboardAvoiding
+  - IHKeyboardAvoiding (from `https://github.com/hxx0215/IHKeyboardAvoiding`)
   - JSONKit-NoWarning
   - Masonry
   - MBProgressHUD
   - ReactiveCocoa
 
+EXTERNAL SOURCES:
+  IHKeyboardAvoiding:
+    :git: https://github.com/hxx0215/IHKeyboardAvoiding
+
+CHECKOUT OPTIONS:
+  IHKeyboardAvoiding:
+    :commit: bdf4641fb6be09f6085a43969358912afe7a66ea
+    :git: https://github.com/hxx0215/IHKeyboardAvoiding
+
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  IHKeyboardAvoiding: f470ea004ae9befb3b10ff4db20d37af10f43e59
+  IHKeyboardAvoiding: 4e91c90a76b302ff86233b8d7aac888093bbc0a3
   JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad

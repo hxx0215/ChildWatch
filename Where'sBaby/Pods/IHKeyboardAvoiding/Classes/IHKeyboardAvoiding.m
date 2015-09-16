@@ -31,7 +31,6 @@ static int _paddingCurrent = 0;
 static KeyboardAvoidingMode _keyboardAvoidingMode = KeyboardAvoidingModeMinimum;
 static float _minimumAnimationDuration;
 static NSNotification *_lastNotification;
-
 static CGAffineTransform _oldTransform;
 
 + (void)didChange:(NSNotification *)notification
@@ -216,7 +215,7 @@ static CGAffineTransform _oldTransform;
                                  [_avoidingView.superview layoutIfNeeded];
                              }
                              else {
-                                 _avoidingView.transform = _oldTransform;//CGAffineTransformIdentity;
+                                 _avoidingView.transform = _oldTransform;
                              }
                          } completion:^(BOOL finished){
                              [_updatedConstraints removeAllObjects];

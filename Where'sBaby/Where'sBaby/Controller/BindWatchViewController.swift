@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class BindWatchViewController: UIViewController {
 
@@ -48,6 +49,8 @@ class BindWatchViewController: UIViewController {
         inputIDView.hidden = !inputButton.selected
         scanView.hidden = !scanButton.selected
     }
+    
+//    var 
     /*
     // MARK: - Navigation
 
