@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class BindWatchViewController: UIViewController {
+class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
 
     @IBOutlet weak var inputButton: UIButton!
     @IBOutlet weak var scanButton: UIButton!
@@ -33,16 +33,23 @@ class BindWatchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setupCamera()
+    }
     @IBAction func inputClicked(sender: UIButton) {
         sender.selected = true
         scanButton.selected = false
         refreshInputView()
+        self.session.stopRunning()
     }
     @IBAction func scanClicked(sender: UIButton) {
         sender.selected = true
         inputButton.selected = false
         inputTextField.resignFirstResponder()
         refreshInputView()
+        self.session.startRunning()
+        self.preview.frame = self.scanView.bounds
     }
 
     func refreshInputView(){
@@ -50,7 +57,51 @@ class BindWatchViewController: UIViewController {
         scanView.hidden = !scanButton.selected
     }
     
-//    var 
+    lazy var session: AVCaptureSession = {
+        let s = AVCaptureSession()
+        s.sessionPreset = AVCaptureSessionPreset1920x1080
+        return s
+    }()
+    
+    lazy var preview: AVCaptureVideoPreviewLayer = {
+        let layer = AVCaptureVideoPreviewLayer.init(session: self.session)
+        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        return layer
+    }()
+    func setupCamera(){
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        do{
+            let input = try AVCaptureDeviceInput.init(device: device)
+            if self.session.canAddInput(input){
+                self.session.addInput(input)
+            }
+            let output = AVCaptureMetadataOutput()
+            output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+            if self.session.canAddOutput(output){
+                self.session.addOutput(output)
+            }
+            output.metadataObjectTypes = output.availableMetadataObjectTypes
+            self.scanView.layer.insertSublayer(self.preview, atIndex: 0)
+        } catch{
+            print(error)
+        }
+        
+    }
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+        self.session.stopRunning()
+        var stringValue:String?
+        if metadataObjects.count > 0 {
+            let metadataObject = metadataObjects[0]
+            if metadataObject.respondsToSelector(Selector("stringValue")){
+                stringValue = metadataObject.stringValue
+            }else{
+                stringValue = nil
+            }
+        }else{
+            stringValue = nil
+        }
+        print(stringValue)
+    }
     /*
     // MARK: - Navigation
 
