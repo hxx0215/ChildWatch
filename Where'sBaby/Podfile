@@ -4,7 +4,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Where\'sBaby' do
-pod 'IHKeyboardAvoiding'
+pod 'IHKeyboardAvoiding', :git => 'https://github.com/hxx0215/IHKeyboardAvoiding'
 pod 'Masonry'
 pod 'ReactiveCocoa'
 pod 'MBProgressHUD'

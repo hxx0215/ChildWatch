@@ -29,6 +29,7 @@
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"username"]){
         [self.navigationController performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
     }
+    [self performSegueWithIdentifier:@"BindingSegueIdentifier" sender:nil];
 }
 
 @end
