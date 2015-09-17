@@ -14,6 +14,7 @@
 #define kMethodUserLogin @"/user/userLogin"
 #define kMethodForgetPassword @"/user/forgetPassword"
 #define kMethodResetPassWord @"/user/resetPassword"
+#define kMethodAddDeviceBind @"/user/addDeviceBind"
 
 @implementation LoginRequest
 + (void)UserRegisterWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
@@ -40,5 +41,10 @@
 + (void)ResetPassWordWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodResetPassWord WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)AddDeviceBindWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure
+{
+    [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodAddDeviceBind WithParameters:parameters post:YES success:success failure:failure];
 }
 @end
