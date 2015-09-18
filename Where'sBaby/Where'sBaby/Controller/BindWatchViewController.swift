@@ -32,6 +32,8 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
     var bindType: BindType = .InputDeviceID
     var bindDeviceID: String?
     var nickName: String?
+    var canUseCamera = true
+    let cameraAlert = UIAlertView.init(title: "失败", message: "摄像头初始化失败", delegate: nil, cancelButtonTitle: "OK")
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,6 +52,13 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setupCamera()
+        if !canUseCamera{
+            cameraAlert.show()
+        }
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     @IBAction func inputClicked(sender: UIButton) {
         bindType = .InputDeviceID
@@ -57,6 +66,10 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
         self.session.stopRunning()
     }
     @IBAction func scanClicked(sender: UIButton) {
+        if !canUseCamera{
+            cameraAlert.show()
+            return;
+        }
         bindType = .ScanDeviceID
         inputTextField.resignFirstResponder()
         refreshInputView()
@@ -240,23 +253,24 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
             self.scanView.layer.insertSublayer(self.preview, atIndex: 0)
         } catch{
             print(error)
+            canUseCamera = false
         }
         
     }
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         self.session.stopRunning()
-        var stringValue:String?
         if metadataObjects.count > 0 {
             let metadataObject = metadataObjects[0]
             if metadataObject.respondsToSelector(Selector("stringValue")){
-                stringValue = metadataObject.stringValue
+                bindDeviceID = metadataObject.stringValue
+                bindType = .InputNickName
+                refreshInputView()
             }else{
-                stringValue = nil
+                self.session.startRunning()
             }
         }else{
-            stringValue = nil
+            self.session.startRunning()
         }
-        print(stringValue)
     }
     /*
     // MARK: - Navigation
