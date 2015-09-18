@@ -20,6 +20,7 @@ enum BindType: String{
 
 class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
 
+    @IBOutlet weak var inputTextView: UIView!
     @IBOutlet weak var inputButton: UIButton!
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
@@ -28,7 +29,6 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
     @IBOutlet weak var inputIDView: UIView!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var inputLabel: UILabel!
-    @IBOutlet weak var inputTextFieldBGView: UIImageView!
     var bindType: BindType = .InputDeviceID
     var bindDeviceID: String?
     var nickName: String?
@@ -64,6 +64,7 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
         self.preview.frame = self.scanView.bounds
     }
     @IBAction func doneInputClicked(sender: UIButton) {
+        inputTextField.resignFirstResponder()
         if self.bindType == .InputDeviceID{
             self.bindDeviceID = self.inputTextField.text!
             bindType = .InputNickName
@@ -72,7 +73,6 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
         else
         {
             self.nickName = self.inputTextField.text!
-            self.inputTextField.resignFirstResponder()
             doBindDevice()
         }
     }
@@ -191,8 +191,7 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
             inputLabel.hidden = false;
             inputTextField.keyboardType = .NumberPad
             inputLabel.text = "请在手表上找到16位绑定ID输入"
-            inputTextField.hidden = false
-            inputTextFieldBGView.hidden = false;
+            inputTextView.hidden = false
             doneButton.hidden = false
         case .ScanDeviceID:
             inputButton.selected = false
@@ -202,14 +201,12 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
             inputTextField.placeholder = "请输入您的名称"
             doneButton.setTitle("确定", forState: .Normal)
             inputLabel.hidden = true
-            inputTextField.hidden = false
-            inputTextFieldBGView.hidden = false;
+            inputTextView.hidden = false
             doneButton.hidden = false
         case .WaitAdmin:
             inputLabel.text = "您的请求已发送给管理员,请等待管理员处理,如果等待时间过长请联系管理员"
             inputLabel.hidden = false
-            inputTextField.hidden = true
-            inputTextFieldBGView.hidden = true;
+            inputTextView.hidden = true
             doneButton.hidden = true
         case .AdminAgree: break
         case .AdminReject: break

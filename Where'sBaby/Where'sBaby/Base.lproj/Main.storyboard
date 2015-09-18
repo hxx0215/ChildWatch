@@ -489,6 +489,23 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bei.png" translatesAutoresizingMaskIntoConstraints="NO" id="fnP-fh-Ofg">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tp6-eh-ZHP">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Tp6-eh-ZHP" secondAttribute="height" multiplier="1:1" id="0kM-nd-tht"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0kM-nd-tht"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="0kM-nd-tht"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOz-fn-fGa">
                                         <rect key="frame" x="-13" y="80" width="303" height="233"/>
                                         <subviews>
@@ -605,23 +622,6 @@
                                             <action selector="scanClicked:" destination="DQ7-fa-pl1" eventType="touchUpInside" id="akb-yc-2gZ"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tp6-eh-ZHP">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Tp6-eh-ZHP" secondAttribute="height" multiplier="1:1" id="0kM-nd-tht"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="0kM-nd-tht"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="0kM-nd-tht"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z8-XJ-n7g">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -674,8 +674,8 @@
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="fnP-fh-Ofg"/>
-                                        <exclude reference="S5Z-pe-rgY"/>
                                         <exclude reference="Tp6-eh-ZHP"/>
+                                        <exclude reference="S5Z-pe-rgY"/>
                                         <exclude reference="9z8-XJ-n7g"/>
                                     </mask>
                                     <mask key="constraints">
@@ -700,8 +700,8 @@
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="fnP-fh-Ofg"/>
-                                        <include reference="S5Z-pe-rgY"/>
                                         <include reference="Tp6-eh-ZHP"/>
+                                        <include reference="S5Z-pe-rgY"/>
                                         <include reference="9z8-XJ-n7g"/>
                                     </mask>
                                     <mask key="constraints">
@@ -789,7 +789,7 @@
                         <outlet property="inputIDView" destination="iOz-fn-fGa" id="Oyl-5g-AjV"/>
                         <outlet property="inputLabel" destination="Pds-0K-0tM" id="fmW-5K-JxM"/>
                         <outlet property="inputTextField" destination="zeA-i1-H8I" id="tXg-Wh-SG4"/>
-                        <outlet property="inputTextFieldBGView" destination="SbW-CM-KKI" id="Gle-f6-dZz"/>
+                        <outlet property="inputTextView" destination="cRT-5u-gIb" id="s7j-4O-WPO"/>
                         <outlet property="scanButton" destination="S5Z-pe-rgY" id="U63-9w-GfQ"/>
                         <outlet property="scanView" destination="Tp6-eh-ZHP" id="rFn-cJ-4o1"/>
                     </connections>
