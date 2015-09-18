@@ -10,7 +10,7 @@ import UIKit
 
 struct LoginSegueIdentifer{
     static let login = "LoginRegisterSegueIdentifier"
-    static let username = "username"
+    static let username = "id"
 }
 class WBWelcomeViewController: UIViewController {
 

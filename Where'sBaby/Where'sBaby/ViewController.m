@@ -26,10 +26,16 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"username"]){
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"id"]){
         [self.navigationController performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
     }
-    [self performSegueWithIdentifier:@"BindingSegueIdentifier" sender:nil];
+    else
+    {
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"devicebind"] integerValue] == 0) {
+            [self performSegueWithIdentifier:@"BindingSegueIdentifier" sender:nil];
+        }
+    }
+    
 }
 
 @end

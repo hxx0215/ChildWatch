@@ -194,6 +194,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 self.dismissViewControllerAnimated(true){
                     
                 }
+                
+                let userId = NSUserDefaults.standardUserDefaults().objectForKey("id") as! NSNumber
+                if (NSUserDefaults.standardUserDefaults().objectForKey("deviceToken") != nil){
+                    let token = NSUserDefaults.standardUserDefaults().objectForKey("deviceToken") as! String
+                    let dicTerminal:[String:String] = ["token":token,"model":"2","userid":userId.stringValue]
+                    LoginRequest.InsertTerminalWithParameters(dicTerminal, success: { (AnyObject object) -> Void in
+                        print(object)
+                        }, failure: { (NSError) -> Void in
+                            
+                    })
+                }
+                
             }
             else if(state==1)
             {

@@ -76,7 +76,31 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
             doBindDevice()
         }
     }
-    
+    @IBAction func backClicked(sender: UIButton) {
+        switch self.bindType{
+        case .InputDeviceID:
+            fallthrough
+        case .ScanDeviceID:
+            let devicebind = NSUserDefaults.standardUserDefaults().objectForKey("devicebind")?.integerValue
+            if devicebind == 0{
+                NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "id")
+            }
+            self.dismissViewControllerAnimated(true){
+            }
+        case .InputNickName:
+            self.bindType = .InputDeviceID
+            refreshInputView()
+        case .WaitAdmin:
+            self.bindType = .InputDeviceID
+            refreshInputView()
+        case .AdminAgree:
+            self.bindType = .InputDeviceID
+            refreshInputView()
+        case .AdminReject:
+            self.bindType = .InputDeviceID
+            refreshInputView()
+        }
+    }
     func doBindDevice(){
         let userId = NSUserDefaults.standardUserDefaults().objectForKey("id") as! NSNumber
         let dic:[String:String] = ["deviceno":self.bindDeviceID!,"nickname":self.nickName!,"userid":userId.stringValue]
