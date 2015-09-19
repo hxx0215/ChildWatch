@@ -217,7 +217,7 @@
 + (BOOL)validateIDCardNumber:(NSString *)value {
     value = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    int length = 0;
+    NSUInteger length = 0;
     if (!value) {
         return NO;
     }else {
