@@ -51,6 +51,7 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.bindView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8)
         setupCamera()
         if !canUseCamera{
             cameraAlert.show()
