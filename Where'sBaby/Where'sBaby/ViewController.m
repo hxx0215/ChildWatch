@@ -8,6 +8,26 @@
 
 #import "ViewController.h"
 #import <SWRevealViewController.h>
+IB_DESIGNABLE
+
+@interface MapBackView : UIView
+
+@end
+@implementation MapBackView
+
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self){
+    }
+    return self;
+}
+
+-(void)drawRect:(CGRect)rect{
+    self.layer.cornerRadius = self.frame.size.width / 2;
+    self.clipsToBounds = YES;
+}
+
+@end
 
 @interface ViewController ()
 @property (nonatomic,assign) BOOL isLogin;
