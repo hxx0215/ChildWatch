@@ -31,6 +31,7 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - ReactiveCocoa
+  - SWRevealViewController
 
 EXTERNAL SOURCES:
   IHKeyboardAvoiding:
@@ -56,5 +58,6 @@ SPEC CHECKSUMS:
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
 COCOAPODS: 0.38.2

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <SWRevealViewController.h>
 
 @interface ViewController ()
 @property (nonatomic,assign) BOOL isLogin;
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    if (self.revealViewController){
+        self.revealViewController.rightViewRevealWidth = 102;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,11 +35,21 @@
     }
     else
     {
-        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"devicebind"] integerValue] == 0) {
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"devicebind"] integerValue] != 0) {
             [self performSegueWithIdentifier:@"BindingSegueIdentifier" sender:nil];
         }
     }
     
+}
+- (IBAction)menuClicked:(UIButton *)sender {
+    if (self.revealViewController){
+        [self.revealViewController rightRevealToggle:sender];
+    }
+}
+- (IBAction)hideMenu:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded){
+        [self.revealViewController setFrontViewPosition:FrontViewPositionLeft animated:YES];
+    }
 }
 
 @end

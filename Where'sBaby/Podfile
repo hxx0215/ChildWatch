@@ -10,5 +10,6 @@ pod 'ReactiveCocoa'
 pod 'MBProgressHUD'
 pod 'JSONKit-NoWarning'
 pod 'AFNetworking'
+pod 'SWRevealViewController'
 end
 
