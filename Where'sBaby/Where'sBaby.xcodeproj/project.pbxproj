@@ -70,6 +70,9 @@
 		B9DEF57B1BAEA87900D9BED7 /* 设置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5581BAEA87900D9BED7 /* 设置@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B9DEF57C1BAEA87900D9BED7 /* 轨迹icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5591BAEA87900D9BED7 /* 轨迹icon@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B9DEF57D1BAEA87900D9BED7 /* 轨迹icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF55A1BAEA87900D9BED7 /* 轨迹icon@3x.png */; settings = {ASSET_TAGS = (); }; };
+		D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D367E4B71BAFFB670062FC62 /* AMap.bundle */; settings = {ASSET_TAGS = (); }; };
+		D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D367E4BD1BB004E10062FC62 /* CustomCalloutView.m */; settings = {ASSET_TAGS = (); }; };
 		D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */; settings = {ASSET_TAGS = (); }; };
 		D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE461BA6A9900078A0C2 /* Security.framework */; };
 		D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */; };
@@ -175,6 +178,11 @@
 		B9DEF5581BAEA87900D9BED7 /* 设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置@3x.png"; sourceTree = "<group>"; };
 		B9DEF5591BAEA87900D9BED7 /* 轨迹icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轨迹icon@2x.png"; sourceTree = "<group>"; };
 		B9DEF55A1BAEA87900D9BED7 /* 轨迹icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轨迹icon@3x.png"; sourceTree = "<group>"; };
+		D367E4B71BAFFB670062FC62 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
+		D367E4BA1BB004E10062FC62 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
+		D367E4BC1BB004E10062FC62 /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
+		D367E4BD1BB004E10062FC62 /* CustomCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalloutView.m; sourceTree = "<group>"; };
 		D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		D374C2861BA851750028456C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -274,13 +282,13 @@
 				B9045C131BA0535100090A86 /* Assets.xcassets */,
 				B9045C151BA0535100090A86 /* LaunchScreen.storyboard */,
 				B9045C181BA0535100090A86 /* Info.plist */,
+				D367E4B91BB004E10062FC62 /* View */,
 				B95890281BA4385300A2C03E /* Controller */,
 				B95890291BA4385300A2C03E /* Dependence */,
 				B958902A1BA4385300A2C03E /* Modal */,
 				D3E734FA1BA5D12500618513 /* Networking */,
 				B958902C1BA4385300A2C03E /* Resource */,
 				B958902D1BA4385300A2C03E /* Utils */,
-				B958902E1BA4385300A2C03E /* View */,
 				B9045C071BA0535100090A86 /* Supporting Files */,
 			);
 			path = "Where'sBaby";
@@ -341,6 +349,7 @@
 		B958902C1BA4385300A2C03E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D367E4B71BAFFB670062FC62 /* AMap.bundle */,
 				B9DEF5371BAEA87900D9BED7 /* Main */,
 				B95890321BA443ED00A2C03E /* Welcome */,
 			);
@@ -352,13 +361,6 @@
 			children = (
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		B958902E1BA4385300A2C03E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B95890321BA443ED00A2C03E /* Welcome */ = {
@@ -440,6 +442,17 @@
 				56F50D48F51F4C753BB9032F /* libPods-Where'sBaby.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D367E4B91BB004E10062FC62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D367E4BA1BB004E10062FC62 /* CustomAnnotationView.h */,
+				D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */,
+				D367E4BC1BB004E10062FC62 /* CustomCalloutView.h */,
+				D367E4BD1BB004E10062FC62 /* CustomCalloutView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D374C2841BA851750028456C /* UMessage_Sdk_1.1.0 */ = {
@@ -624,6 +637,7 @@
 				B958904E1BA443F600A2C03E /* zhuce@3x.png in Resources */,
 				B9DEF5751BAEA87900D9BED7 /* 聊天icon@2x.png in Resources */,
 				B95890491BA443F600A2C03E /* shuru1@2x.png in Resources */,
+				D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */,
 				B9DEF57B1BAEA87900D9BED7 /* 设置@3x.png in Resources */,
 				B95890441BA443F600A2C03E /* bei@3x.png in Resources */,
 				B9DEF56B1BAEA87900D9BED7 /* 宝贝按钮@2x.png in Resources */,
@@ -686,6 +700,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */,
 				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
 				D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */,
@@ -694,6 +709,7 @@
 				D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */,
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
+				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
 				B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */,
 				B9045C091BA0535100090A86 /* main.m in Sources */,
 			);

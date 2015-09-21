@@ -123,7 +123,7 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
         LoginRequest.AddDeviceBindWithParameters(dic, success: { (AnyObject object) -> Void in
             let dic:NSDictionary = object as! NSDictionary
             let state:Int = dic["state"] as! Int
-            
+            print(object)
             //0是已经有超级管理员的
             //7是之前没有管理员，设备初次第一个人绑定，这个人就是超级管理员
             if(state==0  || state==7)
