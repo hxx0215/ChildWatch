@@ -137,11 +137,13 @@ class BindWatchViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
                 }
                 else{
                     let res = dic["data"] as! NSArray
-                    let f = res.firstObject as! [String:AnyObject]
-                    for (key,value) in f{
-                        NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
+                    if res.count>0{
+                        let f = res.firstObject as! [String:AnyObject]
+                        for (key,value) in f{
+                            NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
+                        }
                     }
-                        
+                    NSUserDefaults.standardUserDefaults().setObject(1, forKey: "devicebind");
                     self.dismissViewControllerAnimated(true){
                         
                     }
