@@ -12,6 +12,9 @@
 @implementation UIButton (Log)
 
 +(void)load{
+    if (!logButton){
+        return;
+    }
     Class cls= [self class];
     SEL originAddtarget = @selector(addTarget:action:forControlEvents:);
     SEL swizAddtarget = @selector(swizz_addTarget:action:forControlEvents:);
@@ -41,8 +44,7 @@
 }
 
 void buttonAction(id self,SEL _cmd,id sender){
-    if (logButton)
-        NSLog(@"%@ %@",self,NSStringFromSelector(_cmd));
+    NSLog(@"%@ %@",self,NSStringFromSelector(_cmd));
     SEL selector = NSSelectorFromString([NSString stringWithFormat:@"swizz_%@",NSStringFromSelector(_cmd)]);
     ((void(*)(id,SEL,id))objc_msgSend)(self,selector,sender);
 }
