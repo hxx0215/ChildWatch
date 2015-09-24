@@ -17,6 +17,7 @@
 		B9045C221BA0535100090A86 /* Where_sBabyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9045C211BA0535100090A86 /* Where_sBabyTests.m */; };
 		B9045C2D1BA0535100090A86 /* Where_sBabyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9045C2C1BA0535100090A86 /* Where_sBabyUITests.m */; };
 		B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9052B671BA506C5001AA85C /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B95307901BB41896002B2162 /* UIButton+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B953078F1BB41896002B2162 /* UIButton+Log.m */; settings = {ASSET_TAGS = (); }; };
 		B95890311BA43BE900A2C03E /* WBWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95890301BA43BE900A2C03E /* WBWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B95890411BA443F600A2C03E /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890331BA443F600A2C03E /* 返回@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B95890421BA443F600A2C03E /* 返回@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890341BA443F600A2C03E /* 返回@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -124,6 +125,8 @@
 		B9045C2C1BA0535100090A86 /* Where_sBabyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Where_sBabyUITests.m; sourceTree = "<group>"; };
 		B9045C2E1BA0535100090A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9052B671BA506C5001AA85C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B953078E1BB41896002B2162 /* UIButton+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Log.h"; sourceTree = "<group>"; };
+		B953078F1BB41896002B2162 /* UIButton+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Log.m"; sourceTree = "<group>"; };
 		B958902F1BA43BE800A2C03E /* Where'sBaby-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Where'sBaby-Bridging-Header.h"; path = "Controller/Where'sBaby-Bridging-Header.h"; sourceTree = "<group>"; };
 		B95890301BA43BE900A2C03E /* WBWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWelcomeViewController.swift; sourceTree = "<group>"; };
 		B95890331BA443F600A2C03E /* 返回@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@2x.png"; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 		B958902D1BA4385300A2C03E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B953078E1BB41896002B2162 /* UIButton+Log.h */,
+				B953078F1BB41896002B2162 /* UIButton+Log.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 				B95890311BA43BE900A2C03E /* WBWelcomeViewController.swift in Sources */,
 				B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */,
 				D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */,
+				B95307901BB41896002B2162 /* UIButton+Log.m in Sources */,
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
 				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
