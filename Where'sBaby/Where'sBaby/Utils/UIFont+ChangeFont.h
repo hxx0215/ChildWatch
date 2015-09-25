@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//don't use it directly!!
 @interface UIFont (ChangeFont)
 
 @end
