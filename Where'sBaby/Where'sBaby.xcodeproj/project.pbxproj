@@ -35,6 +35,7 @@
 		B958904E1BA443F600A2C03E /* zhuce@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890401BA443F600A2C03E /* zhuce@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B95B8E321BA6C193008CC426 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95B8E311BA6C193008CC426 /* MAMapKit.framework */; };
 		B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */; settings = {ASSET_TAGS = (); }; };
 		B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B9DEF55B1BAEA87900D9BED7 /* 通讯录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5381BAEA87900D9BED7 /* 通讯录@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B9DEF55C1BAEA87900D9BED7 /* 通讯录@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5391BAEA87900D9BED7 /* 通讯录@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -148,6 +149,8 @@
 		B95890401BA443F600A2C03E /* zhuce@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@3x.png"; sourceTree = "<group>"; };
 		B95B8E311BA6C193008CC426 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Frameworks/MAMapKit.framework; sourceTree = "<group>"; };
 		B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindWatchViewController.swift; sourceTree = "<group>"; };
+		B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ChangeFont.h"; sourceTree = "<group>"; };
+		B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ChangeFont.m"; sourceTree = "<group>"; };
 		B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
 		B9DEF5381BAEA87900D9BED7 /* 通讯录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通讯录@2x.png"; sourceTree = "<group>"; };
 		B9DEF5391BAEA87900D9BED7 /* 通讯录@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通讯录@3x.png"; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 			children = (
 				B953078E1BB41896002B2162 /* UIButton+Log.h */,
 				B953078F1BB41896002B2162 /* UIButton+Log.m */,
+				B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */,
+				B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -739,6 +744,7 @@
 				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
 				D3B353481BB11EC6004DB2BF /* DeviceRequest.m in Sources */,
 				B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */,
+				B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */,
 				B9045C091BA0535100090A86 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
