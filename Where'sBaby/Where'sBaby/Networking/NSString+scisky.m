@@ -322,3 +322,10 @@
 
 @end
 
+
+@implementation UIFont (wb)
++(UIFont *)appFontOfSize:(CGFloat)size
+{
+    return [UIFont fontWithName:@"RTWSYueRoudGoDemo-Regular" size:size];
+}
+@end

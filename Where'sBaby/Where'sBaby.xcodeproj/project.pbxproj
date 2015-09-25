@@ -70,6 +70,8 @@
 		B9DEF57B1BAEA87900D9BED7 /* 设置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5581BAEA87900D9BED7 /* 设置@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B9DEF57C1BAEA87900D9BED7 /* 轨迹icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5591BAEA87900D9BED7 /* 轨迹icon@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B9DEF57D1BAEA87900D9BED7 /* 轨迹icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF55A1BAEA87900D9BED7 /* 轨迹icon@3x.png */; settings = {ASSET_TAGS = (); }; };
+		D362608A1BB4E5090063F833 /* 造字工房悦圆.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36260891BB4DE720063F833 /* 造字工房悦圆.otf */; };
+		D362608C1BB4E7BE0063F833 /* 123.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D362608B1BB4E78F0063F833 /* 123.TTF */; };
 		D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D367E4B71BAFFB670062FC62 /* AMap.bundle */; settings = {ASSET_TAGS = (); }; };
 		D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
 		D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D367E4BD1BB004E10062FC62 /* CustomCalloutView.m */; settings = {ASSET_TAGS = (); }; };
@@ -179,6 +181,8 @@
 		B9DEF5581BAEA87900D9BED7 /* 设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置@3x.png"; sourceTree = "<group>"; };
 		B9DEF5591BAEA87900D9BED7 /* 轨迹icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轨迹icon@2x.png"; sourceTree = "<group>"; };
 		B9DEF55A1BAEA87900D9BED7 /* 轨迹icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轨迹icon@3x.png"; sourceTree = "<group>"; };
+		D36260891BB4DE720063F833 /* 造字工房悦圆.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "造字工房悦圆.otf"; sourceTree = "<group>"; };
+		D362608B1BB4E78F0063F833 /* 123.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 123.TTF; sourceTree = "<group>"; };
 		D367E4B71BAFFB670062FC62 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		D367E4BA1BB004E10062FC62 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
 		D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 		B958902C1BA4385300A2C03E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D36260881BB4DE590063F833 /* Font */,
 				D367E4B71BAFFB670062FC62 /* AMap.bundle */,
 				B9DEF5371BAEA87900D9BED7 /* Main */,
 				B95890321BA443ED00A2C03E /* Welcome */,
@@ -445,6 +450,15 @@
 				56F50D48F51F4C753BB9032F /* libPods-Where'sBaby.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D36260881BB4DE590063F833 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D36260891BB4DE720063F833 /* 造字工房悦圆.otf */,
+				D362608B1BB4E78F0063F833 /* 123.TTF */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		D367E4B91BB004E10062FC62 /* View */ = {
@@ -595,6 +609,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D362608C1BB4E7BE0063F833 /* 123.TTF in Resources */,
+				D362608A1BB4E5090063F833 /* 造字工房悦圆.otf in Resources */,
 				B9DEF56F1BAEA87900D9BED7 /* 放大镜@2x.png in Resources */,
 				B95890451BA443F600A2C03E /* beijing1.png in Resources */,
 				B9DEF56D1BAEA87900D9BED7 /* 手表@2x.png in Resources */,

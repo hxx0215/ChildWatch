@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSString (scisky)
 -(NSString *)AESEncrypt;
 - (BOOL)checkTel;
 + (BOOL)validateIDCardNumber:(NSString *)value;
 - (BOOL)isValidateEmail;
+@end
+
+@interface UIFont (wb)
++(UIFont *)appFontOfSize:(CGFloat)size;
 @end
