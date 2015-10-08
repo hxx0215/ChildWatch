@@ -17,6 +17,8 @@
 		B9045C221BA0535100090A86 /* Where_sBabyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9045C211BA0535100090A86 /* Where_sBabyTests.m */; };
 		B9045C2D1BA0535100090A86 /* Where_sBabyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9045C2C1BA0535100090A86 /* Where_sBabyUITests.m */; };
 		B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9052B671BA506C5001AA85C /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B92408E31BC6A54E0033C73C /* zhuce1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E11BC6A54E0033C73C /* zhuce1@2x.png */; settings = {ASSET_TAGS = (); }; };
+		B92408E41BC6A54F0033C73C /* zhuce1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E21BC6A54E0033C73C /* zhuce1@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B95307901BB41896002B2162 /* UIButton+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B953078F1BB41896002B2162 /* UIButton+Log.m */; settings = {ASSET_TAGS = (); }; };
 		B95890311BA43BE900A2C03E /* WBWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95890301BA43BE900A2C03E /* WBWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B95890411BA443F600A2C03E /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890331BA443F600A2C03E /* 返回@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -129,6 +131,8 @@
 		B9045C2C1BA0535100090A86 /* Where_sBabyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Where_sBabyUITests.m; sourceTree = "<group>"; };
 		B9045C2E1BA0535100090A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9052B671BA506C5001AA85C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B92408E11BC6A54E0033C73C /* zhuce1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@2x.png"; sourceTree = "<group>"; };
+		B92408E21BC6A54E0033C73C /* zhuce1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@3x.png"; sourceTree = "<group>"; };
 		B953078E1BB41896002B2162 /* UIButton+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Log.h"; sourceTree = "<group>"; };
 		B953078F1BB41896002B2162 /* UIButton+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Log.m"; sourceTree = "<group>"; };
 		B958902F1BA43BE800A2C03E /* Where'sBaby-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Where'sBaby-Bridging-Header.h"; path = "Controller/Where'sBaby-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				B958903E1BA443F600A2C03E /* shuru2@3x.png */,
 				B958903F1BA443F600A2C03E /* zhuce@2x.png */,
 				B95890401BA443F600A2C03E /* zhuce@3x.png */,
+				B92408E11BC6A54E0033C73C /* zhuce1@2x.png */,
+				B92408E21BC6A54E0033C73C /* zhuce1@3x.png */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 				B9DEF5661BAEA87900D9BED7 /* 图层-30@3x.png in Resources */,
 				B9DEF57A1BAEA87900D9BED7 /* 设置@2x.png in Resources */,
 				B9DEF5741BAEA87900D9BED7 /* 电话icon@3x.png in Resources */,
+				B92408E31BC6A54E0033C73C /* zhuce1@2x.png in Resources */,
 				B9DEF5721BAEA87900D9BED7 /* 消息@3x.png in Resources */,
 				B95890461BA443F600A2C03E /* beijing2.png in Resources */,
 				B95890471BA443F600A2C03E /* denglu@2x.png in Resources */,
@@ -669,6 +676,7 @@
 				B9DEF5751BAEA87900D9BED7 /* 聊天icon@2x.png in Resources */,
 				B95890491BA443F600A2C03E /* shuru1@2x.png in Resources */,
 				D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */,
+				B92408E41BC6A54F0033C73C /* zhuce1@3x.png in Resources */,
 				B9DEF57B1BAEA87900D9BED7 /* 设置@3x.png in Resources */,
 				B95890441BA443F600A2C03E /* bei@3x.png in Resources */,
 				B9DEF56B1BAEA87900D9BED7 /* 宝贝按钮@2x.png in Resources */,

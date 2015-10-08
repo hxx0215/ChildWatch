@@ -14,6 +14,7 @@ struct LoginSegueIdentifer{
 }
 class WBWelcomeViewController: UIViewController {
 
+    @IBOutlet weak var login: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

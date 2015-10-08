@@ -20,10 +20,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var passTop: NSLayoutConstraint!
     @IBOutlet weak var doneTop: NSLayoutConstraint!
     @IBOutlet weak var checkView: UIView!
+    @IBOutlet weak var confirm: UIView!
     @IBOutlet weak var inputBackView: UIView!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var confirmPassTextField: UITextField!
     @IBOutlet weak var forgetButton: UIButton!
     var loginType: LoginType = .Login
     
@@ -34,6 +36,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         self.inputBackView.clipsToBounds = false
         self.inputBackView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8)
         IHKeyboardAvoiding.setAvoidingView(self.inputBackView)
+        self.layoutWithLoginType(self.loginType)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.layoutWithLoginType(self.loginType)
     }
 
@@ -49,18 +56,21 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         switch loginType{
         case .Login:
             self.checkView.hidden = true
-            self.passTop.constant = -50
+            self.confirm.hidden = true
             self.phoneTop.constant = 40
+            self.passTop.constant = -50
             self.forgetButton.hidden = false
         case .Forget:
             print("Forget")
             self.checkView.hidden = false
-            self.phoneTop.constant = 8
-            self.passTop.constant = 15
+            self.confirm.hidden = false
+            self.phoneTop.constant = 28
+            self.passTop.constant = 10
             self.forgetButton.hidden = true
         case .Register:
             print("Register")
             self.forgetButton.hidden = true
+            self.confirm.hidden = false
         }
     }
 
@@ -237,6 +247,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     func doForget(){
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+        if passTextField.text != confirmPassTextField.text{
+            hud.mode = .Text
+            hud.labelText = "两次输入密码不一致,请重新输入"
+            hud.hide(true, afterDelay: 1.5)
+            return
+        }
         let dic = ["username":self.userNameTextField.text!,"password":self.passTextField.text!,"random":self.codeTextField.text!]
         LoginRequest.ResetPassWordWithParameters(dic, success: { (AnyObject object) -> Void in
             let dic:NSDictionary = object as! NSDictionary
@@ -279,6 +295,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     func doRegister(){
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+        if passTextField.text != confirmPassTextField.text{
+            hud.mode = .Text
+            hud.labelText = "两次输入密码不一致,请重新输入"
+            hud.hide(true, afterDelay: 1.5)
+            return
+        }
         let dic = ["username":self.userNameTextField.text!,"password":self.passTextField.text!,"random":self.codeTextField.text!]
         LoginRequest.UserRegisterWithParameters(dic, success: { (AnyObject object) -> Void in
             let dic:NSDictionary = object as! NSDictionary
