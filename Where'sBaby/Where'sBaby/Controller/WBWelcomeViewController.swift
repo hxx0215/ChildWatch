@@ -27,7 +27,7 @@ class WBWelcomeViewController: UIViewController {
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if let _ = NSUserDefaults.standardUserDefaults().objectForKey(LoginSegueIdentifer.username){
+        if (NSUserDefaults.standardUserDefaults().objectForKey(LoginSegueIdentifer.username) != nil){
             self.dismissViewControllerAnimated(true){
                 
             }
