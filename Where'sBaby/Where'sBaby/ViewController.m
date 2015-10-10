@@ -10,6 +10,7 @@
 #import <SWRevealViewController.h>
 #import <MAMapKit/MAMapKit.h>
 #import "DeviceRequest.h"
+#import <UIButton+AFNetworking.h>
 //#import "CustomAnnotationView.h"
 IB_DESIGNABLE
 
@@ -58,6 +59,10 @@ IB_DESIGNABLE
 @end
 
 @implementation ViewController
+{
+    NSInteger childTag;
+    NSArray *childArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,6 +70,7 @@ IB_DESIGNABLE
     if (self.revealViewController){
         self.revealViewController.rightViewRevealWidth = 102;
     }
+    [self updateChild];
     self.mapView.delegate = self;
     [self addAction];
 }
@@ -78,6 +84,8 @@ IB_DESIGNABLE
     [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"id"]){
         [self.navigationController performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
+        childArray = 0;
+        childTag = 0;
     }
     else
     {
@@ -93,7 +101,8 @@ IB_DESIGNABLE
                 NSLog(@"%@",responseObject);
                 if (responseObject[@"state"]&&[responseObject[@"state"] integerValue]==0)
                 {
-                    NSArray *deviceArray = responseObject[@"data"];
+                    childArray = responseObject[@"data"];
+                    [self updateChild];
                 }
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
@@ -114,9 +123,68 @@ IB_DESIGNABLE
 }
 
 - (IBAction)childButtonClicked:(UIButton *)sender {
-    NSInteger tag = sender.tag;
+    if (sender.tag!=0&&childTag != sender.tag) {
+        childTag = sender.tag;
+        [self updateChild];
+    }
 }
-         
+
+-(void)updateChild
+{
+    for (NSInteger i=1,j=0; i<5; j++) {
+        NSDictionary *dicChild = nil;
+        if (j<[childArray count]) {
+            dicChild = [childArray objectAtIndex:j];
+        }
+        if (childTag == j) {
+            [self setChildButton:self.childButtonCurrent label:self.childLabelCurrent whithDic:dicChild];
+        }
+        else
+        {
+            switch (i) {
+                case 1:
+                {
+                    [self setChildButton:self.childButton1 label:self.childLabel1 whithDic:dicChild];
+                }
+                    break;
+                case 2:
+                {
+                    [self setChildButton:self.childButton2 label:self.childLabel2 whithDic:dicChild];
+                }
+                    break;
+                case 3:
+                {
+                    [self setChildButton:self.childButton3 label:self.childLabel3 whithDic:dicChild];
+                }
+                    break;
+                case 4:
+                {
+                    [self setChildButton:self.childButton4 label:self.childLabel4 whithDic:dicChild];
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+            i++;
+        }
+    }
+}
+
+-(void)setChildButton:(UIButton *)btn label:(UILabel *)label whithDic:(NSDictionary *)dic
+{
+    if (dic==nil) {
+        btn.hidden = YES;
+        label.hidden = YES;
+    }
+    else
+    {
+        btn.hidden = NO;
+        label.hidden = NO;
+        [btn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:dic[@"headimage"]] placeholderImage:[UIImage imageNamed:@"默认头像1"]];
+        label.text = [dic[@"nickname"] length]>0?dic[@"nickname"]:@"宝贝";
+    }
+}
          
 #pragma mark - Utility
 -(void)addAnnotationWithCooordinate:(CLLocationCoordinate2D)coordinate
