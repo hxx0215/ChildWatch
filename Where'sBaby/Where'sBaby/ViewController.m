@@ -8,13 +8,14 @@
 
 #import "ViewController.h"
 #import <SWRevealViewController.h>
-#import <MAMapKit/MAMapKit.h>
+#import "MapManager.h"
 #import "DeviceRequest.h"
 #import <UIButton+AFNetworking.h>
 //#import "CustomAnnotationView.h"
 IB_DESIGNABLE
 
-@interface MapBackView : MAMapView
+@interface MapBackView : UIView
+@property (nonatomic,strong) MAMapView *mapView;
 @end
 @implementation MapBackView
 
@@ -22,29 +23,31 @@ IB_DESIGNABLE
 {
     self = [super initWithCoder:aDecoder];
     if (self){
-        self.showsScale = NO;
-        self.showsCompass = NO;
-        self.showsUserLocation = NO;
+        
     }
     return self;
 }
-
-- (instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self){
-    }
-    return self;
+-(void)setMapView:(MAMapView *)mapView
+{
+    _mapView = mapView;
+    [self addSubview:mapView];
 }
-
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.mapView.frame = self.bounds;
+}
 -(void)drawRect:(CGRect)rect{
-    self.layer.cornerRadius = self.frame.size.width / 2;
+    self.layer.cornerRadius = self.bounds.size.width / 2;
     self.clipsToBounds = YES;
 }
 @end
 
 @interface ViewController () <MAMapViewDelegate>
 @property (nonatomic,assign) BOOL isLogin;
-@property (nonatomic,weak) IBOutlet MapBackView *mapView;
+@property (nonatomic,strong) MAMapView *mapView;
+@property (nonatomic,weak) IBOutlet MapBackView *mapViewContant;
+@property (nonatomic,weak) IBOutlet UIView *mapBackView;
 
 @property (nonatomic,weak) IBOutlet UIButton *childButtonCurrent;
 @property (nonatomic,weak) IBOutlet UILabel *childLabelCurrent;
@@ -70,14 +73,26 @@ IB_DESIGNABLE
     if (self.revealViewController){
         self.revealViewController.rightViewRevealWidth = 102;
     }
-    [self updateChild];
-    self.mapView.delegate = self;
+    
+    UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(mapClick:)];
+    self.mapBackView.userInteractionEnabled = YES;
+    [self.mapBackView addGestureRecognizer:tapGesture];
+    
     [self addAction];
+    [self updateChild];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.mapView = [MapManager MapView];
+    self.mapViewContant.mapView = self.mapView;
+    self.mapView.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -127,6 +142,13 @@ IB_DESIGNABLE
         childTag = sender.tag;
         [self updateChild];
     }
+}
+
+-(void)mapClick:(id)sender
+{
+    NSLog(@"mapClick");
+    [self.revealViewController setFrontViewPosition:FrontViewPositionLeft animated:YES];
+    [self performSegueWithIdentifier:@"LocationIdentifier" sender:nil];
 }
 
 -(void)updateChild
@@ -201,8 +223,8 @@ IB_DESIGNABLE
 {
     CGPoint randomPoint = CGPointZero;
     
-    randomPoint.x = arc4random() % (int)(CGRectGetWidth(self.mapView.bounds));
-    randomPoint.y = arc4random() % (int)(CGRectGetHeight(self.mapView.bounds));
+    randomPoint.x = arc4random() % (int)(CGRectGetWidth(self.mapViewContant.bounds));
+    randomPoint.y = arc4random() % (int)(CGRectGetHeight(self.mapViewContant.bounds));
     
     return randomPoint;
 }
@@ -275,5 +297,13 @@ IB_DESIGNABLE
     CLLocationCoordinate2D randomCoordinate = [self.mapView convertPoint:[self randomPoint] toCoordinateFromView:self.mapView];
     
     [self addAnnotationWithCooordinate:randomCoordinate];
+}
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 @end

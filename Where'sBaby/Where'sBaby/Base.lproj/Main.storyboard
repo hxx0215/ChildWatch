@@ -899,8 +899,10 @@
                         <outlet property="childLabel3" destination="Nol-gi-W2g" id="yEW-ge-QFK"/>
                         <outlet property="childLabel4" destination="T5I-Fl-QPo" id="eco-NL-GyV"/>
                         <outlet property="childLabelCurrent" destination="0BW-MQ-ChX" id="8uL-F4-orI"/>
-                        <outlet property="mapView" destination="jmK-nC-lAv" id="U3x-TT-bmx"/>
+                        <outlet property="mapBackView" destination="nkA-9a-nl5" id="hwZ-bJ-tBy"/>
+                        <outlet property="mapViewContant" destination="jmK-nC-lAv" id="p7o-u7-Sn3"/>
                         <segue destination="DQ7-fa-pl1" kind="presentation" identifier="BindingSegueIdentifier" id="eIG-w5-4fo"/>
+                        <segue destination="Ahb-py-Pn5" kind="show" identifier="LocationIdentifier" id="SDv-K7-K8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -911,6 +913,98 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1449" y="466.5"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="lhH-yB-jaZ">
+            <objects>
+                <viewController id="Ahb-py-Pn5" customClass="LocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fFS-0i-4Ha"/>
+                        <viewControllerLayoutGuide type="bottom" id="fIZ-Ii-S8E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fM7-1y-xl3">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbf-FY-R0d">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="返回" image="返回.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backClic:" destination="Ahb-py-Pn5" eventType="touchUpInside" id="lfi-Gd-jHv"/>
+                                    <action selector="backClick:" destination="l8N-65-RgJ" eventType="touchUpInside" id="EWV-yQ-OQD"/>
+                                    <action selector="backClicked:" destination="DQ7-fa-pl1" eventType="touchUpInside" id="yjB-5h-z7L"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wd-pT-yXg">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEc-dF-yo1">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QEc-dF-yo1" firstAttribute="centerX" secondItem="4Wd-pT-yXg" secondAttribute="centerX" id="IMc-wK-4NA"/>
+                            <constraint firstItem="4Wd-pT-yXg" firstAttribute="centerY" secondItem="qbf-FY-R0d" secondAttribute="centerY" id="IYT-5o-REX"/>
+                            <constraint firstItem="QEc-dF-yo1" firstAttribute="leading" secondItem="fM7-1y-xl3" secondAttribute="leading" id="OMF-cx-M60"/>
+                            <constraint firstItem="4Wd-pT-yXg" firstAttribute="centerX" secondItem="fM7-1y-xl3" secondAttribute="centerX" id="Y9r-Dw-rKd"/>
+                            <constraint firstItem="QEc-dF-yo1" firstAttribute="top" secondItem="qbf-FY-R0d" secondAttribute="bottom" constant="16" id="cGQ-qM-IVm"/>
+                            <constraint firstItem="qbf-FY-R0d" firstAttribute="leading" secondItem="fM7-1y-xl3" secondAttribute="leadingMargin" id="gCA-Sq-HCl"/>
+                            <constraint firstItem="qbf-FY-R0d" firstAttribute="top" secondItem="fFS-0i-4Ha" secondAttribute="bottom" id="j3P-DF-9KE"/>
+                            <constraint firstItem="QEc-dF-yo1" firstAttribute="bottom" secondItem="fIZ-Ii-S8E" secondAttribute="top" id="pPx-zE-SIi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qbf-FY-R0d"/>
+                                <exclude reference="4Wd-pT-yXg"/>
+                                <exclude reference="QEc-dF-yo1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="gCA-Sq-HCl"/>
+                                <exclude reference="j3P-DF-9KE"/>
+                                <exclude reference="IMc-wK-4NA"/>
+                                <exclude reference="OMF-cx-M60"/>
+                                <exclude reference="cGQ-qM-IVm"/>
+                                <exclude reference="pPx-zE-SIi"/>
+                                <exclude reference="IYT-5o-REX"/>
+                                <exclude reference="Y9r-Dw-rKd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="qbf-FY-R0d"/>
+                                <include reference="4Wd-pT-yXg"/>
+                                <include reference="QEc-dF-yo1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="gCA-Sq-HCl"/>
+                                <include reference="j3P-DF-9KE"/>
+                                <include reference="IMc-wK-4NA"/>
+                                <include reference="OMF-cx-M60"/>
+                                <include reference="cGQ-qM-IVm"/>
+                                <include reference="pPx-zE-SIi"/>
+                                <include reference="IYT-5o-REX"/>
+                                <include reference="Y9r-Dw-rKd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="mapBackView" destination="QEc-dF-yo1" id="Zpd-sf-My5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WkG-Lw-AWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2578.5" y="934.5"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="gLb-5s-M5n">
