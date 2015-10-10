@@ -21,7 +21,19 @@ class RightMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func messageClick(sender: UIButton) {
+        self.revealViewController().performSegueWithIdentifier("message", sender: nil);
+    }
 
+    @IBAction func ContactsClick(sender: AnyObject) {
+        self.revealViewController().performSegueWithIdentifier("Contacts", sender: nil);
+    }
+    @IBAction func watchSettingClick(sender: AnyObject) {
+        self.revealViewController().performSegueWithIdentifier("watchSetting", sender: nil);
+    }
+    @IBAction func appSettingClick(sender: AnyObject) {
+        self.revealViewController().performSegueWithIdentifier("appSetting", sender: nil);
+    }
     /*
     // MARK: - Navigation
 
