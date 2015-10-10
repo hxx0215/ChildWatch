@@ -135,6 +135,9 @@
 		D33B2FF21BC92CAA0072FAF6 /* WatchSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D33B2FF81BC952F60072FAF6 /* AboutUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D33B2FFB1BC953850072FAF6 /* shuru2_Click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2FF91BC953850072FAF6 /* shuru2_Click@2x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FFC1BC953850072FAF6 /* shuru2_Click@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2FFA1BC953850072FAF6 /* shuru2_Click@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D362608A1BB4E5090063F833 /* 造字工房悦圆.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36260891BB4DE720063F833 /* 造字工房悦圆.otf */; };
 		D362608C1BB4E7BE0063F833 /* 123.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D362608B1BB4E78F0063F833 /* 123.TTF */; };
 		D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D367E4B71BAFFB670062FC62 /* AMap.bundle */; settings = {ASSET_TAGS = (); }; };
@@ -313,6 +316,9 @@
 		D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingViewController.swift; sourceTree = "<group>"; };
 		D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingTableViewController.swift; sourceTree = "<group>"; };
 		D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPWViewController.swift; sourceTree = "<group>"; };
+		D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUSViewController.swift; sourceTree = "<group>"; };
+		D33B2FF91BC953850072FAF6 /* shuru2_Click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuru2_Click@2x.png"; sourceTree = "<group>"; };
+		D33B2FFA1BC953850072FAF6 /* shuru2_Click@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuru2_Click@3x.png"; sourceTree = "<group>"; };
 		D36260891BB4DE720063F833 /* 造字工房悦圆.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "造字工房悦圆.otf"; sourceTree = "<group>"; };
 		D362608B1BB4E78F0063F833 /* 123.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 123.TTF; sourceTree = "<group>"; };
 		D367E4B71BAFFB670062FC62 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
@@ -471,6 +477,7 @@
 				D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */,
 				D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */,
 				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
+				D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -527,6 +534,8 @@
 				B958903C1BA443F600A2C03E /* shuru1@3x.png */,
 				B958903D1BA443F600A2C03E /* shuru2@2x.png */,
 				B958903E1BA443F600A2C03E /* shuru2@3x.png */,
+				D33B2FF91BC953850072FAF6 /* shuru2_Click@2x.png */,
+				D33B2FFA1BC953850072FAF6 /* shuru2_Click@3x.png */,
 				B958903F1BA443F600A2C03E /* zhuce@2x.png */,
 				B95890401BA443F600A2C03E /* zhuce@3x.png */,
 				B92408E11BC6A54E0033C73C /* zhuce1@2x.png */,
@@ -820,6 +829,7 @@
 				D33B2FCD1BC90AAC0072FAF6 /* 首页背景750X1334.png in Resources */,
 				B95890451BA443F600A2C03E /* beijing1.png in Resources */,
 				B9DEF56D1BAEA87900D9BED7 /* 手表@2x.png in Resources */,
+				D33B2FFC1BC953850072FAF6 /* shuru2_Click@3x.png in Resources */,
 				D33B2FB91BC90AAC0072FAF6 /* 保存@2X.png in Resources */,
 				D33B2FC11BC90AAC0072FAF6 /* 二维码扫描框@2x.png in Resources */,
 				B9DEF55D1BAEA87900D9BED7 /* 位置@2x.png in Resources */,
@@ -882,6 +892,7 @@
 				D33B2FE31BC90AAC0072FAF6 /* beijing2_750X1334.png in Resources */,
 				D33B2FE41BC90AAC0072FAF6 /* beijing2_1242X2280.png in Resources */,
 				D33B2FC31BC90AAC0072FAF6 /* 空白头像框@2x.png in Resources */,
+				D33B2FFB1BC953850072FAF6 /* shuru2_Click@2x.png in Resources */,
 				B9DEF5721BAEA87900D9BED7 /* 消息@3x.png in Resources */,
 				B95890461BA443F600A2C03E /* beijing2.png in Resources */,
 				B95890471BA443F600A2C03E /* denglu@2x.png in Resources */,
@@ -994,6 +1005,7 @@
 				D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */,
 				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
 				D3B353481BB11EC6004DB2BF /* DeviceRequest.m in Sources */,
+				D33B2FF81BC952F60072FAF6 /* AboutUSViewController.swift in Sources */,
 				D33B2FF21BC92CAA0072FAF6 /* WatchSettingViewController.swift in Sources */,
 				B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */,
 				B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */,

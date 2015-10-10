@@ -1604,6 +1604,7 @@
                     <connections>
                         <outlet property="tableView" destination="k6r-GZ-2E9" id="4Hd-Mh-g7l"/>
                         <segue destination="MQx-bK-box" kind="show" identifier="modifxPWIdentifier" id="gSt-FY-Xzs"/>
+                        <segue destination="fx5-f0-aVT" kind="show" identifier="aboutUSIdentifier" id="klP-qM-utI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYZ-0h-whV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2323,6 +2324,79 @@
             </objects>
             <point key="canvasLocation" x="3517.5" y="82.5"/>
         </scene>
+        <!--AboutUS View Controller-->
+        <scene sceneID="5JQ-Q6-fKY">
+            <objects>
+                <viewController id="fx5-f0-aVT" customClass="AboutUSViewController" customModule="Where_sBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1XQ-KS-zaH"/>
+                        <viewControllerLayoutGuide type="bottom" id="JoM-U6-oIe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vfc-Ar-Qyg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beijing1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jkv-Zz-uKS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9b-dV-QCk">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="客服电话：400-8888888" backgroundImage="shuru2.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="shuru2_Click.png"/>
+                                <state key="highlighted" backgroundImage="shuru2_Click.png"/>
+                                <connections>
+                                    <action selector="btnClick" destination="fx5-f0-aVT" eventType="touchUpInside" id="AeJ-M6-QaP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JoM-U6-oIe" firstAttribute="top" secondItem="u9b-dV-QCk" secondAttribute="bottom" constant="30" id="Knz-Ez-xti"/>
+                            <constraint firstItem="Jkv-Zz-uKS" firstAttribute="top" secondItem="Vfc-Ar-Qyg" secondAttribute="top" id="M8T-YA-oGa"/>
+                            <constraint firstItem="JoM-U6-oIe" firstAttribute="top" secondItem="Jkv-Zz-uKS" secondAttribute="bottom" id="Mol-Ch-99c"/>
+                            <constraint firstAttribute="trailing" secondItem="Jkv-Zz-uKS" secondAttribute="trailing" id="daD-8I-pOt"/>
+                            <constraint firstItem="u9b-dV-QCk" firstAttribute="centerX" secondItem="Vfc-Ar-Qyg" secondAttribute="centerX" id="fLU-v7-tAB"/>
+                            <constraint firstItem="Jkv-Zz-uKS" firstAttribute="leading" secondItem="Vfc-Ar-Qyg" secondAttribute="leading" id="qjT-eE-iOy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Jkv-Zz-uKS"/>
+                                <exclude reference="u9b-dV-QCk"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="M8T-YA-oGa"/>
+                                <exclude reference="daD-8I-pOt"/>
+                                <exclude reference="qjT-eE-iOy"/>
+                                <exclude reference="fLU-v7-tAB"/>
+                                <exclude reference="Knz-Ez-xti"/>
+                                <exclude reference="Mol-Ch-99c"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Jkv-Zz-uKS"/>
+                                <include reference="u9b-dV-QCk"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="M8T-YA-oGa"/>
+                                <include reference="daD-8I-pOt"/>
+                                <include reference="qjT-eE-iOy"/>
+                                <include reference="fLU-v7-tAB"/>
+                                <include reference="Knz-Ez-xti"/>
+                                <include reference="Mol-Ch-99c"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgP-Fg-gdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3517.5" y="846.75"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bei.png" width="345" height="427"/>
@@ -2330,6 +2404,7 @@
         <image name="beijing2.png" width="1242" height="2208"/>
         <image name="shuru1.png" width="263" height="60"/>
         <image name="shuru2.png" width="263" height="60"/>
+        <image name="shuru2_Click.png" width="263" height="60"/>
         <image name="zhuce.png" width="103" height="43"/>
         <image name="zhuce1.png" width="103" height="43"/>
         <image name="安全icon.png" width="74" height="74"/>

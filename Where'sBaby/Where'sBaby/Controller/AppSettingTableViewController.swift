@@ -11,7 +11,7 @@ import UIKit
 class AppSettingTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var tableView : UITableView!
-    var titleArray: [Array<String>] = [["通知设置",""], ["常见问题",""], ["离线地图",""], ["关于我们",""], ["软件信息",""], ["意见反馈",""], ["分享应用",""], ["修改密码","modifxPWIdentifier"], ["清除缓存",""]]
+    var titleArray: [Array<String>] = [["通知设置",""], ["常见问题",""], ["离线地图",""], ["关于我们","aboutUSIdentifier"], ["软件信息",""], ["意见反馈",""], ["分享应用",""], ["修改密码","modifxPWIdentifier"], ["清除缓存",""]]
     override func viewDidLoad() {
         super.viewDidLoad()
 
