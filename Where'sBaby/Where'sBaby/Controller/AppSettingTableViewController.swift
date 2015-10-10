@@ -11,7 +11,7 @@ import UIKit
 class AppSettingTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var tableView : UITableView!
-    var titleArray: [String] = ["通知设置", "常见问题", "离线地图", "关于我们", "软件信息", "意见反馈", "分享应用", "修改密码", "清除缓存"]
+    var titleArray: [Array<String>] = [["通知设置",""], ["常见问题",""], ["离线地图",""], ["关于我们",""], ["软件信息",""], ["意见反馈",""], ["分享应用",""], ["修改密码","modifxPWIdentifier"], ["清除缓存",""]]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +29,10 @@ class AppSettingTableViewController: UIViewController,UITableViewDelegate,UITabl
     }
 
     @IBAction func backClick(sender : AnyObject){
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    @IBAction func loginOutClick(sender : AnyObject){
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "id")
         self.navigationController?.popViewControllerAnimated(true)
     }
     // MARK: - Table view data source
@@ -58,10 +62,17 @@ class AppSettingTableViewController: UIViewController,UITableViewDelegate,UITabl
 
         // Configure the cell...
 
-        cell.textLabel?.text = titleArray[indexPath.row]
+        cell.textLabel?.text = titleArray[indexPath.row][0]
         return cell
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView .deselectRowAtIndexPath(indexPath, animated: true)
+        let identifier:String = titleArray[indexPath.row][1]
+        if identifier.characters.count>0{
+            self.performSegueWithIdentifier(identifier, sender: nil)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

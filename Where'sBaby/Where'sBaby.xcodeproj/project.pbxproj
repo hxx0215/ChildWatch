@@ -134,6 +134,7 @@
 		D33B2FF01BC92C8E0072FAF6 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF21BC92CAA0072FAF6 /* WatchSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D362608A1BB4E5090063F833 /* 造字工房悦圆.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36260891BB4DE720063F833 /* 造字工房悦圆.otf */; };
 		D362608C1BB4E7BE0063F833 /* 123.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D362608B1BB4E78F0063F833 /* 123.TTF */; };
 		D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D367E4B71BAFFB670062FC62 /* AMap.bundle */; settings = {ASSET_TAGS = (); }; };
@@ -311,6 +312,7 @@
 		D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingViewController.swift; sourceTree = "<group>"; };
 		D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingTableViewController.swift; sourceTree = "<group>"; };
+		D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPWViewController.swift; sourceTree = "<group>"; };
 		D36260891BB4DE720063F833 /* 造字工房悦圆.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "造字工房悦圆.otf"; sourceTree = "<group>"; };
 		D362608B1BB4E78F0063F833 /* 123.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 123.TTF; sourceTree = "<group>"; };
 		D367E4B71BAFFB670062FC62 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */,
 				D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */,
 				D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */,
+				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -988,6 +991,7 @@
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
 				D33B2FEE1BC92C580072FAF6 /* MessageViewController.swift in Sources */,
+				D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */,
 				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
 				D3B353481BB11EC6004DB2BF /* DeviceRequest.m in Sources */,
 				D33B2FF21BC92CAA0072FAF6 /* WatchSettingViewController.swift in Sources */,

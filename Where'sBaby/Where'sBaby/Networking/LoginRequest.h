@@ -21,4 +21,7 @@
 + (void)InsertTerminalWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 + (void)AddDeviceBindWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
++ (void)UpdatePasswordWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 @end
