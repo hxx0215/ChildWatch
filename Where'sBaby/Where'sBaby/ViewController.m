@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <SWRevealViewController.h>
 #import <MAMapKit/MAMapKit.h>
+#import "DeviceRequest.h"
 //#import "CustomAnnotationView.h"
 IB_DESIGNABLE
 
@@ -43,6 +44,17 @@ IB_DESIGNABLE
 @interface ViewController () <MAMapViewDelegate>
 @property (nonatomic,assign) BOOL isLogin;
 @property (nonatomic,weak) IBOutlet MapBackView *mapView;
+
+@property (nonatomic,weak) IBOutlet UIButton *childButtonCurrent;
+@property (nonatomic,weak) IBOutlet UILabel *childLabelCurrent;
+@property (nonatomic,weak) IBOutlet UIButton *childButton1;
+@property (nonatomic,weak) IBOutlet UILabel *childLabel1;
+@property (nonatomic,weak) IBOutlet UIButton *childButton2;
+@property (nonatomic,weak) IBOutlet UILabel *childLabel2;
+@property (nonatomic,weak) IBOutlet UIButton *childButton3;
+@property (nonatomic,weak) IBOutlet UILabel *childLabel3;
+@property (nonatomic,weak) IBOutlet UIButton *childButton4;
+@property (nonatomic,weak) IBOutlet UILabel *childLabel4;
 @end
 
 @implementation ViewController
@@ -69,8 +81,23 @@ IB_DESIGNABLE
     }
     else
     {
-        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"devicebind"] integerValue] != 0) {
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"devicebind"] integerValue] == 0) {
             [self performSegueWithIdentifier:@"BindingSegueIdentifier" sender:nil];
+        }
+        else
+        {
+            NSDictionary *rDic = @{
+                                   @"userid" : [[NSUserDefaults standardUserDefaults] objectForKey:@"id"]
+                                   };
+            [DeviceRequest DeviceListWithParameters:rDic success:^(id responseObject) {
+                NSLog(@"%@",responseObject);
+                if (responseObject[@"state"]&&[responseObject[@"state"] integerValue]==0)
+                {
+                    NSArray *deviceArray = responseObject[@"data"];
+                }
+            } failure:^(NSError *error) {
+                NSLog(@"%@",error);
+            }];
         }
     }
     
@@ -86,6 +113,9 @@ IB_DESIGNABLE
     }
 }
 
+- (IBAction)childButtonClicked:(UIButton *)sender {
+    NSInteger tag = sender.tag;
+}
          
          
 #pragma mark - Utility
