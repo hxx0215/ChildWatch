@@ -160,6 +160,7 @@ IB_DESIGNABLE
         }
         if (childTag == j) {
             [self setChildButton:self.childButtonCurrent label:self.childLabelCurrent whithDic:dicChild];
+            [MapManager sharedManager].currentDeviceDic = dicChild;
         }
         else
         {

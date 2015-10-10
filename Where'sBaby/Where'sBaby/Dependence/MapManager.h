@@ -12,4 +12,5 @@
 @interface MapManager : NSObject
 +(instancetype)sharedManager;
 +(MAMapView *)MapView;
+@property (nonatomic,strong) NSDictionary *currentDeviceDic;
 @end
