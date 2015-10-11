@@ -10,10 +10,17 @@
 #import "BaseHTTPRequestOperationManager.h"
 
 #define kMethodUserDeviceList @"/user/getMyDeviceList"
+#define kMethodGetLastLocation @"/device/getLastLocationByDeviceNo"
 
 @implementation DeviceRequest
 + (void)DeviceListWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodUserDeviceList WithParameters:parameters post:YES success:success failure:failure];
 }
+
++ (void)GetLastLocationWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
+{
+    [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodGetLastLocation WithParameters:parameters post:YES success:success failure:failure];
+}
+
 @end
