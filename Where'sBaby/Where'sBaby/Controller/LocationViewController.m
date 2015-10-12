@@ -9,16 +9,25 @@
 #import "LocationViewController.h"
 #import "MapManager.h"
 #import "DeviceRequest.h"
+#import "CustomAnnotationView.h"
 
 @interface LocationViewController ()
 @property (nonatomic,weak) IBOutlet UIView *mapBackView;
 @property (nonatomic,weak) IBOutlet UIView *hudView;
 @property (nonatomic,weak) IBOutlet UIImageView *loadingImageView;
+@property (nonatomic,weak) IBOutlet UIButton *typeButton;
+@property (nonatomic,weak) IBOutlet UILabel *typeLabel;
+@property (nonatomic,weak) IBOutlet UIImageView *typeImageView;
+@property (nonatomic,weak) IBOutlet UIButton *locationButton;
 @property (nonatomic ,strong) MAMapView *mapView;
+@property (nonatomic ,strong) UIView *holdView;
 @end
 
 @implementation LocationViewController
 {
+    NSTimer *countDownTimer;
+    long timeCount;
+    BOOL first;
 }
 
 - (void)viewDidLoad {
@@ -26,7 +35,36 @@
     // Do any additional setup after loading the view.
     self.mapView = [MapManager MapView];
     [self.mapBackView addSubview:self.mapView];
+    [self.mapBackView sendSubviewToBack:self.mapBackView];
+    self.mapView.delegate = self;
+    [self.mapView removeAnnotations:self.mapView.annotations];
     
+    self.holdView = [[UIView alloc]init];
+    self.holdView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    [self.mapBackView addSubview:self.holdView];
+    [self.mapBackView bringSubviewToFront:self.holdView];
+    
+    [self addAction];
+    timeCount = 0;
+    first = YES;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (first) {
+        [self showHudView];
+        [self startAnimation];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    if (countDownTimer) {
+        [countDownTimer invalidate];
+        countDownTimer = nil;
+    }
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,23 +77,27 @@
 {
     [super viewWillLayoutSubviews];
     self.mapView.frame = self.mapBackView.bounds;
+    self.holdView.frame = self.mapBackView.bounds;
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.hudView.hidden = NO;
-    [self startAnimation];
-    NSDictionary *dic = @{
-                          @"deviceno" : [MapManager sharedManager].currentDeviceDic[@"deviceno"]
-                          };
-    [DeviceRequest GetLastLocationWithParameters:dic success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
-        self.hudView.hidden = YES;
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-        self.hudView.hidden = YES;
-    }];
+    if (first) {
+        first = NO;
+        NSDictionary *dic = @{
+                              @"deviceno" : [MapManager sharedManager].currentDeviceDic[@"deviceno"]
+                              };
+        [DeviceRequest LocationCommandWithParameters:dic success:^(id responseObject) {
+            NSLog(@"LocationCommand %@",responseObject);
+            if ([responseObject[@"state"] integerValue]==0) {
+                countDownTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(countDownTest) userInfo:nil repeats:YES];
+            }
+            
+        } failure:^(NSError *error) {
+            NSLog(@"LocationCommand %@",error);
+        }];
+    }
 }
 
 - (void)startAnimation
@@ -76,6 +118,152 @@
 -(IBAction)backClic:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)locationClick:(id)sender
+{
+}
+
+-(void)countDownTest{
+    timeCount++;
+    if (timeCount>3) {
+        if (countDownTimer) {
+            [countDownTimer invalidate];
+            countDownTimer = nil;
+        }
+    }
+    NSDictionary *dic = @{
+                          @"deviceno" : [MapManager sharedManager].currentDeviceDic[@"deviceno"]
+                          };
+    [DeviceRequest GetLastLocationWithParameters:dic success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        [self hideHudView];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        [self hideHudView];
+    }];
+}
+
+-(void)showHudView
+{
+    self.hudView.hidden = NO;
+    self.holdView.hidden = NO;
+    self.locationButton.hidden = YES;
+    self.typeButton.hidden = YES;
+    self.typeLabel.hidden = YES;
+    self.typeImageView.hidden = YES;
+}
+
+-(void)hideHudView
+{
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.hudView.hidden = YES;
+        self.holdView.hidden = YES;
+        self.locationButton.hidden = NO;
+        self.typeButton.hidden = NO;
+        self.typeLabel.hidden = NO;
+        self.typeImageView.hidden = NO;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)addAction
+{
+    
+    CLLocationCoordinate2D randomCoordinate = [self.mapView convertPoint:[self randomPoint] toCoordinateFromView:self.mapView];
+    
+    [self addAnnotationWithCooordinate:randomCoordinate];
+}
+
+#pragma mark - Utility
+-(void)addAnnotationWithCooordinate:(CLLocationCoordinate2D)coordinate
+{
+    MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];
+    annotation.coordinate = coordinate;
+    annotation.title    = @"宝贝";
+    annotation.subtitle = @"宝贝位置";
+    
+    [self.mapView addAnnotation:annotation];
+}
+
+- (CGPoint)randomPoint
+{
+    CGPoint randomPoint = CGPointZero;
+    
+    randomPoint.x = arc4random() % (int)(CGRectGetWidth(self.mapBackView.bounds));
+    randomPoint.y = arc4random() % (int)(CGRectGetHeight(self.mapBackView.bounds));
+    
+    return randomPoint;
+}
+
+- (CGSize)offsetToContainRect:(CGRect)innerRect inRect:(CGRect)outerRect
+{
+    CGFloat nudgeRight = fmaxf(0, CGRectGetMinX(outerRect) - (CGRectGetMinX(innerRect)));
+    CGFloat nudgeLeft = fminf(0, CGRectGetMaxX(outerRect) - (CGRectGetMaxX(innerRect)));
+    CGFloat nudgeTop = fmaxf(0, CGRectGetMinY(outerRect) - (CGRectGetMinY(innerRect)));
+    CGFloat nudgeBottom = fminf(0, CGRectGetMaxY(outerRect) - (CGRectGetMaxY(innerRect)));
+    return CGSizeMake(nudgeLeft ?: nudgeRight, nudgeTop ?: nudgeBottom);
+}
+
+#pragma mark - MAMapViewDelegate
+
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MAPointAnnotation class]])
+    {
+        static NSString *customReuseIndetifier = @"customReuseIndetifier2";
+        
+        CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:customReuseIndetifier];
+        
+        if (annotationView == nil)
+        {
+            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:customReuseIndetifier];
+            // must set to NO, so we can show the custom callout view.
+            annotationView.canShowCallout = NO;
+            annotationView.draggable = YES;
+            annotationView.calloutOffset = CGPointMake(0, -5);
+            annotationView.image = [UIImage imageNamed:@"位置_空"];
+            UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"语音"]];
+            imageView.frame = CGRectMake(8, 5, annotationView.frame.size.width-16, annotationView.frame.size.width-16);
+            [annotationView addSubview:imageView];
+            annotationView.top = @"1111121123124124";
+            annotationView.left = @"10fenzhong";
+            annotationView.right = @"jingdu100m";
+            annotationView.selected = YES;
+        }
+        
+        return annotationView;
+    }
+    
+    return nil;
+}
+
+#pragma mark - Action Handle
+
+- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
+{
+    /* Adjust the map center in order to show the callout view completely. */
+        if ([view isKindOfClass:[CustomAnnotationView class]]) {
+            CustomAnnotationView *cusView = (CustomAnnotationView *)view;
+            CGRect frame = [cusView convertRect:cusView.calloutView.frame toView:self.mapView];
+    
+            frame = UIEdgeInsetsInsetRect(frame, UIEdgeInsetsMake(-8, -8, -8, -8));
+    
+            if (!CGRectContainsRect(self.mapView.frame, frame))
+            {
+                /* Calculate the offset to make the callout view show up. */
+                CGSize offset = [self offsetToContainRect:frame inRect:self.mapView.frame];
+    
+                CGPoint theCenter = self.mapView.center;
+                theCenter = CGPointMake(theCenter.x - offset.width, theCenter.y - offset.height);
+    
+                CLLocationCoordinate2D coordinate = [self.mapView convertPoint:theCenter toCoordinateFromView:self.mapView];
+    
+                [self.mapView setCenterCoordinate:coordinate animated:YES];
+            }
+            
+        }
 }
 /*
 #pragma mark - Navigation

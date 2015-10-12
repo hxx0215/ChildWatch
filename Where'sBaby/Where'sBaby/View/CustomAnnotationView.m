@@ -18,7 +18,7 @@
 #define kPortraitWidth  50.f
 #define kPortraitHeight 50.f
 
-#define kCalloutWidth   200.0
+#define kCalloutWidth   250.0
 #define kCalloutHeight  70.0
 
 @interface CustomAnnotationView ()
@@ -26,6 +26,9 @@
 @property (nonatomic, strong) UIImageView *portraitImageView;
 @property (nonatomic, strong) UILabel *nameLabel;
 
+@property (nonatomic, strong) UILabel *topLabel;
+@property (nonatomic, strong) UILabel *leftLabel;
+@property (nonatomic, strong) UILabel *rightLabel;
 @end
 
 @implementation CustomAnnotationView
@@ -45,24 +48,34 @@
 
 #pragma mark - Override
 
-- (NSString *)name
+-(void)setTop:(NSString *)top
 {
-    return self.nameLabel.text;
+    self.topLabel.text = top;
 }
 
-- (void)setName:(NSString *)name
+- (NSString *)top
 {
-    self.nameLabel.text = name;
+    return self.topLabel.text;
 }
 
-- (UIImage *)portrait
+-(void)setLeft:(NSString *)left
 {
-    return self.portraitImageView.image;
+    self.leftLabel.text = left;
 }
 
-- (void)setPortrait:(UIImage *)portrait
+- (NSString *)left
 {
-    self.portraitImageView.image = portrait;
+    return self.leftLabel.text;
+}
+
+-(void)setRight:(NSString *)right
+{
+    self.rightLabel.text = right;
+}
+
+- (NSString *)right
+{
+    return self.rightLabel.text;
 }
 
 - (void)setSelected:(BOOL)selected
@@ -82,18 +95,28 @@
         if (self.calloutView == nil)
         {
             /* Construct custom callout. */
-            self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, kCalloutWidth, kCalloutHeight)];
+            [self.topLabel sizeToFit];
+            [self.leftLabel sizeToFit];
+            [self.rightLabel sizeToFit];
+            CGFloat widthT = self.topLabel.bounds.size.width;
+            CGFloat widthB = kCalloutWidth;
+            self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, widthT>widthB?widthT:widthB, kCalloutHeight)];
             self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
                                                   -CGRectGetHeight(self.calloutView.bounds) / 2.f + self.calloutOffset.y);
-            
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            btn.frame = CGRectMake(10, 10, 40, 40);
-            [btn setTitle:@"Test" forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-            [btn setBackgroundColor:[UIColor whiteColor]];
-            [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-            
-            [self.calloutView addSubview:btn];
+            [self.calloutView addSubview:self.topLabel];
+            [self.calloutView addSubview:self.leftLabel];
+            [self.calloutView addSubview:self.rightLabel];
+            self.topLabel.frame = CGRectMake(30, 12, self.topLabel.frame.size.width, self.topLabel.frame.size.height);
+            self.leftLabel.frame = CGRectMake(30, 29, self.leftLabel.frame.size.width, self.leftLabel.frame.size.height);
+            self.rightLabel.frame = CGRectMake(self.calloutView.frame.size.width - self.rightLabel.frame.size.width - 30, 29, self.rightLabel.frame.size.width, self.rightLabel.frame.size.height);
+//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//            btn.frame = CGRectMake(10, 10, 40, 40);
+//            [btn setTitle:@"Test" forState:UIControlStateNormal];
+//            [btn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+//            [btn setBackgroundColor:[UIColor whiteColor]];
+//            [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
+//            
+//            [self.calloutView addSubview:btn];
             
             UILabel *name = [[UILabel alloc] initWithFrame:CGRectMake(60, 10, 100, 30)];
             name.backgroundColor = [UIColor clearColor];
@@ -106,7 +129,7 @@
     }
     else
     {
-        [self.calloutView removeFromSuperview];
+        //[self.calloutView removeFromSuperview];
     }
     
     [super setSelected:selected animated:animated];
@@ -137,22 +160,31 @@
     {
         self.bounds = CGRectMake(0.f, 0.f, kWidth, kHeight);
         
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor clearColor];
         
-        /* Create portrait image view and add to view hierarchy. */
-        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
-        [self addSubview:self.portraitImageView];
-        
-        /* Create name label. */
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPortraitWidth + kHoriMargin,
-                                                                   kVertMargin,
-                                                                   kWidth - kPortraitWidth - kHoriMargin,
-                                                                   kHeight - 2 * kVertMargin)];
-        self.nameLabel.backgroundColor  = [UIColor clearColor];
-        self.nameLabel.textAlignment    = UITextAlignmentCenter;
-        self.nameLabel.textColor        = [UIColor whiteColor];
-        self.nameLabel.font             = [UIFont systemFontOfSize:15.f];
-        [self addSubview:self.nameLabel];
+//        /* Create portrait image view and add to view hierarchy. */
+//        self.portraitImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kHoriMargin, kVertMargin, kPortraitWidth, kPortraitHeight)];
+//        [self addSubview:self.portraitImageView];
+//        
+//        /* Create name label. */
+//        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(kPortraitWidth + kHoriMargin,
+//                                                                   kVertMargin,
+//                                                                   kWidth - kPortraitWidth - kHoriMargin,
+//                                                                   kHeight - 2 * kVertMargin)];
+//        self.nameLabel.backgroundColor  = [UIColor clearColor];
+//        self.nameLabel.textAlignment    = UITextAlignmentCenter;
+//        self.nameLabel.textColor        = [UIColor whiteColor];
+//        self.nameLabel.font             = [UIFont systemFontOfSize:15.f];
+//        [self addSubview:self.nameLabel];
+        self.topLabel = [[UILabel alloc]init];
+        self.topLabel.textColor = [UIColor darkGrayColor];
+        self.topLabel.font = [UIFont systemFontOfSize:14];
+        self.leftLabel = [[UILabel alloc]init];
+        self.leftLabel.textColor = [UIColor darkGrayColor];
+        self.leftLabel.font = [UIFont systemFontOfSize:14];
+        self.rightLabel = [[UILabel alloc]init];
+        self.rightLabel.textColor = [UIColor lightGrayColor];
+        self.rightLabel.font = [UIFont systemFontOfSize:14];
     }
     
     return self;

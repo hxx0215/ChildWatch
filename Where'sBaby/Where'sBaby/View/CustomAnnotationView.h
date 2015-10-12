@@ -10,10 +10,9 @@
 
 @interface CustomAnnotationView : MAAnnotationView
 
-@property (nonatomic, copy) NSString *name;
-
-@property (nonatomic, strong) UIImage *portrait;
-
 @property (nonatomic, strong) UIView *calloutView;
 
+@property (nonatomic, strong) NSString *top;
+@property (nonatomic, strong) NSString *left;
+@property (nonatomic, strong) NSString *right;
 @end

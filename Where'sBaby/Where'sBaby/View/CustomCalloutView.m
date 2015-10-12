@@ -29,7 +29,7 @@
     
     [self drawInContext:UIGraphicsGetCurrentContext()];
     
-    self.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.layer.shadowColor = [[UIColor colorWithRed:102/255.0 green:205/255.0 blue:251/255.0 alpha:1] CGColor];
     self.layer.shadowOpacity = 1.0;
     self.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     
@@ -37,24 +37,26 @@
 
 - (void)drawInContext:(CGContextRef)context
 {
-    
-    CGContextSetLineWidth(context, 2.0);
-    CGContextSetFillColorWithColor(context, [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.8].CGColor);
-    
+    CGContextSetFillColorWithColor(context, [UIColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor);
+    CGContextSetStrokeColorWithColor(context, [[UIColor colorWithRed:102/255.0 green:205/255.0 blue:251/255.0 alpha:1] CGColor]);
+    CGContextSetLineWidth(context, 2);
     [self getDrawPath:context];
     CGContextFillPath(context);
+    [self getDrawPath:context];
+    CGContextStrokePath(context);
+    
     
 }
 
 - (void)getDrawPath:(CGContextRef)context
 {
-    CGRect rrect = self.bounds;
-    CGFloat radius = 6.0;
+    CGRect rrect = CGRectInset(self.bounds, 1, 1);
     CGFloat minx = CGRectGetMinX(rrect),
     midx = CGRectGetMidX(rrect),
     maxx = CGRectGetMaxX(rrect);
     CGFloat miny = CGRectGetMinY(rrect),
     maxy = CGRectGetMaxY(rrect)-kArrorHeight;
+    CGFloat radius = (maxy - miny)/2;
     
     CGContextMoveToPoint(context, midx+kArrorHeight, maxy);
     CGContextAddLineToPoint(context,midx, maxy+kArrorHeight);

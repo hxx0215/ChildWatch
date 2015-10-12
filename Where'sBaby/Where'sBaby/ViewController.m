@@ -265,33 +265,6 @@ IB_DESIGNABLE
     return nil;
 }
 
-#pragma mark - Action Handle
-
-- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
-{
-    /* Adjust the map center in order to show the callout view completely. */
-//    if ([view isKindOfClass:[CustomAnnotationView class]]) {
-//        CustomAnnotationView *cusView = (CustomAnnotationView *)view;
-//        CGRect frame = [cusView convertRect:cusView.calloutView.frame toView:self.mapView];
-//        
-//        frame = UIEdgeInsetsInsetRect(frame, UIEdgeInsetsMake(-8, -8, -8, -8));
-//        
-//        if (!CGRectContainsRect(self.mapView.frame, frame))
-//        {
-//            /* Calculate the offset to make the callout view show up. */
-//            CGSize offset = [self offsetToContainRect:frame inRect:self.mapView.frame];
-//            
-//            CGPoint theCenter = self.mapView.center;
-//            theCenter = CGPointMake(theCenter.x - offset.width, theCenter.y - offset.height);
-//            
-//            CLLocationCoordinate2D coordinate = [self.mapView convertPoint:theCenter toCoordinateFromView:self.mapView];
-//            
-//            [self.mapView setCenterCoordinate:coordinate animated:YES];
-//        }
-//        
-//    }
-}
-
 - (void)addAction
 {
     
