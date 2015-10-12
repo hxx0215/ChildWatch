@@ -182,12 +182,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
             hud.hide(true, afterDelay: 1.5)
             return false;
         }
-        if self.passTextField.text!.compare(self.confirmPassTextField.text!) != .OrderedSame{
-            let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
-            hud.mode = .Text
-            hud.labelText = "两次密码不一致"
-            hud.hide(true, afterDelay: 1.5)
-            return false;
+        if !self.confirm.hidden{
+            if self.passTextField.text!.compare(self.confirmPassTextField.text!) != .OrderedSame{
+                let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+                hud.mode = .Text
+                hud.labelText = "两次密码不一致"
+                hud.hide(true, afterDelay: 1.5)
+                return false;
+            }
         }
         return true;
     }

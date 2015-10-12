@@ -24,6 +24,9 @@ class AboutUSViewController: UIViewController {
     @IBAction func btnClick(){
     }
 
+    @IBAction func backClicked(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     /*
     // MARK: - Navigation
 
