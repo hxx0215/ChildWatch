@@ -2520,6 +2520,7 @@
                                     <action selector="backClic:" destination="Ahb-py-Pn5" eventType="touchUpInside" id="N2Q-7n-7gT"/>
                                     <action selector="backClick:" destination="l8N-65-RgJ" eventType="touchUpInside" id="yrY-Sk-oBV"/>
                                     <action selector="backClicked:" destination="DQ7-fa-pl1" eventType="touchUpInside" id="A4a-AA-fA3"/>
+                                    <action selector="backClicked:" destination="fx5-f0-aVT" eventType="touchUpInside" id="g9X-sF-9zN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2542,14 +2543,14 @@
                                 <exclude reference="N57-51-ICQ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="M8T-YA-oGa"/>
-                                <exclude reference="daD-8I-pOt"/>
-                                <exclude reference="qjT-eE-iOy"/>
+                                <exclude reference="Knz-Ez-xti"/>
+                                <exclude reference="Mol-Ch-99c"/>
                                 <exclude reference="4ao-nj-HYg"/>
                                 <exclude reference="Qbe-Yx-9Lj"/>
                                 <exclude reference="fLU-v7-tAB"/>
-                                <exclude reference="Knz-Ez-xti"/>
-                                <exclude reference="Mol-Ch-99c"/>
+                                <exclude reference="M8T-YA-oGa"/>
+                                <exclude reference="daD-8I-pOt"/>
+                                <exclude reference="qjT-eE-iOy"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2559,14 +2560,14 @@
                                 <include reference="N57-51-ICQ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="M8T-YA-oGa"/>
-                                <include reference="daD-8I-pOt"/>
-                                <include reference="qjT-eE-iOy"/>
+                                <include reference="Knz-Ez-xti"/>
+                                <include reference="Mol-Ch-99c"/>
                                 <include reference="4ao-nj-HYg"/>
                                 <include reference="Qbe-Yx-9Lj"/>
                                 <include reference="fLU-v7-tAB"/>
-                                <include reference="Knz-Ez-xti"/>
-                                <include reference="Mol-Ch-99c"/>
+                                <include reference="M8T-YA-oGa"/>
+                                <include reference="daD-8I-pOt"/>
+                                <include reference="qjT-eE-iOy"/>
                             </mask>
                         </variation>
                     </view>
