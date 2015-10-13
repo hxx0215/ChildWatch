@@ -9,3 +9,4 @@
 #import "DeviceRequest.h"
 #import "NSString+scisky.h"
 #import <SWRevealViewController.h>
+#import "DeviceManager.h"

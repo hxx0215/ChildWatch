@@ -226,6 +226,7 @@
 		D3DF40C41BCBC0DE00A3A9D7 /* 位置_空@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40C31BCBC0DE00A3A9D7 /* 位置_空@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF40C61BCD059800A3A9D7 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DF40C51BCD059700A3A9D7 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
 		D3DF40C91BCD333A00A3A9D7 /* DeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF40C81BCD333A00A3A9D7 /* DeviceManager.m */; settings = {ASSET_TAGS = (); }; };
+		D3DF40CB1BCD646F00A3A9D7 /* BabyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF40CA1BCD646F00A3A9D7 /* BabyDataTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -488,6 +489,7 @@
 		D3DF40C51BCD059700A3A9D7 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = Frameworks/AMapSearchKit.framework; sourceTree = "<group>"; };
 		D3DF40C71BCD333A00A3A9D7 /* DeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManager.h; sourceTree = "<group>"; };
 		D3DF40C81BCD333A00A3A9D7 /* DeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManager.m; sourceTree = "<group>"; };
+		D3DF40CA1BCD646F00A3A9D7 /* BabyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyDataTableViewController.swift; sourceTree = "<group>"; };
 		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 				B96BDBA21BCD31D400BE7FE3 /* ShareViewController.swift */,
 				D33B2FFD1BC9606B0072FAF6 /* LocationViewController.h */,
 				D33B2FFE1BC9606B0072FAF6 /* LocationViewController.m */,
+				D3DF40CA1BCD646F00A3A9D7 /* BabyDataTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1322,6 +1325,7 @@
 				D3B353481BB11EC6004DB2BF /* DeviceRequest.m in Sources */,
 				D33B2FF81BC952F60072FAF6 /* AboutUSViewController.swift in Sources */,
 				B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */,
+				D3DF40CB1BCD646F00A3A9D7 /* BabyDataTableViewController.swift in Sources */,
 				B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */,
 				B9045C091BA0535100090A86 /* main.m in Sources */,
 			);

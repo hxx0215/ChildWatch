@@ -145,13 +145,16 @@ IB_DESIGNABLE
 }
 
 - (IBAction)childButtonClicked:(UIButton *)sender {
-    if (sender.tag!=0&&childTag != sender.tag) {
+    if (sender.tag ==0) {
+        [self.revealViewController performSegueWithIdentifier:@"baby" sender:nil];
+    }
+    else if (childTag != sender.tag) {
         childTag = sender.tag;
         [self updateChild];
     }
 }
 
-//-(IBAction)<#selector#>:(id)sender)
+//-(IBAction)selector:(id)sender)
 
 -(void)mapClick:(id)sender
 {
