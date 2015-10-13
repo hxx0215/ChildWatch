@@ -98,7 +98,7 @@
             [self.topLabel sizeToFit];
             [self.leftLabel sizeToFit];
             [self.rightLabel sizeToFit];
-            CGFloat widthT = self.topLabel.bounds.size.width;
+            CGFloat widthT = self.topLabel.bounds.size.width+60;
             CGFloat widthB = kCalloutWidth;
             self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, widthT>widthB?widthT:widthB, kCalloutHeight)];
             self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,

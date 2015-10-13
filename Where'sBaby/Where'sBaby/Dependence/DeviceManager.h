@@ -7,10 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MAMapKit/MAMapKit.h>
+
+typedef enum {
+    LocationTypeWIFI,
+    LocationTypeGPS,
+    LocationTypeGSM,
+    LocationTypeOFFLine
+}LocationType;
 
 @interface DeviceModel : NSObject
 @property (nonatomic ,strong) NSDictionary *dicBase;
 @property (nonatomic ,strong) NSDictionary *dicLocation;
+-(CLLocationCoordinate2D)getLocationCoordinate;
+-(LocationType)getLocationType;
 @end
 
 @interface DeviceManager : NSObject

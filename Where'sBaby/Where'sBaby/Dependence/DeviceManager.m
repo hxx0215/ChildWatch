@@ -7,8 +7,51 @@
 //
 
 #import "DeviceManager.h"
+#import <MAMapKit/MAMapKit.h>
 
 @implementation DeviceModel
+{
+    double latitude;
+    double longitude;
+    LocationType type;
+}
+
+-(void)setDicLocation:(NSDictionary *)dicLocation
+{
+    _dicLocation = dicLocation;
+    latitude = 0;
+    longitude = 0;
+    type = LocationTypeOFFLine;
+    NSString *str = nil;
+    if ([dicLocation[@"gpslocation"] length]>0) {
+        type = LocationTypeGPS;
+        str = dicLocation[@"gpslocation"];
+    }
+    if ([dicLocation[@"gsmlocation"] length]>0) {
+        type = LocationTypeGSM;
+        str = dicLocation[@"gsmlocation"];
+    }
+    if ([dicLocation[@"wifilocation"] length]>0) {
+        type = LocationTypeWIFI;
+        str = dicLocation[@"wifilocation"];
+    }
+    NSArray *array = [str componentsSeparatedByString:@","];
+    if ([array count]>=2) {
+        longitude = [array[0] doubleValue];
+        latitude = [array[1] doubleValue];
+    }
+}
+
+-(CLLocationCoordinate2D)getLocationCoordinate
+{
+    CLLocationCoordinate2D location = (CLLocationCoordinate2D){latitude, longitude};
+    return location;
+}
+
+-(LocationType)getLocationType
+{
+    return type;
+}
 @end
 
 @implementation DeviceManager

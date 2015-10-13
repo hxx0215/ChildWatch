@@ -33,6 +33,9 @@
     NSInteger angle;
 
     AMapSearchAPI *_search;
+    NSString *adrress;
+    
+    BOOL offLine;
 }
 
 - (void)viewDidLoad {
@@ -53,6 +56,7 @@
     timeCount = 0;
     first = YES;
     angle = 0;
+    offLine = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -97,7 +101,13 @@
         [DeviceRequest LocationCommandWithParameters:dic success:^(id responseObject) {
             NSLog(@"LocationCommand %@",responseObject);
             if ([responseObject[@"state"] integerValue]==0) {
+                offLine = NO;
                 countDownTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(countDownTest) userInfo:nil repeats:YES];
+            }
+            else
+            {
+                [self doLocation];
+                offLine = YES;
             }
             
         } failure:^(NSError *error) {
@@ -127,6 +137,10 @@
 
 -(IBAction)locationClick:(id)sender
 {
+    if (countDownTimer) {
+        return;
+    }
+    [self doLocation];
 }
 
 -(void)countDownTest{
@@ -137,21 +151,32 @@
             countDownTimer = nil;
         }
     }
+    [self showHudView];
+    [self doLocation];
+}
+
+-(void)doLocation
+{
     NSDictionary *dic = @{
                           @"deviceno" : [DeviceManager sharedManager].curentDevice.dicBase[@"deviceno"]
                           };
     [DeviceRequest GetLastLocationWithParameters:dic success:^(id responseObject) {
         NSLog(@"%@",responseObject);
-        [self hideHudView];
+        if ([responseObject[@"state"] integerValue]==0) {
+            [DeviceManager sharedManager].curentDevice.dicLocation = [responseObject[@"data"] firstObject];
+            //构造AMapReGeocodeSearchRequest对象
+            AMapReGeocodeSearchRequest *regeo = [[AMapReGeocodeSearchRequest alloc] init];
+            regeo.location = [AMapGeoPoint locationWithLatitude:[[DeviceManager sharedManager].curentDevice getLocationCoordinate].latitude  longitude:[[DeviceManager sharedManager].curentDevice getLocationCoordinate].longitude];
+            //regeo.radius = 10000;
+            regeo.requireExtension = YES;
+            //发起逆地理编码
+            [_search AMapReGoecodeSearch: regeo];
+        }
+        else
+        {
+            [self hideHudView];
+        }
         
-        //构造AMapReGeocodeSearchRequest对象
-        AMapReGeocodeSearchRequest *regeo = [[AMapReGeocodeSearchRequest alloc] init];
-        regeo.location = [AMapGeoPoint locationWithLatitude:39.990459 longitude:116.481476];
-        regeo.radius = 10000;
-        regeo.requireExtension = YES;
-        
-        //发起逆地理编码
-        [_search AMapReGoecodeSearch: regeo];
         
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
@@ -171,24 +196,46 @@
 
 -(void)hideHudView
 {
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    if (!self.hudView.hidden) {
         self.hudView.hidden = YES;
         self.holdView.hidden = YES;
         self.locationButton.hidden = NO;
         self.typeButton.hidden = NO;
         self.typeLabel.hidden = NO;
         self.typeImageView.hidden = NO;
-    } completion:^(BOOL finished) {
-        [self addAction];
-    }];
+    }
 }
 
-- (void)addAction
+-(void)upDateUi
 {
-    
-    CLLocationCoordinate2D randomCoordinate = [self.mapView convertPoint:[self randomPoint] toCoordinateFromView:self.mapView];
-    
-    [self addAnnotationWithCooordinate:randomCoordinate];
+    switch ([[DeviceManager sharedManager].curentDevice getLocationType]) {
+        case LocationTypeWIFI:
+        {
+            self.typeImageView.hidden = self.typeLabel.hidden = YES;
+            [self.typeButton setBackgroundImage:[UIImage imageNamed:@"WIFI定位"] forState:UIControlStateNormal];
+        }
+            break;
+        case LocationTypeGPS:
+        {
+            self.typeImageView.hidden = self.typeLabel.hidden = YES;
+            [self.typeButton setBackgroundImage:[UIImage imageNamed:@"GPS定位"] forState:UIControlStateNormal];
+        }
+            break;
+        case LocationTypeGSM:
+        {
+            self.typeLabel.text = @"基站定位准确度比较差,建议移动到开阔地带使用GPS定位";
+            self.typeImageView.hidden = self.typeLabel.hidden = NO;
+            [self.typeButton setBackgroundImage:[UIImage imageNamed:@"GSM定位"] forState:UIControlStateNormal];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    if (offLine) {
+        self.typeLabel.text = @"手表不在线,当前为最后一次定位位置";
+        self.typeImageView.hidden = self.typeLabel.hidden = NO;
+    }
 }
 
 #pragma mark - Utility
@@ -196,11 +243,13 @@
 //实现逆地理编码的回调函数
 - (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
 {
+    [self hideHudView];
     if(response.regeocode != nil)
     {
         //通过AMapReGeocodeSearchResponse对象处理搜索结果
-        NSString *result = [NSString stringWithFormat:@"ReGeocode: %@", response.regeocode.formattedAddress];
-        NSLog(@"ReGeo: %@", result);
+        adrress = response.regeocode.formattedAddress;
+        NSLog(@"ReGeo: %@", adrress);
+        [self addAnnotationWithCooordinate:[[DeviceManager sharedManager].curentDevice getLocationCoordinate]];
     }
 }
 
@@ -208,20 +257,10 @@
 {
     MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];
     annotation.coordinate = coordinate;
-    annotation.title    = @"宝贝";
-    annotation.subtitle = @"宝贝位置";
-    
+    [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotation:annotation];
-}
-
-- (CGPoint)randomPoint
-{
-    CGPoint randomPoint = CGPointZero;
-    
-    randomPoint.x = arc4random() % (int)(CGRectGetWidth(self.mapBackView.bounds));
-    randomPoint.y = arc4random() % (int)(CGRectGetHeight(self.mapBackView.bounds));
-    
-    return randomPoint;
+    [self.mapView setRegion:MACoordinateRegionMakeWithDistance(coordinate, 10000, 10000) animated:YES];
+    [self upDateUi];
 }
 
 - (CGSize)offsetToContainRect:(CGRect)innerRect inRect:(CGRect)outerRect
@@ -232,7 +271,6 @@
     CGFloat nudgeBottom = fminf(0, CGRectGetMaxY(outerRect) - (CGRectGetMaxY(innerRect)));
     return CGSizeMake(nudgeLeft ?: nudgeRight, nudgeTop ?: nudgeBottom);
 }
-
 #pragma mark - MAMapViewDelegate
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
@@ -254,7 +292,7 @@
             UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"语音"]];
             imageView.frame = CGRectMake(8, 5, annotationView.frame.size.width-16, annotationView.frame.size.width-16);
             [annotationView addSubview:imageView];
-            annotationView.top = @"1111121123124124";
+            annotationView.top = adrress;
             annotationView.left = @"10fenzhong";
             annotationView.right = @"jingdu100m";
             annotationView.selected = YES;
