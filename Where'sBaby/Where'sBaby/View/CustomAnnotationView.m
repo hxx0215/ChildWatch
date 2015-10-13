@@ -106,23 +106,10 @@
             [self.calloutView addSubview:self.topLabel];
             [self.calloutView addSubview:self.leftLabel];
             [self.calloutView addSubview:self.rightLabel];
+            [self.calloutView bringSubviewToFront:self.topLabel];
             self.topLabel.frame = CGRectMake(30, 12, self.topLabel.frame.size.width, self.topLabel.frame.size.height);
             self.leftLabel.frame = CGRectMake(30, 29, self.leftLabel.frame.size.width, self.leftLabel.frame.size.height);
             self.rightLabel.frame = CGRectMake(self.calloutView.frame.size.width - self.rightLabel.frame.size.width - 30, 29, self.rightLabel.frame.size.width, self.rightLabel.frame.size.height);
-//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//            btn.frame = CGRectMake(10, 10, 40, 40);
-//            [btn setTitle:@"Test" forState:UIControlStateNormal];
-//            [btn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-//            [btn setBackgroundColor:[UIColor whiteColor]];
-//            [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [self.calloutView addSubview:btn];
-            
-            UILabel *name = [[UILabel alloc] initWithFrame:CGRectMake(60, 10, 100, 30)];
-            name.backgroundColor = [UIColor clearColor];
-            name.textColor = [UIColor whiteColor];
-            name.text = @"Hello Amap!";
-            [self.calloutView addSubview:name];
         }
         
         [self addSubview:self.calloutView];
