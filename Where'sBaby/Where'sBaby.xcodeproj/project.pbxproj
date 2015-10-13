@@ -223,6 +223,7 @@
 		D3DF40C01BCBA7B200A3A9D7 /* WIFI定位@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40821BCBA7B200A3A9D7 /* WIFI定位@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF40C21BCBC0D600A3A9D7 /* 位置_空@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40C11BCBC0D600A3A9D7 /* 位置_空@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF40C41BCBC0DE00A3A9D7 /* 位置_空@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40C31BCBC0DE00A3A9D7 /* 位置_空@3x.png */; settings = {ASSET_TAGS = (); }; };
+		D3DF40C61BCD059800A3A9D7 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DF40C51BCD059700A3A9D7 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
 		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -481,6 +482,7 @@
 		D3DF40821BCBA7B200A3A9D7 /* WIFI定位@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WIFI定位@3x.png"; sourceTree = "<group>"; };
 		D3DF40C11BCBC0D600A3A9D7 /* 位置_空@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "位置_空@2x.png"; sourceTree = "<group>"; };
 		D3DF40C31BCBC0DE00A3A9D7 /* 位置_空@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "位置_空@3x.png"; sourceTree = "<group>"; };
+		D3DF40C51BCD059700A3A9D7 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = Frameworks/AMapSearchKit.framework; sourceTree = "<group>"; };
 		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				D384DE4D1BA6A9EB0078A0C2 /* CoreTelephony.framework in Frameworks */,
 				D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 				D384DE4B1BA6A9CA0078A0C2 /* SystemConfiguration.framework in Frameworks */,
+				D3DF40C61BCD059800A3A9D7 /* AMapSearchKit.framework in Frameworks */,
 				D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */,
 				D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */,
 				A2DCC1055518DEEA635CBA7C /* libPods-Where'sBaby.a in Frameworks */,
@@ -794,6 +797,7 @@
 		C52591142B71FA3B413470DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3DF40C51BCD059700A3A9D7 /* AMapSearchKit.framework */,
 				B95B8E311BA6C193008CC426 /* MAMapKit.framework */,
 				D384DE541BA6AA180078A0C2 /* libstdc++.tbd */,
 				D384DE521BA6AA0E0078A0C2 /* libz.tbd */,

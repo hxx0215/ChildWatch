@@ -92,7 +92,7 @@ IB_DESIGNABLE
     [super viewWillAppear:animated];
     self.mapView = [MapManager MapView];
     self.mapViewContant.mapView = self.mapView;
-    self.mapView.delegate = self;
+    [MapManager MapViewDelegate:self reset:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

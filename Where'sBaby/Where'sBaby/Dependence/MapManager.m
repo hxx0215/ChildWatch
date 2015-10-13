@@ -31,4 +31,13 @@
 {
     return [MapManager sharedManager].mapView;
 }
+
++(void)MapViewDelegate:(id<MAMapViewDelegate>)delegate reset:(BOOL)reset
+{
+    [MapManager sharedManager].mapView.delegate = delegate;
+    if (reset) {
+        [[MapManager sharedManager].mapView removeAnnotations:[MapManager sharedManager].mapView.annotations];
+        [[MapManager sharedManager].mapView removeOverlays:[MapManager sharedManager].mapView.overlays];
+    }
+}
 @end

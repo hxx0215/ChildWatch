@@ -10,8 +10,9 @@
 #import "MapManager.h"
 #import "DeviceRequest.h"
 #import "CustomAnnotationView.h"
+#import <AMapSearchKit/AMapSearchKit.h>
 
-@interface LocationViewController ()
+@interface LocationViewController () <AMapSearchDelegate,MAMapViewDelegate>
 @property (nonatomic,weak) IBOutlet UIView *mapBackView;
 @property (nonatomic,weak) IBOutlet UIView *hudView;
 @property (nonatomic,weak) IBOutlet UIImageView *loadingImageView;
@@ -28,6 +29,9 @@
     NSTimer *countDownTimer;
     long timeCount;
     BOOL first;
+    NSInteger angle;
+
+    AMapSearchAPI *_search;
 }
 
 - (void)viewDidLoad {
@@ -36,17 +40,18 @@
     self.mapView = [MapManager MapView];
     [self.mapBackView addSubview:self.mapView];
     [self.mapBackView sendSubviewToBack:self.mapBackView];
-    self.mapView.delegate = self;
-    [self.mapView removeAnnotations:self.mapView.annotations];
+    [MapManager MapViewDelegate:self reset:YES];
+    _search = [[AMapSearchAPI alloc] init];
+    _search.delegate = self;
     
     self.holdView = [[UIView alloc]init];
     self.holdView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
     [self.mapBackView addSubview:self.holdView];
     [self.mapBackView bringSubviewToFront:self.holdView];
-    
-    [self addAction];
+
     timeCount = 0;
     first = YES;
+    angle = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -102,7 +107,6 @@
 
 - (void)startAnimation
 {
-    static NSInteger angle = 0;
     CGAffineTransform endAngle = CGAffineTransformMakeRotation(angle * (M_PI /180.0f));
     [UIView animateWithDuration:0.03 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         self.loadingImageView.transform = endAngle;
@@ -138,6 +142,16 @@
     [DeviceRequest GetLastLocationWithParameters:dic success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         [self hideHudView];
+        
+        //构造AMapReGeocodeSearchRequest对象
+        AMapReGeocodeSearchRequest *regeo = [[AMapReGeocodeSearchRequest alloc] init];
+        regeo.location = [AMapGeoPoint locationWithLatitude:39.990459 longitude:116.481476];
+        regeo.radius = 10000;
+        regeo.requireExtension = YES;
+        
+        //发起逆地理编码
+        [_search AMapReGoecodeSearch: regeo];
+        
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
         [self hideHudView];
@@ -164,7 +178,7 @@
         self.typeLabel.hidden = NO;
         self.typeImageView.hidden = NO;
     } completion:^(BOOL finished) {
-        
+        [self addAction];
     }];
 }
 
@@ -177,6 +191,18 @@
 }
 
 #pragma mark - Utility
+
+//实现逆地理编码的回调函数
+- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
+{
+    if(response.regeocode != nil)
+    {
+        //通过AMapReGeocodeSearchResponse对象处理搜索结果
+        NSString *result = [NSString stringWithFormat:@"ReGeocode: %@", response.regeocode.formattedAddress];
+        NSLog(@"ReGeo: %@", result);
+    }
+}
+
 -(void)addAnnotationWithCooordinate:(CLLocationCoordinate2D)coordinate
 {
     MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];

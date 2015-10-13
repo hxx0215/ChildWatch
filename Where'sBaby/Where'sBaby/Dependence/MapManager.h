@@ -12,5 +12,6 @@
 @interface MapManager : NSObject
 +(instancetype)sharedManager;
 +(MAMapView *)MapView;
++(void)MapViewDelegate:(id<MAMapViewDelegate>)delegate reset:(BOOL)reset;
 @property (nonatomic,strong) NSDictionary *currentDeviceDic;
 @end

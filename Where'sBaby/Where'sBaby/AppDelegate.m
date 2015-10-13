@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "UMessage.h"
 #import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 
 #define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -23,6 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [MAMapServices sharedServices].apiKey = @"57f662120235dcb0a6ac6dc44425a61d";
+    [AMapSearchServices sharedServices].apiKey = @"57f662120235dcb0a6ac6dc44425a61d";
     [UMessage startWithAppkey:@"55f81820e0f55a69c9000f3e" launchOptions:launchOptions];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
