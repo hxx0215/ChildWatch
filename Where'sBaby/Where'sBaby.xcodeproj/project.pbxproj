@@ -38,6 +38,10 @@
 		B95B8E321BA6C193008CC426 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95B8E311BA6C193008CC426 /* MAMapKit.framework */; };
 		B96BDBA31BCD31D400BE7FE3 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BDBA21BCD31D400BE7FE3 /* ShareViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B96BDBA71BCD393A00BE7FE3 /* WatchSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BDBA61BCD393A00BE7FE3 /* WatchSettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B96BDBAB1BCD516E00BE7FE3 /* 打开@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBA91BCD516E00BE7FE3 /* 打开@2x.png */; settings = {ASSET_TAGS = (); }; };
+		B96BDBAC1BCD516E00BE7FE3 /* 打开@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAA1BCD516E00BE7FE3 /* 打开@3x.png */; settings = {ASSET_TAGS = (); }; };
+		B96BDBAF1BCD51A500BE7FE3 /* 关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */; settings = {ASSET_TAGS = (); }; };
+		B96BDBB01BCD51A500BE7FE3 /* 关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */; settings = {ASSET_TAGS = (); }; };
 		B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -287,6 +291,10 @@
 		B95B8E311BA6C193008CC426 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Frameworks/MAMapKit.framework; sourceTree = "<group>"; };
 		B96BDBA21BCD31D400BE7FE3 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		B96BDBA61BCD393A00BE7FE3 /* WatchSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingViewController.swift; sourceTree = "<group>"; };
+		B96BDBA91BCD516E00BE7FE3 /* 打开@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "打开@2x.png"; sourceTree = "<group>"; };
+		B96BDBAA1BCD516E00BE7FE3 /* 打开@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "打开@3x.png"; sourceTree = "<group>"; };
+		B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@2x.png"; sourceTree = "<group>"; };
+		B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@3x.png"; sourceTree = "<group>"; };
 		B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindWatchViewController.swift; sourceTree = "<group>"; };
 		B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ChangeFont.h"; sourceTree = "<group>"; };
 		B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ChangeFont.m"; sourceTree = "<group>"; };
@@ -649,6 +657,7 @@
 		B958902C1BA4385300A2C03E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B96BDBA81BCD514D00BE7FE3 /* WatchSetting */,
 				D33B30031BC970810072FAF6 /* Location */,
 				D36260881BB4DE590063F833 /* Font */,
 				D367E4B71BAFFB670062FC62 /* AMap.bundle */,
@@ -692,6 +701,17 @@
 				B92408E21BC6A54E0033C73C /* zhuce1@3x.png */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		B96BDBA81BCD514D00BE7FE3 /* WatchSetting */ = {
+			isa = PBXGroup;
+			children = (
+				B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */,
+				B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */,
+				B96BDBA91BCD516E00BE7FE3 /* 打开@2x.png */,
+				B96BDBAA1BCD516E00BE7FE3 /* 打开@3x.png */,
+			);
+			path = WatchSetting;
 			sourceTree = "<group>";
 		};
 		B9DEF5371BAEA87900D9BED7 /* Main */ = {
@@ -1055,9 +1075,11 @@
 				D3DF409E1BCBA7B200A3A9D7 /* 收起_点击状态@3x.png in Resources */,
 				B95890451BA443F600A2C03E /* beijing1.png in Resources */,
 				B9DEF56D1BAEA87900D9BED7 /* 手表@2x.png in Resources */,
+				B96BDBB01BCD51A500BE7FE3 /* 关闭@3x.png in Resources */,
 				D33B2FFC1BC953850072FAF6 /* shuru2_Click@3x.png in Resources */,
 				D33B2FB91BC90AAC0072FAF6 /* 保存@2X.png in Resources */,
 				D33B2FC11BC90AAC0072FAF6 /* 二维码扫描框@2x.png in Resources */,
+				B96BDBAC1BCD516E00BE7FE3 /* 打开@3x.png in Resources */,
 				D3DF40B81BCBA7B200A3A9D7 /* 正在语音1@3x.png in Resources */,
 				B9DEF55D1BAEA87900D9BED7 /* 位置@2x.png in Resources */,
 				D33B2FE11BC90AAC0072FAF6 /* beijing2_640X960.png in Resources */,
@@ -1158,6 +1180,7 @@
 				D3DF40A31BCBA7B200A3A9D7 /* 文字框1@2x.png in Resources */,
 				D33B2FC31BC90AAC0072FAF6 /* 空白头像框@2x.png in Resources */,
 				D3DF408A1BCBA7B200A3A9D7 /* 定位@3x.png in Resources */,
+				B96BDBAF1BCD51A500BE7FE3 /* 关闭@2x.png in Resources */,
 				D33B2FFB1BC953850072FAF6 /* shuru2_Click@2x.png in Resources */,
 				B9DEF5721BAEA87900D9BED7 /* 消息@3x.png in Resources */,
 				B95890461BA443F600A2C03E /* beijing2.png in Resources */,
@@ -1216,6 +1239,7 @@
 				B9DEF56B1BAEA87900D9BED7 /* 宝贝按钮@2x.png in Resources */,
 				B9DEF5641BAEA87900D9BED7 /* 图层-29@3x.png in Resources */,
 				B9DEF55E1BAEA87900D9BED7 /* 位置@3x.png in Resources */,
+				B96BDBAB1BCD516E00BE7FE3 /* 打开@2x.png in Resources */,
 				D3DF40861BCBA7B200A3A9D7 /* 地图上的提示框1@3x.png in Resources */,
 				D3DF40AB1BCBA7B200A3A9D7 /* 语音框1@2x.png in Resources */,
 			);
