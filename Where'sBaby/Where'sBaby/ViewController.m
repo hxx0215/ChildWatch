@@ -151,6 +151,8 @@ IB_DESIGNABLE
     }
 }
 
+//-(IBAction)<#selector#>:(id)sender)
+
 -(void)mapClick:(id)sender
 {
     NSLog(@"mapClick");

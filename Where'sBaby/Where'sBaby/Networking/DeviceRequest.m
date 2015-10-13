@@ -12,6 +12,8 @@
 #define kMethodUserDeviceList @"/user/getMyDeviceList"
 #define kMethodGetLastLocation @"/device/getLastLocationByDeviceNo"
 #define kMethodLocationCommand @"/device/locationCommand"
+#define kMethodGetDeviceInfo @"/device/getDeviceInfo"
+#define kMethodUpdateDeviceInfo @"/device/updateDeviceInfo"
 
 @implementation DeviceRequest
 + (void)DeviceListWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
@@ -27,5 +29,15 @@
 + (void)LocationCommandWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodLocationCommand WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)GetDeviceInfoWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
+{
+    [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodGetDeviceInfo WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)UpdateDeviceInfoWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
+{
+    [[BaseHTTPRequestOperationManager sharedManager]defaultHTTPWithMethod:kMethodUpdateDeviceInfo WithParameters:parameters post:YES success:success failure:failure];
 }
 @end
