@@ -11,6 +11,7 @@
 #import "DeviceRequest.h"
 #import "CustomAnnotationView.h"
 #import <AMapSearchKit/AMapSearchKit.h>
+#import "DeviceManager.h"
 
 @interface LocationViewController () <AMapSearchDelegate,MAMapViewDelegate>
 @property (nonatomic,weak) IBOutlet UIView *mapBackView;
@@ -91,7 +92,7 @@
     if (first) {
         first = NO;
         NSDictionary *dic = @{
-                              @"deviceno" : [MapManager sharedManager].currentDeviceDic[@"deviceno"]
+                              @"deviceno" : [DeviceManager sharedManager].curentDevice.dicBase[@"deviceno"]
                               };
         [DeviceRequest LocationCommandWithParameters:dic success:^(id responseObject) {
             NSLog(@"LocationCommand %@",responseObject);
@@ -137,7 +138,7 @@
         }
     }
     NSDictionary *dic = @{
-                          @"deviceno" : [MapManager sharedManager].currentDeviceDic[@"deviceno"]
+                          @"deviceno" : [DeviceManager sharedManager].curentDevice.dicBase[@"deviceno"]
                           };
     [DeviceRequest GetLastLocationWithParameters:dic success:^(id responseObject) {
         NSLog(@"%@",responseObject);

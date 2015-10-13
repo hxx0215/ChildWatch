@@ -11,6 +11,7 @@
 #import "MapManager.h"
 #import "DeviceRequest.h"
 #import <UIButton+AFNetworking.h>
+#import "DeviceManager.h"
 //#import "CustomAnnotationView.h"
 IB_DESIGNABLE
 
@@ -64,7 +65,7 @@ IB_DESIGNABLE
 @implementation ViewController
 {
     NSInteger childTag;
-    NSArray *childArray;
+    NSMutableArray *childDeviceArray;
 }
 
 - (void)viewDidLoad {
@@ -99,7 +100,7 @@ IB_DESIGNABLE
     [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"id"]){
         [self.navigationController performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
-        childArray = 0;
+        childDeviceArray = nil;
         childTag = 0;
     }
     else
@@ -116,7 +117,13 @@ IB_DESIGNABLE
                 NSLog(@"%@",responseObject);
                 if (responseObject[@"state"]&&[responseObject[@"state"] integerValue]==0)
                 {
-                    childArray = responseObject[@"data"];
+                    NSArray *array = responseObject[@"data"];
+                    childDeviceArray = [[NSMutableArray alloc]init];
+                    for (NSDictionary *dic in array) {
+                        DeviceModel *model = [[DeviceModel alloc]init];
+                        model.dicBase = dic;
+                        [childDeviceArray addObject:model];
+                    }
                     [self updateChild];
                 }
             } failure:^(NSError *error) {
@@ -154,35 +161,35 @@ IB_DESIGNABLE
 -(void)updateChild
 {
     for (NSInteger i=1,j=0; i<5; j++) {
-        NSDictionary *dicChild = nil;
-        if (j<[childArray count]) {
-            dicChild = [childArray objectAtIndex:j];
+        DeviceModel *device = nil;
+        if (j<[childDeviceArray count]) {
+            device = [childDeviceArray objectAtIndex:j];
         }
         if (childTag == j) {
-            [self setChildButton:self.childButtonCurrent label:self.childLabelCurrent whithDic:dicChild];
-            [MapManager sharedManager].currentDeviceDic = dicChild;
+            [self setChildButton:self.childButtonCurrent label:self.childLabelCurrent whithDic:device];
+            [DeviceManager sharedManager].curentDevice = device;
         }
         else
         {
             switch (i) {
                 case 1:
                 {
-                    [self setChildButton:self.childButton1 label:self.childLabel1 whithDic:dicChild];
+                    [self setChildButton:self.childButton1 label:self.childLabel1 whithDic:device];
                 }
                     break;
                 case 2:
                 {
-                    [self setChildButton:self.childButton2 label:self.childLabel2 whithDic:dicChild];
+                    [self setChildButton:self.childButton2 label:self.childLabel2 whithDic:device];
                 }
                     break;
                 case 3:
                 {
-                    [self setChildButton:self.childButton3 label:self.childLabel3 whithDic:dicChild];
+                    [self setChildButton:self.childButton3 label:self.childLabel3 whithDic:device];
                 }
                     break;
                 case 4:
                 {
-                    [self setChildButton:self.childButton4 label:self.childLabel4 whithDic:dicChild];
+                    [self setChildButton:self.childButton4 label:self.childLabel4 whithDic:device];
                 }
                     break;
                     
@@ -194,9 +201,9 @@ IB_DESIGNABLE
     }
 }
 
--(void)setChildButton:(UIButton *)btn label:(UILabel *)label whithDic:(NSDictionary *)dic
+-(void)setChildButton:(UIButton *)btn label:(UILabel *)label whithDic:(DeviceModel *)model
 {
-    if (dic==nil) {
+    if (model==nil) {
         btn.hidden = YES;
         label.hidden = YES;
     }
@@ -204,8 +211,8 @@ IB_DESIGNABLE
     {
         btn.hidden = NO;
         label.hidden = NO;
-        [btn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:dic[@"headimage"]] placeholderImage:[UIImage imageNamed:@"默认头像1"]];
-        label.text = [dic[@"nickname"] length]>0?dic[@"nickname"]:@"宝贝";
+        [btn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.dicBase[@"headimage"]] placeholderImage:[UIImage imageNamed:@"默认头像1"]];
+        label.text = [model.dicBase[@"nickname"] length]>0?model.dicBase[@"nickname"]:@"宝贝";
     }
 }
          

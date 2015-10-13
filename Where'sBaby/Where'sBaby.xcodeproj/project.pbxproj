@@ -224,6 +224,7 @@
 		D3DF40C21BCBC0D600A3A9D7 /* 位置_空@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40C11BCBC0D600A3A9D7 /* 位置_空@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF40C41BCBC0DE00A3A9D7 /* 位置_空@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40C31BCBC0DE00A3A9D7 /* 位置_空@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF40C61BCD059800A3A9D7 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DF40C51BCD059700A3A9D7 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
+		D3DF40C91BCD333A00A3A9D7 /* DeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF40C81BCD333A00A3A9D7 /* DeviceManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -483,6 +484,8 @@
 		D3DF40C11BCBC0D600A3A9D7 /* 位置_空@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "位置_空@2x.png"; sourceTree = "<group>"; };
 		D3DF40C31BCBC0DE00A3A9D7 /* 位置_空@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "位置_空@3x.png"; sourceTree = "<group>"; };
 		D3DF40C51BCD059700A3A9D7 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = Frameworks/AMapSearchKit.framework; sourceTree = "<group>"; };
+		D3DF40C71BCD333A00A3A9D7 /* DeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManager.h; sourceTree = "<group>"; };
+		D3DF40C81BCD333A00A3A9D7 /* DeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManager.m; sourceTree = "<group>"; };
 		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
@@ -635,6 +638,8 @@
 				D374C2841BA851750028456C /* UMessage_Sdk_1.1.0 */,
 				D33B30001BC9634E0072FAF6 /* MapManager.h */,
 				D33B30011BC9634E0072FAF6 /* MapManager.m */,
+				D3DF40C71BCD333A00A3A9D7 /* DeviceManager.h */,
+				D3DF40C81BCD333A00A3A9D7 /* DeviceManager.m */,
 			);
 			path = Dependence;
 			sourceTree = "<group>";
@@ -1296,6 +1301,7 @@
 				B95307901BB41896002B2162 /* UIButton+Log.m in Sources */,
 				D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */,
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,
+				D3DF40C91BCD333A00A3A9D7 /* DeviceManager.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
 				D33B2FEE1BC92C580072FAF6 /* MessageViewController.swift in Sources */,
 				D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */,
