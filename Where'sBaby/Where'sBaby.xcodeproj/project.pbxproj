@@ -37,6 +37,7 @@
 		B958904E1BA443F600A2C03E /* zhuce@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95890401BA443F600A2C03E /* zhuce@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B95B8E321BA6C193008CC426 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95B8E311BA6C193008CC426 /* MAMapKit.framework */; };
 		B96BDBA31BCD31D400BE7FE3 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BDBA21BCD31D400BE7FE3 /* ShareViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B96BDBA71BCD393A00BE7FE3 /* WatchSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96BDBA61BCD393A00BE7FE3 /* WatchSettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */; settings = {ASSET_TAGS = (); }; };
 		B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -129,7 +130,6 @@
 		D33B2FE81BC90AAC0072FAF6 /* beijing3_1242X2280.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2FB41BC90AAC0072FAF6 /* beijing3_1242X2280.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FEE1BC92C580072FAF6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FED1BC92C580072FAF6 /* MessageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF01BC92C8E0072FAF6 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D33B2FF21BC92CAA0072FAF6 /* WatchSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D33B2FF81BC952F60072FAF6 /* AboutUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -286,6 +286,7 @@
 		B95890401BA443F600A2C03E /* zhuce@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce@3x.png"; sourceTree = "<group>"; };
 		B95B8E311BA6C193008CC426 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Frameworks/MAMapKit.framework; sourceTree = "<group>"; };
 		B96BDBA21BCD31D400BE7FE3 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		B96BDBA61BCD393A00BE7FE3 /* WatchSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingViewController.swift; sourceTree = "<group>"; };
 		B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindWatchViewController.swift; sourceTree = "<group>"; };
 		B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ChangeFont.h"; sourceTree = "<group>"; };
 		B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ChangeFont.m"; sourceTree = "<group>"; };
@@ -379,7 +380,6 @@
 		D33B2FB41BC90AAC0072FAF6 /* beijing3_1242X2280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beijing3_1242X2280.png; sourceTree = "<group>"; };
 		D33B2FED1BC92C580072FAF6 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingViewController.swift; sourceTree = "<group>"; };
 		D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingTableViewController.swift; sourceTree = "<group>"; };
 		D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPWViewController.swift; sourceTree = "<group>"; };
 		D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUSViewController.swift; sourceTree = "<group>"; };
@@ -616,7 +616,7 @@
 				B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */,
 				D33B2FED1BC92C580072FAF6 /* MessageViewController.swift */,
 				D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */,
-				D33B2FF11BC92CAA0072FAF6 /* WatchSettingViewController.swift */,
+				B96BDBA61BCD393A00BE7FE3 /* WatchSettingViewController.swift */,
 				D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */,
 				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
 				D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */,
@@ -1285,6 +1285,7 @@
 				D33B30021BC9634E0072FAF6 /* MapManager.m in Sources */,
 				B95890311BA43BE900A2C03E /* WBWelcomeViewController.swift in Sources */,
 				B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */,
+				B96BDBA71BCD393A00BE7FE3 /* WatchSettingViewController.swift in Sources */,
 				D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */,
 				B95307901BB41896002B2162 /* UIButton+Log.m in Sources */,
 				D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */,
@@ -1296,7 +1297,6 @@
 				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
 				D3B353481BB11EC6004DB2BF /* DeviceRequest.m in Sources */,
 				D33B2FF81BC952F60072FAF6 /* AboutUSViewController.swift in Sources */,
-				D33B2FF21BC92CAA0072FAF6 /* WatchSettingViewController.swift in Sources */,
 				B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */,
 				B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */,
 				B9045C091BA0535100090A86 /* main.m in Sources */,
