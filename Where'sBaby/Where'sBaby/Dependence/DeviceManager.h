@@ -19,6 +19,7 @@ typedef enum {
 @interface DeviceModel : NSObject
 @property (nonatomic ,strong) NSDictionary *dicBase;
 @property (nonatomic ,strong) NSDictionary *dicLocation;
+@property (nonatomic ,strong) NSMutableDictionary *dicBabyData;
 -(CLLocationCoordinate2D)getLocationCoordinate;
 -(LocationType)getLocationType;
 @end

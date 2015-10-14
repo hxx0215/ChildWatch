@@ -21,6 +21,7 @@ class BabyDataTableViewController: UITableViewController {
     @IBOutlet weak var brithLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     var first: Bool = true
+    //var babyDataDic : NSMutableDictionary!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,8 +41,17 @@ class BabyDataTableViewController: UITableViewController {
         nameEditeButton.layer.borderColor = UIColor.grayColor().CGColor;
         nameEditeButton.layer.masksToBounds = true;
         
+        NSNotificationCenter.defaultCenter().addObserverForName("updateBabyData", object: nil, queue: NSOperationQueue.mainQueue()) { (NSNotification) -> Void in
+            self.updateBabyData()
+        }
+        
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.updateBabyData()
+    }
+        
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if first{
@@ -54,7 +64,9 @@ class BabyDataTableViewController: UITableViewController {
                 let state:Int = dic["state"] as! Int
                 if(state==0)
                 {
-                    dic["state"].firstObject
+                    let dicData:NSDictionary = dic["data"]!.firstObject as! NSDictionary
+                    DeviceManager.sharedManager().curentDevice.dicBabyData = NSMutableDictionary(dictionary: dicData)
+                    self.updateBabyData()
                 }
                 
                 }) { (NSError error) -> Void in
@@ -81,6 +93,24 @@ class BabyDataTableViewController: UITableViewController {
 
     @IBAction func headImageClicked(sender: UIButton) {
     }
+    
+    func updateBabyData()
+    {
+        let babyDataDic:NSDictionary! = DeviceManager.sharedManager().curentDevice.dicBabyData
+        if (babyDataDic != nil){
+            self.mobileLabel.text = babyDataDic["mobile"] as? String
+            self.brithLabel.text = babyDataDic["brith"] as? String
+            self.gradeLabel.text = babyDataDic["grade"] as? String
+            self.heightLabel.text = babyDataDic["height"] as? String
+            self.weightLabel.text = babyDataDic["weight"] as? String
+            self.sexLabel.text = babyDataDic["sex"] as? String
+            self.nicknameLabel.text = babyDataDic["nickname"] as? String
+            self.mobile_shortLabel.text = babyDataDic["mobile_short"] as? String
+        }
+        
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
