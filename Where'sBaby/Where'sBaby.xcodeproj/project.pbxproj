@@ -294,6 +294,7 @@
 		D3DF41671BCE3E9700A3A9D7 /* BabySexSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41661BCE3E9700A3A9D7 /* BabySexSetViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3DF41691BCE4BBA00A3A9D7 /* BabyBirthSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41681BCE4BBA00A3A9D7 /* BabyBirthSetViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3DF416B1BCE5C5200A3A9D7 /* BabyGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF416A1BCE5C5200A3A9D7 /* BabyGradeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D3DF416D1BCEB53500A3A9D7 /* BabyHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF416C1BCEB53500A3A9D7 /* BabyHeightViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -624,6 +625,7 @@
 		D3DF41661BCE3E9700A3A9D7 /* BabySexSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabySexSetViewController.swift; sourceTree = "<group>"; };
 		D3DF41681BCE4BBA00A3A9D7 /* BabyBirthSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyBirthSetViewController.swift; sourceTree = "<group>"; };
 		D3DF416A1BCE5C5200A3A9D7 /* BabyGradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyGradeViewController.swift; sourceTree = "<group>"; };
+		D3DF416C1BCEB53500A3A9D7 /* BabyHeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyHeightViewController.swift; sourceTree = "<group>"; };
 		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
@@ -771,6 +773,7 @@
 				D3DF41661BCE3E9700A3A9D7 /* BabySexSetViewController.swift */,
 				D3DF41681BCE4BBA00A3A9D7 /* BabyBirthSetViewController.swift */,
 				D3DF416A1BCE5C5200A3A9D7 /* BabyGradeViewController.swift */,
+				D3DF416C1BCEB53500A3A9D7 /* BabyHeightViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1594,6 +1597,7 @@
 				B95890311BA43BE900A2C03E /* WBWelcomeViewController.swift in Sources */,
 				B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */,
 				B96BDBA71BCD393A00BE7FE3 /* WatchSettingViewController.swift in Sources */,
+				D3DF416D1BCEB53500A3A9D7 /* BabyHeightViewController.swift in Sources */,
 				D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */,
 				B95307901BB41896002B2162 /* UIButton+Log.m in Sources */,
 				D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */,
