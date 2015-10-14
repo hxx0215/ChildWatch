@@ -54,6 +54,7 @@ class BabyDataTableViewController: UITableViewController {
                 let state:Int = dic["state"] as! Int
                 if(state==0)
                 {
+                    dic["state"].firstObject
                 }
                 
                 }) { (NSError error) -> Void in
