@@ -18,4 +18,6 @@
 + (void)GetDeviceInfoWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 + (void)UpdateDeviceInfoWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
++ (void)GetDeviceConfigInfoWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end

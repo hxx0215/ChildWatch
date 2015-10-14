@@ -28,6 +28,13 @@ class WatchSettingViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        let deviceNo = DeviceManager.sharedManager().currentDeviceNo
+        let parameter = ["deviceno":deviceNo]
+        DeviceRequest.GetDeviceConfigInfoWithParameters(parameter, success: { (response) -> Void in
+            print(response)
+            }) { (error) -> Void in
+                print(error)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
