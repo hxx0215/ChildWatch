@@ -3825,7 +3825,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="5SW-uD-ptX" kind="show" id="wvV-qp-gdw"/>
+                                            <segue destination="5SW-uD-ptX" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="wvV-qp-gdw"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="mkQ-jc-dkv">
@@ -4567,6 +4567,10 @@
                                     <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="249" verticalCompressionResistancePriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="LQg-dU-Exi">
                                         <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="5SW-uD-ptX" id="BlF-Va-K7b"/>
+                                            <outlet property="delegate" destination="5SW-uD-ptX" id="Vln-6l-cN3"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                                 <animations/>

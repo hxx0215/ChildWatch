@@ -13,6 +13,7 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    var pickArray : Array! = ["未上学","幼儿园小班","幼儿园中班","幼儿园大班","学前班"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +27,17 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         //cancelButton.layer.borderWidth = 0;
         //cancelButton.layer.borderColor = UIColor.grayColor().CGColor;
         cancelButton.layer.masksToBounds = true;
+        
+        pickerView.reloadAllComponents()
+        let  grade:String = DeviceManager.sharedManager().curentDevice.dicBabyData["grade"] as! String
+        var i = 0;
+        for str in pickArray{
+            if grade == str{
+                pickerView.selectRow(i, inComponent: 0, animated: true)
+            }
+            i++;
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +46,8 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     }
     
     @IBAction func okButtonClick(sender : AnyObject){
-        DeviceManager.sharedManager().curentDevice.dicBabyData .setObject("", forKey: "grade")
+        
+        DeviceManager.sharedManager().curentDevice.dicBabyData.setObject(pickArray[pickerView.selectedRowInComponent(0)], forKey: "grade")
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
         DeviceRequest .UpdateDeviceInfoWithParameters(DeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
             
@@ -80,9 +93,35 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     // returns the # of rows in each component..
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return 1;
+        return pickArray.count;
+    }
+    // MARK: - UIPickerView
+    
+//    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat
+//    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat
+//    @available(iOS 2.0, *)
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+//    {
+//        return pickArray[row] as String
+//    }
+    
+//    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? // attributed title is favored if both methods are implemented
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
+    {
+        let label:UILabel = UILabel()
+        label.text = pickArray[row]
+        label.textAlignment = .Center
+        if(row == pickerView.selectedRowInComponent(0))
+        {
+            label.textColor = UIColor.blueColor()
+        }
+        return label
     }
     
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        pickerView.reloadAllComponents()
+    }
     /*
     // MARK: - Navigation
 
