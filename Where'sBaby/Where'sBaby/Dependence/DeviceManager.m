@@ -64,4 +64,8 @@
     });
     return _sharedInstance;
 }
+
+- (NSString *)currentDeviceNo{
+    return [self.curentDevice.dicBase objectForKey:@"deviceno"];
+}
 @end
