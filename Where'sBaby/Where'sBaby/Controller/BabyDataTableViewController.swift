@@ -56,7 +56,7 @@ class BabyDataTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         if first{
             first = false
-            let dic = ["deviceno":DeviceManager.sharedManager().curentDevice.dicBase["deviceno"] as! String]
+            let dic = ["deviceno":ChildDeviceManager.sharedManager().curentDevice.dicBase["deviceno"] as! String]
             DeviceRequest .GetDeviceInfoWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
         
                 print(object)
@@ -65,7 +65,7 @@ class BabyDataTableViewController: UITableViewController {
                 if(state==0)
                 {
                     let dicData:NSDictionary = dic["data"]!.firstObject as! NSDictionary
-                    DeviceManager.sharedManager().curentDevice.dicBabyData = NSMutableDictionary(dictionary: dicData)
+                    ChildDeviceManager.sharedManager().curentDevice.dicBabyData = NSMutableDictionary(dictionary: dicData)
                     self.updateBabyData()
                 }
                 
@@ -96,8 +96,9 @@ class BabyDataTableViewController: UITableViewController {
     
     func updateBabyData()
     {
-        let babyDataDic:NSDictionary! = DeviceManager.sharedManager().curentDevice.dicBabyData
+        let babyDataDic:NSDictionary! = ChildDeviceManager.sharedManager().curentDevice.dicBabyData
         if (babyDataDic != nil){
+            self.headimageView.setImageWithURL(NSURL(string: FileRequest.imageURL(babyDataDic["headimage"] as? String))!)
             self.mobileLabel.text = babyDataDic["mobile"] as? String
             self.brithLabel.text = babyDataDic["brith"] as? String
             self.gradeLabel.text = babyDataDic["grade"] as? String

@@ -24,7 +24,7 @@ typedef enum {
 -(LocationType)getLocationType;
 @end
 
-@interface DeviceManager : NSObject
+@interface ChildDeviceManager : NSObject
 +(instancetype)sharedManager;
 @property (nonatomic ,strong) DeviceModel *curentDevice;
 @property (nonatomic, readonly) NSString *currentDeviceNo;

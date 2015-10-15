@@ -15,7 +15,6 @@
 #define baseURL @"http://121.42.10.232/utalifeServer"
 #define resourceSeeURL @"http://121.42.10.232/utalifeResource/"
 #define resourceURL @"http://121.42.10.232/utalifeResource/image?image="
-#define uploadResourceURL @" http://121.42.10.232/utalifeResource/image"
 
 @implementation BaseHTTPRequestOperationManager
 + (BaseHTTPRequestOperationManager *)sharedManager
@@ -93,31 +92,31 @@
 }
 
 
-- (void)filePostWithUrl:(NSString *)urlString WithParameters:(NSData *)parameters success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+- (void)filePostWithUrl:(NSString *)urlString WithParameters:(NSData *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     [[BaseHTTPRequestOperationManager sharedManager]POST:urlString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:parameters name:@"File" fileName:@"addImage" mimeType:@"image/png"];
+        [formData appendPartWithFileData:parameters name:@"File" fileName:@"addImage" mimeType:@"image/jpeg; charset=UTF-8"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (responseObject) {
             id object = [responseObject objectFromJSONData];
             if (object) {
-                success(operation, object);
+                success(object);
             }
             else
             {
                 NSError *error = [NSError errorWithDomain:kErrorEmpty code:0 userInfo:nil];
-                failure(operation, error);
+                failure(error);
             }
             
         }
         else{
             NSError *error = [NSError errorWithDomain:kErrorEmpty code:0 userInfo:nil];
-            failure(operation, error);
+            failure(error);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error.description);
         NSError *error2 = [NSError errorWithDomain:kErrorConnect code:0 userInfo:nil];
-        failure(operation, error2);
+        failure(error2);
     }];
 }
 @end

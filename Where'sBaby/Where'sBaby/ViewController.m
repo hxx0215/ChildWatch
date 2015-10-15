@@ -11,7 +11,8 @@
 #import "MapManager.h"
 #import "DeviceRequest.h"
 #import <UIButton+AFNetworking.h>
-#import "DeviceManager.h"
+#import "ChildDeviceManager.h"
+#import "filerequest.h"
 //#import "CustomAnnotationView.h"
 IB_DESIGNABLE
 
@@ -74,6 +75,17 @@ IB_DESIGNABLE
     if (self.revealViewController){
         self.revealViewController.rightViewRevealWidth = 102;
     }
+    
+    _childButtonCurrent.imageView.layer.cornerRadius = (66-8)/2;
+    _childButtonCurrent.imageView.layer.masksToBounds = YES;
+    _childButton1.layer.cornerRadius = (15-8)/2;
+    _childButton1.layer.masksToBounds = YES;
+    _childButton2.layer.cornerRadius = (15-8)/2;
+    _childButton2.layer.masksToBounds = YES;
+    _childButton3.layer.cornerRadius = (15-8)/2;
+    _childButton3.layer.masksToBounds = YES;
+    _childButton4.layer.cornerRadius = (15-8)/2;
+    _childButton4.layer.masksToBounds = YES;
     
     UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(mapClick:)];
     self.mapBackView.userInteractionEnabled = YES;
@@ -172,7 +184,7 @@ IB_DESIGNABLE
         }
         if (childTag == j) {
             [self setChildButton:self.childButtonCurrent label:self.childLabelCurrent whithDic:device];
-            [DeviceManager sharedManager].curentDevice = device;
+            [ChildDeviceManager sharedManager].curentDevice = device;
         }
         else
         {
@@ -216,7 +228,7 @@ IB_DESIGNABLE
     {
         btn.hidden = NO;
         label.hidden = NO;
-        [btn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:model.dicBase[@"headimage"]] placeholderImage:[UIImage imageNamed:@"默认头像1"]];
+        [btn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[FileRequest imageURL:model.dicBase[@"headimage"]]] placeholderImage:[UIImage imageNamed:@"默认头像1"]];
         label.text = [model.dicBase[@"nickname"] length]>0?model.dicBase[@"nickname"]:@"宝贝";
     }
 }

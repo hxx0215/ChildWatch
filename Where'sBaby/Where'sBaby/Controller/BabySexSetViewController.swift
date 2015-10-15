@@ -28,7 +28,7 @@ class BabySexSetViewController: UIViewController {
         //cancelButton.layer.borderColor = UIColor.grayColor().CGColor;
         cancelButton.layer.masksToBounds = true;
         
-        let sex:String = DeviceManager.sharedManager().curentDevice.dicBabyData["sex"] as! String
+        let sex:String = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["sex"] as! String
         if sex == "男"{
             self.boyButtonClick(0)
         }
@@ -59,14 +59,14 @@ class BabySexSetViewController: UIViewController {
     }
     @IBAction func okButtonClick(sender : AnyObject){
         if self.boyButton.selected{
-            DeviceManager.sharedManager().curentDevice.dicBabyData .setObject("男", forKey: "sex")
+            ChildDeviceManager.sharedManager().curentDevice.dicBabyData .setObject("男", forKey: "sex")
         }
         else
         {
-            DeviceManager.sharedManager().curentDevice.dicBabyData .setObject("女", forKey: "sex")
+            ChildDeviceManager.sharedManager().curentDevice.dicBabyData .setObject("女", forKey: "sex")
         }
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
-        DeviceRequest .UpdateDeviceInfoWithParameters(DeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
+        DeviceRequest .UpdateDeviceInfoWithParameters(ChildDeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
             
             print(object)
             let dic:NSDictionary = object as! NSDictionary

@@ -11,7 +11,7 @@
 #import "DeviceRequest.h"
 #import "CustomAnnotationView.h"
 #import <AMapSearchKit/AMapSearchKit.h>
-#import "DeviceManager.h"
+#import "ChildDeviceManager.h"
 
 @interface LocationViewController () <AMapSearchDelegate,MAMapViewDelegate>
 @property (nonatomic,weak) IBOutlet UIView *mapBackView;
@@ -96,7 +96,7 @@
     if (first) {
         first = NO;
         NSDictionary *dic = @{
-                              @"deviceno" : [DeviceManager sharedManager].curentDevice.dicBase[@"deviceno"]
+                              @"deviceno" : [ChildDeviceManager sharedManager].curentDevice.dicBase[@"deviceno"]
                               };
         [DeviceRequest LocationCommandWithParameters:dic success:^(id responseObject) {
             NSLog(@"LocationCommand %@",responseObject);
@@ -158,15 +158,15 @@
 -(void)doLocation
 {
     NSDictionary *dic = @{
-                          @"deviceno" : [DeviceManager sharedManager].curentDevice.dicBase[@"deviceno"]
+                          @"deviceno" : [ChildDeviceManager sharedManager].curentDevice.dicBase[@"deviceno"]
                           };
     [DeviceRequest GetLastLocationWithParameters:dic success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         if ([responseObject[@"state"] integerValue]==0) {
-            [DeviceManager sharedManager].curentDevice.dicLocation = [responseObject[@"data"] firstObject];
+            [ChildDeviceManager sharedManager].curentDevice.dicLocation = [responseObject[@"data"] firstObject];
             //构造AMapReGeocodeSearchRequest对象
             AMapReGeocodeSearchRequest *regeo = [[AMapReGeocodeSearchRequest alloc] init];
-            regeo.location = [AMapGeoPoint locationWithLatitude:[[DeviceManager sharedManager].curentDevice getLocationCoordinate].latitude  longitude:[[DeviceManager sharedManager].curentDevice getLocationCoordinate].longitude];
+            regeo.location = [AMapGeoPoint locationWithLatitude:[[ChildDeviceManager sharedManager].curentDevice getLocationCoordinate].latitude  longitude:[[ChildDeviceManager sharedManager].curentDevice getLocationCoordinate].longitude];
             //regeo.radius = 10000;
             regeo.requireExtension = YES;
             //发起逆地理编码
@@ -208,7 +208,7 @@
 
 -(void)upDateUi
 {
-    switch ([[DeviceManager sharedManager].curentDevice getLocationType]) {
+    switch ([[ChildDeviceManager sharedManager].curentDevice getLocationType]) {
         case LocationTypeWIFI:
         {
             self.typeImageView.hidden = self.typeLabel.hidden = YES;
@@ -249,7 +249,7 @@
         //通过AMapReGeocodeSearchResponse对象处理搜索结果
         adrress = response.regeocode.formattedAddress;
         NSLog(@"ReGeo: %@", adrress);
-        [self addAnnotationWithCooordinate:[[DeviceManager sharedManager].curentDevice getLocationCoordinate]];
+        [self addAnnotationWithCooordinate:[[ChildDeviceManager sharedManager].curentDevice getLocationCoordinate]];
     }
 }
 

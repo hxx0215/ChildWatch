@@ -13,7 +13,7 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    var pickArray : Array! = ["未上学","幼儿园小班","幼儿园中班","幼儿园大班","学前班"]
+    var pickArray : Array! = ["未上学","幼儿园小班","幼儿园中班","幼儿园大班","学前班","一年级","二年级","三年级","四年级","五年级","六年级","其它"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +29,7 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         cancelButton.layer.masksToBounds = true;
         
         pickerView.reloadAllComponents()
-        let  grade:String = DeviceManager.sharedManager().curentDevice.dicBabyData["grade"] as! String
+        let  grade:String = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["grade"] as! String
         var i = 0;
         for str in pickArray{
             if grade == str{
@@ -47,9 +47,9 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     @IBAction func okButtonClick(sender : AnyObject){
         
-        DeviceManager.sharedManager().curentDevice.dicBabyData.setObject(pickArray[pickerView.selectedRowInComponent(0)], forKey: "grade")
+        ChildDeviceManager.sharedManager().curentDevice.dicBabyData.setObject(pickArray[pickerView.selectedRowInComponent(0)], forKey: "grade")
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
-        DeviceRequest .UpdateDeviceInfoWithParameters(DeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
+        DeviceRequest .UpdateDeviceInfoWithParameters(ChildDeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
             
             print(object)
             let dic:NSDictionary = object as! NSDictionary

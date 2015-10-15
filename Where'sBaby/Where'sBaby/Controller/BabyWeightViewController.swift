@@ -1,44 +1,21 @@
 //
-//  BabyBirthSetViewController.swift
+//  BabyWeightViewController.swift
 //  Where'sBaby
 //
-//  Created by 刘向宏 on 15/10/14.
+//  Created by 刘向宏 on 15/10/15.
 //  Copyright © 2015年 coolLH. All rights reserved.
 //
 
 import UIKit
 
-class BabyBirthSetViewController: UIViewController {
+class BabyWeightViewController: UIViewController {
 
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        okButton.layer.cornerRadius = 15;
-        //okButton.layer.borderWidth = 0;
-        //okButton.layer.borderColor = UIColor.grayColor().CGColor;
-        okButton.layer.masksToBounds = true;
-        
-        cancelButton.layer.cornerRadius = 15;
-        //cancelButton.layer.borderWidth = 0;
-        //cancelButton.layer.borderColor = UIColor.grayColor().CGColor;
-        cancelButton.layer.masksToBounds = true;
-        
-        datePicker.datePickerMode = .Date;
-        datePicker.maximumDate = NSDate();
-        //datePicker.date = [NSDate dateWithTimeIntervalSince1970:0];
-        
-        let brith:String = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["brith"] as! String
-        if !brith.isEmpty{
-            let formatter:NSDateFormatter = NSDateFormatter()
-            formatter.dateFormat = "YYYY-MM-dd"
-            let date:NSDate? = formatter.dateFromString(brith);
-            datePicker.date = date!
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,13 +23,12 @@ class BabyBirthSetViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     @IBAction func okButtonClick(sender : AnyObject){
-        let formatter:NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "YYYY-MM-dd"
-        ChildDeviceManager.sharedManager().curentDevice.dicBabyData .setObject(formatter.stringFromDate(datePicker.date), forKey: "brith")
         
+        ChildDeviceManager.sharedManager().curentDevice.dicBabyData.setObject("", forKey: "weight")
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
-        DeviceRequest.UpdateDeviceInfoWithParameters(ChildDeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
+        DeviceRequest .UpdateDeviceInfoWithParameters(ChildDeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
             
             print(object)
             let dic:NSDictionary = object as! NSDictionary
@@ -86,7 +62,6 @@ class BabyBirthSetViewController: UIViewController {
             
         }
     }
-
     /*
     // MARK: - Navigation
 

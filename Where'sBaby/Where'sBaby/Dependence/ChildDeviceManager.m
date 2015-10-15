@@ -6,7 +6,7 @@
 //  Copyright © 2015年 coolLH. All rights reserved.
 //
 
-#import "DeviceManager.h"
+#import "ChildDeviceManager.h"
 #import <MAMapKit/MAMapKit.h>
 
 @implementation DeviceModel
@@ -54,10 +54,10 @@
 }
 @end
 
-@implementation DeviceManager
+@implementation ChildDeviceManager
 +(instancetype)sharedManager
 {
-    static DeviceManager *_sharedInstance = nil;
+    static ChildDeviceManager *_sharedInstance = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
         _sharedInstance = [[self alloc] init];

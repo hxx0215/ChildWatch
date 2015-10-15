@@ -8,14 +8,41 @@
 
 import UIKit
 
-class BabyHeightViewController: UIViewController {
+class BabyHeightViewController: UIViewController,ZHRulerViewDelegate {
 
+    @IBOutlet weak var rulerView: ZHRulerView!
+    @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    var value:Int = 100
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        okButton.layer.cornerRadius = 15;
+        //okButton.layer.borderWidth = 0;
+        //okButton.layer.borderColor = UIColor.grayColor().CGColor;
+        okButton.layer.masksToBounds = true;
+        
+        cancelButton.layer.cornerRadius = 15;
+        //cancelButton.layer.borderWidth = 0;
+        //cancelButton.layer.borderColor = UIColor.grayColor().CGColor;
+        cancelButton.layer.masksToBounds = true;
+        
+//        self.rulerView.layer.cornerRadius = 3;
+//        self.rulerView.layer.borderWidth = 1;
+//        self.rulerView.layer.borderColor = UIColor.grayColor().CGColor;
+//        self.rulerView.layer.masksToBounds = true;
+        self.rulerView.setWithMixNuber(35, maxNuber: 175, showType:rulerViewShowType.ViewshowVerticalType, rulerMultiple: 10)
+        let height = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["height"]?.integerValue
+        if(height>=30&&height<=120)
+        {
+            value = height!
+        }
+        self.rulerView.defaultVaule = CGFloat.init(value)
+        valueLabel.text = String.init(value) + "cm"
+        self.rulerView.delegate=self;
+        self.rulerView.backgroundColor = UIColor.whiteColor()// [UIColor colorWithRed:0xb5/255.0  green:0xb5/255.0 blue:0xb5/255.0 alpha:0.4f];
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,12 +50,15 @@ class BabyHeightViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addButtonClick(sender : AnyObject){
+    }
+    @IBAction func lowerButtonClick(sender : AnyObject){
+    }
 
     @IBAction func okButtonClick(sender : AnyObject){
-        
-        DeviceManager.sharedManager().curentDevice.dicBabyData.setObject("", forKey: "height")
+        ChildDeviceManager.sharedManager().curentDevice.dicBabyData.setObject("\(value)", forKey: "height")
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
-        DeviceRequest .UpdateDeviceInfoWithParameters(DeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
+        DeviceRequest .UpdateDeviceInfoWithParameters(ChildDeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
             
             print(object)
             let dic:NSDictionary = object as! NSDictionary
@@ -61,6 +91,11 @@ class BabyHeightViewController: UIViewController {
         self.dismissViewControllerAnimated(false) { () -> Void in
             
         }
+    }
+    
+    func getRulerValue(rulerValue: CGFloat, withScrollRulerView rulerView: ZHRulerView!) {
+        value = Int.init(rulerValue)+1
+        valueLabel.text = String.init(value) + "cm"
     }
     /*
     // MARK: - Navigation

@@ -9,4 +9,7 @@
 #import "DeviceRequest.h"
 #import "NSString+scisky.h"
 #import <SWRevealViewController.h>
-#import "DeviceManager.h"
+#import "ChildDeviceManager.h"
+#import "ZHRulerView.h"
+#import "FileRequest.h"
+#import "UIImageView+AFNetworking.h"
