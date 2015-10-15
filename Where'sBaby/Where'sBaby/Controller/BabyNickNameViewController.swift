@@ -1,5 +1,5 @@
 //
-//  BabyWeightViewController.swift
+//  BabyNickNameViewController.swift
 //  Where'sBaby
 //
 //  Created by 刘向宏 on 15/10/15.
@@ -8,17 +8,18 @@
 
 import UIKit
 
-class BabyWeightViewController: UIViewController,ZHRulerViewDelegate {
+class BabyNickNameViewController: UIViewController {
 
-    @IBOutlet weak var rulerView: ZHRulerView!
-    @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    var value:Int = 30
+    @IBOutlet weak var nameTextFileld: UITextField!
+    @IBOutlet weak var inputBackView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        IHKeyboardAvoiding.setAvoidingView(self.inputBackView)
+        
         okButton.layer.cornerRadius = 15;
         //okButton.layer.borderWidth = 0;
         //okButton.layer.borderColor = UIColor.grayColor().CGColor;
@@ -29,16 +30,17 @@ class BabyWeightViewController: UIViewController,ZHRulerViewDelegate {
         //cancelButton.layer.borderColor = UIColor.grayColor().CGColor;
         cancelButton.layer.masksToBounds = true;
         
-        self.rulerView.setWithMixNuber(10, maxNuber: 80, showType:rulerViewShowType.ViewshowHorizontalType, rulerMultiple: 10)
-        let weight = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["weight"]?.integerValue
-        if(weight>=5&&weight<=80)
-        {
-            value = weight!
-        }
-        self.rulerView.defaultVaule = CGFloat.init(value)
-        valueLabel.text = String.init(value) + "kg"
-        self.rulerView.delegate=self;
-        self.rulerView.backgroundColor = UIColor.whiteColor()// [UIColor colorWithRed:0xb5/255.0  green:0xb5/255.0 blue:0xb5/255.0 alpha:0.4f];
+        nameTextFileld.layer.cornerRadius = 5;
+        nameTextFileld.layer.borderWidth = 1;
+        nameTextFileld.layer.masksToBounds = true;
+        nameTextFileld.layer.borderColor = UIColor.grayColor().CGColor;
+        
+        nameTextFileld.text = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["nickname"] as? String
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        nameTextFileld.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,26 +48,9 @@ class BabyWeightViewController: UIViewController,ZHRulerViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addButtonClick(sender : AnyObject){
-        let weight = value+1
-        if(weight>=5&&weight<=80)
-        {
-            value = weight
-        }
-        rulerView.defaultVaule = CGFloat.init(value)
-    }
-    @IBAction func lowerButtonClick(sender : AnyObject){
-        let weight = value-1
-        if(weight>=5&&weight<=80)
-        {
-            value = weight
-        }
-        rulerView.defaultVaule = CGFloat.init(value)
-    }
 
     @IBAction func okButtonClick(sender : AnyObject){
-        
-        ChildDeviceManager.sharedManager().curentDevice.dicBabyData.setObject("\(value)", forKey: "weight")
+        ChildDeviceManager.sharedManager().curentDevice.dicBabyData.setObject(nameTextFileld.text!, forKey: "nickname")
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
         DeviceRequest .UpdateDeviceInfoWithParameters(ChildDeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
             
@@ -99,15 +84,6 @@ class BabyWeightViewController: UIViewController,ZHRulerViewDelegate {
     @IBAction func cancelButtonClick(sender : AnyObject){
         self.dismissViewControllerAnimated(false) { () -> Void in
             
-        }
-    }
-    
-    func getRulerValue(rulerValue: CGFloat, withScrollRulerView rulerView: ZHRulerView!) {
-        let weight:Int = Int.init(rulerValue+0.5)
-        if(weight>=5&&weight<=80)
-        {
-            value = weight
-            valueLabel.text = String.init(value) + "kg"
         }
     }
     /*

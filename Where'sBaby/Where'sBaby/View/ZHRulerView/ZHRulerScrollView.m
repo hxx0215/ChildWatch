@@ -54,7 +54,7 @@ static const CGFloat rulerLableFont=8;
         self.clipsToBounds=NO;
         if (_showType==rulerViewshowHorizontalType) {//如果水平放置
             _rulerImage=[UIImage imageNamed:@"ruler_weight"];
-            self.contentSize=CGSizeMake(_rulerImage.size.width*( BTminus(_maxNuber, _mixNuber)/rulerMultiple+1), self.frame.size.height);
+            self.contentSize=CGSizeMake(_rulerImage.size.width*( BTminus(_maxNuber, _mixNuber)/rulerMultiple+0.5), self.frame.size.height);
         }else{
             _rulerImage=[UIImage imageNamed:@"ruler_height"];
             self.contentSize=CGSizeMake(self.frame.size.width, _rulerImage.size.height*(BTminus(_maxNuber, _mixNuber)/rulerMultiple+1));
@@ -103,7 +103,7 @@ static const CGFloat rulerLableFont=8;
             
             if (_showType==rulerViewshowHorizontalType) {
                 rulerLableW=60;
-                rulerLableH=20;
+                rulerLableH=35;
                 rulerLableX =centerPoint.x-rulerLableW/2;
                 rulerLableY=rulerImageViewH+imageSpaceToLable;
             }else{

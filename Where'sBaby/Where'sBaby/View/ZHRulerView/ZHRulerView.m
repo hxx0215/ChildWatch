@@ -66,7 +66,10 @@ static  CGFloat const pointViewH=23;
     UIView *pointerView=[[UIView alloc] init];
     pointerView.backgroundColor=[UIColor redColor];
     _pointerView=pointerView;
-    //[self addSubview:pointerView];
+    if (showType == rulerViewshowHorizontalType) {
+        [self addSubview:pointerView];
+    }
+    
 }
 
 -(void)setDefaultVaule:(CGFloat)defaultVaule{

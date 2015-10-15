@@ -233,8 +233,6 @@
 		D3DF40FC1BCE33A400A3A9D7 /* 男孩@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40E81BCE33A400A3A9D7 /* 男孩@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF40FD1BCE33A400A3A9D7 /* 女孩@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40E91BCE33A400A3A9D7 /* 女孩@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF40FE1BCE33A400A3A9D7 /* 女孩@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40EA1BCE33A400A3A9D7 /* 女孩@3x.png */; settings = {ASSET_TAGS = (); }; };
-		D3DF40FF1BCE33A400A3A9D7 /* 设置体重标尺@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40EB1BCE33A400A3A9D7 /* 设置体重标尺@2x.png */; settings = {ASSET_TAGS = (); }; };
-		D3DF41001BCE33A400A3A9D7 /* 设置体重标尺@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40EC1BCE33A400A3A9D7 /* 设置体重标尺@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF41011BCE33A400A3A9D7 /* 设置体重底框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40ED1BCE33A400A3A9D7 /* 设置体重底框@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF41021BCE33A400A3A9D7 /* 设置体重底框@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40EE1BCE33A400A3A9D7 /* 设置体重底框@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D3DF41031BCE33A400A3A9D7 /* 身高设置标尺@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40EF1BCE33A400A3A9D7 /* 身高设置标尺@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -314,6 +312,7 @@
 		D3DF41941BCF4EFE00A3A9D7 /* ZHRulerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41911BCF4EFE00A3A9D7 /* ZHRulerScrollView.m */; settings = {ASSET_TAGS = (); }; };
 		D3DF41951BCF4EFE00A3A9D7 /* ZHRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41931BCF4EFE00A3A9D7 /* ZHRulerView.m */; settings = {ASSET_TAGS = (); }; };
 		D3DF41981BCF92F000A3A9D7 /* FileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41971BCF92EF00A3A9D7 /* FileRequest.m */; settings = {ASSET_TAGS = (); }; };
+		D3DF419D1BCFD05500A3A9D7 /* BabyNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -583,8 +582,6 @@
 		D3DF40E81BCE33A400A3A9D7 /* 男孩@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "男孩@3x.png"; sourceTree = "<group>"; };
 		D3DF40E91BCE33A400A3A9D7 /* 女孩@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "女孩@2x.png"; sourceTree = "<group>"; };
 		D3DF40EA1BCE33A400A3A9D7 /* 女孩@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "女孩@3x.png"; sourceTree = "<group>"; };
-		D3DF40EB1BCE33A400A3A9D7 /* 设置体重标尺@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置体重标尺@2x.png"; sourceTree = "<group>"; };
-		D3DF40EC1BCE33A400A3A9D7 /* 设置体重标尺@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置体重标尺@3x.png"; sourceTree = "<group>"; };
 		D3DF40ED1BCE33A400A3A9D7 /* 设置体重底框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置体重底框@2x.png"; sourceTree = "<group>"; };
 		D3DF40EE1BCE33A400A3A9D7 /* 设置体重底框@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置体重底框@3x.png"; sourceTree = "<group>"; };
 		D3DF40EF1BCE33A400A3A9D7 /* 身高设置标尺@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "身高设置标尺@2x.png"; sourceTree = "<group>"; };
@@ -667,6 +664,7 @@
 		D3DF41931BCF4EFE00A3A9D7 /* ZHRulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHRulerView.m; sourceTree = "<group>"; };
 		D3DF41961BCF92EF00A3A9D7 /* FileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileRequest.h; sourceTree = "<group>"; };
 		D3DF41971BCF92EF00A3A9D7 /* FileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileRequest.m; sourceTree = "<group>"; };
+		D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyNickNameViewController.swift; sourceTree = "<group>"; };
 		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
@@ -817,6 +815,7 @@
 				D3DF416C1BCEB53500A3A9D7 /* BabyHeightViewController.swift */,
 				D3DF418B1BCEB85700A3A9D7 /* BabyWeightViewController.swift */,
 				D3DF418D1BCEBD7300A3A9D7 /* BabyImageUpdataViewController.swift */,
+				D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1130,8 +1129,6 @@
 				D3DF40E81BCE33A400A3A9D7 /* 男孩@3x.png */,
 				D3DF40E91BCE33A400A3A9D7 /* 女孩@2x.png */,
 				D3DF40EA1BCE33A400A3A9D7 /* 女孩@3x.png */,
-				D3DF40EB1BCE33A400A3A9D7 /* 设置体重标尺@2x.png */,
-				D3DF40EC1BCE33A400A3A9D7 /* 设置体重标尺@3x.png */,
 				D3DF40ED1BCE33A400A3A9D7 /* 设置体重底框@2x.png */,
 				D3DF40EE1BCE33A400A3A9D7 /* 设置体重底框@3x.png */,
 				D3DF40EF1BCE33A400A3A9D7 /* 身高设置标尺@2x.png */,
@@ -1472,7 +1469,6 @@
 				D3DF40931BCBA7B200A3A9D7 /* 切换语音@2x.png in Resources */,
 				D3DF41601BCE3D1C00A3A9D7 /* 暂停@2x.png in Resources */,
 				D3DF41051BCE33A400A3A9D7 /* 身高设置底框@2x.png in Resources */,
-				D3DF40FF1BCE33A400A3A9D7 /* 设置体重标尺@2x.png in Resources */,
 				B9DEF5791BAEA87900D9BED7 /* 菜单按钮@3x.png in Resources */,
 				D3DF41041BCE33A400A3A9D7 /* 身高设置标尺@3x.png in Resources */,
 				D3DF40911BCBA7B200A3A9D7 /* 切换键盘@2x.png in Resources */,
@@ -1508,7 +1504,6 @@
 				D3DF413C1BCE3D1C00A3A9D7 /* 减少@2x.png in Resources */,
 				D3DF40A91BCBA7B200A3A9D7 /* 语音@2x.png in Resources */,
 				D33B2FCF1BC90AAC0072FAF6 /* 头像1@2x.png in Resources */,
-				D3DF41001BCE33A400A3A9D7 /* 设置体重标尺@3x.png in Resources */,
 				D33B2FE81BC90AAC0072FAF6 /* beijing3_1242X2280.png in Resources */,
 				B958904D1BA443F600A2C03E /* zhuce@2x.png in Resources */,
 				B9DEF57C1BAEA87900D9BED7 /* 轨迹icon@2x.png in Resources */,
@@ -1695,6 +1690,7 @@
 				B96BDBA71BCD393A00BE7FE3 /* WatchSettingViewController.swift in Sources */,
 				D3DF416D1BCEB53500A3A9D7 /* BabyHeightViewController.swift in Sources */,
 				D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */,
+				D3DF419D1BCFD05500A3A9D7 /* BabyNickNameViewController.swift in Sources */,
 				B95307901BB41896002B2162 /* UIButton+Log.m in Sources */,
 				D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */,
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,

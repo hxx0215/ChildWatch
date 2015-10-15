@@ -35,7 +35,7 @@ class BabyHeightViewController: UIViewController,ZHRulerViewDelegate {
 //        self.rulerView.layer.masksToBounds = true;
         self.rulerView.setWithMixNuber(35, maxNuber: 175, showType:rulerViewShowType.ViewshowVerticalType, rulerMultiple: 10)
         let height = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["height"]?.integerValue
-        if(height>=30&&height<=120)
+        if(height>=30&&height<=180)
         {
             value = height!
         }
@@ -51,8 +51,20 @@ class BabyHeightViewController: UIViewController,ZHRulerViewDelegate {
     }
     
     @IBAction func addButtonClick(sender : AnyObject){
+        let height = value+1
+        if(height>=30&&height<=180)
+        {
+            value = height
+        }
+        rulerView.defaultVaule = CGFloat.init(value)
     }
     @IBAction func lowerButtonClick(sender : AnyObject){
+        let height = value-1
+        if(height>=30&&height<=180)
+        {
+            value = height
+        }
+        rulerView.defaultVaule = CGFloat.init(value)
     }
 
     @IBAction func okButtonClick(sender : AnyObject){
@@ -94,8 +106,12 @@ class BabyHeightViewController: UIViewController,ZHRulerViewDelegate {
     }
     
     func getRulerValue(rulerValue: CGFloat, withScrollRulerView rulerView: ZHRulerView!) {
-        value = Int.init(rulerValue)+1
-        valueLabel.text = String.init(value) + "cm"
+        let height:Int = Int.init(rulerValue)+1
+        if(height>=30&&height<=180)
+        {
+            value = height
+            valueLabel.text = String.init(value) + "cm"
+        }
     }
     /*
     // MARK: - Navigation
