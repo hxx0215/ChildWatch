@@ -1,5 +1,5 @@
 //
-//  BabyNickNameViewController.swift
+//  BabyPhoneShortViewController.swift
 //  Where'sBaby
 //
 //  Created by 刘向宏 on 15/10/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BabyNickNameViewController: UIViewController {
+class BabyPhoneShortViewController: UIViewController {
 
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -16,7 +16,7 @@ class BabyNickNameViewController: UIViewController {
     @IBOutlet weak var inputBackView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         IHKeyboardAvoiding.setAvoidingView(self.inputBackView)
         
@@ -35,22 +35,22 @@ class BabyNickNameViewController: UIViewController {
         nameTextFileld.layer.masksToBounds = true;
         nameTextFileld.layer.borderColor = UIColor.grayColor().CGColor;
         
-        nameTextFileld.text = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["nickname"] as? String
+        nameTextFileld.text = ChildDeviceManager.sharedManager().curentDevice.dicBabyData["mobile_short"] as? String
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         nameTextFileld.becomeFirstResponder()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func okButtonClick(sender : AnyObject){
-        ChildDeviceManager.sharedManager().curentDevice.dicBabyData.setObject(nameTextFileld.text!, forKey: "nickname")
+        ChildDeviceManager.sharedManager().curentDevice.dicBabyData.setObject(nameTextFileld.text!, forKey: "mobile_short")
         let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
         DeviceRequest .UpdateDeviceInfoWithParameters(ChildDeviceManager.sharedManager().curentDevice.dicBabyData, success: { (AnyObject object) -> Void in
             
@@ -87,6 +87,8 @@ class BabyNickNameViewController: UIViewController {
             
         }
     }
+    
+
     /*
     // MARK: - Navigation
 

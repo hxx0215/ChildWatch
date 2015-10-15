@@ -313,6 +313,8 @@
 		D3DF41951BCF4EFE00A3A9D7 /* ZHRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41931BCF4EFE00A3A9D7 /* ZHRulerView.m */; settings = {ASSET_TAGS = (); }; };
 		D3DF41981BCF92F000A3A9D7 /* FileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41971BCF92EF00A3A9D7 /* FileRequest.m */; settings = {ASSET_TAGS = (); }; };
 		D3DF419D1BCFD05500A3A9D7 /* BabyNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41A01BCFDAF600A3A9D7 /* BabyPhoneViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D3DF41A31BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41A21BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -665,6 +667,8 @@
 		D3DF41961BCF92EF00A3A9D7 /* FileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileRequest.h; sourceTree = "<group>"; };
 		D3DF41971BCF92EF00A3A9D7 /* FileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileRequest.m; sourceTree = "<group>"; };
 		D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyNickNameViewController.swift; sourceTree = "<group>"; };
+		D3DF41A01BCFDAF600A3A9D7 /* BabyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyPhoneViewController.swift; sourceTree = "<group>"; };
+		D3DF41A21BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyPhoneShortViewController.swift; sourceTree = "<group>"; };
 		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
@@ -816,6 +820,8 @@
 				D3DF418B1BCEB85700A3A9D7 /* BabyWeightViewController.swift */,
 				D3DF418D1BCEBD7300A3A9D7 /* BabyImageUpdataViewController.swift */,
 				D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */,
+				D3DF41A01BCFDAF600A3A9D7 /* BabyPhoneViewController.swift */,
+				D3DF41A21BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1679,8 +1685,10 @@
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
 				D33B2FFF1BC9606B0072FAF6 /* LocationViewController.m in Sources */,
 				D3DF418C1BCEB85700A3A9D7 /* BabyWeightViewController.swift in Sources */,
+				D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */,
 				D3DF418E1BCEBD7300A3A9D7 /* BabyImageUpdataViewController.swift in Sources */,
 				D3DF41981BCF92F000A3A9D7 /* FileRequest.m in Sources */,
+				D3DF41A31BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift in Sources */,
 				D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */,
 				D33B2FF01BC92C8E0072FAF6 /* ContactsViewController.swift in Sources */,
 				B96BDBA31BCD31D400BE7FE3 /* ShareViewController.swift in Sources */,
