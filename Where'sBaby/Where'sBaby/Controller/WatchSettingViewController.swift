@@ -42,6 +42,9 @@ class WatchSettingViewController: UITableViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
+    func refreshUI(){
+        
+    }
     // MARK: - Table view data source
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
