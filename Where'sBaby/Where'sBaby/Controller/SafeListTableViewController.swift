@@ -12,6 +12,7 @@ class SafeListTableViewController: UIViewController,UITableViewDelegate ,UITable
 
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var editeButton : UIButton!
+    var tableViewArray : NSArray! = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,12 +62,23 @@ class SafeListTableViewController: UIViewController,UITableViewDelegate ,UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1;
+        if tableViewArray.count == 0{
+            tableView.separatorStyle = .None
+            return 1
+        }
+        tableView.separatorStyle = .SingleLine
+        return tableViewArray.count
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if tableViewArray.count == 0{
+            return self.view.frame.size.width/2
+        }
+        return 74
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -76,10 +88,19 @@ class SafeListTableViewController: UIViewController,UITableViewDelegate ,UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:SafeListTableViewCell = tableView.dequeueReusableCellWithIdentifier("safeCellIdentifier", forIndexPath: indexPath) as! SafeListTableViewCell
-        
-        // Configure the cell...
-        return cell
+        if tableViewArray.count==0{
+            let cell = tableView.dequeueReusableCellWithIdentifier("noDataIdentifier", forIndexPath: indexPath)
+            
+            // Configure the cell...
+            return cell
+        }
+        else
+        {
+            let cell:SafeListTableViewCell = tableView.dequeueReusableCellWithIdentifier("safeCellIdentifier", forIndexPath: indexPath) as! SafeListTableViewCell
+            
+            // Configure the cell...
+            return cell
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

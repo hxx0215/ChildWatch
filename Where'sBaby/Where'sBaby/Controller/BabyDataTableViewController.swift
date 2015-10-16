@@ -57,7 +57,7 @@ class BabyDataTableViewController: UITableViewController {
         if first{
             first = false
             let dic = ["deviceno":ChildDeviceManager.sharedManager().curentDevice.dicBase["deviceno"] as! String]
-            DeviceRequest .GetDeviceInfoWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
+            DeviceRequest.GetDeviceInfoWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
         
                 print(object)
                 let dic:NSDictionary = object as! NSDictionary

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MAMapKit/MAMapKit.h>
-
+@class AMapTip;
 typedef enum {
     LocationTypeWIFI,
     LocationTypeGPS,
@@ -20,6 +20,7 @@ typedef enum {
 @property (nonatomic ,strong) NSDictionary *dicBase;
 @property (nonatomic ,strong) NSDictionary *dicLocation;
 @property (nonatomic ,strong) NSMutableDictionary *dicBabyData;
+@property (nonatomic ,strong) AMapTip *mapTip;
 -(CLLocationCoordinate2D)getLocationCoordinate;
 -(LocationType)getLocationType;
 @end

@@ -44,6 +44,8 @@
     CLLocationDistance distance;
     
     NSInteger alarmType;
+    
+    MBProgressHUD *hudReGe;
 }
 
 - (void)viewDidLoad {
@@ -80,7 +82,13 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [MapManager MapViewDelegate:self reset:YES];
+    [MapManager MapSearchDelegate:self reset:YES];
+    if ([ChildDeviceManager sharedManager].curentDevice.mapTip) {
+        AMapTip *mapTip = [ChildDeviceManager sharedManager].curentDevice.mapTip;
+        [self doReGoecode:CLLocationCoordinate2DMake(mapTip.location.latitude, mapTip.location.longitude)];
+        [ChildDeviceManager sharedManager].curentDevice.mapTip = nil;
+    }
 }
 
 -(void)viewWillLayoutSubviews
@@ -284,6 +292,8 @@
     //regeo.radius = 10000;
     regeo.requireExtension = YES;
     //发起逆地理编码
+    hudReGe = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hudReGe.labelText = @"获取地理信息中";
     [_search AMapReGoecodeSearch: regeo];
 }
 
@@ -293,10 +303,17 @@
 {
     if(response.regeocode != nil)
     {
+        [hudReGe hide:YES];
         //通过AMapReGeocodeSearchResponse对象处理搜索结果
         adrress = response.regeocode.formattedAddress;
         NSLog(@"ReGeo: %@", adrress);
         [self addAnnotationWithCooordinate:locationCoord];
+    }
+    else
+    {
+        hudReGe.mode = MBProgressHUDModeText;
+        hudReGe.detailsLabelText = @"获取地理位置失败";
+        [hudReGe hide:YES afterDelay:1.5f];
     }
 }
 

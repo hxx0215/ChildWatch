@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 #import "SearchTableViewCell.h"
 #import "MapManager.h"
+#import "ChildDeviceManager.h"
 
 @interface SearchViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate,AMapSearchDelegate>
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
@@ -31,6 +32,12 @@
     CGRect tableViewFooterRect = self.tableView.tableFooterView.frame;
     tableViewFooterRect.size.height = 78.0f+10;
     [self.tableView.tableFooterView setFrame:tableViewFooterRect];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MapManager MapSearchDelegate:self reset:YES];
 }
 
 -(IBAction)backClick:(id)sender{
@@ -67,6 +74,12 @@
     return self.tips.count;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [ChildDeviceManager sharedManager].curentDevice.mapTip = self.tips[indexPath.row];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar

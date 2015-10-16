@@ -13,6 +13,7 @@
 #import <UIButton+AFNetworking.h>
 #import "ChildDeviceManager.h"
 #import "filerequest.h"
+#import <MBProgressHUD.h>
 //#import "CustomAnnotationView.h"
 IB_DESIGNABLE
 
@@ -173,6 +174,35 @@ IB_DESIGNABLE
         [self performSegueWithIdentifier:@"SafeIdentifier" sender:nil];
     }
     
+}
+
+-(IBAction)callPhoneClick:(id)sender
+{
+    NSDictionary *dic = @{
+                          @"deviceno" : [ChildDeviceManager sharedManager].currentDeviceNo
+                          };
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [DeviceRequest GetDeviceInfoWithParameters:dic success:^(id responseObject) {
+        if ([responseObject[@"state"] integerValue]==0) {
+            [ChildDeviceManager sharedManager].curentDevice.dicBabyData = [[NSMutableDictionary alloc] initWithDictionary:[responseObject[@"data"] firstObject]];
+            [hud hide:YES];
+            
+            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",[ChildDeviceManager sharedManager].curentDevice.dicBabyData[@"mobile"]];
+            UIWebView * callWebview = [[UIWebView alloc] init];
+            [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str]]];
+            [self.view addSubview:callWebview];
+        }
+        else
+        {
+            hud.mode = MBProgressHUDModeText;
+            hud.detailsLabelText = @"获取宝贝资料失败";
+            [hud hide:YES afterDelay:1.5f];
+        }
+    } failure:^(NSError *error) {
+        hud.mode = MBProgressHUDModeText;
+        hud.detailsLabelText = error.domain;
+        [hud hide:YES afterDelay:1.5f];
+    }];
 }
 //-(IBAction)selector:(id)sender)
 
