@@ -166,6 +166,14 @@ IB_DESIGNABLE
     }
 }
 
+-(IBAction)safeButtonClick:(id)sender
+{
+    if ([ChildDeviceManager sharedManager].curentDevice) {
+        [self.revealViewController setFrontViewPosition:FrontViewPositionLeft animated:YES];
+        [self performSegueWithIdentifier:@"SafeIdentifier" sender:nil];
+    }
+    
+}
 //-(IBAction)selector:(id)sender)
 
 -(void)mapClick:(id)sender

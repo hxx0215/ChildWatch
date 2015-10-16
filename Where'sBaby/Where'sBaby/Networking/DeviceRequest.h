@@ -20,4 +20,15 @@
 + (void)UpdateDeviceInfoWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 + (void)GetDeviceConfigInfoWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+//安全区域
+//查询安全区域列表/safeArea/getSafeAreaList
++ (void)GetSafeAreaListWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+//添加安全区域/safeArea/
++ (void)InsertSafeAreaWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+//编辑安全区域/safeArea/updateSafeArea
++ (void)UpdateSafeAreaWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+//删除安全区域/safeArea/deleteSafeArea
++ (void)DeleteSafeAreaWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+//end安全区域
 @end

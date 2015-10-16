@@ -84,14 +84,14 @@
 		D33B2F821BC90A650072FAF6 /* 宝贝按钮_空@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F7E1BC90A650072FAF6 /* 宝贝按钮_空@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2F831BC90A650072FAF6 /* 宝贝小头像_空@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F7F1BC90A650072FAF6 /* 宝贝小头像_空@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2F841BC90A650072FAF6 /* 宝贝小头像_空@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F801BC90A650072FAF6 /* 宝贝小头像_空@3x.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FB91BC90AAC0072FAF6 /* 保存@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F851BC90AAC0072FAF6 /* 保存@2X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FBA1BC90AAC0072FAF6 /* 保存@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F861BC90AAC0072FAF6 /* 保存@3X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FBB1BC90AAC0072FAF6 /* 错误&失失败&提示图标@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F871BC90AAC0072FAF6 /* 错误&失失败&提示图标@2X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FBC1BC90AAC0072FAF6 /* 错误&失失败&提示图标@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F881BC90AAC0072FAF6 /* 错误&失失败&提示图标@3X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FBD1BC90AAC0072FAF6 /* 弹出框@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F891BC90AAC0072FAF6 /* 弹出框@2X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FBE1BC90AAC0072FAF6 /* 弹出框@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8A1BC90AAC0072FAF6 /* 弹出框@3X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FBF1BC90AAC0072FAF6 /* 等待图标@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8B1BC90AAC0072FAF6 /* 等待图标@2X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FC01BC90AAC0072FAF6 /* 等待图标@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8C1BC90AAC0072FAF6 /* 等待图标@3X.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FB91BC90AAC0072FAF6 /* 保存@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F851BC90AAC0072FAF6 /* 保存@2x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FBA1BC90AAC0072FAF6 /* 保存@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F861BC90AAC0072FAF6 /* 保存@3x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FBB1BC90AAC0072FAF6 /* 错误&失失败&提示图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F871BC90AAC0072FAF6 /* 错误&失失败&提示图标@2x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FBC1BC90AAC0072FAF6 /* 错误&失失败&提示图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F881BC90AAC0072FAF6 /* 错误&失失败&提示图标@3x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FBD1BC90AAC0072FAF6 /* 弹出框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F891BC90AAC0072FAF6 /* 弹出框@2x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FBE1BC90AAC0072FAF6 /* 弹出框@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8A1BC90AAC0072FAF6 /* 弹出框@3x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FBF1BC90AAC0072FAF6 /* 等待图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8B1BC90AAC0072FAF6 /* 等待图标@2x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FC01BC90AAC0072FAF6 /* 等待图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8C1BC90AAC0072FAF6 /* 等待图标@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FC11BC90AAC0072FAF6 /* 二维码扫描框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8D1BC90AAC0072FAF6 /* 二维码扫描框@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FC21BC90AAC0072FAF6 /* 二维码扫描框@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8E1BC90AAC0072FAF6 /* 二维码扫描框@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FC31BC90AAC0072FAF6 /* 空白头像框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F8F1BC90AAC0072FAF6 /* 空白头像框@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -100,8 +100,8 @@
 		D33B2FC61BC90AAC0072FAF6 /* 默认头像1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F921BC90AAC0072FAF6 /* 默认头像1@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FC71BC90AAC0072FAF6 /* 默认头像2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F931BC90AAC0072FAF6 /* 默认头像2@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FC81BC90AAC0072FAF6 /* 默认头像2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F941BC90AAC0072FAF6 /* 默认头像2@3x.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FC91BC90AAC0072FAF6 /* 确定&通过图标@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F951BC90AAC0072FAF6 /* 确定&通过图标@2X.png */; settings = {ASSET_TAGS = (); }; };
-		D33B2FCA1BC90AAC0072FAF6 /* 确定&通过图标@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F961BC90AAC0072FAF6 /* 确定&通过图标@3X.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FC91BC90AAC0072FAF6 /* 确定&通过图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F951BC90AAC0072FAF6 /* 确定&通过图标@2x.png */; settings = {ASSET_TAGS = (); }; };
+		D33B2FCA1BC90AAC0072FAF6 /* 确定&通过图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F961BC90AAC0072FAF6 /* 确定&通过图标@3x.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FCB1BC90AAC0072FAF6 /* 首页背景640X960.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F971BC90AAC0072FAF6 /* 首页背景640X960.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FCC1BC90AAC0072FAF6 /* 首页背景640X1136.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F981BC90AAC0072FAF6 /* 首页背景640X1136.png */; settings = {ASSET_TAGS = (); }; };
 		D33B2FCD1BC90AAC0072FAF6 /* 首页背景750X1334.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F991BC90AAC0072FAF6 /* 首页背景750X1334.png */; settings = {ASSET_TAGS = (); }; };
@@ -315,6 +315,8 @@
 		D3DF419D1BCFD05500A3A9D7 /* BabyNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41A01BCFDAF600A3A9D7 /* BabyPhoneViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3DF41A31BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41A21BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D3DF41A51BCFEA8D00A3A9D7 /* SafeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41A41BCFEA8D00A3A9D7 /* SafeListTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D3DF41A71BCFF9C400A3A9D7 /* SafeEditeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DF41A61BCFF9C400A3A9D7 /* SafeEditeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E734FF1BA5D19200618513 /* NSString+scisky.m */; settings = {ASSET_TAGS = (); }; };
 		D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E735021BA5D5CB00618513 /* LoginRequest.m */; settings = {ASSET_TAGS = (); }; };
@@ -344,8 +346,8 @@
 		B9045C081BA0535100090A86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9045C0A1BA0535100090A86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B9045C0B1BA0535100090A86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B9045C0D1BA0535100090A86 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B9045C0E1BA0535100090A86 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B9045C0D1BA0535100090A86 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		B9045C0E1BA0535100090A86 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		B9045C111BA0535100090A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9045C131BA0535100090A86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9045C161BA0535100090A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -427,14 +429,14 @@
 		D33B2F7E1BC90A650072FAF6 /* 宝贝按钮_空@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宝贝按钮_空@3x.png"; sourceTree = "<group>"; };
 		D33B2F7F1BC90A650072FAF6 /* 宝贝小头像_空@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宝贝小头像_空@2x.png"; sourceTree = "<group>"; };
 		D33B2F801BC90A650072FAF6 /* 宝贝小头像_空@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宝贝小头像_空@3x.png"; sourceTree = "<group>"; };
-		D33B2F851BC90AAC0072FAF6 /* 保存@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "保存@2X.png"; sourceTree = "<group>"; };
-		D33B2F861BC90AAC0072FAF6 /* 保存@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "保存@3X.png"; sourceTree = "<group>"; };
-		D33B2F871BC90AAC0072FAF6 /* 错误&失失败&提示图标@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "错误&失失败&提示图标@2X.png"; sourceTree = "<group>"; };
-		D33B2F881BC90AAC0072FAF6 /* 错误&失失败&提示图标@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "错误&失失败&提示图标@3X.png"; sourceTree = "<group>"; };
-		D33B2F891BC90AAC0072FAF6 /* 弹出框@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹出框@2X.png"; sourceTree = "<group>"; };
-		D33B2F8A1BC90AAC0072FAF6 /* 弹出框@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹出框@3X.png"; sourceTree = "<group>"; };
-		D33B2F8B1BC90AAC0072FAF6 /* 等待图标@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "等待图标@2X.png"; sourceTree = "<group>"; };
-		D33B2F8C1BC90AAC0072FAF6 /* 等待图标@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "等待图标@3X.png"; sourceTree = "<group>"; };
+		D33B2F851BC90AAC0072FAF6 /* 保存@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "保存@2x.png"; sourceTree = "<group>"; };
+		D33B2F861BC90AAC0072FAF6 /* 保存@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "保存@3x.png"; sourceTree = "<group>"; };
+		D33B2F871BC90AAC0072FAF6 /* 错误&失失败&提示图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "错误&失失败&提示图标@2x.png"; sourceTree = "<group>"; };
+		D33B2F881BC90AAC0072FAF6 /* 错误&失失败&提示图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "错误&失失败&提示图标@3x.png"; sourceTree = "<group>"; };
+		D33B2F891BC90AAC0072FAF6 /* 弹出框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹出框@2x.png"; sourceTree = "<group>"; };
+		D33B2F8A1BC90AAC0072FAF6 /* 弹出框@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹出框@3x.png"; sourceTree = "<group>"; };
+		D33B2F8B1BC90AAC0072FAF6 /* 等待图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "等待图标@2x.png"; sourceTree = "<group>"; };
+		D33B2F8C1BC90AAC0072FAF6 /* 等待图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "等待图标@3x.png"; sourceTree = "<group>"; };
 		D33B2F8D1BC90AAC0072FAF6 /* 二维码扫描框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "二维码扫描框@2x.png"; sourceTree = "<group>"; };
 		D33B2F8E1BC90AAC0072FAF6 /* 二维码扫描框@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "二维码扫描框@3x.png"; sourceTree = "<group>"; };
 		D33B2F8F1BC90AAC0072FAF6 /* 空白头像框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空白头像框@2x.png"; sourceTree = "<group>"; };
@@ -443,8 +445,8 @@
 		D33B2F921BC90AAC0072FAF6 /* 默认头像1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认头像1@3x.png"; sourceTree = "<group>"; };
 		D33B2F931BC90AAC0072FAF6 /* 默认头像2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认头像2@2x.png"; sourceTree = "<group>"; };
 		D33B2F941BC90AAC0072FAF6 /* 默认头像2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认头像2@3x.png"; sourceTree = "<group>"; };
-		D33B2F951BC90AAC0072FAF6 /* 确定&通过图标@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "确定&通过图标@2X.png"; sourceTree = "<group>"; };
-		D33B2F961BC90AAC0072FAF6 /* 确定&通过图标@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "确定&通过图标@3X.png"; sourceTree = "<group>"; };
+		D33B2F951BC90AAC0072FAF6 /* 确定&通过图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "确定&通过图标@2x.png"; sourceTree = "<group>"; };
+		D33B2F961BC90AAC0072FAF6 /* 确定&通过图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "确定&通过图标@3x.png"; sourceTree = "<group>"; };
 		D33B2F971BC90AAC0072FAF6 /* 首页背景640X960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页背景640X960.png"; sourceTree = "<group>"; };
 		D33B2F981BC90AAC0072FAF6 /* 首页背景640X1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页背景640X1136.png"; sourceTree = "<group>"; };
 		D33B2F991BC90AAC0072FAF6 /* 首页背景750X1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页背景750X1334.png"; sourceTree = "<group>"; };
@@ -669,6 +671,8 @@
 		D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyNickNameViewController.swift; sourceTree = "<group>"; };
 		D3DF41A01BCFDAF600A3A9D7 /* BabyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyPhoneViewController.swift; sourceTree = "<group>"; };
 		D3DF41A21BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyPhoneShortViewController.swift; sourceTree = "<group>"; };
+		D3DF41A41BCFEA8D00A3A9D7 /* SafeListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeListTableViewController.swift; sourceTree = "<group>"; };
+		D3DF41A61BCFF9C400A3A9D7 /* SafeEditeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeEditeViewController.swift; sourceTree = "<group>"; };
 		D3E734FB1BA5D12500618513 /* BaseHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		D3E734FC1BA5D12500618513 /* BaseHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		D3E734FE1BA5D19200618513 /* NSString+scisky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+scisky.h"; sourceTree = "<group>"; };
@@ -752,8 +756,6 @@
 				B958902F1BA43BE800A2C03E /* Where'sBaby-Bridging-Header.h */,
 				B9045C0A1BA0535100090A86 /* AppDelegate.h */,
 				B9045C0B1BA0535100090A86 /* AppDelegate.m */,
-				B9045C0D1BA0535100090A86 /* ViewController.h */,
-				B9045C0E1BA0535100090A86 /* ViewController.m */,
 				B9045C101BA0535100090A86 /* Main.storyboard */,
 				B9045C131BA0535100090A86 /* Assets.xcassets */,
 				B9045C151BA0535100090A86 /* LaunchScreen.storyboard */,
@@ -799,6 +801,10 @@
 		B95890281BA4385300A2C03E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B9045C0D1BA0535100090A86 /* ViewController.h */,
+				B9045C0E1BA0535100090A86 /* ViewController.m */,
+				D33B2FFD1BC9606B0072FAF6 /* LocationViewController.h */,
+				D33B2FFE1BC9606B0072FAF6 /* LocationViewController.m */,
 				B95890301BA43BE900A2C03E /* WBWelcomeViewController.swift */,
 				B9052B671BA506C5001AA85C /* LoginViewController.swift */,
 				B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */,
@@ -810,8 +816,6 @@
 				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
 				D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */,
 				B96BDBA21BCD31D400BE7FE3 /* ShareViewController.swift */,
-				D33B2FFD1BC9606B0072FAF6 /* LocationViewController.h */,
-				D33B2FFE1BC9606B0072FAF6 /* LocationViewController.m */,
 				D3DF40CA1BCD646F00A3A9D7 /* BabyDataTableViewController.swift */,
 				D3DF41661BCE3E9700A3A9D7 /* BabySexSetViewController.swift */,
 				D3DF41681BCE4BBA00A3A9D7 /* BabyBirthSetViewController.swift */,
@@ -822,6 +826,8 @@
 				D3DF419C1BCFD05500A3A9D7 /* BabyNickNameViewController.swift */,
 				D3DF41A01BCFDAF600A3A9D7 /* BabyPhoneViewController.swift */,
 				D3DF41A21BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift */,
+				D3DF41A41BCFEA8D00A3A9D7 /* SafeListTableViewController.swift */,
+				D3DF41A61BCFF9C400A3A9D7 /* SafeEditeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -952,14 +958,14 @@
 				D33B2F7E1BC90A650072FAF6 /* 宝贝按钮_空@3x.png */,
 				D33B2F7F1BC90A650072FAF6 /* 宝贝小头像_空@2x.png */,
 				D33B2F801BC90A650072FAF6 /* 宝贝小头像_空@3x.png */,
-				D33B2F851BC90AAC0072FAF6 /* 保存@2X.png */,
-				D33B2F861BC90AAC0072FAF6 /* 保存@3X.png */,
-				D33B2F871BC90AAC0072FAF6 /* 错误&失失败&提示图标@2X.png */,
-				D33B2F881BC90AAC0072FAF6 /* 错误&失失败&提示图标@3X.png */,
-				D33B2F891BC90AAC0072FAF6 /* 弹出框@2X.png */,
-				D33B2F8A1BC90AAC0072FAF6 /* 弹出框@3X.png */,
-				D33B2F8B1BC90AAC0072FAF6 /* 等待图标@2X.png */,
-				D33B2F8C1BC90AAC0072FAF6 /* 等待图标@3X.png */,
+				D33B2F851BC90AAC0072FAF6 /* 保存@2x.png */,
+				D33B2F861BC90AAC0072FAF6 /* 保存@3x.png */,
+				D33B2F871BC90AAC0072FAF6 /* 错误&失失败&提示图标@2x.png */,
+				D33B2F881BC90AAC0072FAF6 /* 错误&失失败&提示图标@3x.png */,
+				D33B2F891BC90AAC0072FAF6 /* 弹出框@2x.png */,
+				D33B2F8A1BC90AAC0072FAF6 /* 弹出框@3x.png */,
+				D33B2F8B1BC90AAC0072FAF6 /* 等待图标@2x.png */,
+				D33B2F8C1BC90AAC0072FAF6 /* 等待图标@3x.png */,
 				D33B2F8D1BC90AAC0072FAF6 /* 二维码扫描框@2x.png */,
 				D33B2F8E1BC90AAC0072FAF6 /* 二维码扫描框@3x.png */,
 				D33B2F8F1BC90AAC0072FAF6 /* 空白头像框@2x.png */,
@@ -968,8 +974,8 @@
 				D33B2F921BC90AAC0072FAF6 /* 默认头像1@3x.png */,
 				D33B2F931BC90AAC0072FAF6 /* 默认头像2@2x.png */,
 				D33B2F941BC90AAC0072FAF6 /* 默认头像2@3x.png */,
-				D33B2F951BC90AAC0072FAF6 /* 确定&通过图标@2X.png */,
-				D33B2F961BC90AAC0072FAF6 /* 确定&通过图标@3X.png */,
+				D33B2F951BC90AAC0072FAF6 /* 确定&通过图标@2x.png */,
+				D33B2F961BC90AAC0072FAF6 /* 确定&通过图标@3x.png */,
 				D33B2F971BC90AAC0072FAF6 /* 首页背景640X960.png */,
 				D33B2F981BC90AAC0072FAF6 /* 首页背景640X1136.png */,
 				D33B2F991BC90AAC0072FAF6 /* 首页背景750X1334.png */,
@@ -1381,7 +1387,7 @@
 				D33B2F831BC90A650072FAF6 /* 宝贝小头像_空@2x.png in Resources */,
 				D362608C1BB4E7BE0063F833 /* 123.TTF in Resources */,
 				D3DF40871BCBA7B200A3A9D7 /* 地图上的提示框2@2x.png in Resources */,
-				D33B2FBA1BC90AAC0072FAF6 /* 保存@3X.png in Resources */,
+				D33B2FBA1BC90AAC0072FAF6 /* 保存@3x.png in Resources */,
 				D362608A1BB4E5090063F833 /* 造字工房悦圆.otf in Resources */,
 				D33B2FCD1BC90AAC0072FAF6 /* 首页背景750X1334.png in Resources */,
 				D3DF40F91BCE33A400A3A9D7 /* 话费流量图标@2x.png in Resources */,
@@ -1395,7 +1401,7 @@
 				B96BDBB01BCD51A500BE7FE3 /* 关闭@3x.png in Resources */,
 				D33B2FFC1BC953850072FAF6 /* shuru2_Click@3x.png in Resources */,
 				D3DF413B1BCE3D1C00A3A9D7 /* 关闭@3x.png in Resources */,
-				D33B2FB91BC90AAC0072FAF6 /* 保存@2X.png in Resources */,
+				D33B2FB91BC90AAC0072FAF6 /* 保存@2x.png in Resources */,
 				D33B2FC11BC90AAC0072FAF6 /* 二维码扫描框@2x.png in Resources */,
 				B96BDBAC1BCD516E00BE7FE3 /* 打开@3x.png in Resources */,
 				D3DF40FC1BCE33A400A3A9D7 /* 男孩@3x.png in Resources */,
@@ -1418,7 +1424,7 @@
 				D3DF415B1BCE3D1C00A3A9D7 /* 收起箭头@3x.png in Resources */,
 				D3DF41421BCE3D1C00A3A9D7 /* 单选框_未选@2x.png in Resources */,
 				D3DF414C1BCE3D1C00A3A9D7 /* 当前时间选中条@2x.png in Resources */,
-				D33B2FCA1BC90AAC0072FAF6 /* 确定&通过图标@3X.png in Resources */,
+				D33B2FCA1BC90AAC0072FAF6 /* 确定&通过图标@3x.png in Resources */,
 				B9DEF5691BAEA87900D9BED7 /* 安全icon@2x.png in Resources */,
 				D3DF40991BCBA7B200A3A9D7 /* 删除进度条底@2x.png in Resources */,
 				D3DF41591BCE3D1C00A3A9D7 /* 播放@3x.png in Resources */,
@@ -1444,7 +1450,7 @@
 				D3DF41841BCEB7D300A3A9D7 /* 指针@3x.png in Resources */,
 				B958904C1BA443F600A2C03E /* shuru2@3x.png in Resources */,
 				D3DF415F1BCE3D1C00A3A9D7 /* 显示距离进度条底框@3x.png in Resources */,
-				D33B2FC91BC90AAC0072FAF6 /* 确定&通过图标@2X.png in Resources */,
+				D33B2FC91BC90AAC0072FAF6 /* 确定&通过图标@2x.png in Resources */,
 				D33B2FDD1BC90AAC0072FAF6 /* beijing1_640X960.png in Resources */,
 				D3DF41611BCE3D1C00A3A9D7 /* 暂停@3x.png in Resources */,
 				D3DF40881BCBA7B200A3A9D7 /* 地图上的提示框2@3x.png in Resources */,
@@ -1457,7 +1463,7 @@
 				D33B30081BC970810072FAF6 /* loading@2x.png in Resources */,
 				B9045C171BA0535100090A86 /* LaunchScreen.storyboard in Resources */,
 				D3DF40BA1BCBA7B200A3A9D7 /* 正在语音2@3x.png in Resources */,
-				D33B2FBC1BC90AAC0072FAF6 /* 错误&失失败&提示图标@3X.png in Resources */,
+				D33B2FBC1BC90AAC0072FAF6 /* 错误&失失败&提示图标@3x.png in Resources */,
 				D3DF417D1BCEB7D300A3A9D7 /* QQ@2x.png in Resources */,
 				D3DF409F1BCBA7B200A3A9D7 /* 收起_正常状态@2x.png in Resources */,
 				D33B2F7C1BC909F70072FAF6 /* 放大镜@3x.png in Resources */,
@@ -1553,9 +1559,9 @@
 				D3DF40FE1BCE33A400A3A9D7 /* 女孩@3x.png in Resources */,
 				D3DF40AD1BCBA7B200A3A9D7 /* 语音框2@2x.png in Resources */,
 				D3DF41031BCE33A400A3A9D7 /* 身高设置标尺@2x.png in Resources */,
-				D33B2FC01BC90AAC0072FAF6 /* 等待图标@3X.png in Resources */,
+				D33B2FC01BC90AAC0072FAF6 /* 等待图标@3x.png in Resources */,
 				D3DF41471BCE3D1C00A3A9D7 /* 增加_@3x.png in Resources */,
-				D33B2FBE1BC90AAC0072FAF6 /* 弹出框@3X.png in Resources */,
+				D33B2FBE1BC90AAC0072FAF6 /* 弹出框@3x.png in Resources */,
 				B9DEF5761BAEA87900D9BED7 /* 聊天icon@3x.png in Resources */,
 				D3DF408C1BCBA7B200A3A9D7 /* 复选框_未选@3x.png in Resources */,
 				D3DF41871BCEB7D300A3A9D7 /* 朋友圈@2x.png in Resources */,
@@ -1569,7 +1575,7 @@
 				D3DF40AE1BCBA7B200A3A9D7 /* 语音框2@3x.png in Resources */,
 				B9DEF5711BAEA87900D9BED7 /* 消息@2x.png in Resources */,
 				D3DF417E1BCEB7D300A3A9D7 /* QQ@3x.png in Resources */,
-				D33B2FBF1BC90AAC0072FAF6 /* 等待图标@2X.png in Resources */,
+				D33B2FBF1BC90AAC0072FAF6 /* 等待图标@2x.png in Resources */,
 				D33B2FC61BC90AAC0072FAF6 /* 默认头像1@3x.png in Resources */,
 				D3DF40B21BCBA7B200A3A9D7 /* 预置文本管理@3x.png in Resources */,
 				D33B2F7B1BC909F70072FAF6 /* 放大镜@2x.png in Resources */,
@@ -1584,7 +1590,7 @@
 				B9DEF56E1BAEA87900D9BED7 /* 手表@3x.png in Resources */,
 				B9DEF57D1BAEA87900D9BED7 /* 轨迹icon@3x.png in Resources */,
 				D33B2FD51BC90AAC0072FAF6 /* 头像4@2x.png in Resources */,
-				D33B2FBD1BC90AAC0072FAF6 /* 弹出框@2X.png in Resources */,
+				D33B2FBD1BC90AAC0072FAF6 /* 弹出框@2x.png in Resources */,
 				D33B2FDC1BC90AAC0072FAF6 /* 增加@3x.png in Resources */,
 				D33B2F821BC90A650072FAF6 /* 宝贝按钮_空@3x.png in Resources */,
 				B9DEF55F1BAEA87900D9BED7 /* 图层-27@2x.png in Resources */,
@@ -1607,7 +1613,7 @@
 				D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */,
 				B92408E41BC6A54F0033C73C /* zhuce1@3x.png in Resources */,
 				D33B2FD71BC90AAC0072FAF6 /* 头像5@2x.png in Resources */,
-				D33B2FBB1BC90AAC0072FAF6 /* 错误&失失败&提示图标@2X.png in Resources */,
+				D33B2FBB1BC90AAC0072FAF6 /* 错误&失失败&提示图标@2x.png in Resources */,
 				B9DEF57B1BAEA87900D9BED7 /* 设置@3x.png in Resources */,
 				B95890441BA443F600A2C03E /* bei@3x.png in Resources */,
 				D33B2F841BC90A650072FAF6 /* 宝贝小头像_空@3x.png in Resources */,
@@ -1681,7 +1687,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */,
+				D3DF41A71BCFF9C400A3A9D7 /* SafeEditeViewController.swift in Sources */,
 				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
+				D3DF41A51BCFEA8D00A3A9D7 /* SafeListTableViewController.swift in Sources */,
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
 				D33B2FFF1BC9606B0072FAF6 /* LocationViewController.m in Sources */,
 				D3DF418C1BCEB85700A3A9D7 /* BabyWeightViewController.swift in Sources */,
