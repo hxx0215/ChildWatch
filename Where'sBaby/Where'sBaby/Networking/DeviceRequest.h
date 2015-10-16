@@ -31,4 +31,13 @@
 //删除安全区域/safeArea/deleteSafeArea
 + (void)DeleteSafeAreaWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 //end安全区域
+
++ (void)GetPhoneBookListWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
++ (void)AddFriendsWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
++ (void)UpdatePhoneBookWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
++ (void)DeletePhoneBookWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
 @end

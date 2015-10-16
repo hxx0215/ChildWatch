@@ -21,6 +21,11 @@
 #define kMethodUpdateSafeArea @"/safeArea/updateSafeArea"
 #define kMethodDeleteSafeArea @"/safeArea/deleteSafeArea"
 
+#define kMethodGetPhoneBookList @"/user/getPhoneBookList"
+#define kMethodAddFriends @"/user/addFriends"
+#define kMethodUpdatePhoneBook @"/user/updatePhoneBook"
+#define kMethodDeletePhoneBook @"/user/deletePhoneBook"
+
 @implementation DeviceRequest
 + (void)DeviceListWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
@@ -69,4 +74,20 @@
     [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodDeleteSafeArea WithParameters:parameters post:YES success:success failure:failure];
 }
 //end安全区域
+
++ (void)GetPhoneBookListWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodGetPhoneBookList WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)AddFriendsWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodAddFriends WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)UpdatePhoneBookWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodUpdatePhoneBook WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)DeletePhoneBookWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodDeletePhoneBook WithParameters:parameters post:YES success:success failure:failure];
+}
 @end

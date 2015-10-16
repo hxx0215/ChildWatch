@@ -10,6 +10,8 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
 
+    var tableViewFamilyArray : NSMutableArray!
+    var tableViewFrinedArray : NSMutableArray!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,43 @@ class ContactsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableViewFamilyArray = NSMutableArray.init(array: [])
+        self.tableViewFrinedArray = NSMutableArray.init(array: [])
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let hud : MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let dic = ["deviceno":ChildDeviceManager.sharedManager().currentDeviceNo]
+        DeviceRequest.GetPhoneBookListWithParameters(dic, success: { (object) -> Void in
+            print(object)
+            let dic:NSDictionary = object as! NSDictionary
+            let state:Int = dic["state"] as! Int
+            if(state==0)
+            {
+                self.tableViewFamilyArray.removeAllObjects()
+                self.tableViewFrinedArray.removeAllObjects()
+                let dicArray:NSArray = dic["data"] as! NSArray
+                for dicDatat in dicArray{
+                    let role:String = dicDatat["role"] as! String
+                    if role == "friend"{
+                        self.tableViewFrinedArray.addObject(dicDatat)
+                    }
+                    else
+                    {
+                        self.tableViewFamilyArray.addObject(dicDatat)
+                        //self.tableViewFamilyArray.insertObject(dicDatat, atIndex: 0)
+                    }
+                }
+                self.tableView.reloadData()
+            }
+            hud.hide(true)
+            }) { (NSError error) -> Void in
+                print(error)
+                hud.mode = .Text
+                hud.detailsLabelText = error.domain
+                hud.hide(true, afterDelay: 1.5)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,12 +76,17 @@ class ContactsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        if section == 0{
+            return tableViewFamilyArray.count
+        }
+        else{
+            return tableViewFrinedArray.count
+        }
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -86,13 +130,33 @@ class ContactsTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("contactsIdentifier", forIndexPath: indexPath)
+        let cell:ContactsTableViewCell = tableView.dequeueReusableCellWithIdentifier("contactsIdentifier", forIndexPath: indexPath) as! ContactsTableViewCell
 
         // Configure the cell...
 
+        var dic:NSDictionary;
+        if(indexPath.section == 0)
+        {
+            dic = tableViewFamilyArray[indexPath.row] as! NSDictionary
+        }
+        else
+        {
+            dic = tableViewFrinedArray[indexPath.row] as! NSDictionary
+        }
+        let nickname:String = dic["nickname"] as! String
+        let mobile:String = dic["mobile"] as! String
+        var mobileshort:String = dic["mobileshort"] as! String
+        if mobileshort.isEmpty{
+            mobileshort = "未设置"
+        }
+        cell.mobelLabel.text = "\(nickname)  \(mobile)"
+        cell.shortLabel.text = "\(mobileshort)"
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
