@@ -76,7 +76,7 @@ class SafeListTableViewController: UIViewController,UITableViewDelegate ,UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("safeCellIdentifier", forIndexPath: indexPath)
+        let cell:SafeListTableViewCell = tableView.dequeueReusableCellWithIdentifier("safeCellIdentifier", forIndexPath: indexPath) as! SafeListTableViewCell
         
         // Configure the cell...
         return cell

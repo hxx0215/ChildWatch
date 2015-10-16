@@ -150,6 +150,9 @@
 		D367E4B81BAFFB670062FC62 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D367E4B71BAFFB670062FC62 /* AMap.bundle */; settings = {ASSET_TAGS = (); }; };
 		D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
 		D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D367E4BD1BB004E10062FC62 /* CustomCalloutView.m */; settings = {ASSET_TAGS = (); }; };
+		D36ECB291BD09D3700C79794 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB281BD09D3700C79794 /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		D36ECB2C1BD09F3200C79794 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB2B1BD09F3200C79794 /* SearchTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		D36ECB2E1BD0A18200C79794 /* SafeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB2D1BD0A18200C79794 /* SafeListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */; settings = {ASSET_TAGS = (); }; };
 		D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE461BA6A9900078A0C2 /* Security.framework */; };
 		D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */; };
@@ -499,6 +502,11 @@
 		D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
 		D367E4BC1BB004E10062FC62 /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
 		D367E4BD1BB004E10062FC62 /* CustomCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalloutView.m; sourceTree = "<group>"; };
+		D36ECB271BD09D3700C79794 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		D36ECB281BD09D3700C79794 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		D36ECB2A1BD09F3200C79794 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		D36ECB2B1BD09F3200C79794 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		D36ECB2D1BD0A18200C79794 /* SafeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeListTableViewCell.swift; sourceTree = "<group>"; };
 		D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		D374C2861BA851750028456C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -805,6 +813,8 @@
 				B9045C0E1BA0535100090A86 /* ViewController.m */,
 				D33B2FFD1BC9606B0072FAF6 /* LocationViewController.h */,
 				D33B2FFE1BC9606B0072FAF6 /* LocationViewController.m */,
+				D36ECB271BD09D3700C79794 /* SearchViewController.h */,
+				D36ECB281BD09D3700C79794 /* SearchViewController.m */,
 				B95890301BA43BE900A2C03E /* WBWelcomeViewController.swift */,
 				B9052B671BA506C5001AA85C /* LoginViewController.swift */,
 				B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */,
@@ -1119,6 +1129,9 @@
 				D367E4BB1BB004E10062FC62 /* CustomAnnotationView.m */,
 				D367E4BC1BB004E10062FC62 /* CustomCalloutView.h */,
 				D367E4BD1BB004E10062FC62 /* CustomCalloutView.m */,
+				D36ECB2A1BD09F3200C79794 /* SearchTableViewCell.h */,
+				D36ECB2B1BD09F3200C79794 /* SearchTableViewCell.m */,
+				D36ECB2D1BD0A18200C79794 /* SafeListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1688,15 +1701,18 @@
 			files = (
 				D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */,
 				D3DF41A71BCFF9C400A3A9D7 /* SafeEditeViewController.swift in Sources */,
+				D36ECB2E1BD0A18200C79794 /* SafeListTableViewCell.swift in Sources */,
 				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
 				D3DF41A51BCFEA8D00A3A9D7 /* SafeListTableViewController.swift in Sources */,
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
+				D36ECB2C1BD09F3200C79794 /* SearchTableViewCell.m in Sources */,
 				D33B2FFF1BC9606B0072FAF6 /* LocationViewController.m in Sources */,
 				D3DF418C1BCEB85700A3A9D7 /* BabyWeightViewController.swift in Sources */,
 				D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */,
 				D3DF418E1BCEBD7300A3A9D7 /* BabyImageUpdataViewController.swift in Sources */,
 				D3DF41981BCF92F000A3A9D7 /* FileRequest.m in Sources */,
 				D3DF41A31BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift in Sources */,
+				D36ECB291BD09D3700C79794 /* SearchViewController.m in Sources */,
 				D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */,
 				D33B2FF01BC92C8E0072FAF6 /* ContactsViewController.swift in Sources */,
 				B96BDBA31BCD31D400BE7FE3 /* ShareViewController.swift in Sources */,
