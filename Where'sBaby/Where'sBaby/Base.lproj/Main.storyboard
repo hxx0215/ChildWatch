@@ -6536,10 +6536,10 @@
             </objects>
             <point key="canvasLocation" x="3433.5" y="2656.5"/>
         </scene>
-        <!--Safe Edite View Controller-->
+        <!--Safe Area View Controller-->
         <scene sceneID="VTM-lv-889">
             <objects>
-                <viewController id="ibE-1z-jWb" customClass="SafeEditeViewController" customModule="Where_sBaby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ibE-1z-jWb" customClass="SafeAreaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tin-kB-iGu"/>
                         <viewControllerLayoutGuide type="bottom" id="rAt-Li-i2G"/>
@@ -6990,6 +6990,9 @@
                                 <state key="normal" title="宝贝定位" backgroundImage="按钮.png">
                                     <color key="titleColor" red="0.30196078430000001" green="0.74509803919999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="babyLocationClick:" destination="ibE-1z-jWb" eventType="touchUpInside" id="clr-P6-Spb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCJ-3v-JOt">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -6997,6 +7000,9 @@
                                 <state key="normal" title="手机定位" backgroundImage="按钮.png">
                                     <color key="titleColor" red="0.30196078430000001" green="0.74509803919999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="phoneLocationClick:" destination="ibE-1z-jWb" eventType="touchUpInside" id="ABM-fu-hd3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3g-xn-SXr">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -7005,6 +7011,7 @@
                                     <color key="titleColor" red="0.30196078430000001" green="0.74509803919999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchLocationClick:" destination="ibE-1z-jWb" eventType="touchUpInside" id="my1-6i-EaC"/>
                                     <segue destination="iEY-rb-Riy" kind="show" id="Omj-nq-sgZ"/>
                                 </connections>
                             </button>

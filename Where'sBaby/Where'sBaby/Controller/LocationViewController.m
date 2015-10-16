@@ -12,6 +12,8 @@
 #import "CustomAnnotationView.h"
 #import <AMapSearchKit/AMapSearchKit.h>
 #import "ChildDeviceManager.h"
+#import <UIImageView+AFNetworking.h>
+#import "FileRequest.h"
 
 @interface LocationViewController () <AMapSearchDelegate,MAMapViewDelegate>
 @property (nonatomic,weak) IBOutlet UIView *mapBackView;
@@ -277,20 +279,24 @@
 {
     if ([annotation isKindOfClass:[MAPointAnnotation class]])
     {
-        static NSString *customReuseIndetifier = @"customReuseIndetifier2";
-        
-        CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:customReuseIndetifier];
+        CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:customReuseIndetifierLocation];
         
         if (annotationView == nil)
         {
-            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:customReuseIndetifier];
+            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:customReuseIndetifierLocation];
             // must set to NO, so we can show the custom callout view.
             annotationView.canShowCallout = NO;
             annotationView.draggable = YES;
             annotationView.calloutOffset = CGPointMake(0, -5);
             annotationView.image = [UIImage imageNamed:@"位置_空"];
-            UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"语音"]];
+            UIImageView *imageView = [[UIImageView alloc]init];
+            [imageView setImageWithURL:[NSURL URLWithString:[FileRequest imageURL:[ChildDeviceManager sharedManager].curentDevice.dicBase[@"headimage"]]] placeholderImage:[UIImage imageNamed:@"默认头像1"]];
             imageView.frame = CGRectMake(8, 5, annotationView.frame.size.width-16, annotationView.frame.size.width-16);
+            imageView.layer.cornerRadius = imageView.frame.size.width/2;
+            //okButton.layer.borderWidth = 0;
+            //okButton.layer.borderColor = UIColor.grayColor().CGColor;
+            imageView.layer.masksToBounds = true;
+
             [annotationView addSubview:imageView];
             annotationView.top = adrress;
             annotationView.left = @"10fenzhong";
@@ -327,7 +333,6 @@
     
                 [self.mapView setCenterCoordinate:coordinate animated:YES];
             }
-            
         }
 }
 /*

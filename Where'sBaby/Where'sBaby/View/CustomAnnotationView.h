@@ -8,6 +8,9 @@
 
 #import <MAMapKit/MAMapKit.h>
 
+static NSString *customReuseIndetifierLocation = @"customReuseIndetifier3";
+static NSString *customReuseIndetifierSafeArea = @"customReuseIndetifier3";
+
 @interface CustomAnnotationView : MAAnnotationView
 
 @property (nonatomic, strong) UIView *calloutView;

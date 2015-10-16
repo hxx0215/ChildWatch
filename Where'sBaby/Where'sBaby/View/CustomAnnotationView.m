@@ -100,12 +100,19 @@
             [self.rightLabel sizeToFit];
             CGFloat widthT = self.topLabel.bounds.size.width+60;
             CGFloat widthB = kCalloutWidth;
-            self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, widthT>widthB?widthT:widthB, kCalloutHeight)];
+            CGFloat heightCallout = kCalloutHeight;
+            if ([self.reuseIdentifier isEqualToString:customReuseIndetifierSafeArea]) {
+                heightCallout = 48;
+            }
+            self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, widthT>widthB?widthT:widthB, heightCallout)];
             self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
                                                   -CGRectGetHeight(self.calloutView.bounds) / 2.f + self.calloutOffset.y);
             [self.calloutView addSubview:self.topLabel];
-            [self.calloutView addSubview:self.leftLabel];
-            [self.calloutView addSubview:self.rightLabel];
+            if (![self.reuseIdentifier isEqualToString:customReuseIndetifierSafeArea]){
+                [self.calloutView addSubview:self.leftLabel];
+                [self.calloutView addSubview:self.rightLabel];
+            }
+            
             [self.calloutView bringSubviewToFront:self.topLabel];
             self.topLabel.frame = CGRectMake(30, 12, self.topLabel.frame.size.width, self.topLabel.frame.size.height);
             self.leftLabel.frame = CGRectMake(30, 29, self.leftLabel.frame.size.width, self.leftLabel.frame.size.height);
@@ -116,6 +123,9 @@
     }
     else
     {
+        if (![self.reuseIdentifier isEqualToString:customReuseIndetifierSafeArea]){
+            [self.calloutView removeFromSuperview];
+        }
         //[self.calloutView removeFromSuperview];
     }
     

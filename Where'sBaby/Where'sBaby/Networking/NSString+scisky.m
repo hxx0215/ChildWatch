@@ -92,7 +92,7 @@
     
     NSData *myData = [NSData dataWithBytes:(const void *)bufferPtr length:(NSUInteger)movedBytes];
     free(bufferPtr);
-    NSLog(@"%@",[[[myData description] formatData] decryptWithDES]);
+    //NSLog(@"%@",[[[myData description] formatData] decryptWithDES]);
     return [[myData description] formatData];
 }
 
