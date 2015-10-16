@@ -10,6 +10,7 @@
 
 @interface MapManager()
 @property (nonatomic ,strong) MAMapView *mapView;
+@property (nonatomic, strong) AMapSearchAPI *search;
 @end
 
 @implementation MapManager
@@ -23,6 +24,8 @@
         _sharedInstance.mapView.showsScale = NO;
         _sharedInstance.mapView.showsCompass = NO;
         _sharedInstance.mapView.showsUserLocation = NO;
+        
+        _sharedInstance.search = [[AMapSearchAPI alloc] init];
     });
     return _sharedInstance;
 }
@@ -32,6 +35,10 @@
     return [MapManager sharedManager].mapView;
 }
 
++(AMapSearchAPI *)MapSearch{
+    return [MapManager sharedManager].search;
+}
+
 +(void)MapViewDelegate:(id<MAMapViewDelegate>)delegate reset:(BOOL)reset
 {
     [MapManager sharedManager].mapView.delegate = delegate;
@@ -39,5 +46,9 @@
         [[MapManager sharedManager].mapView removeAnnotations:[MapManager sharedManager].mapView.annotations];
         [[MapManager sharedManager].mapView removeOverlays:[MapManager sharedManager].mapView.overlays];
     }
+}
+
++(void)MapSearchDelegate:(id<AMapSearchDelegate>)delegate reset:(BOOL)reset{
+    [MapManager sharedManager].search.delegate = delegate;
 }
 @end

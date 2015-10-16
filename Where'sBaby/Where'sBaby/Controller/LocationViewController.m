@@ -45,8 +45,8 @@
     [self.mapBackView addSubview:self.mapView];
     [self.mapBackView sendSubviewToBack:self.mapBackView];
     [MapManager MapViewDelegate:self reset:YES];
-    _search = [[AMapSearchAPI alloc] init];
-    _search.delegate = self;
+    [MapManager MapSearchDelegate:self reset:YES];
+    _search = [MapManager MapSearch];
     
     self.holdView = [[UIView alloc]init];
     self.holdView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
