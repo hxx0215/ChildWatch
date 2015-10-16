@@ -154,6 +154,8 @@
 		D36ECB2C1BD09F3200C79794 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB2B1BD09F3200C79794 /* SearchTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		D36ECB2E1BD0A18200C79794 /* SafeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB2D1BD0A18200C79794 /* SafeListTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D36ECB311BD0C59000C79794 /* SafeAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB301BD0C59000C79794 /* SafeAreaViewController.m */; settings = {ASSET_TAGS = (); }; };
+		D36ECB331BD13BD300C79794 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB321BD13BD300C79794 /* ContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D36ECB371BD13FAF00C79794 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB361BD13FAF00C79794 /* ContactsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */; settings = {ASSET_TAGS = (); }; };
 		D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE461BA6A9900078A0C2 /* Security.framework */; };
 		D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */; };
@@ -509,6 +511,8 @@
 		D36ECB2D1BD0A18200C79794 /* SafeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeListTableViewCell.swift; sourceTree = "<group>"; };
 		D36ECB2F1BD0C59000C79794 /* SafeAreaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeAreaViewController.h; sourceTree = "<group>"; };
 		D36ECB301BD0C59000C79794 /* SafeAreaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeAreaViewController.m; sourceTree = "<group>"; };
+		D36ECB321BD13BD300C79794 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		D36ECB361BD13FAF00C79794 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		D374C2861BA851750028456C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -840,6 +844,7 @@
 				D3DF41A01BCFDAF600A3A9D7 /* BabyPhoneViewController.swift */,
 				D3DF41A21BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift */,
 				D3DF41A41BCFEA8D00A3A9D7 /* SafeListTableViewController.swift */,
+				D36ECB321BD13BD300C79794 /* ContactsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1134,6 +1139,7 @@
 				D36ECB2A1BD09F3200C79794 /* SearchTableViewCell.h */,
 				D36ECB2B1BD09F3200C79794 /* SearchTableViewCell.m */,
 				D36ECB2D1BD0A18200C79794 /* SafeListTableViewCell.swift */,
+				D36ECB361BD13FAF00C79794 /* ContactsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1703,6 +1709,7 @@
 			files = (
 				D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */,
 				D36ECB2E1BD0A18200C79794 /* SafeListTableViewCell.swift in Sources */,
+				D36ECB371BD13FAF00C79794 /* ContactsTableViewCell.swift in Sources */,
 				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
 				D3DF41A51BCFEA8D00A3A9D7 /* SafeListTableViewController.swift in Sources */,
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
@@ -1727,6 +1734,7 @@
 				D3DF419D1BCFD05500A3A9D7 /* BabyNickNameViewController.swift in Sources */,
 				B95307901BB41896002B2162 /* UIButton+Log.m in Sources */,
 				D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */,
+				D36ECB331BD13BD300C79794 /* ContactsTableViewController.swift in Sources */,
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,
 				D3DF40C91BCD333A00A3A9D7 /* ChildDeviceManager.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
