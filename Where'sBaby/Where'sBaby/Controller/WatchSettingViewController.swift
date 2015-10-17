@@ -10,6 +10,17 @@ import UIKit
 
 class WatchSettingViewController: UITableViewController {
 
+    @IBOutlet weak var poweroff: UILabel!
+    @IBOutlet weak var allSwitch: UIButton!
+    @IBOutlet weak var friendSwitch: UIButton!
+    @IBOutlet weak var strangeSwitch: UIButton!
+    @IBOutlet weak var watchVersion: UILabel!
+    @IBOutlet weak var watchModel: UILabel!
+    @IBOutlet weak var calloff: UILabel!
+    @IBOutlet weak var alarm: UILabel!
+    @IBOutlet weak var ring: UILabel!
+    @IBOutlet weak var volume: UILabel!
+    @IBOutlet weak var bindID: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
