@@ -157,6 +157,7 @@
 		D36ECB331BD13BD300C79794 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB321BD13BD300C79794 /* ContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D36ECB371BD13FAF00C79794 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB361BD13FAF00C79794 /* ContactsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D36ECB391BD1719900C79794 /* RelationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB381BD1719900C79794 /* RelationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D36ECB3B1BD280C100C79794 /* ContactDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB3A1BD280C100C79794 /* ContactDetailsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */; settings = {ASSET_TAGS = (); }; };
 		D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE461BA6A9900078A0C2 /* Security.framework */; };
 		D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */; };
@@ -515,6 +516,7 @@
 		D36ECB321BD13BD300C79794 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		D36ECB361BD13FAF00C79794 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		D36ECB381BD1719900C79794 /* RelationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationViewController.swift; sourceTree = "<group>"; };
+		D36ECB3A1BD280C100C79794 /* ContactDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsTableViewController.swift; sourceTree = "<group>"; };
 		D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		D374C2861BA851750028456C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -848,6 +850,7 @@
 				D3DF41A41BCFEA8D00A3A9D7 /* SafeListTableViewController.swift */,
 				D36ECB321BD13BD300C79794 /* ContactsTableViewController.swift */,
 				D36ECB381BD1719900C79794 /* RelationViewController.swift */,
+				D36ECB3A1BD280C100C79794 /* ContactDetailsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1718,6 +1721,7 @@
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
 				D36ECB2C1BD09F3200C79794 /* SearchTableViewCell.m in Sources */,
 				D33B2FFF1BC9606B0072FAF6 /* LocationViewController.m in Sources */,
+				D36ECB3B1BD280C100C79794 /* ContactDetailsTableViewController.swift in Sources */,
 				D3DF418C1BCEB85700A3A9D7 /* BabyWeightViewController.swift in Sources */,
 				D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */,
 				D36ECB311BD0C59000C79794 /* SafeAreaViewController.m in Sources */,

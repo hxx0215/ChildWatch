@@ -156,6 +156,16 @@ class ContactsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var dic:NSDictionary;
+        if(indexPath.section == 0)
+        {
+            dic = tableViewFamilyArray[indexPath.row] as! NSDictionary
+        }
+        else
+        {
+            dic = tableViewFrinedArray[indexPath.row] as! NSDictionary
+        }
+        self.performSegueWithIdentifier("ContactDetailsIdentifier", sender: dic)
     }
 
     /*
@@ -193,14 +203,19 @@ class ContactsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ContactDetailsIdentifier"{
+            let vc:ContactDetailsTableViewController = segue.destinationViewController as! ContactDetailsTableViewController
+            let dic:NSDictionary = sender as! NSDictionary
+            vc.currentDic = NSMutableDictionary.init(dictionary: dic)
+        }
     }
-    */
+
 
 }
