@@ -35,7 +35,6 @@ class WatchSettingViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    var data:AnyObject?
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -43,7 +42,9 @@ class WatchSettingViewController: UITableViewController {
         let parameter = ["deviceno":deviceNo]
         DeviceRequest.GetDeviceConfigInfoWithParameters(parameter, success: { (response) -> Void in
             print(response)
-            self.data = response
+            let data = response["data"] as! [AnyObject]
+            let first = data.first as! NSDictionary
+            self.watchModel.text = first["model"]! as? String
             }) { (error) -> Void in
                 print(error)
         }
