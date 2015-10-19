@@ -45,6 +45,8 @@ class WatchSettingViewController: UITableViewController {
             let data = response["data"] as! [AnyObject]
             let first = data.first as! NSDictionary
             self.watchModel.text = first["model"]! as? String
+            self.watchVersion.text = first["version"] as? String
+            self.poweroff.text = first["poweroff"] as? String
             }) { (error) -> Void in
                 print(error)
         }
