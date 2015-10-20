@@ -47,6 +47,14 @@ class WatchSettingViewController: UITableViewController {
             self.watchModel.text = first["model"]! as? String
             self.watchVersion.text = first["version"] as? String
             self.poweroff.text = first["poweroff"] as? String
+            self.alarm.text = first["alarm"] as? String
+            self.allSwitch.selected = ((first["allcalloff"] as? String) == "1")
+            self.bindID.text = first["deviceno"] as? String
+            self.friendSwitch.selected = ((first["friendoff"] as? String) == "1")
+            self.ring.text = first["ring"] as? String
+            self.poweroff.text = first["poweroff"] as? String
+            self.volume.text = first["volume"] as? String
+            self.strangeSwitch.selected = ((first["strangeoff"] as? String) == "1")
             }) { (error) -> Void in
                 print(error)
         }
