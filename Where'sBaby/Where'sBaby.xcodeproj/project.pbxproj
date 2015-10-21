@@ -42,6 +42,7 @@
 		B96BDBAC1BCD516E00BE7FE3 /* 打开@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAA1BCD516E00BE7FE3 /* 打开@3x.png */; settings = {ASSET_TAGS = (); }; };
 		B96BDBAF1BCD51A500BE7FE3 /* 关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */; settings = {ASSET_TAGS = (); }; };
 		B96BDBB01BCD51A500BE7FE3 /* 关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */; settings = {ASSET_TAGS = (); }; };
+		B97281701BD7CB7300418688 /* PowerSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */; settings = {ASSET_TAGS = (); }; };
 		B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -393,6 +394,7 @@
 		B96BDBAA1BCD516E00BE7FE3 /* 打开@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "打开@3x.png"; sourceTree = "<group>"; };
 		B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@2x.png"; sourceTree = "<group>"; };
 		B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@3x.png"; sourceTree = "<group>"; };
+		B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerSettingTableViewController.swift; sourceTree = "<group>"; };
 		B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindWatchViewController.swift; sourceTree = "<group>"; };
 		B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ChangeFont.h"; sourceTree = "<group>"; };
 		B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ChangeFont.m"; sourceTree = "<group>"; };
@@ -833,6 +835,7 @@
 				D33B2FED1BC92C580072FAF6 /* MessageViewController.swift */,
 				D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */,
 				B96BDBA61BCD393A00BE7FE3 /* WatchSettingViewController.swift */,
+				B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */,
 				D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */,
 				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
 				D33B2FF71BC952F60072FAF6 /* AboutUSViewController.swift */,
@@ -1747,6 +1750,7 @@
 				D3DF40C91BCD333A00A3A9D7 /* ChildDeviceManager.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
 				D33B2FEE1BC92C580072FAF6 /* MessageViewController.swift in Sources */,
+				B97281701BD7CB7300418688 /* PowerSettingTableViewController.swift in Sources */,
 				D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */,
 				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
 				D3DF41951BCF4EFE00A3A9D7 /* ZHRulerView.m in Sources */,

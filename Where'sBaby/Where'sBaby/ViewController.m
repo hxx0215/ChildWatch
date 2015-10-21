@@ -15,7 +15,7 @@
 #import "filerequest.h"
 #import <MBProgressHUD.h>
 //#import "CustomAnnotationView.h"
-IB_DESIGNABLE
+//IB_DESIGNABLE
 
 @interface MapBackView : UIView
 @property (nonatomic,strong) MAMapView *mapView;

@@ -1,28 +1,15 @@
 //
-//  WatchSettingViewController.swift
+//  PowerSettingTableViewController.swift
 //  Where'sBaby
 //
-//  Created by shadowPriest on 15/10/13.
+//  Created by shadowPriest on 15/10/21.
 //  Copyright © 2015年 coolLH. All rights reserved.
 //
 
 import UIKit
 
-class WatchSettingViewController: UITableViewController {
+class PowerSettingTableViewController: UITableViewController {
 
-    @IBOutlet weak var mode: UILabel!
-    @IBOutlet weak var findWatch: UILabel!
-    @IBOutlet weak var poweroff: UILabel!
-    @IBOutlet weak var allSwitch: UIButton!
-    @IBOutlet weak var friendSwitch: UIButton!
-    @IBOutlet weak var strangeSwitch: UIButton!
-    @IBOutlet weak var watchVersion: UILabel!
-    @IBOutlet weak var watchModel: UILabel!
-    @IBOutlet weak var calloff: UILabel!
-    @IBOutlet weak var alarm: UILabel!
-    @IBOutlet weak var ring: UILabel!
-    @IBOutlet weak var volume: UILabel!
-    @IBOutlet weak var bindID: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,43 +24,9 @@ class WatchSettingViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        let deviceNo = ChildDeviceManager.sharedManager().currentDeviceNo
-        let parameter = ["deviceno":deviceNo]
-        DeviceRequest.GetDeviceConfigInfoWithParameters(parameter, success: { (response) -> Void in
-            print(response)
-            let data = response["data"] as! [AnyObject]
-            let first = data.first as! NSDictionary
-            self.watchModel.text = first["model"]! as? String
-            self.watchVersion.text = first["version"] as? String
-            self.poweroff.text = first["poweroff"] as? String
-            self.alarm.text = first["alarm"] as? String
-            self.allSwitch.selected = ((first["allcalloff"] as? String) == "1")
-            self.bindID.text = first["deviceno"] as? String
-            self.friendSwitch.selected = ((first["friendoff"] as? String) == "1")
-            self.ring.text = first["ring"] as? String
-            self.poweroff.text = first["poweroff"] as? String
-            self.volume.text = first["volume"] as? String
-            self.strangeSwitch.selected = ((first["strangeoff"] as? String) == "1")
-            self.calloff.text = first["calloff"] as? String
-            self.mode.text = first["mode"] as? String
-            }) { (error) -> Void in
-                print(error)
-        }
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
 
-    @IBAction func backClicked(sender: UIBarButtonItem) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    func refreshUI(){
-        
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSLog("%@", indexPath)
     }
     // MARK: - Table view data source
 
@@ -81,7 +34,7 @@ class WatchSettingViewController: UITableViewController {
 //        // #warning Incomplete implementation, return the number of sections
 //        return 0
 //    }
-
+//
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
 //        return 0
