@@ -8,8 +8,11 @@
 
 import UIKit
 
-class PowerSettingTableViewController: UITableViewController {
+class PowerSettingTableViewController: UITableViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var powerOffTime: UITextField!
+    @IBOutlet weak var powerOnTime: UITextField!
+    @IBOutlet var selectedButton: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +27,17 @@ class PowerSettingTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        self.performSegueWithIdentifier("SettingPowerTimeIdentifier", sender: textField)
+        return false
+    }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSLog("%@", indexPath)
+        selectedButton.forEach { (button) -> () in
+            if button.tag == 100 + indexPath.row{
+                button.selected = !button.selected
+            }
+        }
     }
     // MARK: - Table view data source
 
@@ -85,14 +96,19 @@ class PowerSettingTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destinationViewController as! TimeSettingViewController
+        vc.textField = (sender as! UITextField)
+        if powerOnTime == (sender as! UITextField){
+            vc.titleText = "开机时间"
+        }else{
+            vc.titleText = "关机时间"
+        }
     }
-    */
 
 }
