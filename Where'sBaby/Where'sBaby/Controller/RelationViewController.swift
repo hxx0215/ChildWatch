@@ -15,7 +15,7 @@ class RelationViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var mobel_SortField : UITextField!
     @IBOutlet weak var backView : UIView!
     @IBOutlet weak var imageView : UIImageView!
-    let array : Array = ["爸爸","妈妈","爷爷","奶奶","姑姑","叔叔"]
+    let array : [String] = ["爸爸","妈妈","爷爷","奶奶","姑姑","叔叔"]
     override func viewDidLoad() {
         super.viewDidLoad()
 

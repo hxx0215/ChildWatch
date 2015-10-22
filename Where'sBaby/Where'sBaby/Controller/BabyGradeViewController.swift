@@ -13,7 +13,7 @@ class BabyGradeViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    var pickArray : Array! = ["未上学","幼儿园小班","幼儿园中班","幼儿园大班","学前班","一年级","二年级","三年级","四年级","五年级","六年级","其它"]
+    var pickArray : [String] = ["未上学","幼儿园小班","幼儿园中班","幼儿园大班","学前班","一年级","二年级","三年级","四年级","五年级","六年级","其它"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
