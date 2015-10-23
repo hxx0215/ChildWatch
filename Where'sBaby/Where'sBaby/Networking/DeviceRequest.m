@@ -15,6 +15,7 @@
 #define kMethodGetDeviceInfo @"/device/getDeviceInfo"
 #define kMethodUpdateDeviceInfo @"/device/updateDeviceInfo"
 #define kMethodGetDeviceConfigInfo @"/device/getDeviceConfigInfo"
+#define kMethodUpdateDeviceConfigInfo @"/device/updateDeviceConfig"
 
 #define kMethodGetSafeAreaList @"/safeArea/getSafeAreaList"
 #define kMethodInsertSafeArea @"/safeArea/insertSafeArea"
@@ -54,6 +55,10 @@
 
 + (void)GetDeviceConfigInfoWithParameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure{
     [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodGetDeviceConfigInfo WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)UpdateDeviceConfigInfoWithParameters:(id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodUpdateDeviceConfigInfo WithParameters:parameters post:YES success:success failure:failure];
 }
 
 //安全区域

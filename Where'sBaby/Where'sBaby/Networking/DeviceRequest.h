@@ -21,6 +21,8 @@
 
 + (void)GetDeviceConfigInfoWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
++ (void)UpdateDeviceConfigInfoWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 //安全区域
 //查询安全区域列表/safeArea/getSafeAreaList
 + (void)GetSafeAreaListWithParameters: (id)parameters success:(void (^)(id))success failure:(void (^)(NSError *))failure;
