@@ -17,6 +17,8 @@
 		B9045C221BA0535100090A86 /* Where_sBabyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9045C211BA0535100090A86 /* Where_sBabyTests.m */; };
 		B9045C2D1BA0535100090A86 /* Where_sBabyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9045C2C1BA0535100090A86 /* Where_sBabyUITests.m */; };
 		B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9052B671BA506C5001AA85C /* LoginViewController.swift */; };
+		B910ADCF1BDBB70900B079F8 /* WatchSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADCE1BDBB70900B079F8 /* WatchSettingTableViewController.swift */; };
+		B910ADD11BDBBB7900B079F8 /* WatchSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADD01BDBBB7900B079F8 /* WatchSettingTableViewCell.swift */; };
 		B92408E31BC6A54E0033C73C /* zhuce1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E11BC6A54E0033C73C /* zhuce1@2x.png */; };
 		B92408E41BC6A54F0033C73C /* zhuce1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E21BC6A54E0033C73C /* zhuce1@3x.png */; };
 		B95307901BB41896002B2162 /* UIButton+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B953078F1BB41896002B2162 /* UIButton+Log.m */; };
@@ -368,6 +370,8 @@
 		B9045C2C1BA0535100090A86 /* Where_sBabyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Where_sBabyUITests.m; sourceTree = "<group>"; };
 		B9045C2E1BA0535100090A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9052B671BA506C5001AA85C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B910ADCE1BDBB70900B079F8 /* WatchSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingTableViewController.swift; sourceTree = "<group>"; };
+		B910ADD01BDBBB7900B079F8 /* WatchSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingTableViewCell.swift; sourceTree = "<group>"; };
 		B92408E11BC6A54E0033C73C /* zhuce1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@2x.png"; sourceTree = "<group>"; };
 		B92408E21BC6A54E0033C73C /* zhuce1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@3x.png"; sourceTree = "<group>"; };
 		B953078E1BB41896002B2162 /* UIButton+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Log.h"; sourceTree = "<group>"; };
@@ -838,6 +842,7 @@
 				D33B2FEF1BC92C8E0072FAF6 /* ContactsViewController.swift */,
 				B96BDBA61BCD393A00BE7FE3 /* WatchSettingViewController.swift */,
 				B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */,
+				B910ADCE1BDBB70900B079F8 /* WatchSettingTableViewController.swift */,
 				B9545C1A1BD913BA00C945FC /* TimeSettingViewController.swift */,
 				D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */,
 				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
@@ -1152,6 +1157,7 @@
 				D36ECB2B1BD09F3200C79794 /* SearchTableViewCell.m */,
 				D36ECB2D1BD0A18200C79794 /* SafeListTableViewCell.swift */,
 				D36ECB361BD13FAF00C79794 /* ContactsTableViewCell.swift */,
+				B910ADD01BDBBB7900B079F8 /* WatchSettingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1727,6 +1733,7 @@
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
 				D36ECB2C1BD09F3200C79794 /* SearchTableViewCell.m in Sources */,
 				D33B2FFF1BC9606B0072FAF6 /* LocationViewController.m in Sources */,
+				B910ADCF1BDBB70900B079F8 /* WatchSettingTableViewController.swift in Sources */,
 				D36ECB3B1BD280C100C79794 /* ContactDetailsTableViewController.swift in Sources */,
 				D3DF418C1BCEB85700A3A9D7 /* BabyWeightViewController.swift in Sources */,
 				D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */,
@@ -1765,6 +1772,7 @@
 				D3DF40CB1BCD646F00A3A9D7 /* BabyDataTableViewController.swift in Sources */,
 				D3DF41941BCF4EFE00A3A9D7 /* ZHRulerScrollView.m in Sources */,
 				B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */,
+				B910ADD11BDBBB7900B079F8 /* WatchSettingTableViewCell.swift in Sources */,
 				B9045C091BA0535100090A86 /* main.m in Sources */,
 				D3DF416B1BCE5C5200A3A9D7 /* BabyGradeViewController.swift in Sources */,
 				D3DF41671BCE3E9700A3A9D7 /* BabySexSetViewController.swift in Sources */,

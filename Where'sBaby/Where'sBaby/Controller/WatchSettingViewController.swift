@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct WatchSettingConstant{
+    static let workModeSegueIdentifier = "WorkModeSettingSegueIndentifier"
+    static let ringSegueIdentifier = "RingSegueIdentifier"
+}
+
 class WatchSettingViewController: UITableViewController {
 
     @IBOutlet weak var mode: UILabel!
@@ -132,14 +137,19 @@ class WatchSettingViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destinationViewController as! WatchSettingTableViewController
+        if segue.identifier == WatchSettingConstant.workModeSegueIdentifier{
+            vc.type = .Mode
+        }
+        if segue.identifier == WatchSettingConstant.ringSegueIdentifier{
+            vc.type = .Ring
+        }
     }
-    */
 
 }
