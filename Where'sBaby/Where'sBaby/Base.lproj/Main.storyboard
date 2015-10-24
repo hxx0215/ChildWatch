@@ -49,9 +49,9 @@
                         <segue destination="iib-cB-Aq7" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegueSetController" id="Vgp-U7-T3c"/>
                         <segue destination="QT3-lf-ISb" kind="show" identifier="message" id="gfo-SD-POr"/>
                         <segue destination="l8N-65-RgJ" kind="show" identifier="appSetting" id="lij-nW-FoI"/>
-                        <segue destination="n93-hA-u7X" kind="show" identifier="watchSetting" id="93p-zC-azE"/>
                         <segue destination="ujg-Q4-ckA" kind="show" identifier="baby" id="NpL-8J-1n8"/>
                         <segue destination="hxv-Pv-OEE" kind="show" identifier="Contacts" id="SSx-xk-fqE"/>
+                        <segue destination="ItW-SU-rkI" kind="show" identifier="watchSetting" id="usW-AO-9yO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHo-AS-zQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3023,12 +3023,13 @@
                                 <state key="normal" title="返回" image="返回.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backClicked:" destination="ItW-SU-rkI" eventType="touchUpInside" id="uxI-MQ-eL0"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="backClicked:" destination="ItW-SU-rkI" id="OC8-Bw-JpY"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="alarm" destination="l9p-WF-hOf" id="TYm-c3-ue0"/>
                         <outlet property="allSwitch" destination="Gli-yc-b8V" id="a1e-Pl-yap"/>
@@ -3604,6 +3605,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vdl-XW-28t"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KkC-4y-lHh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="设置体重底框.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fqp-L8-0Cg">
@@ -3629,6 +3631,7 @@
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WatchSettingTableViewCellIdentifier" id="4yj-MU-ycI" customClass="WatchSettingTableViewCell" customModule="Where_sBaby" customModuleProvider="target">
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4yj-MU-ycI" id="NiM-GB-uAs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-7A-DcX">
@@ -3655,10 +3658,10 @@
                                                             <exclude reference="3Vc-ZS-5lN"/>
                                                         </mask>
                                                         <mask key="constraints">
-                                                            <exclude reference="UVX-yE-HJK"/>
-                                                            <exclude reference="yyh-r7-jdY"/>
                                                             <exclude reference="2Tz-S5-Qpb"/>
                                                             <exclude reference="85c-ux-bVq"/>
+                                                            <exclude reference="UVX-yE-HJK"/>
+                                                            <exclude reference="yyh-r7-jdY"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
@@ -3667,10 +3670,10 @@
                                                             <include reference="3Vc-ZS-5lN"/>
                                                         </mask>
                                                         <mask key="constraints">
-                                                            <include reference="UVX-yE-HJK"/>
-                                                            <include reference="yyh-r7-jdY"/>
                                                             <include reference="2Tz-S5-Qpb"/>
                                                             <include reference="85c-ux-bVq"/>
+                                                            <include reference="UVX-yE-HJK"/>
+                                                            <include reference="yyh-r7-jdY"/>
                                                         </mask>
                                                     </variation>
                                                 </tableViewCellContentView>
@@ -3740,17 +3743,17 @@
                                         <exclude reference="oWd-LX-zMJ"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="DWA-rk-DZh"/>
-                                        <exclude reference="Hz7-tc-LXF"/>
-                                        <exclude reference="j9B-Xb-hab"/>
-                                        <exclude reference="tiq-eo-JNh"/>
-                                        <exclude reference="Tm6-3o-4Q3"/>
-                                        <exclude reference="mFY-3A-UOW"/>
                                         <exclude reference="UyL-fs-OdS"/>
                                         <exclude reference="hLi-rx-HzN"/>
                                         <exclude reference="xrd-kV-8hu"/>
                                         <exclude reference="0OP-V9-ajG"/>
                                         <exclude reference="p4W-OH-pje"/>
+                                        <exclude reference="Tm6-3o-4Q3"/>
+                                        <exclude reference="mFY-3A-UOW"/>
+                                        <exclude reference="DWA-rk-DZh"/>
+                                        <exclude reference="Hz7-tc-LXF"/>
+                                        <exclude reference="j9B-Xb-hab"/>
+                                        <exclude reference="tiq-eo-JNh"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -3761,17 +3764,17 @@
                                         <include reference="oWd-LX-zMJ"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="DWA-rk-DZh"/>
-                                        <include reference="Hz7-tc-LXF"/>
-                                        <include reference="j9B-Xb-hab"/>
-                                        <include reference="tiq-eo-JNh"/>
-                                        <include reference="Tm6-3o-4Q3"/>
-                                        <include reference="mFY-3A-UOW"/>
                                         <include reference="UyL-fs-OdS"/>
                                         <include reference="hLi-rx-HzN"/>
                                         <include reference="xrd-kV-8hu"/>
                                         <include reference="0OP-V9-ajG"/>
                                         <include reference="p4W-OH-pje"/>
+                                        <include reference="Tm6-3o-4Q3"/>
+                                        <include reference="mFY-3A-UOW"/>
+                                        <include reference="DWA-rk-DZh"/>
+                                        <include reference="Hz7-tc-LXF"/>
+                                        <include reference="j9B-Xb-hab"/>
+                                        <include reference="tiq-eo-JNh"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -7295,9 +7298,6 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="减少.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="57" y="101" width="27" height="27"/>
-                                        </variation>
                                         <connections>
                                             <action selector="lowerButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="QnU-mU-Ts7"/>
                                             <action selector="lowerButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="sOV-qs-QPb"/>
@@ -7307,9 +7307,6 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="增加_.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="177" y="101" width="27" height="27"/>
-                                        </variation>
                                         <connections>
                                             <action selector="addButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="CDQ-JL-QTl"/>
                                             <action selector="addButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="co6-0G-2hz"/>
@@ -7362,8 +7359,7 @@
                                                         <exclude reference="wXc-FG-FsE"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="8" y="21" width="228" height="35"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="wXc-FG-FsE"/>
                                                     </mask>
@@ -7404,9 +7400,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="114" y="106" width="33" height="17"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -10067,6 +10060,7 @@
         <image name="默认头像2.png" width="81" height="81"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="usW-AO-9yO"/>
         <segue reference="EaM-HS-Fyw"/>
     </inferredMetricsTieBreakers>
 </document>

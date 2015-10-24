@@ -19,6 +19,7 @@
 		B9052B681BA506C5001AA85C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9052B671BA506C5001AA85C /* LoginViewController.swift */; };
 		B910ADCF1BDBB70900B079F8 /* WatchSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADCE1BDBB70900B079F8 /* WatchSettingTableViewController.swift */; };
 		B910ADD11BDBBB7900B079F8 /* WatchSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADD01BDBBB7900B079F8 /* WatchSettingTableViewCell.swift */; };
+		B910ADD31BDBCCDC00B079F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADD21BDBCCDC00B079F8 /* SwiftyJSON.swift */; };
 		B92408E31BC6A54E0033C73C /* zhuce1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E11BC6A54E0033C73C /* zhuce1@2x.png */; };
 		B92408E41BC6A54F0033C73C /* zhuce1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E21BC6A54E0033C73C /* zhuce1@3x.png */; };
 		B95307901BB41896002B2162 /* UIButton+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B953078F1BB41896002B2162 /* UIButton+Log.m */; };
@@ -372,6 +373,7 @@
 		B9052B671BA506C5001AA85C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B910ADCE1BDBB70900B079F8 /* WatchSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingTableViewController.swift; sourceTree = "<group>"; };
 		B910ADD01BDBBB7900B079F8 /* WatchSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSettingTableViewCell.swift; sourceTree = "<group>"; };
+		B910ADD21BDBCCDC00B079F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B92408E11BC6A54E0033C73C /* zhuce1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@2x.png"; sourceTree = "<group>"; };
 		B92408E21BC6A54E0033C73C /* zhuce1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@3x.png"; sourceTree = "<group>"; };
 		B953078E1BB41896002B2162 /* UIButton+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Log.h"; sourceTree = "<group>"; };
@@ -904,6 +906,7 @@
 		B958902D1BA4385300A2C03E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B910ADD21BDBCCDC00B079F8 /* SwiftyJSON.swift */,
 				B953078E1BB41896002B2162 /* UIButton+Log.h */,
 				B953078F1BB41896002B2162 /* UIButton+Log.m */,
 				B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */,
@@ -1736,6 +1739,7 @@
 				B910ADCF1BDBB70900B079F8 /* WatchSettingTableViewController.swift in Sources */,
 				D36ECB3B1BD280C100C79794 /* ContactDetailsTableViewController.swift in Sources */,
 				D3DF418C1BCEB85700A3A9D7 /* BabyWeightViewController.swift in Sources */,
+				B910ADD31BDBCCDC00B079F8 /* SwiftyJSON.swift in Sources */,
 				D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */,
 				D36ECB311BD0C59000C79794 /* SafeAreaViewController.m in Sources */,
 				D3DF418E1BCEBD7300A3A9D7 /* BabyImageUpdataViewController.swift in Sources */,

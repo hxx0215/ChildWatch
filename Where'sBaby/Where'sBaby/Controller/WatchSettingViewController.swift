@@ -13,6 +13,18 @@ struct WatchSettingConstant{
     static let ringSegueIdentifier = "RingSegueIdentifier"
 }
 
+class WatchSettingViewModel: NSObject{
+    var json:JSON
+    var data:JSON?
+    init(json:JSON){
+        self.json = json
+        if let data = json["data"].array,
+            let arr = data.first {
+                self.data = arr
+        }
+    }
+}
+
 class WatchSettingViewController: UITableViewController {
 
     @IBOutlet weak var mode: UILabel!
@@ -28,6 +40,7 @@ class WatchSettingViewController: UITableViewController {
     @IBOutlet weak var ring: UILabel!
     @IBOutlet weak var volume: UILabel!
     @IBOutlet weak var bindID: UILabel!
+    var viewModel: WatchSettingViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,22 +61,29 @@ class WatchSettingViewController: UITableViewController {
         let deviceNo = ChildDeviceManager.sharedManager().currentDeviceNo
         let parameter = ["deviceno":deviceNo]
         DeviceRequest.GetDeviceConfigInfoWithParameters(parameter, success: { (response) -> Void in
-            print(response)
-            let data = response["data"] as! [AnyObject]
-            let first = data.first as! NSDictionary
-            self.watchModel.text = first["model"]! as? String
-            self.watchVersion.text = first["version"] as? String
-            self.poweroff.text = first["poweroff"] as? String
-            self.alarm.text = first["alarm"] as? String
-            self.allSwitch.selected = ((first["allcalloff"] as? String) == "1")
-            self.bindID.text = first["deviceno"] as? String
-            self.friendSwitch.selected = ((first["friendoff"] as? String) == "1")
-            self.ring.text = first["ring"] as? String
-            self.poweroff.text = first["poweroff"] as? String
-            self.volume.text = first["volume"] as? String
-            self.strangeSwitch.selected = ((first["strangeoff"] as? String) == "1")
-            self.calloff.text = first["calloff"] as? String
-            self.mode.text = first["mode"] as? String
+            let json = JSON(response)
+            self.viewModel = WatchSettingViewModel(json: json)
+            guard let vm = self.viewModel else{
+                self.backClicked(UIButton())
+                return
+            }
+            guard let data = vm.data else{
+                self.backClicked(UIButton())
+                return
+            }
+            self.watchModel.text = data["model"].stringValue
+            self.watchVersion.text = data["version"].stringValue
+            self.poweroff.text = data["poweroff"].stringValue
+            self.alarm.text = data["alarm"].stringValue
+            self.allSwitch.selected = (data["allcalloff"].stringValue == "1")
+            self.bindID.text = data["deviceno"].stringValue
+            self.friendSwitch.selected = ((data["friendoff"].stringValue) == "1")
+            self.ring.text = data["ring"].stringValue
+            self.poweroff.text = data["poweroff"].stringValue
+            self.volume.text = data["volume"].stringValue
+            self.strangeSwitch.selected = ((data["strangeoff"].stringValue) == "1")
+            self.calloff.text = data["calloff"].stringValue
+            self.mode.text = data["mode"].stringValue
             }) { (error) -> Void in
                 print(error)
         }
@@ -73,9 +93,9 @@ class WatchSettingViewController: UITableViewController {
         super.viewWillDisappear(animated)
     }
 
-    @IBAction func backClicked(sender: UIBarButtonItem) {
+    @IBAction func backClicked(sender: UIButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.popViewControllerAnimated(true)
     }
     func refreshUI(){
         
@@ -143,11 +163,12 @@ class WatchSettingViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let vc = segue.destinationViewController as! WatchSettingTableViewController
         if segue.identifier == WatchSettingConstant.workModeSegueIdentifier{
+            let vc = segue.destinationViewController as! WatchSettingTableViewController
             vc.type = .Mode
         }
         if segue.identifier == WatchSettingConstant.ringSegueIdentifier{
+            let vc = segue.destinationViewController as! WatchSettingTableViewController
             vc.type = .Ring
         }
     }
