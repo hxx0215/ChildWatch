@@ -2801,7 +2801,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="mup-GI-1pK" kind="show" id="1a4-Ds-VlV"/>
+                                            <segue destination="mup-GI-1pK" kind="show" identifier="PowerOffSegueIdentifier" id="1a4-Ds-VlV"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -3726,6 +3726,9 @@
                                 <state key="normal" title="取消" image="返回.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelClicked:" destination="mup-GI-1pK" eventType="touchUpInside" id="2IO-LM-dL5"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="v2V-m0-i4J">
@@ -3733,6 +3736,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="保存.png"/>
+                                <connections>
+                                    <action selector="saveClicked:" destination="mup-GI-1pK" eventType="touchUpInside" id="wPl-WU-gCt"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
