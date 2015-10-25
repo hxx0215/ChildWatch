@@ -12,6 +12,7 @@ struct WatchSettingConstant{
     static let workModeSegueIdentifier = "WorkModeSettingSegueIndentifier"
     static let ringSegueIdentifier = "RingSegueIdentifier"
     static let watchCallOffSegueIdentifier = "WatchCallOffSegueIdentifier"
+    static let volumeSettingSegueIdentifier = "VolumeSettingSegueIdentifier"
 }
 
 class WatchSettingViewModel: NSObject{
@@ -26,7 +27,7 @@ class WatchSettingViewModel: NSObject{
     }
 }
 
-class WatchSettingViewController: UITableViewController {
+class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate{
 
     @IBOutlet weak var mode: UILabel!
     @IBOutlet weak var findWatch: UILabel!
@@ -100,6 +101,11 @@ class WatchSettingViewController: UITableViewController {
     }
     func refreshUI(){
         
+    }
+    
+    func volumeChange(vc: VolumeSettingViewController, volume: Int) {
+        viewModel?.data!["volume"].string = "\(volume)"
+        self.volume.text = "\(volume)"
     }
     // MARK: - Table view data source
 
@@ -184,6 +190,13 @@ class WatchSettingViewController: UITableViewController {
             let vc = segue.destinationViewController as! WatchCallOffSettingViewController
 //            vc.calloffString = data["calloff"].stringValue
             vc.calloffString = "8:30-12:00,1-2-3-4-5|2:30-5:30,5-6"
+        }
+        if segue.identifier == WatchSettingConstant.volumeSettingSegueIdentifier{
+            let vc = segue.destinationViewController as! VolumeSettingViewController
+            if let volume = viewModel?.data!["volume"].stringValue{
+                vc.volume = Int(volume)
+                vc.delegate = self
+            }
         }
     }
 

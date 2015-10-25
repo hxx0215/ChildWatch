@@ -12,10 +12,30 @@ struct WatchCallOffItem{
     var beginTime: String
     var endTime: String
     var week: [Bool]
+    init(itemString: String){
+        beginTime = "06:00"
+        endTime = "18:00"
+        week = [false,false,false,false,false,false,false]
+        let arr = itemString.characters.split{ $0 == ","}.map(String.init)
+        if arr.count > 0{
+            let time = arr[0].characters.split{ $0 == "-"}.map(String.init)
+            beginTime = time[0]
+            endTime = time[1]
+            if arr.count > 1{
+                let weekday = arr[1].characters.split{ $0 == "-"}.map(String.init)
+                weekday.forEach({ (index) -> () in
+                    if let i = Int(index){
+                        week[i - 1] = true
+                    }
+                })
+            }
+        }
+    }
 }
 
 struct WatchCallOffConstant{
     static let cellIdentifier = "WatchCallOffIdentifier"
+    static let CallOffTimeSettingSegueIdentifier = "CallOffTimeSettingSegueIdentifier"
 }
 
 class WatchCallOffSettingViewModel: NSObject{
@@ -25,20 +45,7 @@ class WatchCallOffSettingViewModel: NSObject{
         dataSource = []
         let itemArr = calloff.characters.split{ $0 == "|"}.map(String.init)
         dataSource = itemArr.map { (itemString) -> WatchCallOffItem in
-            var item = WatchCallOffItem(beginTime: "",endTime: "",week: [false,false,false,false,false,false,false])
-            let arr = itemString.characters.split{ $0 == ","}.map(String.init)
-            let time = arr[0].characters.split{ $0 == "-"}.map(String.init)
-            item.beginTime = time[0]
-            item.endTime = time[1]
-            if arr.count > 1{
-                let weekday = arr[1].characters.split{ $0 == "-"}.map(String.init)
-                weekday.forEach({ (index) -> () in
-                    if let i = Int(index){
-                        item.week[i - 1] = true
-                    }
-                })
-            }
-            return item
+            return WatchCallOffItem(itemString: itemString)
         }
     }
     
@@ -103,14 +110,22 @@ class WatchCallOffSettingViewController: UIViewController,UITableViewDelegate,UI
         cell.weekLabel.text = viewModel?.weekLabel(indexPath.row)
         return cell
     }
-    /*
+    
+    
+    @IBAction func addCallOffTime(sender: UIButton) {
+        self.performSegueWithIdentifier(WatchCallOffConstant.CallOffTimeSettingSegueIdentifier, sender: nil)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == WatchCallOffConstant.CallOffTimeSettingSegueIdentifier{
+            let vc = segue.destinationViewController as! PowerSettingTableViewController
+            vc.type = .Calloff
+            vc.itemString = sender as? String
+        }
     }
-    */
 
 }

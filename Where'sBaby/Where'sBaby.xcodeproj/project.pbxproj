@@ -49,6 +49,18 @@
 		B96BDBAF1BCD51A500BE7FE3 /* 关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */; };
 		B96BDBB01BCD51A500BE7FE3 /* 关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */; };
 		B97281701BD7CB7300418688 /* PowerSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */; };
+		B9C73D3F1BDCEF7B000F0CA9 /* 手表音量0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D351BDCEF7B000F0CA9 /* 手表音量0@2x.png */; };
+		B9C73D401BDCEF7B000F0CA9 /* 手表音量1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D361BDCEF7B000F0CA9 /* 手表音量1@2x.png */; };
+		B9C73D411BDCEF7B000F0CA9 /* 手表音量2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D371BDCEF7B000F0CA9 /* 手表音量2@2x.png */; };
+		B9C73D421BDCEF7B000F0CA9 /* 手表音量3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D381BDCEF7B000F0CA9 /* 手表音量3@2x.png */; };
+		B9C73D431BDCEF7B000F0CA9 /* 手表音量4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D391BDCEF7B000F0CA9 /* 手表音量4@2x.png */; };
+		B9C73D441BDCEF7B000F0CA9 /* 手表音量5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D3A1BDCEF7B000F0CA9 /* 手表音量5@2x.png */; };
+		B9C73D451BDCEF7B000F0CA9 /* 手表音量6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D3B1BDCEF7B000F0CA9 /* 手表音量6@2x.png */; };
+		B9C73D461BDCEF7B000F0CA9 /* 手表音量7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D3C1BDCEF7B000F0CA9 /* 手表音量7@2x.png */; };
+		B9C73D471BDCEF7B000F0CA9 /* 手表音量8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D3D1BDCEF7B000F0CA9 /* 手表音量8@2x.png */; };
+		B9C73D481BDCEF7B000F0CA9 /* 手表音量9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D3E1BDCEF7B000F0CA9 /* 手表音量9@2x.png */; };
+		B9C73D4A1BDCF2CC000F0CA9 /* VolumeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C73D491BDCF2CC000F0CA9 /* VolumeSettingViewController.swift */; };
+		B9C73D4C1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C73D4B1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift */; };
 		B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */; };
 		B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */; };
 		B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */; };
@@ -407,6 +419,18 @@
 		B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@2x.png"; sourceTree = "<group>"; };
 		B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@3x.png"; sourceTree = "<group>"; };
 		B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerSettingTableViewController.swift; sourceTree = "<group>"; };
+		B9C73D351BDCEF7B000F0CA9 /* 手表音量0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量0@2x.png"; sourceTree = "<group>"; };
+		B9C73D361BDCEF7B000F0CA9 /* 手表音量1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量1@2x.png"; sourceTree = "<group>"; };
+		B9C73D371BDCEF7B000F0CA9 /* 手表音量2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量2@2x.png"; sourceTree = "<group>"; };
+		B9C73D381BDCEF7B000F0CA9 /* 手表音量3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量3@2x.png"; sourceTree = "<group>"; };
+		B9C73D391BDCEF7B000F0CA9 /* 手表音量4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量4@2x.png"; sourceTree = "<group>"; };
+		B9C73D3A1BDCEF7B000F0CA9 /* 手表音量5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量5@2x.png"; sourceTree = "<group>"; };
+		B9C73D3B1BDCEF7B000F0CA9 /* 手表音量6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量6@2x.png"; sourceTree = "<group>"; };
+		B9C73D3C1BDCEF7B000F0CA9 /* 手表音量7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量7@2x.png"; sourceTree = "<group>"; };
+		B9C73D3D1BDCEF7B000F0CA9 /* 手表音量8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量8@2x.png"; sourceTree = "<group>"; };
+		B9C73D3E1BDCEF7B000F0CA9 /* 手表音量9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量9@2x.png"; sourceTree = "<group>"; };
+		B9C73D491BDCF2CC000F0CA9 /* VolumeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSettingViewController.swift; sourceTree = "<group>"; };
+		B9C73D4B1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSettingSwipeView.swift; sourceTree = "<group>"; };
 		B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindWatchViewController.swift; sourceTree = "<group>"; };
 		B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ChangeFont.h"; sourceTree = "<group>"; };
 		B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ChangeFont.m"; sourceTree = "<group>"; };
@@ -850,6 +874,7 @@
 				B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */,
 				B910ADCE1BDBB70900B079F8 /* WatchSettingTableViewController.swift */,
 				B910ADD41BDC7C5E00B079F8 /* WatchCallOffSettingViewController.swift */,
+				B9C73D491BDCF2CC000F0CA9 /* VolumeSettingViewController.swift */,
 				B9545C1A1BD913BA00C945FC /* TimeSettingViewController.swift */,
 				D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */,
 				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
@@ -948,6 +973,16 @@
 		B96BDBA81BCD514D00BE7FE3 /* WatchSetting */ = {
 			isa = PBXGroup;
 			children = (
+				B9C73D351BDCEF7B000F0CA9 /* 手表音量0@2x.png */,
+				B9C73D361BDCEF7B000F0CA9 /* 手表音量1@2x.png */,
+				B9C73D371BDCEF7B000F0CA9 /* 手表音量2@2x.png */,
+				B9C73D381BDCEF7B000F0CA9 /* 手表音量3@2x.png */,
+				B9C73D391BDCEF7B000F0CA9 /* 手表音量4@2x.png */,
+				B9C73D3A1BDCEF7B000F0CA9 /* 手表音量5@2x.png */,
+				B9C73D3B1BDCEF7B000F0CA9 /* 手表音量6@2x.png */,
+				B9C73D3C1BDCEF7B000F0CA9 /* 手表音量7@2x.png */,
+				B9C73D3D1BDCEF7B000F0CA9 /* 手表音量8@2x.png */,
+				B9C73D3E1BDCEF7B000F0CA9 /* 手表音量9@2x.png */,
 				B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */,
 				B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */,
 				B96BDBA91BCD516E00BE7FE3 /* 打开@2x.png */,
@@ -1167,6 +1202,7 @@
 				D36ECB361BD13FAF00C79794 /* ContactsTableViewCell.swift */,
 				B910ADD01BDBBB7900B079F8 /* WatchSettingTableViewCell.swift */,
 				B910ADD61BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift */,
+				B9C73D4B1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1424,6 +1460,7 @@
 				D3DF40951BCBA7B200A3A9D7 /* 删除@2x.png in Resources */,
 				D3DF41561BCE3D1C00A3A9D7 /* 搜索@2x.png in Resources */,
 				D3DF40B51BCBA7B200A3A9D7 /* 展开_正常状态@2x.png in Resources */,
+				B9C73D3F1BDCEF7B000F0CA9 /* 手表音量0@2x.png in Resources */,
 				D3DF415D1BCE3D1C00A3A9D7 /* 显示距离框@3x.png in Resources */,
 				D3DF40AC1BCBA7B200A3A9D7 /* 语音框1@3x.png in Resources */,
 				D33B2FC81BC90AAC0072FAF6 /* 默认头像2@3x.png in Resources */,
@@ -1432,6 +1469,7 @@
 				D33B2FD01BC90AAC0072FAF6 /* 头像1@3x.png in Resources */,
 				D3DF415A1BCE3D1C00A3A9D7 /* 收起箭头@2x.png in Resources */,
 				D3DF41061BCE33A400A3A9D7 /* 身高设置底框@3x.png in Resources */,
+				B9C73D461BDCEF7B000F0CA9 /* 手表音量7@2x.png in Resources */,
 				D33B2F831BC90A650072FAF6 /* 宝贝小头像_空@2x.png in Resources */,
 				D362608C1BB4E7BE0063F833 /* 123.TTF in Resources */,
 				D3DF40871BCBA7B200A3A9D7 /* 地图上的提示框2@2x.png in Resources */,
@@ -1483,6 +1521,7 @@
 				D3DF41881BCEB7D300A3A9D7 /* 朋友圈@3x.png in Resources */,
 				B9DEF55B1BAEA87900D9BED7 /* 通讯录@2x.png in Resources */,
 				D3DF41531BCE3D1C00A3A9D7 /* 打开@3x.png in Resources */,
+				B9C73D421BDCEF7B000F0CA9 /* 手表音量3@2x.png in Resources */,
 				D3DF414D1BCE3D1C00A3A9D7 /* 当前时间选中条@3x.png in Resources */,
 				D33B2FC51BC90AAC0072FAF6 /* 默认头像1@2x.png in Resources */,
 				D3DF40A51BCBA7B200A3A9D7 /* 文字框2@2x.png in Resources */,
@@ -1521,6 +1560,7 @@
 				D3DF41521BCE3D1C00A3A9D7 /* 打开@2x.png in Resources */,
 				D33B2FD61BC90AAC0072FAF6 /* 头像4@3x.png in Resources */,
 				D33B2FCC1BC90AAC0072FAF6 /* 首页背景640X1136.png in Resources */,
+				B9C73D401BDCEF7B000F0CA9 /* 手表音量1@2x.png in Resources */,
 				D3DF40C41BCBC0DE00A3A9D7 /* 位置_空@3x.png in Resources */,
 				D3DF40BD1BCBA7B200A3A9D7 /* GPS定位@2x.png in Resources */,
 				D3DF40B31BCBA7B200A3A9D7 /* 展开_点击状态@2x.png in Resources */,
@@ -1558,6 +1598,7 @@
 				D3DF40BF1BCBA7B200A3A9D7 /* WIFI定位@2x.png in Resources */,
 				B9DEF55C1BAEA87900D9BED7 /* 通讯录@3x.png in Resources */,
 				D3DF41821BCEB7D300A3A9D7 /* 微信@3x.png in Resources */,
+				B9C73D411BDCEF7B000F0CA9 /* 手表音量2@2x.png in Resources */,
 				D3DF41851BCEB7D300A3A9D7 /* 新浪微博@2x.png in Resources */,
 				B95890421BA443F600A2C03E /* 返回@3x.png in Resources */,
 				D3DF40B71BCBA7B200A3A9D7 /* 正在语音1@2x.png in Resources */,
@@ -1579,6 +1620,7 @@
 				B9DEF5781BAEA87900D9BED7 /* 菜单按钮@2x.png in Resources */,
 				B95890481BA443F600A2C03E /* denglu@3x.png in Resources */,
 				D3DF41541BCE3D1C00A3A9D7 /* 按钮@2x.png in Resources */,
+				B9C73D441BDCEF7B000F0CA9 /* 手表音量5@2x.png in Resources */,
 				B9DEF5601BAEA87900D9BED7 /* 图层-27@3x.png in Resources */,
 				D3DF41411BCE3D1C00A3A9D7 /* 单选框_已选@3x.png in Resources */,
 				D3DF41461BCE3D1C00A3A9D7 /* 增加_@2x.png in Resources */,
@@ -1638,8 +1680,10 @@
 				B9DEF56E1BAEA87900D9BED7 /* 手表@3x.png in Resources */,
 				B9DEF57D1BAEA87900D9BED7 /* 轨迹icon@3x.png in Resources */,
 				D33B2FD51BC90AAC0072FAF6 /* 头像4@2x.png in Resources */,
+				B9C73D471BDCEF7B000F0CA9 /* 手表音量8@2x.png in Resources */,
 				D33B2FBD1BC90AAC0072FAF6 /* 弹出框@2x.png in Resources */,
 				D33B2FDC1BC90AAC0072FAF6 /* 增加@3x.png in Resources */,
+				B9C73D431BDCEF7B000F0CA9 /* 手表音量4@2x.png in Resources */,
 				D33B2F821BC90A650072FAF6 /* 宝贝按钮_空@3x.png in Resources */,
 				B9DEF55F1BAEA87900D9BED7 /* 图层-27@2x.png in Resources */,
 				D3DF41491BCE3D1C00A3A9D7 /* 定位@3x.png in Resources */,
@@ -1672,6 +1716,8 @@
 				B9DEF56B1BAEA87900D9BED7 /* 宝贝按钮@2x.png in Resources */,
 				B9DEF5641BAEA87900D9BED7 /* 图层-29@3x.png in Resources */,
 				B9DEF55E1BAEA87900D9BED7 /* 位置@3x.png in Resources */,
+				B9C73D481BDCEF7B000F0CA9 /* 手表音量9@2x.png in Resources */,
+				B9C73D451BDCEF7B000F0CA9 /* 手表音量6@2x.png in Resources */,
 				B96BDBAB1BCD516E00BE7FE3 /* 打开@2x.png in Resources */,
 				D3DF41631BCE3D1C00A3A9D7 /* 框@3x.png in Resources */,
 				D3DF40861BCBA7B200A3A9D7 /* 地图上的提示框1@3x.png in Resources */,
@@ -1734,9 +1780,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C73D4C1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift in Sources */,
 				D367E4BF1BB004E10062FC62 /* CustomCalloutView.m in Sources */,
 				D36ECB2E1BD0A18200C79794 /* SafeListTableViewCell.swift in Sources */,
 				D36ECB371BD13FAF00C79794 /* ContactsTableViewCell.swift in Sources */,
+				B9C73D4A1BDCF2CC000F0CA9 /* VolumeSettingViewController.swift in Sources */,
 				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
 				B910ADD71BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift in Sources */,
 				D3DF41A51BCFEA8D00A3A9D7 /* SafeListTableViewController.swift in Sources */,
