@@ -25,9 +25,27 @@ class WatchSettingViewModel: NSObject{
                 self.data = arr
         }
     }
+    func modeText()->String{
+        let map = ["关闭定位","每1分钟定位一次","每10分钟定位一次","单次定位"]
+        if let index = data!["mode"].string,
+            let i = Int(index){
+            return map[i]
+        }else{
+            return map[0]
+        }
+    }
+    
+    func ringText()->String{
+        let map = ["HelloBaby","Yesterday","You are so beatuiful"]
+        if let index = Int(data!["ring"].stringValue){
+            return map[index]
+        }else{
+            return map[0]
+        }
+    }
 }
 
-class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate{
+class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,WatchSettingTableDelegate{
 
     @IBOutlet weak var mode: UILabel!
     @IBOutlet weak var findWatch: UILabel!
@@ -80,12 +98,12 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate{
             self.allSwitch.selected = (data["allcalloff"].stringValue == "1")
             self.bindID.text = data["deviceno"].stringValue
             self.friendSwitch.selected = ((data["friendoff"].stringValue) == "1")
-            self.ring.text = data["ring"].stringValue
+            self.ring.text = vm.ringText()//data["ring"].stringValue
             self.poweroff.text = data["poweroff"].stringValue
-            self.volume.text = data["volume"].stringValue
+            self.volume.text = data["volume"].stringValue == "" ? "0" : data["volume"].stringValue
             self.strangeSwitch.selected = ((data["strangeoff"].stringValue) == "1")
             self.calloff.text = data["calloff"].stringValue
-            self.mode.text = data["mode"].stringValue
+            self.mode.text = vm.modeText()//data["mode"].stringValue
             }) { (error) -> Void in
                 print(error)
         }
@@ -107,6 +125,24 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate{
         viewModel?.data!["volume"].string = "\(volume)"
         self.volume.text = "\(volume)"
     }
+    
+    func watchSettingChange(type: Int, index: Int, content: String) {
+        switch type{
+        case WatchSettingTableType.Mode.rawValue:
+            viewModel?.data!["mode"].string = "\(index)"
+            mode.text = viewModel?.modeText()
+        case WatchSettingTableType.Ring.rawValue:
+            viewModel?.data!["ring"].string = "\(index)"
+            ring.text = viewModel?.ringText()
+        default:
+            break
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: - Table view data source
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -173,10 +209,22 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate{
         if segue.identifier == WatchSettingConstant.workModeSegueIdentifier{
             let vc = segue.destinationViewController as! WatchSettingTableViewController
             vc.type = .Mode
+            vc.settingDelegate = self
+            if let index = Int((viewModel?.data!["mode"].stringValue)!){
+                vc.selected = index
+            }else{
+                vc.selected = 0
+            }
         }
         if segue.identifier == WatchSettingConstant.ringSegueIdentifier{
             let vc = segue.destinationViewController as! WatchSettingTableViewController
             vc.type = .Ring
+            vc.settingDelegate = self
+            if let index = Int((viewModel?.data!["ring"].stringValue)!){
+                vc.selected = index
+            }else{
+                vc.selected = 0
+            }
         }
         if segue.identifier == WatchSettingConstant.watchCallOffSegueIdentifier{
             guard let vm = self.viewModel else{

@@ -16,6 +16,10 @@ struct WatchSettingIdentifier{
     static let cellIdentifier = "WatchSettingTableViewCellIdentifier"
 }
 
+@objc protocol WatchSettingTableDelegate{
+    func watchSettingChange(type: Int,index: Int,content: String)
+}
+
 class WatchSettingTableViewModel: NSObject{
     
     let type : WatchSettingTableType
@@ -46,6 +50,7 @@ class WatchSettingTableViewController: UIViewController,UITableViewDelegate,UITa
     var viewModel: WatchSettingTableViewModel!
     var type: WatchSettingTableType = .Mode
     var selected = 0
+    weak var settingDelegate: WatchSettingTableDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,7 +77,9 @@ class WatchSettingTableViewController: UIViewController,UITableViewDelegate,UITa
     }
 
     @IBAction func confirmClicked(sender: UIButton) {
-        
+        if let del = settingDelegate{
+            del.watchSettingChange(self.type.rawValue, index: viewModel.selected, content: viewModel.dataSource[viewModel.selected])
+        }
         cancelClicked(cancelButton)
     }
     

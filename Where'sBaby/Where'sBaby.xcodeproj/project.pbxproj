@@ -61,6 +61,7 @@
 		B9C73D481BDCEF7B000F0CA9 /* 手表音量9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D3E1BDCEF7B000F0CA9 /* 手表音量9@2x.png */; };
 		B9C73D4A1BDCF2CC000F0CA9 /* VolumeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C73D491BDCF2CC000F0CA9 /* VolumeSettingViewController.swift */; };
 		B9C73D4C1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C73D4B1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift */; };
+		B9C73D4E1BDD0AFA000F0CA9 /* FindWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C73D4D1BDD0AFA000F0CA9 /* FindWatchViewController.swift */; };
 		B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */; };
 		B9D392B51BB5709B0062DDD5 /* UIFont+ChangeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */; };
 		B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DEF5351BAEA54400D9BED7 /* RightMenuViewController.swift */; };
@@ -431,6 +432,7 @@
 		B9C73D3E1BDCEF7B000F0CA9 /* 手表音量9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量9@2x.png"; sourceTree = "<group>"; };
 		B9C73D491BDCF2CC000F0CA9 /* VolumeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSettingViewController.swift; sourceTree = "<group>"; };
 		B9C73D4B1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSettingSwipeView.swift; sourceTree = "<group>"; };
+		B9C73D4D1BDD0AFA000F0CA9 /* FindWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindWatchViewController.swift; sourceTree = "<group>"; };
 		B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindWatchViewController.swift; sourceTree = "<group>"; };
 		B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ChangeFont.h"; sourceTree = "<group>"; };
 		B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ChangeFont.m"; sourceTree = "<group>"; };
@@ -875,6 +877,7 @@
 				B910ADCE1BDBB70900B079F8 /* WatchSettingTableViewController.swift */,
 				B910ADD41BDC7C5E00B079F8 /* WatchCallOffSettingViewController.swift */,
 				B9C73D491BDCF2CC000F0CA9 /* VolumeSettingViewController.swift */,
+				B9C73D4D1BDD0AFA000F0CA9 /* FindWatchViewController.swift */,
 				B9545C1A1BD913BA00C945FC /* TimeSettingViewController.swift */,
 				D33B2FF31BC92CC20072FAF6 /* AppSettingTableViewController.swift */,
 				D33B2FF51BC94CBD0072FAF6 /* ModifyPWViewController.swift */,
@@ -1797,6 +1800,7 @@
 				B910ADD31BDBCCDC00B079F8 /* SwiftyJSON.swift in Sources */,
 				D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */,
 				D36ECB311BD0C59000C79794 /* SafeAreaViewController.m in Sources */,
+				B9C73D4E1BDD0AFA000F0CA9 /* FindWatchViewController.swift in Sources */,
 				D3DF418E1BCEBD7300A3A9D7 /* BabyImageUpdataViewController.swift in Sources */,
 				D3DF41981BCF92F000A3A9D7 /* FileRequest.m in Sources */,
 				D3DF41A31BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift in Sources */,
