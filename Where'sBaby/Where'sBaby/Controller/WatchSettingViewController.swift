@@ -11,6 +11,7 @@ import UIKit
 struct WatchSettingConstant{
     static let workModeSegueIdentifier = "WorkModeSettingSegueIndentifier"
     static let ringSegueIdentifier = "RingSegueIdentifier"
+    static let watchCallOffSegueIdentifier = "WatchCallOffSegueIdentifier"
 }
 
 class WatchSettingViewModel: NSObject{
@@ -170,6 +171,19 @@ class WatchSettingViewController: UITableViewController {
         if segue.identifier == WatchSettingConstant.ringSegueIdentifier{
             let vc = segue.destinationViewController as! WatchSettingTableViewController
             vc.type = .Ring
+        }
+        if segue.identifier == WatchSettingConstant.watchCallOffSegueIdentifier{
+            guard let vm = self.viewModel else{
+                self.backClicked(UIButton())
+                return
+            }
+            guard let _ = vm.data else{
+                self.backClicked(UIButton())
+                return
+            }
+            let vc = segue.destinationViewController as! WatchCallOffSettingViewController
+//            vc.calloffString = data["calloff"].stringValue
+            vc.calloffString = "8:30-12:00,1-2-3-4-5|2:30-5:30,5-6"
         }
     }
 
