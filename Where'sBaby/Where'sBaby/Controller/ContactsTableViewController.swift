@@ -34,6 +34,7 @@ class ContactsTableViewController: UITableViewController {
             let state:Int = dic["state"] as! Int
             if(state==0)
             {
+                let username:String = NSUserDefaults.standardUserDefaults().objectForKey("username") as! String
                 self.tableViewFamilyArray.removeAllObjects()
                 self.tableViewFrinedArray.removeAllObjects()
                 let dicArray:NSArray = dic["data"] as! NSArray
@@ -44,8 +45,14 @@ class ContactsTableViewController: UITableViewController {
                     }
                     else
                     {
-                        self.tableViewFamilyArray.addObject(dicDatat)
-                        //self.tableViewFamilyArray.insertObject(dicDatat, atIndex: 0)
+                        let mobile:String = dicDatat["mobile"] as! String
+                        if mobile == username{
+                            self.tableViewFamilyArray.insertObject(dicDatat, atIndex: 0)
+                        }
+                        else {
+                            self.tableViewFamilyArray.addObject(dicDatat)
+                        }
+                        
                     }
                 }
                 self.tableView.reloadData()
@@ -149,7 +156,13 @@ class ContactsTableViewController: UITableViewController {
         if mobileshort.isEmpty{
             mobileshort = "未设置"
         }
-        cell.mobelLabel.text = "\(nickname)  \(mobile)"
+        if indexPath.row == 0 && indexPath.section == 0{
+            cell.mobelLabel.text = "\(nickname)（我）  \(mobile)"
+        }
+        else
+        {
+            cell.mobelLabel.text = "\(nickname)  \(mobile)"
+        }
         cell.shortLabel.text = "\(mobileshort)"
         return cell
     }

@@ -15,13 +15,22 @@ class RelationViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var mobel_SortField : UITextField!
     @IBOutlet weak var backView : UIView!
     @IBOutlet weak var imageView : UIImageView!
+    @IBOutlet weak var mobelLabel : UILabel!
+    @IBOutlet weak var mobel_SortLabel : UILabel!
     let array : [String] = ["爸爸","妈妈","爷爷","奶奶","姑姑","叔叔"]
+    var currentDic : NSMutableDictionary! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         IHKeyboardAvoiding.setAvoidingView(self.view, withTriggerView: self.mobel_SortField)
         IHKeyboardAvoiding.setKeyboardAvoidingMode(KeyboardAvoidingModeMinimum)
+        if self.currentDic != nil{
+            self.mobelField.hidden = true;
+            self.mobel_SortField.hidden = true;
+            self.mobelLabel.hidden = true;
+            self.mobel_SortLabel.hidden = true;
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,43 +58,76 @@ class RelationViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func saveClicked(sender: UIButton) {
-        let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        if self.nameField.text!.isEmpty{
-            hud.mode = .Text
-            hud.detailsLabelText = "请输入称呼"
-            hud.hide(true, afterDelay: 1.5)
-            return
-        }
-        if self.mobelField.text!.isEmpty{
-            hud.mode = .Text
-            hud.detailsLabelText = "请输入手机号码"
-            hud.hide(true, afterDelay: 1.5)
-            return
-        }
-        let dic:NSDictionary = ["nickname":self.nameField.text!,"mobile":self.mobelField.text!,"mobileshort":self.mobel_SortField.text!,"deviceno":ChildDeviceManager.sharedManager().currentDeviceNo,"autoanswer":0,"sosflag":0]
-        DeviceRequest.AddFriendsWithParameters(dic, success: { (object) -> Void in
-            print(object)
-            let dic:NSDictionary = object as! NSDictionary
-            let state:Int = dic["state"] as! Int
-            if(state==0){
-                hud.detailsLabelText = "添加成功"
-                self.navigationController?.popViewControllerAnimated(true)
-            }
-            else if(state == 1)
-            {
-                hud.detailsLabelText = "手机号码已经在通讯录中"
-            }
-            else
-            {
-                hud.detailsLabelText = "添加失败"
-            }
-            hud.mode = .Text
-            hud.hide(true, afterDelay: 1.5)
-            }) { (NSError error) -> Void in
+        if self.currentDic != nil{
+            let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            self.currentDic.setObject(self.nameField.text!, forKey: "nickname")
+            DeviceRequest.UpdatePhoneBookWithParameters(self.currentDic, success: { (object) -> Void in
+                print(object)
+                let dic:NSDictionary = object as! NSDictionary
+                let state:Int = dic["state"] as! Int
+                if(state==0){
+                    hud.labelText = "修改成功"
+                    NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "updateMobileshort", object: nil))
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+                else if(state == 1)
+                {
+                    hud.detailsLabelText = "手机号码已经在通讯录中"
+                }
+                else
+                {
+                    hud.detailsLabelText = "修改失败"
+                }
                 hud.mode = .Text
-                hud.detailsLabelText = error.domain
                 hud.hide(true, afterDelay: 1.5)
+                
+                }) { (NSError error) -> Void in
+                    hud.mode = .Text
+                    hud.detailsLabelText = error.domain
+                    hud.hide(true, afterDelay: 1.5)
+            }
         }
+        else
+        {
+            let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            if self.nameField.text!.isEmpty{
+                hud.mode = .Text
+                hud.detailsLabelText = "请输入称呼"
+                hud.hide(true, afterDelay: 1.5)
+                return
+            }
+            if self.mobelField.text!.isEmpty{
+                hud.mode = .Text
+                hud.detailsLabelText = "请输入手机号码"
+                hud.hide(true, afterDelay: 1.5)
+                return
+            }
+            let dic:NSDictionary = ["nickname":self.nameField.text!,"mobile":self.mobelField.text!,"mobileshort":self.mobel_SortField.text!,"deviceno":ChildDeviceManager.sharedManager().currentDeviceNo,"autoanswer":0,"sosflag":0]
+            DeviceRequest.AddFriendsWithParameters(dic, success: { (object) -> Void in
+                print(object)
+                let dic:NSDictionary = object as! NSDictionary
+                let state:Int = dic["state"] as! Int
+                if(state==0){
+                    hud.detailsLabelText = "添加成功"
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+                else if(state == 1)
+                {
+                    hud.detailsLabelText = "手机号码已经在通讯录中"
+                }
+                else
+                {
+                    hud.detailsLabelText = "添加失败"
+                }
+                hud.mode = .Text
+                hud.hide(true, afterDelay: 1.5)
+                }) { (NSError error) -> Void in
+                    hud.mode = .Text
+                    hud.detailsLabelText = error.domain
+                    hud.hide(true, afterDelay: 1.5)
+            }
+        }
+        
     }
     
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
