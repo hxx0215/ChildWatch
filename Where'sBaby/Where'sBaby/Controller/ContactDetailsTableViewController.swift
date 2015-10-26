@@ -25,6 +25,7 @@ class ContactDetailsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.nicknameLabel.text = self.currentDic["nickname"] as? String
+        self.title = self.nicknameLabel.text
         self.mobileshortLabel.text = self.currentDic["mobileshort"] as? String
         let sosflag:Int = self.currentDic["sosflag"] as! Int
         let autoanswer:Int = self.currentDic["autoanswer"] as! Int
@@ -37,6 +38,8 @@ class ContactDetailsTableViewController: UITableViewController {
         
         observer = NSNotificationCenter.defaultCenter().addObserverForName("updateMobileshort", object: nil, queue: NSOperationQueue.mainQueue()) { (NSNotification) -> Void in
             self.mobileshortLabel.text = self.currentDic["mobileshort"] as? String
+            self.nicknameLabel.text = self.currentDic["nickname"] as? String
+            self.title = self.nicknameLabel.text
         }
     }
 
@@ -48,6 +51,44 @@ class ContactDetailsTableViewController: UITableViewController {
     @IBAction func backClicked(sender: UIButton) {
         NSNotificationCenter.defaultCenter().removeObserver(self.observer)
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func deleteClicked(sender: AnyObject?) {
+        let ac:UIAlertController = UIAlertController(title: "", message: "确定要删除该联系人吗？", preferredStyle: UIAlertControllerStyle.Alert)
+        let a:UIAlertAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (UIAlertAction) -> Void in
+            
+        }
+        let b:UIAlertAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+            let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            DeviceRequest.DeletePhoneBookWithParameters(self.currentDic, success: { (object) -> Void in
+                print(object)
+                let dic:NSDictionary = object as! NSDictionary
+                let state:Int = dic["state"] as! Int
+                if(state==0){
+                    hud.detailsLabelText = "删除成功"
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+                else if(state == 1)
+                {
+                    hud.detailsLabelText = "数据库异常"
+                }
+                else
+                {
+                    hud.detailsLabelText = "删除失败"
+                }
+                hud.mode = .Text
+                hud.hide(true, afterDelay: 1.5)
+                
+                }) { (NSError error) -> Void in
+                    hud.mode = .Text
+                    hud.detailsLabelText = error.domain
+                    hud.hide(true, afterDelay: 1.5)
+            }
+        }
+        ac.addAction(a)
+        ac.addAction(b)
+        self.presentViewController(ac, animated: true) { () -> Void in
+        }
     }
     
     @IBAction func sosflagButtonClicked(sender: UIButton) {
@@ -128,7 +169,10 @@ class ContactDetailsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if indexPath.row == 1{
+        if indexPath.row == 0{
+            self.performSegueWithIdentifier("relation", sender: nil)
+        }
+        else if indexPath.row == 1{
             self.performSegueWithIdentifier("phoneShort", sender: nil)
         }
         
@@ -193,6 +237,10 @@ class ContactDetailsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "phoneShort"{
             let vc:BabyPhoneShortViewController = segue.destinationViewController as! BabyPhoneShortViewController
+            vc.currentDic = self.currentDic
+        }
+        else if segue.identifier == "relation"{
+            let vc:RelationViewController = segue.destinationViewController as! RelationViewController
             vc.currentDic = self.currentDic
         }
     }
