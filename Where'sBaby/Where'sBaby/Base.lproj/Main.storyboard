@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -74,6 +74,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="消息.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="350" y="28" width="30" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="messageClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="EEP-ob-IYx"/>
                                 </connections>
@@ -82,6 +85,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="通讯录.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="82" width="62" height="62"/>
+                                </variation>
                                 <connections>
                                     <action selector="ContactsClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="I0W-dB-iMb"/>
                                 </connections>
@@ -90,6 +96,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="手表.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="168" width="62" height="62"/>
+                                </variation>
                                 <connections>
                                     <action selector="watchSettingClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="cJA-wS-yJC"/>
                                 </connections>
@@ -98,6 +107,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="设置.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="254" width="62" height="62"/>
+                                </variation>
                                 <connections>
                                     <action selector="appSettingClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="uAV-c7-Ow8"/>
                                 </connections>
@@ -108,6 +120,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="352" y="58" width="26" height="16"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通讯录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-hG-h5F">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -115,6 +130,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="346" y="144" width="39" height="16"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyc-ox-YHG">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -122,6 +140,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="341" y="316" width="49" height="16"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手表设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B10-Zv-HK9">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -129,6 +150,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="339" y="230" width="52" height="16"/>
+                                </variation>
                             </label>
                         </subviews>
                         <animations/>
@@ -2565,6 +2589,9 @@
                                                     <animations/>
                                                     <state key="normal" image="关闭.png"/>
                                                     <state key="selected" image="打开.png"/>
+                                                    <connections>
+                                                        <action selector="strangeChange:" destination="ItW-SU-rkI" eventType="touchUpInside" id="ubS-l0-bgb"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启后不再通讯录里的来电将自动屏蔽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQs-dt-gb4">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2642,6 +2669,9 @@
                                                     <animations/>
                                                     <state key="normal" image="关闭.png"/>
                                                     <state key="selected" image="打开.png"/>
+                                                    <connections>
+                                                        <action selector="friendChange:" destination="ItW-SU-rkI" eventType="touchUpInside" id="Vwc-Hj-kOj"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -2712,6 +2742,9 @@
                                                     <animations/>
                                                     <state key="normal" image="关闭.png"/>
                                                     <state key="selected" image="打开.png"/>
+                                                    <connections>
+                                                        <action selector="allChange:" destination="ItW-SU-rkI" eventType="touchUpInside" id="Tjt-g6-iIP"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -2933,6 +2966,9 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="0Xk-pF-FhA" kind="show" identifier="AlarmSegueIdentifier" id="YnI-mM-Fpo"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="jWZ-T6-V6r">
                                         <rect key="frame" x="0.0" y="756" width="600" height="60"/>
@@ -3108,7 +3144,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="eSs-HQ-dei" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="CNe-Av-v4T"/>
+                                            <segue destination="eSs-HQ-dei" kind="presentation" identifier="FindWatchSegueIdentifier" animates="NO" modalPresentationStyle="overCurrentContext" id="CNe-Av-v4T"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="IWu-ve-SV1">
@@ -3790,7 +3826,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="powerOffLabel" destination="PPj-zp-eDT" id="cUA-OD-DxO"/>
                         <outlet property="powerOffTime" destination="oMF-g6-f0I" id="Oy5-1K-BsA"/>
+                        <outlet property="powerOnLabel" destination="xyt-9A-u3j" id="5tJ-dS-r2z"/>
                         <outlet property="powerOnTime" destination="KlA-DD-FxU" id="qge-Zt-AM3"/>
                         <outletCollection property="selectedButton" destination="9PW-ao-gVL" collectionClass="NSMutableArray" id="YE7-vx-Rdd"/>
                         <outletCollection property="selectedButton" destination="nV8-sf-40N" collectionClass="NSMutableArray" id="m2N-bf-h2j"/>
@@ -4211,9 +4249,6 @@
                                                             <animations/>
                                                             <state key="normal" image="关闭.png"/>
                                                             <state key="selected" image="打开.png"/>
-                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="188" y="18" width="44" height="24"/>
-                                                            </variation>
                                                         </button>
                                                     </subviews>
                                                     <animations/>
@@ -4373,9 +4408,16 @@
                                 <state key="normal" title="返回" image="返回.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backClicked:" destination="0Xk-pF-FhA" eventType="touchUpInside" id="sbf-V3-xeH"/>
+                                </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="编辑.png" id="gPT-9J-hTh"/>
+                        <barButtonItem key="rightBarButtonItem" image="编辑.png" id="gPT-9J-hTh">
+                            <connections>
+                                <action selector="editClicked:" destination="0Xk-pF-FhA" id="5uE-9N-lhd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableContainer" destination="SDG-Um-vHc" id="39r-3a-6bY"/>
@@ -6839,7 +6881,6 @@
         <!--Navigation Controller-->
         <scene sceneID="tzF-Ro-XfR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Nx-oN-bOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="ujg-Q4-ckA" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="amM-f5-kw3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -6851,6 +6892,7 @@
                         <segue destination="qDz-G0-6hm" kind="relationship" relationship="rootViewController" id="5nd-42-tJc"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Nx-oN-bOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2113.5" y="1576.5"/>
         </scene>
@@ -7631,6 +7673,9 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="43" y="350" width="62" height="30"/>
+                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="LnE-Gz-I3D"/>
                                         </connections>
@@ -7642,6 +7687,9 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="157" y="350" width="62" height="30"/>
+                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="8zx-oQ-kDQ"/>
                                         </connections>
@@ -7693,6 +7741,9 @@
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="194" y="154" width="41" height="16"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -7764,7 +7815,8 @@
                                         <exclude reference="MXM-nF-Cpe"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="70" y="206" width="260" height="390"/>
                                     <mask key="subviews">
                                         <include reference="HgK-pI-VWP"/>
                                         <include reference="zqK-dU-hL9"/>
@@ -7865,6 +7917,9 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="减少.png"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="57" y="101" width="27" height="27"/>
+                                        </variation>
                                         <connections>
                                             <action selector="lowerButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="QnU-mU-Ts7"/>
                                             <action selector="lowerButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="sOV-qs-QPb"/>
@@ -7874,6 +7929,9 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="增加_.png"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="177" y="101" width="27" height="27"/>
+                                        </variation>
                                         <connections>
                                             <action selector="addButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="CDQ-JL-QTl"/>
                                             <action selector="addButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="co6-0G-2hz"/>
@@ -7926,7 +7984,8 @@
                                                         <exclude reference="wXc-FG-FsE"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
+                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="8" y="21" width="228" height="35"/>
                                                     <mask key="constraints">
                                                         <include reference="wXc-FG-FsE"/>
                                                     </mask>
@@ -7967,6 +8026,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="114" y="106" width="33" height="17"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -10762,7 +10824,7 @@
             <objects>
                 <tableViewController id="cRM-yw-K3B" customClass="LocationDesTableViewController" customModule="Where_sBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="69" sectionHeaderHeight="18" sectionFooterHeight="18" id="vjx-1j-qiT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -10770,10 +10832,10 @@
                             <tableViewSection id="Ev1-2T-p5Q">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="NUO-Rh-vKQ">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="35" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NUO-Rh-vKQ" id="pFv-rh-oIa">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前系统定位类型：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEu-m3-yKV">
@@ -10815,13 +10877,13 @@
                                                     <exclude reference="jfQ-Ex-pMK"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="65Q-vW-c1b"/>
+                                                    <exclude reference="RYj-W1-H5q"/>
                                                     <exclude reference="SIF-Qx-qFK"/>
                                                     <exclude reference="lxO-Lf-wr7"/>
                                                     <exclude reference="MS1-sB-2yb"/>
                                                     <exclude reference="Vtp-Qh-bj7"/>
                                                     <exclude reference="ach-Fb-1iY"/>
-                                                    <exclude reference="65Q-vW-c1b"/>
-                                                    <exclude reference="RYj-W1-H5q"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -10831,23 +10893,23 @@
                                                     <include reference="jfQ-Ex-pMK"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="65Q-vW-c1b"/>
+                                                    <include reference="RYj-W1-H5q"/>
                                                     <include reference="SIF-Qx-qFK"/>
                                                     <include reference="lxO-Lf-wr7"/>
                                                     <include reference="MS1-sB-2yb"/>
                                                     <include reference="Vtp-Qh-bj7"/>
                                                     <include reference="ach-Fb-1iY"/>
-                                                    <include reference="65Q-vW-c1b"/>
-                                                    <include reference="RYj-W1-H5q"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="5rc-se-zLV">
-                                        <rect key="frame" x="0.0" y="154" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="106" width="600" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5rc-se-zLV" id="Fh1-fn-zDS">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GPS定位.png" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-xd-ixv">
@@ -10899,13 +10961,13 @@
                                                     <exclude reference="BOj-ay-sZd"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="FJa-hc-wNb"/>
-                                                    <exclude reference="kEh-qT-jZ1"/>
-                                                    <exclude reference="ry1-r3-gBx"/>
-                                                    <exclude reference="vbu-Ry-MfC"/>
                                                     <exclude reference="JrN-mw-3HQ"/>
                                                     <exclude reference="Rpw-LW-bOO"/>
                                                     <exclude reference="ngX-TQ-rFu"/>
+                                                    <exclude reference="ry1-r3-gBx"/>
+                                                    <exclude reference="vbu-Ry-MfC"/>
+                                                    <exclude reference="FJa-hc-wNb"/>
+                                                    <exclude reference="kEh-qT-jZ1"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -10915,23 +10977,23 @@
                                                     <include reference="BOj-ay-sZd"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="FJa-hc-wNb"/>
-                                                    <include reference="kEh-qT-jZ1"/>
-                                                    <include reference="ry1-r3-gBx"/>
-                                                    <include reference="vbu-Ry-MfC"/>
                                                     <include reference="JrN-mw-3HQ"/>
                                                     <include reference="Rpw-LW-bOO"/>
                                                     <include reference="ngX-TQ-rFu"/>
+                                                    <include reference="ry1-r3-gBx"/>
+                                                    <include reference="vbu-Ry-MfC"/>
+                                                    <include reference="FJa-hc-wNb"/>
+                                                    <include reference="kEh-qT-jZ1"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="Vk3-RB-VmA">
-                                        <rect key="frame" x="0.0" y="154" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="197" width="600" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vk3-RB-VmA" id="v9x-5O-pmG">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="基站定位.png" translatesAutoresizingMaskIntoConstraints="NO" id="w3a-xC-jAi">
@@ -10983,13 +11045,13 @@
                                                     <exclude reference="R3H-TF-0mw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="nwV-KJ-VRW"/>
-                                                    <exclude reference="6tv-KR-AoG"/>
+                                                    <exclude reference="5Ef-ee-vOy"/>
+                                                    <exclude reference="Eqk-n1-XFp"/>
+                                                    <exclude reference="Gq2-pc-KO1"/>
                                                     <exclude reference="KOR-7o-9xn"/>
                                                     <exclude reference="fe7-A6-GMn"/>
-                                                    <exclude reference="5Ef-ee-vOy"/>
-                                                    <exclude reference="Gq2-pc-KO1"/>
-                                                    <exclude reference="Eqk-n1-XFp"/>
+                                                    <exclude reference="6tv-KR-AoG"/>
+                                                    <exclude reference="nwV-KJ-VRW"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -10999,23 +11061,23 @@
                                                     <include reference="R3H-TF-0mw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="nwV-KJ-VRW"/>
-                                                    <include reference="6tv-KR-AoG"/>
+                                                    <include reference="5Ef-ee-vOy"/>
+                                                    <include reference="Eqk-n1-XFp"/>
+                                                    <include reference="Gq2-pc-KO1"/>
                                                     <include reference="KOR-7o-9xn"/>
                                                     <include reference="fe7-A6-GMn"/>
-                                                    <include reference="5Ef-ee-vOy"/>
-                                                    <include reference="Gq2-pc-KO1"/>
-                                                    <include reference="Eqk-n1-XFp"/>
+                                                    <include reference="6tv-KR-AoG"/>
+                                                    <include reference="nwV-KJ-VRW"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="ag1-az-RPO">
-                                        <rect key="frame" x="0.0" y="154" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="288" width="600" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ag1-az-RPO" id="hHQ-Hz-BXs">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WIFI定位.png" translatesAutoresizingMaskIntoConstraints="NO" id="PZD-9N-Vt9">
@@ -11041,9 +11103,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="54" y="8" width="109" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="GPS模块利用美国卫星导航定位系统进行定位，室外空旷地，定位精度最佳可达10米左右，缺点是室内定位效果不佳" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qz-8G-6sq">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -11051,9 +11110,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="73" y="26" width="312" height="51"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
@@ -11073,13 +11129,13 @@
                                                     <exclude reference="9qz-8G-6sq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="PgO-fP-nNw"/>
-                                                    <exclude reference="CFb-si-cvt"/>
-                                                    <exclude reference="bH1-hM-lvZ"/>
-                                                    <exclude reference="L9e-Kg-iMq"/>
-                                                    <exclude reference="r6h-v8-kdS"/>
                                                     <exclude reference="D3F-YU-F3O"/>
                                                     <exclude reference="ISI-dg-bfA"/>
+                                                    <exclude reference="r6h-v8-kdS"/>
+                                                    <exclude reference="L9e-Kg-iMq"/>
+                                                    <exclude reference="bH1-hM-lvZ"/>
+                                                    <exclude reference="CFb-si-cvt"/>
+                                                    <exclude reference="PgO-fP-nNw"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -11089,13 +11145,13 @@
                                                     <include reference="9qz-8G-6sq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="PgO-fP-nNw"/>
-                                                    <include reference="CFb-si-cvt"/>
-                                                    <include reference="bH1-hM-lvZ"/>
-                                                    <include reference="L9e-Kg-iMq"/>
-                                                    <include reference="r6h-v8-kdS"/>
                                                     <include reference="D3F-YU-F3O"/>
                                                     <include reference="ISI-dg-bfA"/>
+                                                    <include reference="r6h-v8-kdS"/>
+                                                    <include reference="L9e-Kg-iMq"/>
+                                                    <include reference="bH1-hM-lvZ"/>
+                                                    <include reference="CFb-si-cvt"/>
+                                                    <include reference="PgO-fP-nNw"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -11199,8 +11255,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="usW-AO-9yO"/>
-        <segue reference="1a4-Ds-VlV"/>
+        <segue reference="YnI-mM-Fpo"/>
         <segue reference="EaM-HS-Fyw"/>
+        <segue reference="2t1-lD-vdl"/>
         <segue reference="nr5-1F-m2z"/>
         <segue reference="hlb-Gu-8NE"/>
     </inferredMetricsTieBreakers>

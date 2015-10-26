@@ -10,18 +10,26 @@ import UIKit
 
 struct WatchCallOffItem{
     var beginTime: String
-    var endTime: String
+    var endTime: String?
     var week: [Bool]
     var open = -1
-    init(itemString: String){
+    init(itemString: String, haveEndTime: Bool){
         beginTime = "06:00"
-        endTime = "18:00"
+        if haveEndTime{
+            endTime = "18:00"
+        }else{
+            endTime = nil
+        }
         week = [false,false,false,false,false,false,false]
         let arr = itemString.characters.split{ $0 == ","}.map(String.init)
         if arr.count > 0{
             let time = arr[0].characters.split{ $0 == "-"}.map(String.init)
             beginTime = time[0]
-            endTime = time[1]
+            if time.count > 1{
+                endTime = time[1]
+            }else{
+                endTime = nil
+            }
             if arr.count > 1{
                 let weekday = arr[1].characters.split{ $0 == "-"}.map(String.init)
                 weekday.forEach({ (index) -> () in
@@ -40,11 +48,15 @@ struct WatchCallOffItem{
         }
     }
     func itemStr()->String{
-        let time = beginTime + "-" + endTime
+        var end = ""
+        if let _ = endTime{
+            end = "-" + endTime!
+        }
+        let time = beginTime + end
         var week = ""
         for i in 0..<7{
             if self.week[i]{
-                week += "\(i)-"
+                week += "\(i + 1)-"
             }
         }
         var retWeek = String(week.characters.dropLast())
@@ -64,15 +76,31 @@ struct WatchCallOffConstant{
     static let CallOffTimeSettingSegueIdentifier = "CallOffTimeSettingSegueIdentifier"
 }
 
+enum WatchCallOffType: Int{
+    case CallOff
+    case Alarm
+}
+
 class WatchCallOffSettingViewModel: NSObject{
     var dataSource: [WatchCallOffItem]
-    
-    init(calloff :String){
+    var type: WatchCallOffType
+    init(calloff :String,type: WatchCallOffType){
+        self.type = type
         dataSource = []
         let itemArr = calloff.characters.split{ $0 == "|"}.map(String.init)
         dataSource = itemArr.map { (itemString) -> WatchCallOffItem in
-            return WatchCallOffItem(itemString: itemString)
+            return WatchCallOffItem(itemString: itemString,haveEndTime: type != .Alarm)
         }
+    }
+    
+    func calloffString()->String{
+        let a = dataSource.reduce("") { (str, item) -> String in
+            if str == ""{
+                return item.itemStr()
+            }
+            return str + "|" + item.itemStr()
+        }
+        return a
     }
     
     func state(index: Int)->Bool{
@@ -81,7 +109,11 @@ class WatchCallOffSettingViewModel: NSObject{
     }
     func timeLabel(index: Int)->String{
         let data = dataSource[index]
-        return "\(data.beginTime)-\(data.endTime)"
+        if let e = data.endTime{
+            return "\(data.beginTime)-\(e)"
+        }else{
+            return data.beginTime
+        }
     }
     
     func weekLabel(index: Int)->String{
@@ -102,18 +134,24 @@ class WatchCallOffSettingViewModel: NSObject{
     }
 }
 
-class WatchCallOffSettingViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+@objc protocol WatchCallOffSettingDelegate{
+    func callOffChange(type: Int,calloffString: String)
+}
+
+class WatchCallOffSettingViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,PowerSettingDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableContainer: UIView!
     var viewModel: WatchCallOffSettingViewModel?
     var calloffString: String?
+    var delegate: WatchCallOffSettingDelegate?
+    var type: WatchCallOffType?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         if let str = calloffString{
-            viewModel = WatchCallOffSettingViewModel(calloff: str)
+            viewModel = WatchCallOffSettingViewModel(calloff: str, type: type!)
         }
     }
 
@@ -141,10 +179,40 @@ class WatchCallOffSettingViewController: UIViewController,UITableViewDelegate,UI
         cell.stateButton.selected = (viewModel?.state(indexPath.row))!
         return cell
     }
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete{
+            viewModel?.dataSource.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        tableContainer.hidden = viewModel?.dataSource.count == 0
+    }
     
+    @IBAction func editClicked(sender: UIBarButtonItem) {
+        if tableView.editing{
+            tableView.setEditing(false, animated: true)
+        }else{
+            tableView.setEditing(true, animated: true)
+        }
+    }
     
     @IBAction func addCallOffTime(sender: UIButton) {
         self.performSegueWithIdentifier(WatchCallOffConstant.CallOffTimeSettingSegueIdentifier, sender: nil)
+    }
+    
+    @IBAction func backClicked(sender: UIButton) {
+        if let del = delegate{
+            let str = viewModel?.calloffString()
+            del.callOffChange((self.type?.rawValue)!, calloffString: str!)
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    func powerSettingChange(type: Int, itemString: String) {
+        let item = WatchCallOffItem(itemString: itemString,haveEndTime: self.type != .Alarm)
+        viewModel?.dataSource.append(item)
+        tableView.reloadData()
     }
     // MARK: - Navigation
 
@@ -154,8 +222,15 @@ class WatchCallOffSettingViewController: UIViewController,UITableViewDelegate,UI
         // Pass the selected object to the new view controller.
         if segue.identifier == WatchCallOffConstant.CallOffTimeSettingSegueIdentifier{
             let vc = segue.destinationViewController as! PowerSettingTableViewController
-            vc.type = .Calloff
+            switch type!{
+            case .CallOff:
+                vc.type = .Calloff
+            case .Alarm:
+                vc.type = .Alarm
+            }
             vc.itemString = sender as? String
+            vc.delegate = self
+            vc.title = "禁用时段"
         }
     }
 

@@ -11,6 +11,7 @@ import UIKit
 enum PowerSettingType: Int{
     case Power
     case Calloff
+    case Alarm
 }
 
 @objc protocol PowerSettingDelegate{
@@ -22,7 +23,7 @@ class PowerSettingViewModel: NSObject{
     var item: WatchCallOffItem
     init(type: PowerSettingType,itemString: String){
         self.type = type
-        self.item = WatchCallOffItem(itemString: itemString)
+        self.item = WatchCallOffItem(itemString: itemString,haveEndTime: type != .Alarm)
     }
     func tableCount()->Int{
         if type == .Power{
@@ -35,6 +36,8 @@ class PowerSettingViewModel: NSObject{
 
 class PowerSettingTableViewController: UITableViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var powerOnLabel: UILabel!
+    @IBOutlet weak var powerOffLabel: UILabel!
     @IBOutlet weak var powerOffTime: UITextField!
     @IBOutlet weak var powerOnTime: UITextField!
     @IBOutlet var selectedButton: [UIButton]!
@@ -55,6 +58,23 @@ class PowerSettingTableViewController: UITableViewController,UITextFieldDelegate
                 viewModel = PowerSettingViewModel(type: type,itemString: itemString)
             }else{
                 viewModel = PowerSettingViewModel(type: type, itemString: "")
+            }
+            switch type{
+            case .Alarm:
+                powerOffTime.hidden = true
+                powerOffLabel.hidden = true
+                powerOnLabel.text = "闹铃时间"
+            case .Calloff:
+                powerOffTime.hidden = false
+                powerOffLabel.hidden = false
+                powerOnLabel.text = "开始时间"
+                powerOffLabel.text = "结束时间"
+            default:
+                powerOffTime.hidden = false
+                powerOffLabel.hidden = false
+                powerOnLabel.text = "开机时间"
+                powerOffLabel.text = "关机时间"
+                break
             }
         }
         self.addObserver(self, forKeyPath: "powerOffTime.text", options: [.New, .Old], context: &powerOffTime)
