@@ -299,8 +299,8 @@
 
             [annotationView addSubview:imageView];
             annotationView.top = adrress;
-            annotationView.left = @"10fenzhong";
-            annotationView.right = @"jingdu100m";
+            annotationView.left = @"10分钟前";
+            annotationView.right = @"精度100m";
             annotationView.selected = YES;
         }
         

@@ -187,6 +187,7 @@
 		D384DE511BA6AA020078A0C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE501BA6AA020078A0C2 /* CoreGraphics.framework */; };
 		D384DE531BA6AA0E0078A0C2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE521BA6AA0E0078A0C2 /* libz.tbd */; };
 		D384DE561BA6AA320078A0C2 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */; };
+		D39C367D1BDDD0BA00F48547 /* LocationDesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C367C1BDDD0B900F48547 /* LocationDesTableViewController.swift */; };
 		D3B353481BB11EC6004DB2BF /* DeviceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B353471BB11EC6004DB2BF /* DeviceRequest.m */; };
 		D3DF40831BCBA7B200A3A9D7 /* 编辑@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40451BCBA7B200A3A9D7 /* 编辑@2x.png */; };
 		D3DF40841BCBA7B200A3A9D7 /* 编辑@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DF40461BCBA7B200A3A9D7 /* 编辑@3x.png */; };
@@ -568,6 +569,7 @@
 		D384DE501BA6AA020078A0C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D384DE521BA6AA0E0078A0C2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D384DE541BA6AA180078A0C2 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D39C367C1BDDD0B900F48547 /* LocationDesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDesTableViewController.swift; sourceTree = "<group>"; };
 		D3B353461BB11EC6004DB2BF /* DeviceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceRequest.h; sourceTree = "<group>"; };
 		D3B353471BB11EC6004DB2BF /* DeviceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceRequest.m; sourceTree = "<group>"; };
 		D3DF40451BCBA7B200A3A9D7 /* 编辑@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "编辑@2x.png"; sourceTree = "<group>"; };
@@ -897,6 +899,7 @@
 				D36ECB321BD13BD300C79794 /* ContactsTableViewController.swift */,
 				D36ECB381BD1719900C79794 /* RelationViewController.swift */,
 				D36ECB3A1BD280C100C79794 /* ContactDetailsTableViewController.swift */,
+				D39C367C1BDDD0B900F48547 /* LocationDesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1804,6 +1807,7 @@
 				D3DF418E1BCEBD7300A3A9D7 /* BabyImageUpdataViewController.swift in Sources */,
 				D3DF41981BCF92F000A3A9D7 /* FileRequest.m in Sources */,
 				D3DF41A31BCFDCDB00A3A9D7 /* BabyPhoneShortViewController.swift in Sources */,
+				D39C367D1BDDD0BA00F48547 /* LocationDesTableViewController.swift in Sources */,
 				D36ECB291BD09D3700C79794 /* SearchViewController.m in Sources */,
 				D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */,
 				D36ECB391BD1719900C79794 /* RelationViewController.swift in Sources */,
