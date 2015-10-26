@@ -14,6 +14,8 @@ struct WatchSettingConstant{
     static let watchCallOffSegueIdentifier = "WatchCallOffSegueIdentifier"
     static let volumeSettingSegueIdentifier = "VolumeSettingSegueIdentifier"
     static let powerOffSegueIdentifier = "PowerOffSegueIdentifier"
+    static let alarmSegueIdentifier = "AlarmSegueIdentifier"
+    static let findWatchSegueIdentifier = "FindWatchSegueIdentifier"
 }
 
 class WatchSettingViewModel: NSObject{
@@ -50,7 +52,7 @@ class WatchSettingViewModel: NSObject{
     }
 }
 
-class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,WatchSettingTableDelegate,PowerSettingDelegate{
+class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,WatchSettingTableDelegate,PowerSettingDelegate,WatchCallOffSettingDelegate,FindWatchDelegate{
 
     @IBOutlet weak var mode: UILabel!
     @IBOutlet weak var findWatch: UILabel!
@@ -91,7 +93,7 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
             self.watchModel.text = data["model"].stringValue
             self.watchVersion.text = data["version"].stringValue
             self.poweroff.text = data["poweroff"].stringValue
-            self.alarm.text = data["alarm"].stringValue
+            self.alarm.text = ""//data["alarm"].stringValue
             self.allSwitch.selected = (data["allcalloff"].stringValue == "1")
             self.bindID.text = data["deviceno"].stringValue
             self.friendSwitch.selected = ((data["friendoff"].stringValue) == "1")
@@ -99,7 +101,7 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
             self.poweroff.text = data["poweroff"].stringValue
             self.volume.text = data["volume"].stringValue == "" ? "0" : data["volume"].stringValue
             self.strangeSwitch.selected = ((data["strangeoff"].stringValue) == "1")
-            self.calloff.text = data["calloff"].stringValue
+            self.calloff.text = ""//data["calloff"].stringValue
             self.mode.text = vm.modeText()//data["mode"].stringValue
             }) { (error) -> Void in
                 print(error)
@@ -126,13 +128,44 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
         self.navigationController?.popToRootViewControllerAnimated(true)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    func refreshUI(){
-        
+    
+    func updateConfig(){
+        let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
+        DeviceRequest.UpdateDeviceConfigInfoWithParameters(viewModel?.data?.object, success: { (response) -> Void in
+            hud.mode = .Text
+            let json = JSON(response)
+            if json["state"].stringValue == "0"{
+                hud.labelText = "修改成功"
+            }else{
+                hud.labelText = "修改失败,服务器内部错误"
+            }
+            hud.hide(true, afterDelay: 0.3)
+            }) { (error) -> Void in
+                print(error)
+        }
     }
+    
+    @IBAction func strangeChange(sender: UIButton) {
+        sender.selected = !sender.selected
+        viewModel?.data!["strangeoff"].stringValue = sender.selected ? "1" : "0"
+        updateConfig()
+    }
+    @IBAction func friendChange(sender: UIButton) {
+        sender.selected = !sender.selected
+        viewModel?.data!["friendoff"].stringValue = sender.selected ? "1" : "0"
+        updateConfig()
+    }
+    @IBAction func allChange(sender: UIButton) {
+        sender.selected = !sender.selected
+        viewModel?.data!["allcalloff"].stringValue = sender.selected ? "1" : "0"
+        updateConfig()
+    }
+    
     
     func volumeChange(vc: VolumeSettingViewController, volume: Int) {
         viewModel?.data!["volume"].string = "\(volume)"
         self.volume.text = "\(volume)"
+        updateConfig()
     }
     
     func watchSettingChange(type: Int, index: Int, content: String) {
@@ -146,6 +179,7 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
         default:
             break
         }
+        updateConfig()
     }
     
     func powerSettingChange(type: Int, itemString: String) {
@@ -155,6 +189,34 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
             poweroff.text = viewModel?.powerText()
         default:
             break
+        }
+        updateConfig()
+    }
+    
+    
+    func callOffChange(type: Int, calloffString: String) {
+        switch type{
+        case WatchCallOffType.CallOff.rawValue:
+            viewModel?.data!["calloff"].stringValue = calloffString
+        case WatchCallOffType.Alarm.rawValue:
+            viewModel?.data!["alarm"].stringValue = calloffString
+        default:
+            break
+        }
+        updateConfig()
+    }
+    
+    func ringBell() {
+        let deviceNo = ChildDeviceManager.sharedManager().currentDeviceNo
+        let parameter = ["deviceno":deviceNo]
+        DeviceRequest.FindDeviceWithParameters(parameter, success: { (response) -> Void in
+            print(response)
+            let hud = MBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true)
+            hud.mode = .Text
+            hud.labelText = "响铃成功"
+            hud.hide(true, afterDelay: 0.7)
+            }) { (error) -> Void in
+                print(error)
         }
     }
     
@@ -255,8 +317,24 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
                 return
             }
             let vc = segue.destinationViewController as! WatchCallOffSettingViewController
-//            vc.calloffString = data["calloff"].stringValue
-            vc.calloffString = "8:30-12:00,1-2-3-4-5|2:30-5:30,5-6"
+            vc.calloffString = viewModel?.data!["calloff"].stringValue
+            vc.type = .CallOff
+            vc.delegate = self
+        }
+        if segue.identifier == WatchSettingConstant.alarmSegueIdentifier{
+            guard let vm = self.viewModel else{
+                self.backClicked(UIButton())
+                return
+            }
+            guard let _ = vm.data else{
+                self.backClicked(UIButton())
+                return
+            }
+            let vc = segue.destinationViewController as! WatchCallOffSettingViewController
+            vc.calloffString = viewModel?.data!["alarm"].stringValue
+            vc.type = .Alarm
+            vc.delegate = self
+            vc.title = "闹钟"
         }
         if segue.identifier == WatchSettingConstant.volumeSettingSegueIdentifier{
             let vc = segue.destinationViewController as! VolumeSettingViewController
@@ -269,6 +347,10 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
             let vc = segue.destinationViewController as! PowerSettingTableViewController
             vc.type = .Power
             vc.itemString = viewModel?.data!["poweroff"].stringValue
+            vc.delegate = self
+        }
+        if segue.identifier == WatchSettingConstant.findWatchSegueIdentifier{
+            let vc = segue.destinationViewController as! FindWatchViewController
             vc.delegate = self
         }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -74,6 +74,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="消息.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="350" y="28" width="30" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="messageClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="EEP-ob-IYx"/>
                                 </connections>
@@ -82,6 +85,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="通讯录.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="82" width="62" height="62"/>
+                                </variation>
                                 <connections>
                                     <action selector="ContactsClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="I0W-dB-iMb"/>
                                 </connections>
@@ -90,6 +96,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="手表.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="168" width="62" height="62"/>
+                                </variation>
                                 <connections>
                                     <action selector="watchSettingClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="cJA-wS-yJC"/>
                                 </connections>
@@ -98,6 +107,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="设置.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="254" width="62" height="62"/>
+                                </variation>
                                 <connections>
                                     <action selector="appSettingClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="uAV-c7-Ow8"/>
                                 </connections>
@@ -108,6 +120,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="352" y="58" width="26" height="16"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通讯录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-hG-h5F">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -115,6 +130,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="346" y="144" width="39" height="16"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyc-ox-YHG">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -122,6 +140,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="341" y="316" width="49" height="16"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手表设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B10-Zv-HK9">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -129,6 +150,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="339" y="230" width="52" height="16"/>
+                                </variation>
                             </label>
                         </subviews>
                         <animations/>
@@ -2567,6 +2591,9 @@
                                                     <animations/>
                                                     <state key="normal" image="关闭.png"/>
                                                     <state key="selected" image="打开.png"/>
+                                                    <connections>
+                                                        <action selector="strangeChange:" destination="ItW-SU-rkI" eventType="touchUpInside" id="ubS-l0-bgb"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启后不再通讯录里的来电将自动屏蔽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQs-dt-gb4">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2644,6 +2671,9 @@
                                                     <animations/>
                                                     <state key="normal" image="关闭.png"/>
                                                     <state key="selected" image="打开.png"/>
+                                                    <connections>
+                                                        <action selector="friendChange:" destination="ItW-SU-rkI" eventType="touchUpInside" id="Vwc-Hj-kOj"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -2714,6 +2744,9 @@
                                                     <animations/>
                                                     <state key="normal" image="关闭.png"/>
                                                     <state key="selected" image="打开.png"/>
+                                                    <connections>
+                                                        <action selector="allChange:" destination="ItW-SU-rkI" eventType="touchUpInside" id="Tjt-g6-iIP"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -2935,6 +2968,9 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="0Xk-pF-FhA" kind="show" identifier="AlarmSegueIdentifier" id="YnI-mM-Fpo"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="jWZ-T6-V6r">
                                         <rect key="frame" x="0.0" y="756" width="600" height="60"/>
@@ -3110,7 +3146,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="eSs-HQ-dei" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="CNe-Av-v4T"/>
+                                            <segue destination="eSs-HQ-dei" kind="presentation" identifier="FindWatchSegueIdentifier" animates="NO" modalPresentationStyle="overCurrentContext" id="CNe-Av-v4T"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="IWu-ve-SV1">
@@ -3792,7 +3828,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="powerOffLabel" destination="PPj-zp-eDT" id="cUA-OD-DxO"/>
                         <outlet property="powerOffTime" destination="oMF-g6-f0I" id="Oy5-1K-BsA"/>
+                        <outlet property="powerOnLabel" destination="xyt-9A-u3j" id="5tJ-dS-r2z"/>
                         <outlet property="powerOnTime" destination="KlA-DD-FxU" id="qge-Zt-AM3"/>
                         <outletCollection property="selectedButton" destination="9PW-ao-gVL" collectionClass="NSMutableArray" id="YE7-vx-Rdd"/>
                         <outletCollection property="selectedButton" destination="nV8-sf-40N" collectionClass="NSMutableArray" id="m2N-bf-h2j"/>
@@ -4220,9 +4258,6 @@
                                                             <animations/>
                                                             <state key="normal" image="关闭.png"/>
                                                             <state key="selected" image="打开.png"/>
-                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="188" y="18" width="44" height="24"/>
-                                                            </variation>
                                                         </button>
                                                     </subviews>
                                                     <animations/>
@@ -4382,9 +4417,16 @@
                                 <state key="normal" title="返回" image="返回.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backClicked:" destination="0Xk-pF-FhA" eventType="touchUpInside" id="sbf-V3-xeH"/>
+                                </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="编辑.png" id="gPT-9J-hTh"/>
+                        <barButtonItem key="rightBarButtonItem" image="编辑.png" id="gPT-9J-hTh">
+                            <connections>
+                                <action selector="editClicked:" destination="0Xk-pF-FhA" id="5uE-9N-lhd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableContainer" destination="SDG-Um-vHc" id="39r-3a-6bY"/>
@@ -7680,6 +7722,9 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="43" y="350" width="62" height="30"/>
+                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="LnE-Gz-I3D"/>
                                         </connections>
@@ -7691,6 +7736,9 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="157" y="350" width="62" height="30"/>
+                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="8zx-oQ-kDQ"/>
                                         </connections>
@@ -7742,6 +7790,9 @@
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="194" y="154" width="41" height="16"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -7813,7 +7864,8 @@
                                         <exclude reference="MXM-nF-Cpe"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="70" y="206" width="260" height="390"/>
                                     <mask key="subviews">
                                         <include reference="HgK-pI-VWP"/>
                                         <include reference="zqK-dU-hL9"/>
@@ -7914,6 +7966,9 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="减少.png"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="57" y="101" width="27" height="27"/>
+                                        </variation>
                                         <connections>
                                             <action selector="lowerButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="QnU-mU-Ts7"/>
                                             <action selector="lowerButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="sOV-qs-QPb"/>
@@ -7923,6 +7978,9 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="增加_.png"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="177" y="101" width="27" height="27"/>
+                                        </variation>
                                         <connections>
                                             <action selector="addButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="CDQ-JL-QTl"/>
                                             <action selector="addButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="co6-0G-2hz"/>
@@ -7981,7 +8039,8 @@
                                                         <exclude reference="wXc-FG-FsE"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
+                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="8" y="21" width="228" height="35"/>
                                                     <mask key="constraints">
                                                         <include reference="wXc-FG-FsE"/>
                                                     </mask>
@@ -8022,6 +8081,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="114" y="106" width="33" height="17"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -11426,8 +11488,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="usW-AO-9yO"/>
-        <segue reference="1a4-Ds-VlV"/>
+        <segue reference="YnI-mM-Fpo"/>
         <segue reference="EaM-HS-Fyw"/>
+        <segue reference="2t1-lD-vdl"/>
         <segue reference="nr5-1F-m2z"/>
         <segue reference="sRh-ga-WdX"/>
         <segue reference="hlb-Gu-8NE"/>
