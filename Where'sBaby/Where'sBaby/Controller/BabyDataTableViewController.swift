@@ -216,6 +216,7 @@ class BabyDataTableViewController: UITableViewController {
             let vc:ContactDetailsTableViewController = segue.destinationViewController as! ContactDetailsTableViewController
             let dic:NSDictionary = sender as! NSDictionary
             vc.currentDic = NSMutableDictionary.init(dictionary: dic)
+            vc.canAdmin = false
         }
     }
 

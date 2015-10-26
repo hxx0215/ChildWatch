@@ -44,4 +44,7 @@
 
 + (void)DeletePhoneBookWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
++ (void)AssignAdminWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
+
 @end

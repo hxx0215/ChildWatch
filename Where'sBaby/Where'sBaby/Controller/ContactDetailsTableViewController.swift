@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactDetailsTableViewController: UITableViewController {
+class ContactDetailsTableViewController: UITableViewController ,AlartViewControllerDelegate{
 
     @IBOutlet weak var nicknameLabel : UILabel!
     @IBOutlet weak var mobileshortLabel : UILabel!
@@ -16,6 +16,7 @@ class ContactDetailsTableViewController: UITableViewController {
     @IBOutlet weak var autoanswerButton : UIButton!
     var currentDic : NSMutableDictionary!
     var observer: NSObjectProtocol!
+    var canAdmin:Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +42,15 @@ class ContactDetailsTableViewController: UITableViewController {
             self.nicknameLabel.text = self.currentDic["nickname"] as? String
             self.title = self.nicknameLabel.text
         }
+        
+        let role = self.currentDic["role"] as! String
+        if canAdmin && role == "guard"{
+            canAdmin = true
+        }
+        else
+        {
+            canAdmin = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,41 +64,18 @@ class ContactDetailsTableViewController: UITableViewController {
     }
     
     @IBAction func deleteClicked(sender: AnyObject?) {
-        let ac:UIAlertController = UIAlertController(title: "", message: "确定要删除该联系人吗？", preferredStyle: UIAlertControllerStyle.Alert)
-        let a:UIAlertAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (UIAlertAction) -> Void in
-            
-        }
-        let b:UIAlertAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
-            let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            DeviceRequest.DeletePhoneBookWithParameters(self.currentDic, success: { (object) -> Void in
-                print(object)
-                let dic:NSDictionary = object as! NSDictionary
-                let state:Int = dic["state"] as! Int
-                if(state==0){
-                    hud.detailsLabelText = "删除成功"
-                    self.navigationController?.popViewControllerAnimated(true)
-                }
-                else if(state == 1)
-                {
-                    hud.detailsLabelText = "数据库异常"
-                }
-                else
-                {
-                    hud.detailsLabelText = "删除失败"
-                }
-                hud.mode = .Text
-                hud.hide(true, afterDelay: 1.5)
-                
-                }) { (NSError error) -> Void in
-                    hud.mode = .Text
-                    hud.detailsLabelText = error.domain
-                    hud.hide(true, afterDelay: 1.5)
-            }
-        }
-        ac.addAction(a)
-        ac.addAction(b)
-        self.presentViewController(ac, animated: true) { () -> Void in
-        }
+        self.performSegueWithIdentifier("alertIdentifier", sender: 0)
+//        let ac:UIAlertController = UIAlertController(title: "", message: "确定要删除该联系人吗？", preferredStyle: UIAlertControllerStyle.Alert)
+//        let a:UIAlertAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (UIAlertAction) -> Void in
+//            
+//        }
+//        let b:UIAlertAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+//            
+//        }
+//        ac.addAction(a)
+//        ac.addAction(b)
+//        self.presentViewController(ac, animated: true) { () -> Void in
+//        }
     }
     
     @IBAction func sosflagButtonClicked(sender: UIButton) {
@@ -162,20 +149,98 @@ class ContactDetailsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+        if canAdmin{
+            return 2
+        }
+        return 1
     }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if indexPath.row == 0{
+        if indexPath.section==1 && indexPath.row == 0{
+            self.performSegueWithIdentifier("alertIdentifier", sender: 1)
+        }
+        else if indexPath.row == 0{
             self.performSegueWithIdentifier("relation", sender: nil)
         }
         else if indexPath.row == 1{
             self.performSegueWithIdentifier("phoneShort", sender: nil)
         }
         
+    }
+    
+    func didClickButton(index: Int, tag: Int) {
+        if tag == 0{
+            if index == 1{
+                let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+                DeviceRequest.DeletePhoneBookWithParameters(self.currentDic, success: { (object) -> Void in
+                    print(object)
+                    let dic:NSDictionary = object as! NSDictionary
+                    let state:Int = dic["state"] as! Int
+                    if(state==0){
+                        hud.detailsLabelText = "删除成功"
+                        self.navigationController?.popViewControllerAnimated(true)
+                    }
+                    else if(state == 1)
+                    {
+                        hud.detailsLabelText = "数据库异常"
+                    }
+                    else
+                    {
+                        hud.detailsLabelText = "删除失败"
+                    }
+                    hud.mode = .Text
+                    hud.hide(true, afterDelay: 1.5)
+                    
+                    }) { (NSError error) -> Void in
+                        hud.mode = .Text
+                        hud.detailsLabelText = error.domain
+                        hud.hide(true, afterDelay: 1.5)
+                }
+            }
+        }
+        else
+        {
+            if index == 1{
+                let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+                let userId = NSUserDefaults.standardUserDefaults().objectForKey("id") as! NSNumber
+                let dic:[String:String] = ["deviceno":ChildDeviceManager.sharedManager().curentDevice.dicBase["deviceno"] as! String,"userid":userId.stringValue,"mobile":self.currentDic["mobile"] as! String]
+                DeviceRequest.AssignAdminWithParameters(dic, success: { (object) -> Void in
+                    print(object)
+                    let dic:NSDictionary = object as! NSDictionary
+                    let state:Int = dic["state"] as! Int
+                    if(state==0){
+                        hud.detailsLabelText = "转让成功"
+                        self.navigationController?.popViewControllerAnimated(true)
+                    }
+                    else if(state == 1)
+                    {
+                        hud.detailsLabelText = "转让的家人关系不存在"
+                    }
+                    else if(state == 4)
+                    {
+                        hud.detailsLabelText = "超级管理员不存在"
+                    }
+                    else if(state == 5)
+                    {
+                        hud.detailsLabelText = "要转让的家人手机号不是APP用户"
+                    }
+                    else
+                    {
+                        hud.detailsLabelText = "转让失败"
+                    }
+                    hud.mode = .Text
+                    hud.hide(true, afterDelay: 1.5)
+                    }, failure: { (NSError error) -> Void in
+                        
+                        hud.mode = .Text
+                        hud.detailsLabelText = error.domain
+                        hud.hide(true, afterDelay: 1.5)
+                })
+                
+            }
+        }
     }
 
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -242,6 +307,19 @@ class ContactDetailsTableViewController: UITableViewController {
         else if segue.identifier == "relation"{
             let vc:RelationViewController = segue.destinationViewController as! RelationViewController
             vc.currentDic = self.currentDic
+        }
+        if segue.identifier == "alertIdentifier"{
+            let vc:AlartViewController = segue.destinationViewController as! AlartViewController
+            vc.tag = sender as! Int
+            if(vc.tag==0){
+                vc.text = "确定要删除该联系人吗？"
+            }
+            else
+            {
+                let nickname = self.currentDic["nickname"] as! String
+                vc.text = "管理员权限将转移至\(nickname),\n确定要修改吗？"
+            }
+            vc.delegate = self
         }
     }
 
