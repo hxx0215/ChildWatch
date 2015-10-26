@@ -74,9 +74,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="消息.png"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="350" y="28" width="30" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="messageClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="EEP-ob-IYx"/>
                                 </connections>
@@ -85,9 +82,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="通讯录.png"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="334" y="82" width="62" height="62"/>
-                                </variation>
                                 <connections>
                                     <action selector="ContactsClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="I0W-dB-iMb"/>
                                 </connections>
@@ -96,9 +90,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="手表.png"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="334" y="168" width="62" height="62"/>
-                                </variation>
                                 <connections>
                                     <action selector="watchSettingClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="cJA-wS-yJC"/>
                                 </connections>
@@ -107,9 +98,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="设置.png"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="334" y="254" width="62" height="62"/>
-                                </variation>
                                 <connections>
                                     <action selector="appSettingClick:" destination="iib-cB-Aq7" eventType="touchUpInside" id="uAV-c7-Ow8"/>
                                 </connections>
@@ -120,9 +108,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="352" y="58" width="26" height="16"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通讯录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-hG-h5F">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -130,9 +115,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="346" y="144" width="39" height="16"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyc-ox-YHG">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -140,9 +122,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="341" y="316" width="49" height="16"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手表设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B10-Zv-HK9">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -150,9 +129,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="339" y="230" width="52" height="16"/>
-                                </variation>
                             </label>
                         </subviews>
                         <animations/>
@@ -3242,6 +3218,7 @@
                         <outlet property="friendSwitch" destination="v8b-rc-Rvv" id="Qe7-fx-V6d"/>
                         <outlet property="mode" destination="fyZ-2o-Dwh" id="dn3-fy-daS"/>
                         <outlet property="poweroff" destination="eAm-oI-5RQ" id="sZG-Ii-Iiz"/>
+                        <outlet property="qrcodeImage" destination="mdp-1j-Vw5" id="48h-6D-fiV"/>
                         <outlet property="ring" destination="9dl-5A-TWg" id="Rtu-yh-VQs"/>
                         <outlet property="strangeSwitch" destination="amU-Wp-4g1" id="vZm-0E-q4x"/>
                         <outlet property="volume" destination="T9u-RC-kxx" id="1Tt-fA-wwC"/>
@@ -3861,9 +3838,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="设置体重底框.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fqp-L8-0Cg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="77" y="279" width="246" height="244"/>
-                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRu-1I-7eb">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -3978,9 +3952,6 @@
                                         <state key="normal" title="    确定   ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="151" y="204" width="58" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="confirmClicked:" destination="Nsi-bL-wGE" eventType="touchUpInside" id="TcW-SA-jo5"/>
                                         </connections>
@@ -4022,8 +3993,7 @@
                                         <exclude reference="tiq-eo-JNh"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="80" y="279" width="240" height="244"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="580-pW-xXh"/>
                                         <include reference="EM1-HC-1KL"/>
@@ -4453,9 +4423,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="设置体重底框.png" translatesAutoresizingMaskIntoConstraints="NO" id="jwT-jY-7ia">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="31" y="279" width="338" height="244"/>
-                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUX-yu-6J7">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -4467,9 +4434,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="165" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="Sbf-Ro-0KD" eventType="touchUpInside" id="4Yn-qc-VwR"/>
                                             <action selector="cancelClicked:" destination="fdq-NW-kRd" eventType="touchUpInside" id="aOS-Rw-gbc"/>
@@ -4490,8 +4454,7 @@
                                                 <exclude reference="Lx3-22-Tyb"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="165" width="62" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="Lx3-22-Tyb"/>
                                             </mask>
@@ -4564,8 +4527,7 @@
                                         <exclude reference="xgO-ID-csV"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="31" y="279" width="338" height="244"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="b2K-uK-NLv"/>
                                         <include reference="19M-06-I8Z"/>
@@ -6958,9 +6920,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="143" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="NvW-DW-c5g" eventType="touchUpInside" id="OH0-PI-kwk"/>
                                         </connections>
@@ -6972,9 +6931,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="143" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="NvW-DW-c5g" eventType="touchUpInside" id="VWL-mU-4Ra"/>
                                         </connections>
@@ -6988,9 +6944,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="女孩.png" translatesAutoresizingMaskIntoConstraints="NO" id="ixe-KN-7e0">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <animations/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="170" y="49" width="36" height="36"/>
-                                        </variation>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTo-9n-agr">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -7000,9 +6953,6 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="单选框_已选.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="49" y="95" width="50" height="20"/>
-                                        </variation>
                                         <connections>
                                             <action selector="boyButtonClick:" destination="NvW-DW-c5g" eventType="touchUpInside" id="jt5-vp-wrB"/>
                                         </connections>
@@ -7015,9 +6965,6 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="单选框_已选.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="163" y="95" width="50" height="20"/>
-                                        </variation>
                                         <connections>
                                             <action selector="girlButtonClick:" destination="NvW-DW-c5g" eventType="touchUpInside" id="6tD-Ow-bgp"/>
                                         </connections>
@@ -7033,8 +6980,7 @@
                                                 <exclude reference="Ypd-t1-y2f"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="56" y="49" width="36" height="36"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="Ypd-t1-y2f"/>
                                             </mask>
@@ -7212,9 +7158,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="150" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="Sbf-Ro-0KD" eventType="touchUpInside" id="zKD-CB-O1k"/>
                                         </connections>
@@ -7234,8 +7177,7 @@
                                                 <exclude reference="qRO-aB-cvw"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="150" width="62" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="qRO-aB-cvw"/>
                                             </mask>
@@ -7409,9 +7351,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="148" width="62" height="30"/>
-                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpY-p2-uxr">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -7420,9 +7359,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="148" width="62" height="30"/>
-                                        </variation>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置性别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-r7-cpp">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -7549,9 +7485,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="5SW-uD-ptX" eventType="touchUpInside" id="iyv-u5-TUw"/>
                                         </connections>
@@ -7563,9 +7496,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="5SW-uD-ptX" eventType="touchUpInside" id="ODu-ph-YP5"/>
                                         </connections>
@@ -7722,9 +7652,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="350" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="LnE-Gz-I3D"/>
                                         </connections>
@@ -7736,9 +7663,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="350" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="8zx-oQ-kDQ"/>
                                         </connections>
@@ -7790,9 +7714,6 @@
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="194" y="154" width="41" height="16"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -7864,8 +7785,7 @@
                                         <exclude reference="MXM-nF-Cpe"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="70" y="206" width="260" height="390"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="HgK-pI-VWP"/>
                                         <include reference="zqK-dU-hL9"/>
@@ -7966,9 +7886,6 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="减少.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="57" y="101" width="27" height="27"/>
-                                        </variation>
                                         <connections>
                                             <action selector="lowerButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="QnU-mU-Ts7"/>
                                             <action selector="lowerButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="sOV-qs-QPb"/>
@@ -7978,9 +7895,6 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="增加_.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="177" y="101" width="27" height="27"/>
-                                        </variation>
                                         <connections>
                                             <action selector="addButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="CDQ-JL-QTl"/>
                                             <action selector="addButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="co6-0G-2hz"/>
@@ -7993,9 +7907,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="3aK-VP-LYN"/>
                                         </connections>
@@ -8007,9 +7918,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="Yta-Vd-6Tt"/>
                                         </connections>
@@ -8039,8 +7947,7 @@
                                                         <exclude reference="wXc-FG-FsE"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="8" y="21" width="228" height="35"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="wXc-FG-FsE"/>
                                                     </mask>
@@ -8081,9 +7988,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="114" y="106" width="33" height="17"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -8404,9 +8308,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="SDr-fa-w6A" eventType="touchUpInside" id="pzQ-de-uel"/>
                                         </connections>
@@ -8418,9 +8319,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="SDr-fa-w6A" eventType="touchUpInside" id="8sJ-22-pZd"/>
                                         </connections>
@@ -8587,9 +8485,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="PQd-4y-Pkh" eventType="touchUpInside" id="0SD-dy-JJD"/>
                                         </connections>
@@ -8601,9 +8496,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="PQd-4y-Pkh" eventType="touchUpInside" id="x8G-9h-2Ab"/>
                                         </connections>
@@ -8785,9 +8677,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="43" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="wrY-xH-ART" eventType="touchUpInside" id="8Eq-pg-zuV"/>
                                         </connections>
@@ -8799,9 +8688,6 @@
                                         <state key="normal" title="    确定    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="148" width="62" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="okButtonClick:" destination="wrY-xH-ART" eventType="touchUpInside" id="bL9-xU-0TU"/>
                                         </connections>
@@ -9585,8 +9471,7 @@
                                                         <exclude reference="Y5S-Ud-0GW"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="85" y="88" width="27" height="26"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="Y5S-Ud-0GW"/>
                                                     </mask>
@@ -11333,9 +11218,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="usW-AO-9yO"/>
-        <segue reference="YnI-mM-Fpo"/>
+        <segue reference="1a4-Ds-VlV"/>
         <segue reference="EaM-HS-Fyw"/>
-        <segue reference="2t1-lD-vdl"/>
+        <segue reference="YnI-mM-Fpo"/>
         <segue reference="nr5-1F-m2z"/>
         <segue reference="sRh-ga-WdX"/>
         <segue reference="hlb-Gu-8NE"/>
