@@ -12,6 +12,7 @@ class ContactsTableViewController: UITableViewController {
 
     var tableViewFamilyArray : NSMutableArray!
     var tableViewFrinedArray : NSMutableArray!
+    var canAdmin : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +49,10 @@ class ContactsTableViewController: UITableViewController {
                         let mobile:String = dicDatat["mobile"] as! String
                         if mobile == username{
                             self.tableViewFamilyArray.insertObject(dicDatat, atIndex: 0)
+                            let role : String = dicDatat["role"] as! String
+                            if  role == "super"{
+                                self.canAdmin = true
+                            }
                         }
                         else {
                             self.tableViewFamilyArray.addObject(dicDatat)
@@ -227,6 +232,7 @@ class ContactsTableViewController: UITableViewController {
             let vc:ContactDetailsTableViewController = segue.destinationViewController as! ContactDetailsTableViewController
             let dic:NSDictionary = sender as! NSDictionary
             vc.currentDic = NSMutableDictionary.init(dictionary: dic)
+            vc.canAdmin = true
         }
     }
 

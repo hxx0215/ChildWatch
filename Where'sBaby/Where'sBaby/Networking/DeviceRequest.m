@@ -27,6 +27,8 @@
 #define kMethodUpdatePhoneBook @"/user/updatePhoneBook"
 #define kMethodDeletePhoneBook @"/user/deletePhoneBook"
 
+#define kMethodAssignAdmin @"/user/assignAdmin"
+
 @implementation DeviceRequest
 + (void)DeviceListWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
@@ -94,5 +96,10 @@
 
 + (void)DeletePhoneBookWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodDeletePhoneBook WithParameters:parameters post:YES success:success failure:failure];
+}
+
+
++ (void)AssignAdminWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodAssignAdmin WithParameters:parameters post:YES success:success failure:failure];
 }
 @end
