@@ -21,6 +21,8 @@ class BabyDataTableViewController: UITableViewController {
     @IBOutlet weak var brithLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     var first: Bool = true
+    var contactsDic : NSDictionary = NSDictionary()
+    var observer: NSObjectProtocol!
     //var babyDataDic : NSMutableDictionary!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,7 @@ class BabyDataTableViewController: UITableViewController {
         nameEditeButton.layer.borderColor = UIColor.grayColor().CGColor;
         nameEditeButton.layer.masksToBounds = true;
         
-        NSNotificationCenter.defaultCenter().addObserverForName("updateBabyData", object: nil, queue: NSOperationQueue.mainQueue()) { (NSNotification) -> Void in
+        observer = NSNotificationCenter.defaultCenter().addObserverForName("updateBabyData", object: nil, queue: NSOperationQueue.mainQueue()) { (NSNotification) -> Void in
             self.updateBabyData()
         }
         
@@ -56,6 +58,7 @@ class BabyDataTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         if first{
             first = false
+            let hud : MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             let dic = ["deviceno":ChildDeviceManager.sharedManager().curentDevice.dicBase["deviceno"] as! String]
             DeviceRequest.GetDeviceInfoWithParameters(NSDictionary(dictionary: dic), success: { (AnyObject object) -> Void in
         
@@ -67,11 +70,12 @@ class BabyDataTableViewController: UITableViewController {
                     let dicData:NSDictionary = dic["data"]!.firstObject as! NSDictionary
                     ChildDeviceManager.sharedManager().curentDevice.dicBabyData = NSMutableDictionary(dictionary: dicData)
                     self.updateBabyData()
+                    
                 }
+                hud.hide(true)
                 
                 }) { (NSError error) -> Void in
                     print(error)
-                    let hud = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
                     hud.mode = .Text
                     hud.labelText = error.domain;
                     hud.hide(true, afterDelay: 1.5)
@@ -85,6 +89,7 @@ class BabyDataTableViewController: UITableViewController {
     }
     
     @IBAction func backClicked(sender: UIButton) {
+        NSNotificationCenter.defaultCenter().removeObserver(self.observer)
         self.dismissViewControllerAnimated(true, completion: nil);
     }
     
@@ -121,6 +126,34 @@ class BabyDataTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.row == 3 {
+            let hud : MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            let dic = ["deviceno":ChildDeviceManager.sharedManager().currentDeviceNo]
+            DeviceRequest.GetPhoneBookListWithParameters(dic, success: { (object) -> Void in
+                print(object)
+                let dic:NSDictionary = object as! NSDictionary
+                let state:Int = dic["state"] as! Int
+                if(state==0)
+                {
+                    let dicArray:NSArray = dic["data"] as! NSArray
+                    for dicDatat in dicArray{
+                        let mobile:String = dicDatat["mobile"] as! String
+                        let username:String = NSUserDefaults.standardUserDefaults().objectForKey("username") as! String
+                        if mobile == username {
+                            let contactsDic:NSDictionary = dicDatat as! NSDictionary
+                            self.performSegueWithIdentifier("ContactDetailsIdentifier", sender: contactsDic)
+                            break
+                        }
+                    }
+                }
+                hud.hide(true)
+                }) { (NSError error) -> Void in
+                    print(error)
+                    hud.mode = .Text
+                    hud.detailsLabelText = error.domain
+                    hud.hide(true, afterDelay: 1.5)
+            }
+        }
     }
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
@@ -172,14 +205,19 @@ class BabyDataTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ContactDetailsIdentifier"{
+            let vc:ContactDetailsTableViewController = segue.destinationViewController as! ContactDetailsTableViewController
+            let dic:NSDictionary = sender as! NSDictionary
+            vc.currentDic = NSMutableDictionary.init(dictionary: dic)
+        }
     }
-    */
+
 
 }

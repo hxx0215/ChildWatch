@@ -6823,6 +6823,7 @@
                         <outlet property="nicknameLabel" destination="Rz6-9P-WT8" id="ZMs-Th-pl4"/>
                         <outlet property="sexLabel" destination="eYo-Mn-upt" id="w9B-Xy-KWH"/>
                         <outlet property="weightLabel" destination="wz9-cY-sBM" id="Q52-2x-TeM"/>
+                        <segue destination="fsE-xm-kto" kind="show" identifier="ContactDetailsIdentifier" id="nr5-1F-m2z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wod-NU-nM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -10732,6 +10733,7 @@
                         <outlet property="mobileshortLabel" destination="KkG-gu-7yV" id="tMl-iK-CTc"/>
                         <outlet property="nicknameLabel" destination="9oZ-eU-1Tr" id="2hm-Ro-T13"/>
                         <outlet property="sosflagButton" destination="Ln0-rq-yE9" id="DjF-cx-amG"/>
+                        <segue destination="wrY-xH-ART" kind="presentation" identifier="phoneShort" animates="NO" modalPresentationStyle="overCurrentContext" id="hlb-Gu-8NE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNc-yL-HTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -11199,5 +11201,7 @@
         <segue reference="usW-AO-9yO"/>
         <segue reference="1a4-Ds-VlV"/>
         <segue reference="EaM-HS-Fyw"/>
+        <segue reference="nr5-1F-m2z"/>
+        <segue reference="hlb-Gu-8NE"/>
     </inferredMetricsTieBreakers>
 </document>

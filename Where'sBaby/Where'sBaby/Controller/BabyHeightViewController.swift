@@ -106,7 +106,8 @@ class BabyHeightViewController: UIViewController,ZHRulerViewDelegate {
     }
     
     func getRulerValue(rulerValue: CGFloat, withScrollRulerView rulerView: ZHRulerView!) {
-        let height:Int = Int.init(rulerValue)+1
+        print(rulerValue)
+        let height:Int = Int.init(rulerValue+1+0.2)
         if(height>=30&&height<=180)
         {
             value = height

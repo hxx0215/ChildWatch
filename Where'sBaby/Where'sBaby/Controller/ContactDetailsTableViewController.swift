@@ -15,6 +15,7 @@ class ContactDetailsTableViewController: UITableViewController {
     @IBOutlet weak var sosflagButton : UIButton!
     @IBOutlet weak var autoanswerButton : UIButton!
     var currentDic : NSMutableDictionary!
+    var observer: NSObjectProtocol!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +34,10 @@ class ContactDetailsTableViewController: UITableViewController {
         if autoanswer == 1{
             self.autoanswerButton.selected = true
         }
+        
+        observer = NSNotificationCenter.defaultCenter().addObserverForName("updateMobileshort", object: nil, queue: NSOperationQueue.mainQueue()) { (NSNotification) -> Void in
+            self.mobileshortLabel.text = self.currentDic["mobileshort"] as? String
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +46,7 @@ class ContactDetailsTableViewController: UITableViewController {
     }
 
     @IBAction func backClicked(sender: UIButton) {
+        NSNotificationCenter.defaultCenter().removeObserver(self.observer)
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -118,6 +124,15 @@ class ContactDetailsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.row == 1{
+            self.performSegueWithIdentifier("phoneShort", sender: nil)
+        }
+        
+    }
 
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
@@ -169,14 +184,18 @@ class ContactDetailsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "phoneShort"{
+            let vc:BabyPhoneShortViewController = segue.destinationViewController as! BabyPhoneShortViewController
+            vc.currentDic = self.currentDic
+        }
     }
-    */
+
 
 }
