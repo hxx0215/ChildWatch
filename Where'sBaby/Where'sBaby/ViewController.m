@@ -79,14 +79,14 @@
     
     _childButtonCurrent.imageView.layer.cornerRadius = (66-8)/2;
     _childButtonCurrent.imageView.layer.masksToBounds = YES;
-    _childButton1.layer.cornerRadius = (15-8)/2;
-    _childButton1.layer.masksToBounds = YES;
-    _childButton2.layer.cornerRadius = (15-8)/2;
-    _childButton2.layer.masksToBounds = YES;
-    _childButton3.layer.cornerRadius = (15-8)/2;
-    _childButton3.layer.masksToBounds = YES;
-    _childButton4.layer.cornerRadius = (15-8)/2;
-    _childButton4.layer.masksToBounds = YES;
+    _childButton1.imageView.layer.cornerRadius = (30-4)/2;
+    _childButton1.imageView.layer.masksToBounds = YES;
+    _childButton2.imageView.layer.cornerRadius = (30-4)/2;
+    _childButton2.imageView.layer.masksToBounds = YES;
+    _childButton3.imageView.layer.cornerRadius = (30-4)/2;
+    _childButton3.imageView.layer.masksToBounds = YES;
+    _childButton4.imageView.layer.cornerRadius = (30-4)/2;
+    _childButton4.imageView.layer.masksToBounds = YES;
     
     UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(mapClick:)];
     self.mapBackView.userInteractionEnabled = YES;
@@ -161,8 +161,16 @@
     if (sender.tag ==0) {
         [self.revealViewController performSegueWithIdentifier:@"baby" sender:nil];
     }
-    else if (childTag != sender.tag) {
-        childTag = sender.tag;
+    else if ([childDeviceArray count] == sender.tag) {
+        [self performSegueWithIdentifier:@"BindingSegueIdentifier" sender:nil];
+    }
+    else
+    {
+        if ((childTag+1)<=sender.tag) {
+            childTag = sender.tag;
+        }
+        else
+            childTag = sender.tag-1;
         [self updateChild];
     }
 }
@@ -221,44 +229,61 @@
             device = [childDeviceArray objectAtIndex:j];
         }
         if (childTag == j) {
-            [self setChildButton:self.childButtonCurrent label:self.childLabelCurrent whithDic:device];
+            [self setChildButton:self.childButtonCurrent label:self.childLabelCurrent whithDic:device add:NO];
             [ChildDeviceManager sharedManager].curentDevice = device;
         }
         else
         {
+            UIButton *btn = nil;
+            UILabel *label = nil;
             switch (i) {
                 case 1:
                 {
-                    [self setChildButton:self.childButton1 label:self.childLabel1 whithDic:device];
+                    btn = self.childButton1;
+                    label = self.childLabel1;
                 }
                     break;
                 case 2:
                 {
-                    [self setChildButton:self.childButton2 label:self.childLabel2 whithDic:device];
+                    btn = self.childButton2;
+                    label = self.childLabel2;
                 }
                     break;
                 case 3:
                 {
-                    [self setChildButton:self.childButton3 label:self.childLabel3 whithDic:device];
+                    btn = self.childButton3;
+                    label = self.childLabel3;
                 }
                     break;
                 case 4:
                 {
-                    [self setChildButton:self.childButton4 label:self.childLabel4 whithDic:device];
+                    btn = self.childButton4;
+                    label = self.childLabel4;
                 }
                     break;
                     
                 default:
                     break;
             }
+            if (j == ([childDeviceArray count])) {
+                [self setChildButton:btn label:label whithDic:nil add:YES];
+            }
+            else
+                [self setChildButton:btn label:label whithDic:device add:NO];
             i++;
         }
     }
 }
 
--(void)setChildButton:(UIButton *)btn label:(UILabel *)label whithDic:(DeviceModel *)model
+-(void)setChildButton:(UIButton *)btn label:(UILabel *)label whithDic:(DeviceModel *)model add:(BOOL)add
 {
-    if (model==nil) {
+    if (add) {
+        btn.hidden = NO;
+        label.hidden = NO;
+        [btn setImage:[UIImage imageNamed:@"增加"] forState:UIControlStateNormal];
+        label.text = @"添加";
+    }
+    else if (model==nil) {
         btn.hidden = YES;
         label.hidden = YES;
     }

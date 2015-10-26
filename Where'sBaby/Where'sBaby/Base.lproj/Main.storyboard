@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -464,7 +464,7 @@
                                     <action selector="childButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qtp-Qe-FcC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-g0-uHP">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-g0-uHP">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -503,7 +503,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNz-o8-nGm">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNz-o8-nGm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -542,7 +542,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmZ-pj-Sqr">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmZ-pj-Sqr">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -574,7 +574,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbk-gT-x71">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbk-gT-x71">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -2132,16 +2132,19 @@
                         <viewControllerLayoutGuide type="bottom" id="dJ8-yx-k5V"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h8k-yq-NUM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="设置体重底框.png" translatesAutoresizingMaskIntoConstraints="NO" id="bAs-DU-sqc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDL-1p-3Xt">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyo-n3-VWu">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
                                         <string key="text">手表将会响铃一分钟
 按手表任意键停止响铃</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2150,6 +2153,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJW-bU-qcV">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.75294117650000003" green="0.2784313725" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="  取消  ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2160,6 +2164,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NW-eq-EYF">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.28627450980000002" green="0.70588235290000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="  响铃  ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2170,8 +2175,10 @@
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="错误&amp;失失败&amp;提示图标.png" translatesAutoresizingMaskIntoConstraints="NO" id="imU-15-aea">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <animations/>
                                     </imageView>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="YJW-bU-qcV" firstAttribute="centerX" secondItem="cDL-1p-3Xt" secondAttribute="centerX" multiplier="1/2" id="63T-az-qOb"/>
@@ -2193,16 +2200,16 @@
                                         <exclude reference="imU-15-aea"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="CCM-tK-Xjt"/>
-                                        <exclude reference="Hnh-8V-m9n"/>
-                                        <exclude reference="hVr-K1-MbU"/>
-                                        <exclude reference="o0O-he-nsC"/>
-                                        <exclude reference="zvY-tI-lJd"/>
+                                        <exclude reference="jAd-vx-cg4"/>
+                                        <exclude reference="uGU-pj-tiI"/>
                                         <exclude reference="63T-az-qOb"/>
                                         <exclude reference="Y7L-w2-CWF"/>
                                         <exclude reference="jwk-rc-aIk"/>
-                                        <exclude reference="jAd-vx-cg4"/>
-                                        <exclude reference="uGU-pj-tiI"/>
+                                        <exclude reference="hVr-K1-MbU"/>
+                                        <exclude reference="o0O-he-nsC"/>
+                                        <exclude reference="zvY-tI-lJd"/>
+                                        <exclude reference="CCM-tK-Xjt"/>
+                                        <exclude reference="Hnh-8V-m9n"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2213,20 +2220,21 @@
                                         <include reference="imU-15-aea"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="CCM-tK-Xjt"/>
-                                        <include reference="Hnh-8V-m9n"/>
-                                        <include reference="hVr-K1-MbU"/>
-                                        <include reference="o0O-he-nsC"/>
-                                        <include reference="zvY-tI-lJd"/>
+                                        <include reference="jAd-vx-cg4"/>
+                                        <include reference="uGU-pj-tiI"/>
                                         <include reference="63T-az-qOb"/>
                                         <include reference="Y7L-w2-CWF"/>
                                         <include reference="jwk-rc-aIk"/>
-                                        <include reference="jAd-vx-cg4"/>
-                                        <include reference="uGU-pj-tiI"/>
+                                        <include reference="hVr-K1-MbU"/>
+                                        <include reference="o0O-he-nsC"/>
+                                        <include reference="zvY-tI-lJd"/>
+                                        <include reference="CCM-tK-Xjt"/>
+                                        <include reference="Hnh-8V-m9n"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cDL-1p-3Xt" firstAttribute="centerX" secondItem="h8k-yq-NUM" secondAttribute="centerX" id="1lR-Wc-Ha3"/>
@@ -2240,10 +2248,10 @@
                                 <exclude reference="cDL-1p-3Xt"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1lR-Wc-Ha3"/>
-                                <exclude reference="Pfm-Li-kif"/>
                                 <exclude reference="2gF-4V-bnz"/>
                                 <exclude reference="lZw-Yz-5nd"/>
+                                <exclude reference="1lR-Wc-Ha3"/>
+                                <exclude reference="Pfm-Li-kif"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2252,10 +2260,10 @@
                                 <include reference="cDL-1p-3Xt"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1lR-Wc-Ha3"/>
-                                <include reference="Pfm-Li-kif"/>
                                 <include reference="2gF-4V-bnz"/>
                                 <include reference="lZw-Yz-5nd"/>
+                                <include reference="1lR-Wc-Ha3"/>
+                                <include reference="Pfm-Li-kif"/>
                             </mask>
                         </variation>
                     </view>
@@ -3061,9 +3069,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="325" y="19" width="42" height="21"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
@@ -3214,6 +3219,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="69J-wm-rVu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="kr2-t2-35i">
                             <rect key="frame" x="0.0" y="64" width="600" height="128"/>
@@ -3221,12 +3227,14 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开机时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-9A-u3j">
                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KlA-DD-FxU">
                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -3235,12 +3243,14 @@
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关机时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPj-zp-eDT">
                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-g6-f0I">
                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -3249,23 +3259,27 @@
                                 </textField>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLb-Ak-enR">
                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重复" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erL-s5-QKq">
                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择重复时间后，每周指定时间段内手表禁用，未选择为一次性" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yU-DG-Sgr">
                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                    <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="XLb-Ak-enR" firstAttribute="leading" secondItem="xyt-9A-u3j" secondAttribute="leading" id="19b-Ul-o3o"/>
@@ -3361,16 +3375,19 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期一" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHv-YK-7D6">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PW-ao-gVL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" image="复选框_未选.png"/>
                                                     <state key="selected" image="复选框_已选.png"/>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="9PW-ao-gVL" secondAttribute="trailing" constant="25" id="LLD-oc-s22"/>
                                                 <constraint firstItem="KHv-YK-7D6" firstAttribute="leading" secondItem="ie4-d5-3D6" secondAttribute="leading" constant="8" id="QAs-aH-BM9"/>
@@ -3402,6 +3419,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PQ3-Tp-eMi">
                                         <rect key="frame" x="0.0" y="236" width="600" height="44"/>
@@ -3412,16 +3430,19 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期二" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSA-jQ-1LT">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV8-sf-40N">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" image="复选框_未选.png"/>
                                                     <state key="selected" image="复选框_已选.png"/>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="nV8-sf-40N" secondAttribute="trailing" constant="25" id="NKT-vo-e7a"/>
                                                 <constraint firstItem="FSA-jQ-1LT" firstAttribute="centerY" secondItem="43E-ZB-VkC" secondAttribute="centerY" id="WFX-fZ-UFG"/>
@@ -3453,6 +3474,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="15a-Vi-0Ix">
                                         <rect key="frame" x="0.0" y="280" width="600" height="44"/>
@@ -3463,16 +3485,19 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKV-0d-emh">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7t-bt-HAY">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" image="复选框_未选.png"/>
                                                     <state key="selected" image="复选框_已选.png"/>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="z7t-bt-HAY" firstAttribute="centerY" secondItem="Hkt-eo-28N" secondAttribute="centerY" id="IMy-dF-K99"/>
                                                 <constraint firstItem="YKV-0d-emh" firstAttribute="leading" secondItem="Hkt-eo-28N" secondAttribute="leading" constant="8" id="Ode-Vq-HdZ"/>
@@ -3504,6 +3529,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="aV2-vM-tQ8">
                                         <rect key="frame" x="0.0" y="324" width="600" height="44"/>
@@ -3514,16 +3540,19 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期四" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lce-L1-rlJ">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amh-Ed-roO">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" image="复选框_未选.png"/>
                                                     <state key="selected" image="复选框_已选.png"/>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="amh-Ed-roO" secondAttribute="trailing" constant="25" id="bG8-3u-MRm"/>
                                                 <constraint firstItem="lce-L1-rlJ" firstAttribute="leading" secondItem="HUf-Xx-Zpc" secondAttribute="leading" constant="8" id="cZG-BJ-pEA"/>
@@ -3555,6 +3584,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="NfQ-h7-2FG">
                                         <rect key="frame" x="0.0" y="368" width="600" height="44"/>
@@ -3565,16 +3595,19 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期五" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lO2-6q-moC">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHT-fK-uBO">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" image="复选框_未选.png"/>
                                                     <state key="selected" image="复选框_已选.png"/>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="NHT-fK-uBO" firstAttribute="centerY" secondItem="qKx-I8-dd4" secondAttribute="centerY" id="Ija-UZ-0rj"/>
                                                 <constraint firstAttribute="trailing" secondItem="NHT-fK-uBO" secondAttribute="trailing" constant="25" id="h0H-LX-sxy"/>
@@ -3606,6 +3639,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="IKg-DA-cVp">
                                         <rect key="frame" x="0.0" y="412" width="600" height="44"/>
@@ -3616,16 +3650,19 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期六" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vd-6F-vdT">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dly-eb-aHd">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" image="复选框_未选.png"/>
                                                     <state key="selected" image="复选框_已选.png"/>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Dly-eb-aHd" secondAttribute="trailing" constant="25" id="6it-fI-XRw"/>
                                                 <constraint firstItem="4vd-6F-vdT" firstAttribute="centerY" secondItem="EUx-PB-8aQ" secondAttribute="centerY" id="I6F-5w-6b4"/>
@@ -3657,6 +3694,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="cEt-ov-Ie5">
                                         <rect key="frame" x="0.0" y="456" width="600" height="44"/>
@@ -3667,16 +3705,19 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoc-db-4Wx">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff7-nb-RnL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" image="复选框_未选.png"/>
                                                     <state key="selected" image="复选框_已选.png"/>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="Xoc-db-4Wx" firstAttribute="leading" secondItem="zvQ-0j-s44" secondAttribute="leading" constant="8" id="2ES-IM-FDT"/>
                                                 <constraint firstItem="Ff7-nb-RnL" firstAttribute="centerY" secondItem="zvQ-0j-s44" secondAttribute="centerY" id="2mm-AP-Ua3"/>
@@ -3708,6 +3749,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -3722,6 +3764,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TfC-l6-jPk">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="取消" image="返回.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -3732,6 +3775,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iVK-QZ-DOd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="保存.png"/>
                             </button>
                         </barButtonItem>
@@ -3767,18 +3811,21 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="设置体重底框.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fqp-L8-0Cg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRu-1I-7eb">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="580-pW-xXh">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-HC-1KL">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="axc-e2-9PH"/>
@@ -3793,16 +3840,19 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grG-7A-DcX">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vc-ZS-5lN">
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                            <animations/>
                                                             <state key="normal" image="单选框_未选.png"/>
                                                             <state key="selected" image="单选框_已选.png"/>
                                                         </button>
                                                     </subviews>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="3Vc-ZS-5lN" secondAttribute="trailing" constant="8" id="2Tz-S5-Qpb"/>
                                                         <constraint firstItem="3Vc-ZS-5lN" firstAttribute="centerY" secondItem="NiM-GB-uAs" secondAttribute="centerY" id="85c-ux-bVq"/>
@@ -3834,6 +3884,7 @@
                                                         </mask>
                                                     </variation>
                                                 </tableViewCellContentView>
+                                                <animations/>
                                                 <connections>
                                                     <outlet property="contentLabel" destination="grG-7A-DcX" id="iSw-HA-Iu4"/>
                                                     <outlet property="selectedButton" destination="3Vc-ZS-5lN" id="jze-Xf-Pf9"/>
@@ -3859,6 +3910,7 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhL-Hs-Viq">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.75294117647058822" green="0.27843137254901962" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="    取消   ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3869,6 +3921,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWd-LX-zMJ">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.28627450980392155" green="0.70588235294117641" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="    确定   ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3878,6 +3931,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="oWd-LX-zMJ" firstAttribute="centerY" secondItem="IhL-Hs-Viq" secondAttribute="centerY" id="0OP-V9-ajG"/>
@@ -3936,6 +3990,7 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bRu-1I-7eb" firstAttribute="trailing" secondItem="Fqp-L8-0Cg" secondAttribute="trailing" constant="-3" id="1aa-ZV-cWq"/>
@@ -4002,21 +4057,25 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="beijing2.png" translatesAutoresizingMaskIntoConstraints="NO" id="buO-Jq-SPB">
                                         <rect key="frame" x="20" y="20" width="400" height="736"/>
+                                        <animations/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAW-Oe-dRh">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="错误&amp;失失败&amp;提示图标.png" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-iZ-aHS">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <animations/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未设定禁用时段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jg-U1-yf6">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn2-6x-gkC">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <animations/>
                                                 <state key="normal" title="新增禁用时段" backgroundImage="shuru2.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -4025,6 +4084,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Gn2-6x-gkC" secondAttribute="trailing" constant="8" id="Bhl-jm-N0h"/>
@@ -4072,6 +4132,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="bAW-Oe-dRh" firstAttribute="centerX" secondItem="CBj-nl-53S" secondAttribute="centerX" id="4bq-DN-mA2"/>
@@ -4086,12 +4147,12 @@
                                         <exclude reference="bAW-Oe-dRh"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="4bq-DN-mA2"/>
+                                        <exclude reference="7Yk-ju-DKy"/>
                                         <exclude reference="A9s-sK-kd6"/>
                                         <exclude reference="VN0-fk-U96"/>
                                         <exclude reference="sQp-HW-dBp"/>
                                         <exclude reference="trw-uk-xHF"/>
-                                        <exclude reference="4bq-DN-mA2"/>
-                                        <exclude reference="7Yk-ju-DKy"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -4099,12 +4160,12 @@
                                         <include reference="bAW-Oe-dRh"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="4bq-DN-mA2"/>
+                                        <include reference="7Yk-ju-DKy"/>
                                         <include reference="A9s-sK-kd6"/>
                                         <include reference="VN0-fk-U96"/>
                                         <include reference="sQp-HW-dBp"/>
                                         <include reference="trw-uk-xHF"/>
-                                        <include reference="4bq-DN-mA2"/>
-                                        <include reference="7Yk-ju-DKy"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -4113,6 +4174,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rq6-2f-3o9">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WatchCallOffIdentifier" id="adt-gL-XdZ" customClass="WatchCallOffSettingTableViewCell" customModule="Where_sBaby" customModuleProvider="target">
@@ -4123,22 +4185,26 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:00-11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpV-oG-Kma">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周一" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VQ-cB-6u3">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEI-6C-hoB">
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                            <animations/>
                                                             <state key="normal" image="关闭.png"/>
                                                             <state key="selected" image="打开.png"/>
                                                         </button>
                                                     </subviews>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="kEI-6C-hoB" secondAttribute="trailing" constant="8" id="FOX-yC-cxM"/>
                                                         <constraint firstItem="bpV-oG-Kma" firstAttribute="leading" secondItem="plm-S1-CXf" secondAttribute="leading" constant="8" id="HIJ-9o-Icn"/>
@@ -4178,6 +4244,7 @@
                                                         </mask>
                                                     </variation>
                                                 </tableViewCellContentView>
+                                                <animations/>
                                                 <connections>
                                                     <outlet property="stateButton" destination="kEI-6C-hoB" id="GZc-vo-zp3"/>
                                                     <outlet property="timeLabel" destination="bpV-oG-Kma" id="QqP-Yb-knC"/>
@@ -4192,6 +4259,7 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm5-FY-xcI">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <state key="normal" title="新增禁用时段" backgroundImage="shuru2.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -4200,6 +4268,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Gm5-FY-xcI" firstAttribute="top" secondItem="rq6-2f-3o9" secondAttribute="bottom" constant="8" id="FmP-Kr-9sc"/>
@@ -4239,6 +4308,7 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SDG-Um-vHc" firstAttribute="top" secondItem="3EK-JS-9gY" secondAttribute="bottom" id="Ccr-SS-ixm"/>
@@ -4255,14 +4325,14 @@
                                 <exclude reference="SDG-Um-vHc"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="bNW-eU-A3G"/>
-                                <exclude reference="eCf-hR-ilA"/>
-                                <exclude reference="GSN-xr-VJj"/>
-                                <exclude reference="LHl-z8-nBl"/>
-                                <exclude reference="cZp-X5-OCh"/>
                                 <exclude reference="Ccr-SS-ixm"/>
                                 <exclude reference="dLO-MT-Ii5"/>
                                 <exclude reference="uRN-aw-vQ4"/>
+                                <exclude reference="GSN-xr-VJj"/>
+                                <exclude reference="LHl-z8-nBl"/>
+                                <exclude reference="cZp-X5-OCh"/>
+                                <exclude reference="bNW-eU-A3G"/>
+                                <exclude reference="eCf-hR-ilA"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -4270,14 +4340,14 @@
                                 <include reference="SDG-Um-vHc"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="bNW-eU-A3G"/>
-                                <include reference="eCf-hR-ilA"/>
-                                <include reference="GSN-xr-VJj"/>
-                                <include reference="LHl-z8-nBl"/>
-                                <include reference="cZp-X5-OCh"/>
                                 <include reference="Ccr-SS-ixm"/>
                                 <include reference="dLO-MT-Ii5"/>
                                 <include reference="uRN-aw-vQ4"/>
+                                <include reference="GSN-xr-VJj"/>
+                                <include reference="LHl-z8-nBl"/>
+                                <include reference="cZp-X5-OCh"/>
+                                <include reference="bNW-eU-A3G"/>
+                                <include reference="eCf-hR-ilA"/>
                             </mask>
                         </variation>
                     </view>
@@ -4286,6 +4356,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SaA-Pf-BO8">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="返回" image="返回.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -4318,12 +4389,14 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="设置体重底框.png" translatesAutoresizingMaskIntoConstraints="NO" id="jwT-jY-7ia">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUX-yu-6J7">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2K-uK-NLv">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.75294117650000003" green="0.2784313725" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4335,6 +4408,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19M-06-I8Z">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.28627450980000002" green="0.70588235290000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Lx3-22-Tyb"/>
@@ -4359,6 +4433,7 @@
                                     </button>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e18-0J-5qt">
                                         <rect key="frame" x="-160" y="-108" width="320" height="216"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="It1-qN-CbQ"/>
                                             <constraint firstAttribute="width" constant="247" id="SQL-tS-6dg"/>
@@ -4381,11 +4456,13 @@
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRL-Jp-Ysx">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ZRL-Jp-Ysx" firstAttribute="centerX" secondItem="dUX-yu-6J7" secondAttribute="centerX" id="F1d-xT-D6v"/>
@@ -4438,6 +4515,7 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dUX-yu-6J7" firstAttribute="trailing" secondItem="jwT-jY-7ia" secondAttribute="trailing" id="A3f-gG-qal"/>
@@ -8044,9 +8122,6 @@
                                         <state key="normal" title="    取消    ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="50" y="110" width="500" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cancelButtonClick:" destination="Tht-ot-bnc" eventType="touchUpInside" id="qhn-qO-Atm"/>
                                         </connections>
@@ -8058,9 +8133,6 @@
                                         <state key="normal" title="相册">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="50" y="65" width="500" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="photoButtonClick:" destination="Tht-ot-bnc" eventType="touchUpInside" id="AZX-Ac-adQ"/>
                                         </connections>
@@ -8072,9 +8144,6 @@
                                         <state key="normal" title="拍照">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="50" y="20" width="500" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="cameraButtonClick:" destination="Tht-ot-bnc" eventType="touchUpInside" id="bLZ-GX-bHy"/>
                                         </connections>
@@ -8117,8 +8186,7 @@
                                         <exclude reference="tVP-3Q-zmd"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="435" width="600" height="165"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="8tE-TX-cx5"/>
                                         <include reference="zhf-VM-B1Y"/>
@@ -8735,25 +8803,30 @@
                         <viewControllerLayoutGuide type="bottom" id="UBP-q5-CzU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JML-xh-Zm3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="设置体重底框.png" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-xc-eFr">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVo-Qz-NGh">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlK-Xo-mHn">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="手表音量0.png" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-Bj-tEZ">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <animations/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIS-8e-xVp">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.75294117650000003" green="0.2784313725" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="  取消  ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -8764,6 +8837,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGg-Em-cyG">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.28627450980000002" green="0.70588235290000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="  确定  ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -8774,9 +8848,11 @@
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXX-6k-re4" customClass="VolumeSettingSwipeView" customModule="Where_sBaby" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="jGg-Em-cyG" firstAttribute="centerX" secondItem="rVo-Qz-NGh" secondAttribute="centerX" multiplier="3/2" id="0d7-Xc-EiX"/>
@@ -8803,6 +8879,13 @@
                                         <exclude reference="FXX-6k-re4"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="2c9-r8-9H9"/>
+                                        <exclude reference="QSG-5z-Txb"/>
+                                        <exclude reference="aqY-wG-7DS"/>
+                                        <exclude reference="0d7-Xc-EiX"/>
+                                        <exclude reference="ghd-A9-QIB"/>
+                                        <exclude reference="NAx-FX-h1w"/>
+                                        <exclude reference="YHA-4x-Zio"/>
                                         <exclude reference="52g-xu-1cd"/>
                                         <exclude reference="Dcj-zw-K3K"/>
                                         <exclude reference="RJS-HU-XEt"/>
@@ -8810,13 +8893,6 @@
                                         <exclude reference="TWX-sZ-e2f"/>
                                         <exclude reference="TyA-27-3X7"/>
                                         <exclude reference="q6s-tt-CGd"/>
-                                        <exclude reference="2c9-r8-9H9"/>
-                                        <exclude reference="QSG-5z-Txb"/>
-                                        <exclude reference="aqY-wG-7DS"/>
-                                        <exclude reference="NAx-FX-h1w"/>
-                                        <exclude reference="YHA-4x-Zio"/>
-                                        <exclude reference="0d7-Xc-EiX"/>
-                                        <exclude reference="ghd-A9-QIB"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -8828,6 +8904,13 @@
                                         <include reference="FXX-6k-re4"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="2c9-r8-9H9"/>
+                                        <include reference="QSG-5z-Txb"/>
+                                        <include reference="aqY-wG-7DS"/>
+                                        <include reference="0d7-Xc-EiX"/>
+                                        <include reference="ghd-A9-QIB"/>
+                                        <include reference="NAx-FX-h1w"/>
+                                        <include reference="YHA-4x-Zio"/>
                                         <include reference="52g-xu-1cd"/>
                                         <include reference="Dcj-zw-K3K"/>
                                         <include reference="RJS-HU-XEt"/>
@@ -8835,17 +8918,11 @@
                                         <include reference="TWX-sZ-e2f"/>
                                         <include reference="TyA-27-3X7"/>
                                         <include reference="q6s-tt-CGd"/>
-                                        <include reference="2c9-r8-9H9"/>
-                                        <include reference="QSG-5z-Txb"/>
-                                        <include reference="aqY-wG-7DS"/>
-                                        <include reference="NAx-FX-h1w"/>
-                                        <include reference="YHA-4x-Zio"/>
-                                        <include reference="0d7-Xc-EiX"/>
-                                        <include reference="ghd-A9-QIB"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rVo-Qz-NGh" firstAttribute="centerY" secondItem="JML-xh-Zm3" secondAttribute="centerY" id="Syk-3t-SVO"/>
