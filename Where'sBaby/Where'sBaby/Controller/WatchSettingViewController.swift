@@ -13,6 +13,7 @@ struct WatchSettingConstant{
     static let ringSegueIdentifier = "RingSegueIdentifier"
     static let watchCallOffSegueIdentifier = "WatchCallOffSegueIdentifier"
     static let volumeSettingSegueIdentifier = "VolumeSettingSegueIdentifier"
+    static let powerOffSegueIdentifier = "PowerOffSegueIdentifier"
 }
 
 class WatchSettingViewModel: NSObject{
@@ -43,9 +44,13 @@ class WatchSettingViewModel: NSObject{
             return map[0]
         }
     }
+    
+    func powerText()->String{
+        return data!["poweroff"].stringValue
+    }
 }
 
-class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,WatchSettingTableDelegate{
+class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,WatchSettingTableDelegate,PowerSettingDelegate{
 
     @IBOutlet weak var mode: UILabel!
     @IBOutlet weak var findWatch: UILabel!
@@ -61,6 +66,7 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
     @IBOutlet weak var volume: UILabel!
     @IBOutlet weak var bindID: UILabel!
     var viewModel: WatchSettingViewModel?
+    var shouldBack = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,26 +75,17 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         let deviceNo = ChildDeviceManager.sharedManager().currentDeviceNo
         let parameter = ["deviceno":deviceNo]
         DeviceRequest.GetDeviceConfigInfoWithParameters(parameter, success: { (response) -> Void in
             let json = JSON(response)
             self.viewModel = WatchSettingViewModel(json: json)
             guard let vm = self.viewModel else{
-                self.backClicked(UIButton())
+                self.shouldBack = true
                 return
             }
             guard let data = vm.data else{
-                self.backClicked(UIButton())
+                self.shouldBack = true
                 return
             }
             self.watchModel.text = data["model"].stringValue
@@ -106,6 +103,18 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
             self.mode.text = vm.modeText()//data["mode"].stringValue
             }) { (error) -> Void in
                 print(error)
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        if shouldBack{
+            self.backClicked(UIButton())
         }
     }
     
@@ -134,6 +143,16 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
         case WatchSettingTableType.Ring.rawValue:
             viewModel?.data!["ring"].string = "\(index)"
             ring.text = viewModel?.ringText()
+        default:
+            break
+        }
+    }
+    
+    func powerSettingChange(type: Int, itemString: String) {
+        switch type{
+        case PowerSettingType.Power.rawValue:
+            viewModel?.data!["poweroff"].string = itemString
+            poweroff.text = viewModel?.powerText()
         default:
             break
         }
@@ -245,6 +264,12 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
                 vc.volume = Int(volume)
                 vc.delegate = self
             }
+        }
+        if segue.identifier == WatchSettingConstant.powerOffSegueIdentifier{
+            let vc = segue.destinationViewController as! PowerSettingTableViewController
+            vc.type = .Power
+            vc.itemString = viewModel?.data!["poweroff"].stringValue
+            vc.delegate = self
         }
     }
 

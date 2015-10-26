@@ -13,6 +13,10 @@ enum PowerSettingType: Int{
     case Calloff
 }
 
+@objc protocol PowerSettingDelegate{
+    func powerSettingChange(type: Int,itemString: String)
+}
+
 class PowerSettingViewModel: NSObject{
     let type: PowerSettingType
     var item: WatchCallOffItem
@@ -34,6 +38,7 @@ class PowerSettingTableViewController: UITableViewController,UITextFieldDelegate
     @IBOutlet weak var powerOffTime: UITextField!
     @IBOutlet weak var powerOnTime: UITextField!
     @IBOutlet var selectedButton: [UIButton]!
+    weak var delegate: PowerSettingDelegate?
     var viewModel: PowerSettingViewModel?
     var type: PowerSettingType?
     var itemString: String?
@@ -101,6 +106,17 @@ class PowerSettingTableViewController: UITableViewController,UITextFieldDelegate
                 viewModel?.item.week[indexPath.row] = button.selected
             }
         }
+    }
+    
+    @IBAction func cancelClicked(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func saveClicked(sender: UIButton) {
+        if let del = delegate{
+            del.powerSettingChange((type?.rawValue)!, itemString: (viewModel?.item.itemStr())!)
+        }
+        cancelClicked(UIButton())
     }
     // MARK: - Table view data source
 

@@ -12,6 +12,7 @@ struct WatchCallOffItem{
     var beginTime: String
     var endTime: String
     var week: [Bool]
+    var open = -1
     init(itemString: String){
         beginTime = "06:00"
         endTime = "18:00"
@@ -28,8 +29,33 @@ struct WatchCallOffItem{
                         week[i - 1] = true
                     }
                 })
+                if arr.count > 2{
+                    if time[2] == "0"{
+                        open = 0
+                    }else if time[2] == "1"{
+                        open = 1
+                    }
+                }
             }
         }
+    }
+    func itemStr()->String{
+        let time = beginTime + "-" + endTime
+        var week = ""
+        for i in 0..<7{
+            if self.week[i]{
+                week += "\(i)-"
+            }
+        }
+        var retWeek = String(week.characters.dropLast())
+        if retWeek != ""{
+            retWeek = "," + retWeek
+        }
+        var openStr = ""
+        if open >= 0{
+            openStr = ",\(open)"
+        }
+        return time + retWeek + openStr
     }
 }
 
@@ -49,6 +75,10 @@ class WatchCallOffSettingViewModel: NSObject{
         }
     }
     
+    func state(index: Int)->Bool{
+        let data = dataSource[index]
+        return (data.open == 0)
+    }
     func timeLabel(index: Int)->String{
         let data = dataSource[index]
         return "\(data.beginTime)-\(data.endTime)"
@@ -108,6 +138,7 @@ class WatchCallOffSettingViewController: UIViewController,UITableViewDelegate,UI
         let cell = tableView.dequeueReusableCellWithIdentifier(WatchCallOffConstant.cellIdentifier) as! WatchCallOffSettingTableViewCell
         cell.timeLabel.text = viewModel?.timeLabel(indexPath.row)
         cell.weekLabel.text = viewModel?.weekLabel(indexPath.row)
+        cell.stateButton.selected = (viewModel?.state(indexPath.row))!
         return cell
     }
     
