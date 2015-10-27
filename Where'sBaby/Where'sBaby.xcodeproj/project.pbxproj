@@ -22,6 +22,7 @@
 		B910ADD31BDBCCDC00B079F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADD21BDBCCDC00B079F8 /* SwiftyJSON.swift */; };
 		B910ADD51BDC7C5E00B079F8 /* WatchCallOffSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADD41BDC7C5E00B079F8 /* WatchCallOffSettingViewController.swift */; };
 		B910ADD71BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910ADD61BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift */; };
+		B921D1CD1BDE6E6B00D1A903 /* QRCodeGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B921D1CC1BDE6E6B00D1A903 /* QRCodeGenerate.swift */; };
 		B92408E31BC6A54E0033C73C /* zhuce1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E11BC6A54E0033C73C /* zhuce1@2x.png */; };
 		B92408E41BC6A54F0033C73C /* zhuce1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E21BC6A54E0033C73C /* zhuce1@3x.png */; };
 		B95307901BB41896002B2162 /* UIButton+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B953078F1BB41896002B2162 /* UIButton+Log.m */; };
@@ -393,6 +394,7 @@
 		B910ADD21BDBCCDC00B079F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B910ADD41BDC7C5E00B079F8 /* WatchCallOffSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCallOffSettingViewController.swift; sourceTree = "<group>"; };
 		B910ADD61BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCallOffSettingTableViewCell.swift; sourceTree = "<group>"; };
+		B921D1CC1BDE6E6B00D1A903 /* QRCodeGenerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeGenerate.swift; sourceTree = "<group>"; };
 		B92408E11BC6A54E0033C73C /* zhuce1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@2x.png"; sourceTree = "<group>"; };
 		B92408E21BC6A54E0033C73C /* zhuce1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@3x.png"; sourceTree = "<group>"; };
 		B953078E1BB41896002B2162 /* UIButton+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Log.h"; sourceTree = "<group>"; };
@@ -950,6 +952,7 @@
 				B953078F1BB41896002B2162 /* UIButton+Log.m */,
 				B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */,
 				B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */,
+				B921D1CC1BDE6E6B00D1A903 /* QRCodeGenerate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1804,6 +1807,7 @@
 				D36ECB3B1BD280C100C79794 /* ContactDetailsTableViewController.swift in Sources */,
 				D3DF418C1BCEB85700A3A9D7 /* BabyWeightViewController.swift in Sources */,
 				B910ADD31BDBCCDC00B079F8 /* SwiftyJSON.swift in Sources */,
+				B921D1CD1BDE6E6B00D1A903 /* QRCodeGenerate.swift in Sources */,
 				D3DF41A11BCFDAF700A3A9D7 /* BabyPhoneViewController.swift in Sources */,
 				D36ECB311BD0C59000C79794 /* SafeAreaViewController.m in Sources */,
 				B9C73D4E1BDD0AFA000F0CA9 /* FindWatchViewController.swift in Sources */,

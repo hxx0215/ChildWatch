@@ -54,6 +54,7 @@ class WatchSettingViewModel: NSObject{
 
 class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,WatchSettingTableDelegate,PowerSettingDelegate,WatchCallOffSettingDelegate,FindWatchDelegate{
 
+    @IBOutlet weak var qrcodeImage: UIImageView!
     @IBOutlet weak var mode: UILabel!
     @IBOutlet weak var findWatch: UILabel!
     @IBOutlet weak var poweroff: UILabel!
@@ -79,6 +80,7 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         let deviceNo = ChildDeviceManager.sharedManager().currentDeviceNo
         let parameter = ["deviceno":deviceNo]
+        self.qrcodeImage.image = QRCodeGenerate.generateQRCode(deviceNo, size: 80.0)
         DeviceRequest.GetDeviceConfigInfoWithParameters(parameter, success: { (response) -> Void in
             let json = JSON(response)
             self.viewModel = WatchSettingViewModel(json: json)

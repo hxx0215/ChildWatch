@@ -90,7 +90,7 @@ class PowerSettingTableViewController: UITableViewController,UITextFieldDelegate
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if let ob = object,
             let keyP = keyPath{
-                let keyarr = keyP.characters.split{ $0 == "."}.map(String.init)
+                let keyarr = keyP.componentsSeparatedByString(".")//keyP.characters.split{ $0 == "."}.map(String.init)
                 let txtField = ob.valueForKey(keyarr[0]) as! UITextField
                 let newValue = change?[NSKeyValueChangeNewKey] as! String
                 if txtField == powerOnTime{
