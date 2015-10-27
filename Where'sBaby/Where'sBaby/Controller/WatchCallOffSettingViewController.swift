@@ -12,7 +12,7 @@ struct WatchCallOffItem{
     var beginTime: String
     var endTime: String?
     var week: [Bool]
-    var open = -1
+    var open = 1
     init(itemString: String, haveEndTime: Bool){
         beginTime = "06:00"
         if haveEndTime{
@@ -21,26 +21,33 @@ struct WatchCallOffItem{
             endTime = nil
         }
         week = [false,false,false,false,false,false,false]
-        let arr = itemString.characters.split{ $0 == ","}.map(String.init)
+        guard itemString != "" else{
+            return
+        }
+        let arr = itemString.componentsSeparatedByString(",")//itemString.characters.split{ $0 == ","}.map(String.init)
         if arr.count > 0{
-            let time = arr[0].characters.split{ $0 == "-"}.map(String.init)
-            beginTime = time[0]
-            if time.count > 1{
-                endTime = time[1]
-            }else{
-                endTime = nil
+            if arr[0] != "" {
+                let time = arr[0].componentsSeparatedByString("-")//arr[0].characters.split{ $0 == "-"}.map(String.init)
+                beginTime = time[0]
+                if time.count > 1{
+                    endTime = time[1]
+                }else{
+                    endTime = nil
+                }
             }
             if arr.count > 1{
-                let weekday = arr[1].characters.split{ $0 == "-"}.map(String.init)
-                weekday.forEach({ (index) -> () in
-                    if let i = Int(index){
-                        week[i - 1] = true
-                    }
-                })
+                if arr[1] != "" {
+                    let weekday = arr[1].componentsSeparatedByString("-")//arr[1].characters.split{ $0 == "-"}.map(String.init)
+                    weekday.forEach({ (index) -> () in
+                        if let i = Int(index){
+                            week[i - 1] = true
+                        }
+                    })
+                }
                 if arr.count > 2{
-                    if time[2] == "0"{
+                    if arr[2] == "0"{
                         open = 0
-                    }else if time[2] == "1"{
+                    }else if arr[2] == "1"{
                         open = 1
                     }
                 }
@@ -49,8 +56,10 @@ struct WatchCallOffItem{
     }
     func itemStr()->String{
         var end = ""
-        if let _ = endTime{
-            end = "-" + endTime!
+        if let et = endTime {
+            if et != ""{
+                end = "-" + endTime!
+            }
         }
         let time = beginTime + end
         var week = ""
@@ -60,9 +69,7 @@ struct WatchCallOffItem{
             }
         }
         var retWeek = String(week.characters.dropLast())
-        if retWeek != ""{
-            retWeek = "," + retWeek
-        }
+        retWeek = "," + retWeek
         var openStr = ""
         if open >= 0{
             openStr = ",\(open)"
@@ -87,9 +94,11 @@ class WatchCallOffSettingViewModel: NSObject{
     init(calloff :String,type: WatchCallOffType){
         self.type = type
         dataSource = []
-        let itemArr = calloff.characters.split{ $0 == "|"}.map(String.init)
-        dataSource = itemArr.map { (itemString) -> WatchCallOffItem in
-            return WatchCallOffItem(itemString: itemString,haveEndTime: type != .Alarm)
+        if calloff != ""{
+            let itemArr = calloff.componentsSeparatedByString("|")//calloff.characters.split{ $0 == "|"}.map(String.init)
+            dataSource = itemArr.map { (itemString) -> WatchCallOffItem in
+                return WatchCallOffItem(itemString: itemString,haveEndTime: type != .Alarm)
+            }
         }
     }
     
@@ -177,6 +186,9 @@ class WatchCallOffSettingViewController: UIViewController,UITableViewDelegate,UI
         cell.timeLabel.text = viewModel?.timeLabel(indexPath.row)
         cell.weekLabel.text = viewModel?.weekLabel(indexPath.row)
         cell.stateButton.selected = (viewModel?.state(indexPath.row))!
+        cell.stateClicked = { [weak self] selected in
+            self?.viewModel?.dataSource[indexPath.row].open = selected ? 0: 1
+        }
         return cell
     }
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

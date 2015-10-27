@@ -13,6 +13,7 @@ class WatchCallOffSettingTableViewCell: UITableViewCell {
     @IBOutlet weak var stateButton: UIButton!
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    var stateClicked: ((Bool)->())?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,4 +25,10 @@ class WatchCallOffSettingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func stateButtonClicked(sender: UIButton) {
+        sender.selected = !sender.selected
+        if let click = stateClicked{
+            click(sender.selected)
+        }
+    }
 }

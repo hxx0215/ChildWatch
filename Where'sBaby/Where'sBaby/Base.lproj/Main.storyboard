@@ -4228,6 +4228,9 @@
                                                             <animations/>
                                                             <state key="normal" image="关闭.png"/>
                                                             <state key="selected" image="打开.png"/>
+                                                            <connections>
+                                                                <action selector="stateButtonClicked:" destination="adt-gL-XdZ" eventType="touchUpInside" id="fpc-bw-T4l"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <animations/>
@@ -11231,16 +11234,16 @@
                                         <exclude reference="9iY-gN-iFh"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="yGk-2c-k0x"/>
                                         <exclude reference="dLf-WK-2xm"/>
-                                        <exclude reference="h80-Ok-7rM"/>
+                                        <exclude reference="yGk-2c-k0x"/>
                                         <exclude reference="bId-Nr-Wxw"/>
+                                        <exclude reference="h80-Ok-7rM"/>
                                         <exclude reference="rKh-34-U1c"/>
-                                        <exclude reference="GhW-De-ZHT"/>
                                         <exclude reference="5Qr-tF-zEj"/>
+                                        <exclude reference="GhW-De-ZHT"/>
                                         <exclude reference="bcr-FT-JYF"/>
-                                        <exclude reference="u4C-Nd-yG4"/>
                                         <exclude reference="eKm-ZY-sNn"/>
+                                        <exclude reference="u4C-Nd-yG4"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -11251,16 +11254,16 @@
                                         <include reference="9iY-gN-iFh"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="yGk-2c-k0x"/>
                                         <include reference="dLf-WK-2xm"/>
-                                        <include reference="h80-Ok-7rM"/>
+                                        <include reference="yGk-2c-k0x"/>
                                         <include reference="bId-Nr-Wxw"/>
+                                        <include reference="h80-Ok-7rM"/>
                                         <include reference="rKh-34-U1c"/>
-                                        <include reference="GhW-De-ZHT"/>
                                         <include reference="5Qr-tF-zEj"/>
+                                        <include reference="GhW-De-ZHT"/>
                                         <include reference="bcr-FT-JYF"/>
-                                        <include reference="u4C-Nd-yG4"/>
                                         <include reference="eKm-ZY-sNn"/>
+                                        <include reference="u4C-Nd-yG4"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -11279,10 +11282,10 @@
                                 <exclude reference="QFN-dd-0PS"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2Yv-jM-Cys"/>
-                                <exclude reference="Yik-SZ-zUK"/>
                                 <exclude reference="dRt-IJ-ck8"/>
                                 <exclude reference="ncJ-aA-FcI"/>
+                                <exclude reference="2Yv-jM-Cys"/>
+                                <exclude reference="Yik-SZ-zUK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -11291,10 +11294,10 @@
                                 <include reference="QFN-dd-0PS"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2Yv-jM-Cys"/>
-                                <include reference="Yik-SZ-zUK"/>
                                 <include reference="dRt-IJ-ck8"/>
                                 <include reference="ncJ-aA-FcI"/>
+                                <include reference="2Yv-jM-Cys"/>
+                                <include reference="Yik-SZ-zUK"/>
                             </mask>
                         </variation>
                     </view>
@@ -11373,11 +11376,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="usW-AO-9yO"/>
-        <segue reference="1a4-Ds-VlV"/>
-        <segue reference="EaM-HS-Fyw"/>
-        <segue reference="YnI-mM-Fpo"/>
         <segue reference="nr5-1F-m2z"/>
-        <segue reference="sRh-ga-WdX"/>
         <segue reference="hlb-Gu-8NE"/>
+        <segue reference="sRh-ga-WdX"/>
+        <segue reference="YnI-mM-Fpo"/>
+        <segue reference="EaM-HS-Fyw"/>
+        <segue reference="2t1-lD-vdl"/>
     </inferredMetricsTieBreakers>
 </document>
