@@ -32,7 +32,6 @@ static KeyboardAvoidingMode _keyboardAvoidingMode = KeyboardAvoidingModeMinimum;
 static float _minimumAnimationDuration;
 static NSNotification *_lastNotification;
 static CGAffineTransform _oldTransform;
-static BOOL _haveOldTransform;
 
 + (void)didChange:(NSNotification *)notification
 {
@@ -171,10 +170,7 @@ static BOOL _haveOldTransform;
                                          }
                                          else {
                                              CGAffineTransform transform = _avoidingView.transform;
-                                             if (!_haveOldTransform) {
-                                                 _oldTransform = _avoidingView.transform;
-                                                 _haveOldTransform = YES;
-                                             }
+                                             _oldTransform = _avoidingView.transform;
                                              transform = CGAffineTransformTranslate(transform, 0, displacement);
                                              _avoidingView.transform = transform;
                                          }
@@ -219,10 +215,7 @@ static BOOL _haveOldTransform;
                                  [_avoidingView.superview layoutIfNeeded];
                              }
                              else {
-                                 if (_haveOldTransform) {
-                                     _avoidingView.transform = _oldTransform;
-                                     _haveOldTransform = NO;
-                                 }
+                                 _avoidingView.transform = _oldTransform;
                              }
                          } completion:^(BOOL finished){
                              [_updatedConstraints removeAllObjects];
