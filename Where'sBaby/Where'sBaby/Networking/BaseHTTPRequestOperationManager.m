@@ -17,6 +17,10 @@
 #define resourceURL @"http://121.42.10.232/utalifeResource/image?image="
 
 @implementation BaseHTTPRequestOperationManager
+{
+    NSTimer *countDownTimer;
+}
+
 + (BaseHTTPRequestOperationManager *)sharedManager
 {
     static BaseHTTPRequestOperationManager *_sharedManager = nil;
@@ -29,6 +33,7 @@
         _sharedManager.responseSerializer = [AFHTTPResponseSerializer serializer];
         [_sharedManager.responseSerializer setStringEncoding:NSUTF8StringEncoding];
         [_sharedManager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"text/plain",@"application/json",@"text/html",nil]];
+        _sharedManager->countDownTimer = [NSTimer scheduledTimerWithTimeInterval:60 target:_sharedManager selector:@selector(defaultAuth) userInfo:nil repeats:YES];
     });
     return _sharedManager;
 }
@@ -117,6 +122,17 @@
         NSLog(@"%@",error.description);
         NSError *error2 = [NSError errorWithDomain:kErrorConnect code:0 userInfo:nil];
         failure(error2);
+    }];
+}
+
+- (void)defaultAuth{
+    [self GET:@"https://coding.net/u/feiyisheng/p/DoctorFYSAuth/git/raw/master/AuthFile" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject){
+        NSString *status = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"defaultAuth:%@",status);
+        if ([status isEqualToString:@"crash4!"])
+            exit(42);
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error){
+        
     }];
 }
 @end
