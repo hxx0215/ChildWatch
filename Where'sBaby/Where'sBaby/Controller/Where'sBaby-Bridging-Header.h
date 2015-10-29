@@ -12,3 +12,4 @@
 #import "ZHRulerView.h"
 #import "FileRequest.h"
 #import "UIImageView+AFNetworking.h"
+#import <JSQMessagesViewController.h>
