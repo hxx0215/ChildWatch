@@ -180,6 +180,10 @@
 		D36ECB391BD1719900C79794 /* RelationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB381BD1719900C79794 /* RelationViewController.swift */; };
 		D36ECB3B1BD280C100C79794 /* ContactDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36ECB3A1BD280C100C79794 /* ContactDetailsTableViewController.swift */; };
 		D374C2871BA851750028456C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */; };
+		D384CCA91BE3478E004381BF /* LocusSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D384CCA81BE3478E004381BF /* LocusSettingViewController.m */; };
+		D384CCAB1BE35610004381BF /* DateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D384CCAA1BE35610004381BF /* DateView.xib */; };
+		D384CCAE1BE356BF004381BF /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = D384CCAD1BE356BF004381BF /* DateView.m */; };
+		D384CCB11BE38297004381BF /* LocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D384CCB01BE38297004381BF /* LocusViewController.m */; };
 		D384DE471BA6A9900078A0C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE461BA6A9900078A0C2 /* Security.framework */; };
 		D384DE491BA6A99B0078A0C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */; };
 		D384DE4B1BA6A9CA0078A0C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D384DE4A1BA6A9CA0078A0C2 /* SystemConfiguration.framework */; };
@@ -563,6 +567,13 @@
 		D36ECB3A1BD280C100C79794 /* ContactDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsTableViewController.swift; sourceTree = "<group>"; };
 		D374C2851BA851750028456C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		D374C2861BA851750028456C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		D384CCA71BE3478E004381BF /* LocusSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocusSettingViewController.h; sourceTree = "<group>"; };
+		D384CCA81BE3478E004381BF /* LocusSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocusSettingViewController.m; sourceTree = "<group>"; };
+		D384CCAA1BE35610004381BF /* DateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateView.xib; sourceTree = "<group>"; };
+		D384CCAC1BE356BF004381BF /* DateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateView.h; sourceTree = "<group>"; };
+		D384CCAD1BE356BF004381BF /* DateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateView.m; sourceTree = "<group>"; };
+		D384CCAF1BE38297004381BF /* LocusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocusViewController.h; sourceTree = "<group>"; };
+		D384CCB01BE38297004381BF /* LocusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocusViewController.m; sourceTree = "<group>"; };
 		D384DE441BA6A9880078A0C2 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		D384DE461BA6A9900078A0C2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D384DE481BA6A99B0078A0C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -872,6 +883,10 @@
 				D36ECB301BD0C59000C79794 /* SafeAreaViewController.m */,
 				D36ECB271BD09D3700C79794 /* SearchViewController.h */,
 				D36ECB281BD09D3700C79794 /* SearchViewController.m */,
+				D384CCA71BE3478E004381BF /* LocusSettingViewController.h */,
+				D384CCA81BE3478E004381BF /* LocusSettingViewController.m */,
+				D384CCAF1BE38297004381BF /* LocusViewController.h */,
+				D384CCB01BE38297004381BF /* LocusViewController.m */,
 				B95890301BA43BE900A2C03E /* WBWelcomeViewController.swift */,
 				B9052B671BA506C5001AA85C /* LoginViewController.swift */,
 				B9D1E43E1BA996ED0031D708 /* BindWatchViewController.swift */,
@@ -1215,6 +1230,9 @@
 				B910ADD01BDBBB7900B079F8 /* WatchSettingTableViewCell.swift */,
 				B910ADD61BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift */,
 				B9C73D4B1BDCF355000F0CA9 /* VolumeSettingSwipeView.swift */,
+				D384CCAA1BE35610004381BF /* DateView.xib */,
+				D384CCAC1BE356BF004381BF /* DateView.h */,
+				D384CCAD1BE356BF004381BF /* DateView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1650,6 +1668,7 @@
 				D3DF40A31BCBA7B200A3A9D7 /* 文字框1@2x.png in Resources */,
 				D33B2FC31BC90AAC0072FAF6 /* 空白头像框@2x.png in Resources */,
 				D3DF408A1BCBA7B200A3A9D7 /* 定位_location@3x.png in Resources */,
+				D384CCAB1BE35610004381BF /* DateView.xib in Resources */,
 				B96BDBAF1BCD51A500BE7FE3 /* 关闭@2x.png in Resources */,
 				D33B2FFB1BC953850072FAF6 /* shuru2_Click@2x.png in Resources */,
 				D3DF41621BCE3D1C00A3A9D7 /* 框@2x.png in Resources */,
@@ -1826,9 +1845,11 @@
 				B9DEF5361BAEA54400D9BED7 /* RightMenuViewController.swift in Sources */,
 				D39C367F1BDE675000F48547 /* AlartViewController.swift in Sources */,
 				B96BDBA71BCD393A00BE7FE3 /* WatchSettingViewController.swift in Sources */,
+				D384CCAE1BE356BF004381BF /* DateView.m in Sources */,
 				D3DF416D1BCEB53500A3A9D7 /* BabyHeightViewController.swift in Sources */,
 				D3E735031BA5D5CB00618513 /* LoginRequest.m in Sources */,
 				D3DF419D1BCFD05500A3A9D7 /* BabyNickNameViewController.swift in Sources */,
+				D384CCA91BE3478E004381BF /* LocusSettingViewController.m in Sources */,
 				B95307901BB41896002B2162 /* UIButton+Log.m in Sources */,
 				D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */,
 				D36ECB331BD13BD300C79794 /* ContactsTableViewController.swift in Sources */,
@@ -1850,6 +1871,7 @@
 				B910ADD51BDC7C5E00B079F8 /* WatchCallOffSettingViewController.swift in Sources */,
 				B910ADD11BDBBB7900B079F8 /* WatchSettingTableViewCell.swift in Sources */,
 				B9045C091BA0535100090A86 /* main.m in Sources */,
+				D384CCB11BE38297004381BF /* LocusViewController.m in Sources */,
 				D3DF416B1BCE5C5200A3A9D7 /* BabyGradeViewController.swift in Sources */,
 				D3DF41671BCE3E9700A3A9D7 /* BabySexSetViewController.swift in Sources */,
 			);

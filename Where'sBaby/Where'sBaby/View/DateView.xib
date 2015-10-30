@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateView">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="mi0-NA-vSz"/>
+                <outlet property="datePicker" destination="g8z-v1-2N0" id="Koa-2F-96a"/>
+                <outlet property="timePicker" destination="lm5-Sh-tnd" id="blh-n4-Y2u"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="g8z-v1-2N0">
+                    <rect key="frame" x="-13" y="0.0" width="400" height="600"/>
+                    <animations/>
+                    <date key="date" timeIntervalSinceReferenceDate="467885915.83735198">
+                        <!--2015-10-30 08:18:35 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="zh-Hans_HK"/>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lm5-Sh-tnd">
+                    <rect key="frame" x="352" y="0.0" width="263" height="600"/>
+                    <animations/>
+                    <date key="date" timeIntervalSinceReferenceDate="467885990.40286601">
+                        <!--2015-10-30 08:19:50 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="en"/>
+                </datePicker>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="g8z-v1-2N0" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="3:5" constant="40" id="1pL-KR-sl8"/>
+                <constraint firstAttribute="trailing" secondItem="lm5-Sh-tnd" secondAttribute="trailing" constant="-15" id="9WO-wD-KkP"/>
+                <constraint firstItem="lm5-Sh-tnd" firstAttribute="leading" secondItem="g8z-v1-2N0" secondAttribute="trailing" constant="-35" id="C0B-vu-EbS"/>
+                <constraint firstItem="g8z-v1-2N0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MfV-Kn-3ft"/>
+                <constraint firstAttribute="bottom" secondItem="lm5-Sh-tnd" secondAttribute="bottom" id="Wzl-QN-wCR"/>
+                <constraint firstItem="g8z-v1-2N0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-13" id="grM-HM-xwI"/>
+                <constraint firstAttribute="bottom" secondItem="g8z-v1-2N0" secondAttribute="bottom" id="ld5-j4-JeQ"/>
+                <constraint firstItem="lm5-Sh-tnd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="z3S-cd-4Se"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

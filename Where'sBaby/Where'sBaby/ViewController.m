@@ -14,6 +14,8 @@
 #import "ChildDeviceManager.h"
 #import "filerequest.h"
 #import <MBProgressHUD.h>
+#import "LocusSettingViewController.h"
+#import "LocusViewController.h"
 //#import "CustomAnnotationView.h"
 //IB_DESIGNABLE
 
@@ -46,7 +48,7 @@
 }
 @end
 
-@interface ViewController () <MAMapViewDelegate>
+@interface ViewController () <MAMapViewDelegate,LocusSettingViewControllerDelegate>
 @property (nonatomic,assign) BOOL isLogin;
 @property (nonatomic,strong) MAMapView *mapView;
 @property (nonatomic,weak) IBOutlet MapBackView *mapViewContant;
@@ -212,7 +214,14 @@
         [hud hide:YES afterDelay:1.5f];
     }];
 }
-//-(IBAction)selector:(id)sender)
+
+-(IBAction)LocusClick:(id)sender
+{
+    if ([ChildDeviceManager sharedManager].curentDevice) {
+        [self.revealViewController setFrontViewPosition:FrontViewPositionLeft animated:YES];
+        [self performSegueWithIdentifier:@"LocusSettingIdentifier" sender:nil];
+    }
+}
 
 -(void)mapClick:(id)sender
 {
@@ -359,6 +368,11 @@
     
     [self addAnnotationWithCooordinate:randomCoordinate];
 }
+#pragma mark - LocusSettingViewControllerDelegate
+
+-(void)didLocusSetting:(NSArray *)array{
+    [self performSegueWithIdentifier:@"LocusIdentifier" sender:array];
+}
 
 #pragma mark - Navigation
 
@@ -366,5 +380,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"LocusSettingIdentifier"]) {
+        LocusSettingViewController *vc = segue.destinationViewController;
+        vc.delegate = self;
+    }
+    else if([segue.identifier isEqualToString:@"LocusIdentifier"]) {
+        LocusViewController *vc = segue.destinationViewController;
+        vc.array = sender;
+    }
 }
 @end
