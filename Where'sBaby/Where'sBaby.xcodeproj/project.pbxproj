@@ -99,6 +99,7 @@
 		B9DEF57B1BAEA87900D9BED7 /* 设置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5581BAEA87900D9BED7 /* 设置@3x.png */; };
 		B9DEF57C1BAEA87900D9BED7 /* 轨迹icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF5591BAEA87900D9BED7 /* 轨迹icon@2x.png */; };
 		B9DEF57D1BAEA87900D9BED7 /* 轨迹icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9DEF55A1BAEA87900D9BED7 /* 轨迹icon@3x.png */; };
+		B9F9B3B31BE4B53300FFFA43 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B3B21BE4B53300FFFA43 /* ChatViewController.swift */; };
 		D33B2F7B1BC909F70072FAF6 /* 放大镜@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F791BC909F70072FAF6 /* 放大镜@2x.png */; };
 		D33B2F7C1BC909F70072FAF6 /* 放大镜@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F7A1BC909F70072FAF6 /* 放大镜@3x.png */; };
 		D33B2F811BC90A650072FAF6 /* 宝贝按钮_空@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D33B2F7D1BC90A650072FAF6 /* 宝贝按钮_空@2x.png */; };
@@ -478,6 +479,7 @@
 		B9DEF5581BAEA87900D9BED7 /* 设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置@3x.png"; sourceTree = "<group>"; };
 		B9DEF5591BAEA87900D9BED7 /* 轨迹icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轨迹icon@2x.png"; sourceTree = "<group>"; };
 		B9DEF55A1BAEA87900D9BED7 /* 轨迹icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "轨迹icon@3x.png"; sourceTree = "<group>"; };
+		B9F9B3B21BE4B53300FFFA43 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D33B2F791BC909F70072FAF6 /* 放大镜@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "放大镜@2x.png"; sourceTree = "<group>"; };
 		D33B2F7A1BC909F70072FAF6 /* 放大镜@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "放大镜@3x.png"; sourceTree = "<group>"; };
 		D33B2F7D1BC90A650072FAF6 /* 宝贝按钮_空@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宝贝按钮_空@2x.png"; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 				D36ECB3A1BD280C100C79794 /* ContactDetailsTableViewController.swift */,
 				D39C367C1BDDD0B900F48547 /* LocationDesTableViewController.swift */,
 				D39C367E1BDE675000F48547 /* AlartViewController.swift */,
+				B9F9B3B21BE4B53300FFFA43 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1861,6 +1864,7 @@
 				D33B2FF61BC94CBD0072FAF6 /* ModifyPWViewController.swift in Sources */,
 				D367E4BE1BB004E10062FC62 /* CustomAnnotationView.m in Sources */,
 				D3DF41951BCF4EFE00A3A9D7 /* ZHRulerView.m in Sources */,
+				B9F9B3B31BE4B53300FFFA43 /* ChatViewController.swift in Sources */,
 				D3B353481BB11EC6004DB2BF /* DeviceRequest.m in Sources */,
 				D33B2FF81BC952F60072FAF6 /* AboutUSViewController.swift in Sources */,
 				D3DF41691BCE4BBA00A3A9D7 /* BabyBirthSetViewController.swift in Sources */,

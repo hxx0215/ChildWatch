@@ -29,4 +29,5 @@ typedef enum {
 +(instancetype)sharedManager;
 @property (nonatomic ,strong) DeviceModel *curentDevice;
 @property (nonatomic, readonly) NSString *currentDeviceNo;
+@property (nonatomic, readonly) NSString *currentNickName;
 @end

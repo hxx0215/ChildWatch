@@ -16,6 +16,7 @@
 #import <MBProgressHUD.h>
 #import "LocusSettingViewController.h"
 #import "LocusViewController.h"
+#import "Where_sBaby-swift.h"
 //#import "CustomAnnotationView.h"
 //IB_DESIGNABLE
 
@@ -223,6 +224,12 @@
     }
 }
 
+- (IBAction)chatClicked:(id)sender{
+    [self performSegueWithIdentifier:@"ChatSegueIdentifier" sender:sender];
+//    [self.revealViewController performSelector:@"ChatSegueIdentifier" withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#>]
+//    [self.revealViewController performSegueWithIdentifier:@"ChatSegueIdentifier" sender:sender];
+}
+
 -(void)mapClick:(id)sender
 {
     NSLog(@"mapClick");
@@ -387,6 +394,10 @@
     else if([segue.identifier isEqualToString:@"LocusIdentifier"]) {
         LocusViewController *vc = segue.destinationViewController;
         vc.array = sender;
+    }else if([segue.identifier isEqualToString:@"ChatSegueIdentifier"]){
+        ChatViewController *vc = segue.destinationViewController;
+        vc.senderId = [ChildDeviceManager sharedManager].currentDeviceNo;
+        vc.senderDisplayName = [ChildDeviceManager sharedManager].currentNickName;
     }
 }
 @end

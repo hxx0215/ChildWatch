@@ -68,4 +68,8 @@
 - (NSString *)currentDeviceNo{
     return [self.curentDevice.dicBase objectForKey:@"deviceno"];
 }
+
+- (NSString *)currentNickName{
+    return [self.curentDevice.dicBase objectForKey:@"nickname"];
+}
 @end
