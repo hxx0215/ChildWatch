@@ -1542,27 +1542,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDV-RU-8HS">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FDV-RU-8HS" secondAttribute="height" multiplier="1:1" id="aMR-Pk-8kK"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="头像1.png"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="aMR-Pk-8kK"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="aMR-Pk-8kK"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="imX-9a-WZi" eventType="touchUpInside" id="LLr-9T-SHl"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxD-en-mfN">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -1854,6 +1833,27 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDV-RU-8HS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FDV-RU-8HS" secondAttribute="height" multiplier="1:1" id="aMR-Pk-8kK"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="头像1.png"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aMR-Pk-8kK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="aMR-Pk-8kK"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="imX-9a-WZi" eventType="touchUpInside" id="LLr-9T-SHl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1950,7 +1950,6 @@
                                 <exclude reference="NsC-If-i45"/>
                                 <exclude reference="2WR-Xy-S2Y"/>
                                 <exclude reference="Q8T-PI-Kc0"/>
-                                <exclude reference="FDV-RU-8HS"/>
                                 <exclude reference="OxD-en-mfN"/>
                                 <exclude reference="klw-Aj-QnA"/>
                                 <exclude reference="dlR-gh-HoX"/>
@@ -1961,6 +1960,7 @@
                                 <exclude reference="QA1-XC-TQn"/>
                                 <exclude reference="GBE-8z-QVU"/>
                                 <exclude reference="1Za-RK-fTl"/>
+                                <exclude reference="FDV-RU-8HS"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="fp3-Ky-ayZ"/>
@@ -2056,7 +2056,6 @@
                                 <include reference="NsC-If-i45"/>
                                 <include reference="2WR-Xy-S2Y"/>
                                 <include reference="Q8T-PI-Kc0"/>
-                                <include reference="FDV-RU-8HS"/>
                                 <include reference="OxD-en-mfN"/>
                                 <include reference="klw-Aj-QnA"/>
                                 <include reference="dlR-gh-HoX"/>
@@ -2067,6 +2066,7 @@
                                 <include reference="QA1-XC-TQn"/>
                                 <include reference="GBE-8z-QVU"/>
                                 <include reference="1Za-RK-fTl"/>
+                                <include reference="FDV-RU-8HS"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="fp3-Ky-ayZ"/>

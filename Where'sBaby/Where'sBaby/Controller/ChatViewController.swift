@@ -8,7 +8,28 @@
 
 import UIKit
 
+class ChatViewModel: NSObject{
+    var messages: [JSQMessage]?
+    var avatars: [String: JSQMessagesAvatarImage]?
+    var outgoingBubbleImage: JSQMessagesBubbleImage!
+    var incomingBubbleImage: JSQMessagesBubbleImage!
+    var users: [String: String]?
+    let displayNameMap = ["爸爸" : "头像1.png", "妈妈" : "头像2.png" , "爷爷" : "头像3.png" , "奶奶" : "头像4.png" , "姑姑" : "头像5.png", "叔叔" : "头像6.png"]
+    init(senderId: String!,displayName: String!,displayAvatar : UIImage?){
+        messages = []
+        var avatarImage: JSQMessagesAvatarImage!
+        if let image = displayAvatar{
+            avatarImage = JSQMessagesAvatarImageFactory.avatarImageWithImage(image, diameter: 30)
+        }else{
+            avatarImage = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: displayNameMap[displayName]!), diameter: 30)
+        }
+        avatars = [senderId : avatarImage]
+    }
+}
+
 class ChatViewController: JSQMessagesViewController {
+    
+    var currentAvatar: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +54,7 @@ class ChatViewController: JSQMessagesViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
     /*
     // MARK: - Navigation
 

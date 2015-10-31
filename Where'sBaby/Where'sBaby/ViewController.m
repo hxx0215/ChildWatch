@@ -226,8 +226,6 @@
 
 - (IBAction)chatClicked:(id)sender{
     [self performSegueWithIdentifier:@"ChatSegueIdentifier" sender:sender];
-//    [self.revealViewController performSelector:@"ChatSegueIdentifier" withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#>]
-//    [self.revealViewController performSegueWithIdentifier:@"ChatSegueIdentifier" sender:sender];
 }
 
 -(void)mapClick:(id)sender
@@ -396,8 +394,9 @@
         vc.array = sender;
     }else if([segue.identifier isEqualToString:@"ChatSegueIdentifier"]){
         ChatViewController *vc = segue.destinationViewController;
-        vc.senderId = [ChildDeviceManager sharedManager].currentDeviceNo;
-        vc.senderDisplayName = [ChildDeviceManager sharedManager].currentNickName;
+        vc.senderId = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"id"]];
+        //TODO: change 爸爸 to loadData
+        vc.senderDisplayName = @"爸爸";
     }
 }
 @end
