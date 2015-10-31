@@ -11,5 +11,6 @@ pod 'JSONKit-NoWarning'
 pod 'AFNetworking'
 pod 'SWRevealViewController'
 pod 'JSQMessagesViewController'
+pod 'SDWebImage', '~>3.7'
 end
 
