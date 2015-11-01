@@ -397,6 +397,9 @@
         vc.senderId = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"id"]];
         //TODO: change 爸爸 to loadData
         vc.senderDisplayName = @"爸爸";
+        vc.currentAvatar = [UIImage imageNamed:@"默认头像1.png"];
+        vc.receiverId = [ChildDeviceManager sharedManager].currentDeviceNo;
+        vc.receiverName = [ChildDeviceManager sharedManager].currentNickName;
     }
 }
 @end
