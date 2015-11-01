@@ -29,7 +29,7 @@ class ChatViewModel: NSObject{
             receiverId: receiverName]
         let factory = JSQMessagesBubbleImageFactory(bubbleImage: UIImage(named: "文字框2.png"), capInsets: UIEdgeInsetsMake(5, 16, 5, 16))
         outgoingBubbleImage = factory.outgoingMessagesBubbleImageWithColor(UIColor(red: 3.0/255.0, green: 194.0/255.0, blue: 245.0/255.0, alpha: 1.0))
-        incomingBubbleImage = factory.incomingMessagesBubbleImageWithColor(UIColor.whiteColor())
+        incomingBubbleImage = factory.incomingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
     }
     
     func bubbleImage(senderId :String,index :Int)->JSQMessageBubbleImageDataSource!{
@@ -73,6 +73,12 @@ class ChatViewController: JSQMessagesViewController {
 
         // Do any additional setup after loading the view.
         viewModel = ChatViewModel(senderId: senderId, senderName: senderDisplayName, displayAvatar: nil, receiverId: receiverId, receiverName: receiverName, receiverAvatar: currentAvatar)
+        let right = UIBarButtonItem(barButtonSystemItem: .Compose, target: self, action: "rightClicked:")
+        self.navigationItem.rightBarButtonItem = right
+    }
+    
+    func rightClicked(sender: AnyObject){
+        didPressSendButton(nil, withMessageText: "hey", senderId: receiverId, senderDisplayName: receiverName, date: NSDate())
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,7 +97,9 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-        let message = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text)
+        let message = JSQMessage(senderId: senderId,
+            displayName: senderDisplayName,
+            text: text)
         viewModel.messages?.append(message)
         self.finishSendingMessageAnimated(true)
     }
@@ -134,7 +142,20 @@ class ChatViewController: JSQMessagesViewController {
         return cell
     }
     
+    // MARK: - JSQMessages collection view flow layout delegate
+    override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        if indexPath.item % 3 == 0{
+            return 20.0
+        }
+        return 0.0
+    }
     
+    override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        if let _ = viewModel.attributeTextForBubbleTopLabel(senderId, index: indexPath.item){
+            return 20.0
+        }
+        return 0.0
+    }
     /*
     // MARK: - Navigation
 
