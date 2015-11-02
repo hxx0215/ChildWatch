@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BabyDataTableViewController: UITableViewController {
+class BabyDataTableViewController: UITableViewController,AlartViewControllerDelegate {
 
     @IBOutlet weak var headimageView: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -20,6 +20,7 @@ class BabyDataTableViewController: UITableViewController {
     @IBOutlet weak var sexLabel: UILabel!
     @IBOutlet weak var brithLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
+    @IBOutlet weak var contactsLabel: UILabel!
     var first: Bool = true
     var contactsDic : NSDictionary = NSDictionary()
     var observer: NSObjectProtocol!
@@ -70,9 +71,41 @@ class BabyDataTableViewController: UITableViewController {
                     let dicData:NSDictionary = dic["data"]!.firstObject as! NSDictionary
                     ChildDeviceManager.sharedManager().curentDevice.dicBabyData = NSMutableDictionary(dictionary: dicData)
                     self.updateBabyData()
+                    if true{
+                        let dic = ["deviceno":ChildDeviceManager.sharedManager().currentDeviceNo]
+                        DeviceRequest.GetPhoneBookListWithParameters(dic, success: { (object) -> Void in
+                            print(object)
+                            let dic:NSDictionary = object as! NSDictionary
+                            let state:Int = dic["state"] as! Int
+                            if(state==0)
+                            {
+                                let dicArray:NSArray = dic["data"] as! NSArray
+                                for dicDatat in dicArray{
+                                    let mobile:String = dicDatat["mobile"] as! String
+                                    let username:String = NSUserDefaults.standardUserDefaults().objectForKey("username") as! String
+                                    if mobile == username {
+                                        self.contactsDic = dicDatat as! NSDictionary
+                                        
+                                        break
+                                    }
+                                }
+                                self.updateBabyData()
+                            }
+                            hud.hide(true)
+                            }) { (NSError error) -> Void in
+                                print(error)
+                                hud.mode = .Text
+                                hud.detailsLabelText = error.domain
+                                hud.hide(true, afterDelay: 1.5)
+                        }
+                    }
                     
                 }
-                hud.hide(true)
+                else
+                {
+                    hud.detailsLabelText = "获取信息失败";
+                    hud.hide(true, afterDelay: 1.5)
+                }
                 
                 }) { (NSError error) -> Void in
                     print(error)
@@ -94,6 +127,16 @@ class BabyDataTableViewController: UITableViewController {
     }
     
     @IBAction func unBindClicked(sender: UIButton) {
+        if contactsDic.count>0{
+            let role:String = contactsDic["role"] as! String
+            if role == "super"{
+                self.performSegueWithIdentifier("alertIdentifier", sender: 0)
+            }
+            else
+            {
+                self.performSegueWithIdentifier("alertIdentifier", sender: 1)
+            }
+        }
     }
 
     @IBAction func headImageClicked(sender: UIButton) {
@@ -113,6 +156,9 @@ class BabyDataTableViewController: UITableViewController {
             self.nicknameLabel.text = babyDataDic["nickname"] as? String
             self.mobile_shortLabel.text = babyDataDic["mobile_short"] as? String
         }
+        if contactsDic.count>0{
+            self.contactsLabel.text = contactsDic["nickname"] as? String
+        }
         
     }
     
@@ -127,32 +173,7 @@ class BabyDataTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.row == 3 {
-            let hud : MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            let dic = ["deviceno":ChildDeviceManager.sharedManager().currentDeviceNo]
-            DeviceRequest.GetPhoneBookListWithParameters(dic, success: { (object) -> Void in
-                print(object)
-                let dic:NSDictionary = object as! NSDictionary
-                let state:Int = dic["state"] as! Int
-                if(state==0)
-                {
-                    let dicArray:NSArray = dic["data"] as! NSArray
-                    for dicDatat in dicArray{
-                        let mobile:String = dicDatat["mobile"] as! String
-                        let username:String = NSUserDefaults.standardUserDefaults().objectForKey("username") as! String
-                        if mobile == username {
-                            let contactsDic:NSDictionary = dicDatat as! NSDictionary
-                            self.performSegueWithIdentifier("ContactDetailsIdentifier", sender: contactsDic)
-                            break
-                        }
-                    }
-                }
-                hud.hide(true)
-                }) { (NSError error) -> Void in
-                    print(error)
-                    hud.mode = .Text
-                    hud.detailsLabelText = error.domain
-                    hud.hide(true, afterDelay: 1.5)
-            }
+            self.performSegueWithIdentifier("ContactDetailsIdentifier", sender: contactsDic)
         }
     }
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -205,6 +226,55 @@ class BabyDataTableViewController: UITableViewController {
     }
     */
 
+    func didClickButton(index: Int, tag: Int) {
+        if tag == 0{
+            if index == 1{
+                self.performSegueWithIdentifier("Contacts", sender: contactsDic)
+            }
+        }
+        else
+        {
+            if index == 1{
+                let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+                let userId = NSUserDefaults.standardUserDefaults().objectForKey("id") as! NSNumber
+                let dic:[String:String] = ["deviceno":ChildDeviceManager.sharedManager().curentDevice.dicBase["deviceno"] as! String,"userid":userId.stringValue]
+                DeviceRequest.RemoveDeviceBindWithParameters(dic, success: { (object) -> Void in
+                    print(object)
+                    let dic:NSDictionary = object as! NSDictionary
+                    let state:Int = dic["state"] as! Int
+                    if(state==0){
+                        hud.detailsLabelText = "解绑成功"
+                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        })
+                    }
+                    else if(state == 1)
+                    {
+                        hud.detailsLabelText = "解绑失败"
+                    }
+                    else if(state == 4)
+                    {
+                        hud.detailsLabelText = "当前角色为超级管理员，必须先将超级管理员转让给其他家人后，才能解绑"
+                    }
+//                    else if(state == 5)
+//                    {
+//                        hud.detailsLabelText = "要转让的家人手机号不是APP用户"
+//                    }
+                    else
+                    {
+                        hud.detailsLabelText = "解绑失败"
+                    }
+                    hud.mode = .Text
+                    hud.hide(true, afterDelay: 1.5)
+                    }, failure: { (NSError error) -> Void in
+                        
+                        hud.mode = .Text
+                        hud.detailsLabelText = error.domain
+                        hud.hide(true, afterDelay: 1.5)
+                })
+                
+            }
+        }
+    }
     
     // MARK: - Navigation
 
@@ -217,6 +287,22 @@ class BabyDataTableViewController: UITableViewController {
             let dic:NSDictionary = sender as! NSDictionary
             vc.currentDic = NSMutableDictionary.init(dictionary: dic)
             vc.canAdmin = false
+        }
+        else if segue.identifier == "alertIdentifier"{
+            let vc:AlartViewController = segue.destinationViewController as! AlartViewController
+            vc.tag = sender as! Int
+            if(vc.tag==0){
+                vc.text = "解除绑定后,您将不能再查\n看宝贝信息,确定要解绑吗?"
+            }
+            else
+            {
+                vc.text = "解除绑定后,您将不能再查\n看宝贝信息,确定要解绑吗?"
+            }
+            vc.delegate = self
+        }
+        else if segue.identifier == "Contacts"{
+            let vc:ContactsTableViewController = segue.destinationViewController as! ContactsTableViewController
+            vc.type = 1;
         }
     }
 

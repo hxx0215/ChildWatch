@@ -46,5 +46,9 @@
 
 + (void)AssignAdminWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
++ (void)RemoveDeviceBindWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
++ (void)GetTrackByDeviceNoWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
 
 @end

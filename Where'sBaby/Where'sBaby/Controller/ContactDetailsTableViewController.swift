@@ -14,6 +14,7 @@ class ContactDetailsTableViewController: UITableViewController ,AlartViewControl
     @IBOutlet weak var mobileshortLabel : UILabel!
     @IBOutlet weak var sosflagButton : UIButton!
     @IBOutlet weak var autoanswerButton : UIButton!
+    @IBOutlet weak var deletButton : UIButton!
     var currentDic : NSMutableDictionary!
     var observer: NSObjectProtocol!
     var canAdmin:Bool = true
@@ -50,6 +51,10 @@ class ContactDetailsTableViewController: UITableViewController ,AlartViewControl
         else
         {
             canAdmin = false
+        }
+        if role == "super"{
+            self.tableView.tableFooterView?.frame.size.height = 0.0;
+            self.deletButton.hidden = true
         }
     }
 
@@ -174,7 +179,7 @@ class ContactDetailsTableViewController: UITableViewController ,AlartViewControl
         if tag == 0{
             if index == 1{
                 let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
-                DeviceRequest.DeletePhoneBookWithParameters(self.currentDic, success: { (object) -> Void in
+                DeviceRequest.AssignAdminWithParameters(self.currentDic, success: { (object) -> Void in
                     print(object)
                     let dic:NSDictionary = object as! NSDictionary
                     let state:Int = dic["state"] as! Int

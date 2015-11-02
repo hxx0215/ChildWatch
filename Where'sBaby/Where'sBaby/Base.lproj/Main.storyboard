@@ -6945,6 +6945,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brithLabel" destination="ffF-tX-diG" id="dmX-SP-cff"/>
+                        <outlet property="contactsLabel" destination="MIS-hc-PJo" id="juO-pF-MKd"/>
                         <outlet property="gradeLabel" destination="y3u-sV-a4C" id="MLf-Nr-5LU"/>
                         <outlet property="headimageView" destination="IqJ-QD-OjF" id="WOw-6f-kFx"/>
                         <outlet property="heightLabel" destination="U7j-6X-kDH" id="ZjZ-Zp-qhG"/>
@@ -6955,6 +6956,8 @@
                         <outlet property="sexLabel" destination="eYo-Mn-upt" id="w9B-Xy-KWH"/>
                         <outlet property="weightLabel" destination="wz9-cY-sBM" id="Q52-2x-TeM"/>
                         <segue destination="fsE-xm-kto" kind="show" identifier="ContactDetailsIdentifier" id="nr5-1F-m2z"/>
+                        <segue destination="5Lx-iB-p4K" kind="presentation" identifier="alertIdentifier" animates="NO" modalPresentationStyle="overCurrentContext" id="e4z-tA-gPZ"/>
+                        <segue destination="UAO-rr-lit" kind="show" identifier="Contacts" id="FwP-8j-8IQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wod-NU-nM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -10867,6 +10870,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="autoanswerButton" destination="uvA-Vk-an9" id="gDO-MT-jYR"/>
+                        <outlet property="deletButton" destination="IxU-2B-gxj" id="Bng-kW-KpZ"/>
                         <outlet property="mobileshortLabel" destination="KkG-gu-7yV" id="tMl-iK-CTc"/>
                         <outlet property="nicknameLabel" destination="9oZ-eU-1Tr" id="2hm-Ro-T13"/>
                         <outlet property="sosflagButton" destination="Ln0-rq-yE9" id="DjF-cx-amG"/>
@@ -11419,7 +11423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwS-A1-k8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2446.5" y="5033.25"/>
+            <point key="canvasLocation" x="2542.5" y="4973.25"/>
         </scene>
         <!--Locus Setting View Controller-->
         <scene sceneID="Ui3-Ns-hf8">
@@ -11893,9 +11897,11 @@
         <segue reference="EaM-HS-Fyw"/>
         <segue reference="1a4-Ds-VlV"/>
         <segue reference="nr5-1F-m2z"/>
+        <segue reference="FwP-8j-8IQ"/>
         <segue reference="hlb-Gu-8NE"/>
         <segue reference="sRh-ga-WdX"/>
-        <segue reference="XUI-bk-ix8"/>
+        <segue reference="gBi-TN-Bnw"/>
+        <segue reference="Z0z-x9-u97"/>
         <segue reference="yqb-lQ-Rcd"/>
         <segue reference="jb1-vU-m3R"/>
     </inferredMetricsTieBreakers>

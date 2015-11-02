@@ -13,6 +13,7 @@ class ContactsTableViewController: UITableViewController {
     var tableViewFamilyArray : NSMutableArray!
     var tableViewFrinedArray : NSMutableArray!
     var canAdmin : Bool = false
+    var type:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +24,10 @@ class ContactsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.tableViewFamilyArray = NSMutableArray.init(array: [])
         self.tableViewFrinedArray = NSMutableArray.init(array: [])
+        if self.type == 1{
+            self.title = "设置新的设备管理员"
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,7 +52,7 @@ class ContactsTableViewController: UITableViewController {
                     else
                     {
                         let mobile:String = dicDatat["mobile"] as! String
-                        if mobile == username{
+                        if mobile == username && self.type == 0{
                             self.tableViewFamilyArray.insertObject(dicDatat, atIndex: 0)
                             let role : String = dicDatat["role"] as! String
                             if  role == "super"{
@@ -88,6 +93,9 @@ class ContactsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        if self.type == 1{
+            return 1
+        }
         return 2
     }
 
@@ -175,15 +183,58 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var dic:NSDictionary;
-        if(indexPath.section == 0)
-        {
+        if self.type == 1{
             dic = tableViewFamilyArray[indexPath.row] as! NSDictionary
+            
+            let hud:MBProgressHUD = MBProgressHUD.showHUDAddedTo(self.view.window, animated: true)
+            let userId = NSUserDefaults.standardUserDefaults().objectForKey("id") as! NSNumber
+            let dic:[String:String] = ["deviceno":ChildDeviceManager.sharedManager().curentDevice.dicBase["deviceno"] as! String,"userid":userId.stringValue,"mobile":dic["mobile"] as! String]
+            DeviceRequest.AssignAdminWithParameters(dic, success: { (object) -> Void in
+                print(object)
+                let dic:NSDictionary = object as! NSDictionary
+                let state:Int = dic["state"] as! Int
+                if(state==0){
+                    hud.detailsLabelText = "转让成功"
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    })
+                }
+                else if(state == 1)
+                {
+                    hud.detailsLabelText = "转让的家人关系不存在"
+                }
+                else if(state == 4)
+                {
+                    hud.detailsLabelText = "超级管理员不存在"
+                }
+                else if(state == 5)
+                {
+                    hud.detailsLabelText = "要转让的家人手机号不是APP用户"
+                }
+                else
+                {
+                    hud.detailsLabelText = "转让失败"
+                }
+                hud.mode = .Text
+                hud.hide(true, afterDelay: 1.5)
+                }, failure: { (NSError error) -> Void in
+                    
+                    hud.mode = .Text
+                    hud.detailsLabelText = error.domain
+                    hud.hide(true, afterDelay: 1.5)
+            })
         }
-        else
-        {
-            dic = tableViewFrinedArray[indexPath.row] as! NSDictionary
+        else{
+            if(indexPath.section == 0)
+            {
+                dic = tableViewFamilyArray[indexPath.row] as! NSDictionary
+            }
+            else
+            {
+                dic = tableViewFrinedArray[indexPath.row] as! NSDictionary
+            }
+            self.performSegueWithIdentifier("ContactDetailsIdentifier", sender: dic)
         }
-        self.performSegueWithIdentifier("ContactDetailsIdentifier", sender: dic)
+        
     }
 
     /*

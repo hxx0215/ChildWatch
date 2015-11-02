@@ -52,6 +52,7 @@
 
 -(void)didLocusSetting:(NSArray *)array{
     NSLog(@"%@",array);
+    self.array = array;
 }
 
 #pragma mark - Navigation

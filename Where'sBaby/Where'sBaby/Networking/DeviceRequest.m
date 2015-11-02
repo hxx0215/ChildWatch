@@ -29,6 +29,9 @@
 #define kMethodDeletePhoneBook @"/user/deletePhoneBook"
 
 #define kMethodAssignAdmin @"/user/assignAdmin"
+#define kMethodRemoveDeviceBind @"/user/removeDeviceBind"
+
+#define kMethodGetTrackByDeviceNo @"/device/getTrackByDeviceNo"
 
 @implementation DeviceRequest
 + (void)DeviceListWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
@@ -106,5 +109,13 @@
 
 + (void)AssignAdminWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodAssignAdmin WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)RemoveDeviceBindWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodRemoveDeviceBind WithParameters:parameters post:YES success:success failure:failure];
+}
+
++ (void)GetTrackByDeviceNoWithParameters: (id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    [[BaseHTTPRequestOperationManager sharedManager] defaultHTTPWithMethod:kMethodGetTrackByDeviceNo WithParameters:parameters post:YES success:success failure:failure];
 }
 @end
