@@ -50,6 +50,9 @@
 		B96BDBAF1BCD51A500BE7FE3 /* 关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */; };
 		B96BDBB01BCD51A500BE7FE3 /* 关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */; };
 		B97281701BD7CB7300418688 /* PowerSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */; };
+		B9A010501BE7B1C300FDBE9A /* CIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A0104D1BE7B1C300FDBE9A /* CIColorExtension.swift */; };
+		B9A010511BE7B1C300FDBE9A /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A0104E1BE7B1C300FDBE9A /* QRCode.swift */; };
+		B9A010521BE7B1C300FDBE9A /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A0104F1BE7B1C300FDBE9A /* UIImageViewExtension.swift */; };
 		B9C73D3F1BDCEF7B000F0CA9 /* 手表音量0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D351BDCEF7B000F0CA9 /* 手表音量0@2x.png */; };
 		B9C73D401BDCEF7B000F0CA9 /* 手表音量1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D361BDCEF7B000F0CA9 /* 手表音量1@2x.png */; };
 		B9C73D411BDCEF7B000F0CA9 /* 手表音量2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C73D371BDCEF7B000F0CA9 /* 手表音量2@2x.png */; };
@@ -429,6 +432,9 @@
 		B96BDBAD1BCD51A500BE7FE3 /* 关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@2x.png"; sourceTree = "<group>"; };
 		B96BDBAE1BCD51A500BE7FE3 /* 关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关闭@3x.png"; sourceTree = "<group>"; };
 		B972816F1BD7CB7300418688 /* PowerSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerSettingTableViewController.swift; sourceTree = "<group>"; };
+		B9A0104D1BE7B1C300FDBE9A /* CIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIColorExtension.swift; sourceTree = "<group>"; };
+		B9A0104E1BE7B1C300FDBE9A /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		B9A0104F1BE7B1C300FDBE9A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		B9C73D351BDCEF7B000F0CA9 /* 手表音量0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量0@2x.png"; sourceTree = "<group>"; };
 		B9C73D361BDCEF7B000F0CA9 /* 手表音量1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量1@2x.png"; sourceTree = "<group>"; };
 		B9C73D371BDCEF7B000F0CA9 /* 手表音量2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手表音量2@2x.png"; sourceTree = "<group>"; };
@@ -971,6 +977,9 @@
 				B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */,
 				B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */,
 				B921D1CC1BDE6E6B00D1A903 /* QRCodeGenerate.swift */,
+				B9A0104D1BE7B1C300FDBE9A /* CIColorExtension.swift */,
+				B9A0104E1BE7B1C300FDBE9A /* QRCode.swift */,
+				B9A0104F1BE7B1C300FDBE9A /* UIImageViewExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1835,6 +1844,7 @@
 				D36ECB2E1BD0A18200C79794 /* SafeListTableViewCell.swift in Sources */,
 				D36ECB371BD13FAF00C79794 /* ContactsTableViewCell.swift in Sources */,
 				B9C73D4A1BDCF2CC000F0CA9 /* VolumeSettingViewController.swift in Sources */,
+				B9A010511BE7B1C300FDBE9A /* QRCode.swift in Sources */,
 				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
 				B910ADD71BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift in Sources */,
 				D3DF41A51BCFEA8D00A3A9D7 /* SafeListTableViewController.swift in Sources */,
@@ -1856,6 +1866,7 @@
 				D36ECB291BD09D3700C79794 /* SearchViewController.m in Sources */,
 				D3E735001BA5D19200618513 /* NSString+scisky.m in Sources */,
 				D36ECB391BD1719900C79794 /* RelationViewController.swift in Sources */,
+				B9A010501BE7B1C300FDBE9A /* CIColorExtension.swift in Sources */,
 				B9545C1B1BD913BA00C945FC /* TimeSettingViewController.swift in Sources */,
 				D33B2FF01BC92C8E0072FAF6 /* ContactsViewController.swift in Sources */,
 				B96BDBA31BCD31D400BE7FE3 /* ShareViewController.swift in Sources */,
@@ -1873,6 +1884,7 @@
 				D33B2FF41BC92CC20072FAF6 /* AppSettingTableViewController.swift in Sources */,
 				D36ECB331BD13BD300C79794 /* ContactsTableViewController.swift in Sources */,
 				B9045C0F1BA0535100090A86 /* ViewController.m in Sources */,
+				B9A010521BE7B1C300FDBE9A /* UIImageViewExtension.swift in Sources */,
 				D3DF40C91BCD333A00A3A9D7 /* ChildDeviceManager.m in Sources */,
 				B9045C0C1BA0535100090A86 /* AppDelegate.m in Sources */,
 				D33B2FEE1BC92C580072FAF6 /* MessageViewController.swift in Sources */,
