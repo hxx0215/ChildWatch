@@ -115,7 +115,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"id"]){
-        [self.navigationController performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
+        [self performSegueWithIdentifier:@"WelcomSegueIdentifier" sender:nil];
         childDeviceArray = nil;
         childTag = 0;
     }

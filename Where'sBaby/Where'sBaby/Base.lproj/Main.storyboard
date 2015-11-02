@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sjx-09-Qtw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -316,7 +316,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="73" y="139" width="255" height="272"/>
+                                    <rect key="frame" x="73" y="95" width="255" height="272"/>
                                     <mask key="subviews">
                                         <include reference="jmK-nC-lAv"/>
                                         <include reference="nkA-9a-nl5"/>
@@ -352,7 +352,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="314" y="72" width="66" height="81"/>
+                                    <rect key="frame" x="314" y="28" width="66" height="81"/>
                                     <mask key="constraints">
                                         <include reference="jXk-vs-gtz"/>
                                         <include reference="qvW-gS-Shz"/>
@@ -367,7 +367,7 @@
                                 <animations/>
                                 <state key="normal" image="安全icon.png"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="22" y="451" width="74" height="74"/>
+                                    <rect key="frame" x="22" y="407" width="74" height="74"/>
                                 </variation>
                                 <connections>
                                     <action selector="safeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I7j-FF-C1c"/>
@@ -378,7 +378,7 @@
                                 <animations/>
                                 <state key="normal" image="聊天icon.png"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="116" y="431" width="74" height="74"/>
+                                    <rect key="frame" x="116" y="387" width="74" height="74"/>
                                 </variation>
                                 <connections>
                                     <action selector="chatClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Omv-O3-Ra9"/>
@@ -389,7 +389,7 @@
                                 <animations/>
                                 <state key="normal" image="轨迹icon.png"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="305" y="451" width="74" height="74"/>
+                                    <rect key="frame" x="305" y="407" width="74" height="74"/>
                                 </variation>
                                 <connections>
                                     <action selector="LocusClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PTP-fd-KaQ"/>
@@ -400,7 +400,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="1" y="451" width="21" height="74"/>
+                                    <rect key="frame" x="1" y="407" width="21" height="74"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prb-NH-fxf">
@@ -408,7 +408,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="96" y="431" width="20" height="74"/>
+                                    <rect key="frame" x="96" y="387" width="20" height="74"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWN-Dg-bef">
@@ -416,7 +416,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="190" y="431" width="21" height="74"/>
+                                    <rect key="frame" x="190" y="387" width="21" height="74"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PyP-jX-1h3">
@@ -424,7 +424,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="285" y="451" width="20" height="74"/>
+                                    <rect key="frame" x="285" y="407" width="20" height="74"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALd-Ch-UC2">
@@ -432,7 +432,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="379" y="451" width="21" height="74"/>
+                                    <rect key="frame" x="379" y="407" width="21" height="74"/>
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安全" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPJ-Xl-2uR">
@@ -442,7 +442,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="45" y="426" width="28" height="17"/>
+                                    <rect key="frame" x="45" y="382" width="28" height="17"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聊天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCN-qZ-1BJ">
@@ -452,7 +452,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="139" y="406" width="28" height="17"/>
+                                    <rect key="frame" x="139" y="362" width="28" height="17"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnd-ba-HzG">
@@ -462,7 +462,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="234" y="406" width="28" height="17"/>
+                                    <rect key="frame" x="234" y="362" width="28" height="17"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轨迹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlK-NP-dOc">
@@ -472,7 +472,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="328" y="426" width="28" height="17"/>
+                                    <rect key="frame" x="328" y="382" width="28" height="17"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INC-A7-peM">
@@ -480,7 +480,7 @@
                                 <animations/>
                                 <state key="normal" image="电话icon.png"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="211" y="431" width="74" height="74"/>
+                                    <rect key="frame" x="211" y="387" width="74" height="74"/>
                                 </variation>
                                 <connections>
                                     <action selector="callPhoneClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PpQ-Ro-xFS"/>
@@ -502,7 +502,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="72" width="66" height="66"/>
+                                    <rect key="frame" x="20" y="28" width="66" height="66"/>
                                     <mask key="constraints">
                                         <include reference="J8p-SZ-ugx"/>
                                         <include reference="w5O-Lu-B2z"/>
@@ -528,7 +528,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="92" y="90" width="30" height="30"/>
+                                    <rect key="frame" x="92" y="46" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="MRO-vw-Eom"/>
                                         <include reference="UK1-1f-Z7W"/>
@@ -545,7 +545,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="92" y="120" width="31" height="15"/>
+                                    <rect key="frame" x="92" y="76" width="31" height="15"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝贝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BW-MQ-ChX">
@@ -555,7 +555,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="39" y="141" width="28" height="17"/>
+                                    <rect key="frame" x="39" y="97" width="28" height="17"/>
                                 </variation>
                             </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNz-o8-nGm">
@@ -574,7 +574,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="130" y="90" width="30" height="30"/>
+                                    <rect key="frame" x="130" y="46" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="Qw9-Kf-wF2"/>
                                         <include reference="dIc-OG-b0u"/>
@@ -591,7 +591,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="130" y="120" width="31" height="15"/>
+                                    <rect key="frame" x="130" y="76" width="31" height="15"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nol-gi-W2g">
@@ -601,7 +601,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="168" y="120" width="31" height="15"/>
+                                    <rect key="frame" x="168" y="76" width="31" height="15"/>
                                 </variation>
                             </label>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmZ-pj-Sqr">
@@ -620,7 +620,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="206" y="90" width="30" height="30"/>
+                                    <rect key="frame" x="206" y="46" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="rGg-Jw-KY2"/>
                                         <include reference="yE3-1w-DYV"/>
@@ -637,7 +637,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="206" y="120" width="31" height="15"/>
+                                    <rect key="frame" x="206" y="76" width="31" height="15"/>
                                 </variation>
                             </label>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbk-gT-x71">
@@ -656,7 +656,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="168" y="90" width="30" height="30"/>
+                                    <rect key="frame" x="168" y="46" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="eii-sR-E9D"/>
                                         <include reference="vv3-b6-cE5"/>
@@ -968,6 +968,7 @@
                         <segue destination="gYT-qi-IXU" kind="presentation" identifier="LocusSettingIdentifier" animates="NO" modalPresentationStyle="overCurrentContext" id="jb1-vU-m3R"/>
                         <segue destination="tiE-bq-HpK" kind="show" identifier="LocusIdentifier" id="ZJt-1h-5JJ"/>
                         <segue destination="S0D-QX-kCp" kind="show" identifier="ChatSegueIdentifier" id="HI1-46-G8r"/>
+                        <segue destination="enV-3i-aa6" kind="presentation" identifier="WelcomSegueIdentifier" animates="NO" id="XUI-bk-ix8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -5184,7 +5185,9 @@
                         <viewControllerLayoutGuide type="bottom" id="24q-ag-zUR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lx5-zf-5iR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="聊天" id="duD-Zq-e4M">
@@ -5192,6 +5195,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I5J-dF-FUz">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="返回" image="返回.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -5506,7 +5510,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaT-IS-d5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="505.5"/>
+            <point key="canvasLocation" x="642" y="601.5"/>
         </scene>
         <!--Bind Watch View Controller-->
         <scene sceneID="hP6-7W-3YG">
@@ -7798,17 +7802,11 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="身高值显示框.png" translatesAutoresizingMaskIntoConstraints="NO" id="KwN-Eb-dvR">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <animations/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="183" y="143" width="78" height="39"/>
-                                        </variation>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-Cb-eCa">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="增加_.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="208" y="109" width="26" height="26"/>
-                                        </variation>
                                         <connections>
                                             <action selector="addButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="8Zz-2t-eta"/>
                                         </connections>
@@ -7817,9 +7815,6 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="减少.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="208" y="190" width="27" height="27"/>
-                                        </variation>
                                         <connections>
                                             <action selector="lowerButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="HlT-T1-KC1"/>
                                         </connections>
@@ -7830,7 +7825,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="203" y="154" width="41" height="16"/>
+                                            <rect key="frame" x="194" y="153" width="41" height="16"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -8004,9 +7999,6 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="减少.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="66" y="106" width="27" height="27"/>
-                                        </variation>
                                         <connections>
                                             <action selector="lowerButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="QnU-mU-Ts7"/>
                                             <action selector="lowerButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="sOV-qs-QPb"/>
@@ -8016,9 +8008,6 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
                                         <state key="normal" image="增加_.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="168" y="106" width="26" height="26"/>
-                                        </variation>
                                         <connections>
                                             <action selector="addButtonClick:" destination="gMo-vw-Vl8" eventType="touchUpInside" id="CDQ-JL-QTl"/>
                                             <action selector="addButtonClick:" destination="Vfk-Tb-cem" eventType="touchUpInside" id="co6-0G-2hz"/>
@@ -9618,8 +9607,7 @@
                                                         <exclude reference="Vfv-wz-igc"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="365" y="88" width="27" height="26"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="UVs-dP-dnw"/>
                                                         <exclude reference="Vfv-wz-igc"/>
@@ -11900,14 +11888,15 @@
         <image name="默认头像2.png" width="81" height="81"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sRh-ga-WdX"/>
-        <segue reference="nr5-1F-m2z"/>
         <segue reference="usW-AO-9yO"/>
-        <segue reference="6GU-e4-44z"/>
-        <segue reference="1a4-Ds-VlV"/>
-        <segue reference="EaM-HS-Fyw"/>
         <segue reference="YnI-mM-Fpo"/>
-        <segue reference="jb1-vU-m3R"/>
+        <segue reference="EaM-HS-Fyw"/>
+        <segue reference="1a4-Ds-VlV"/>
+        <segue reference="nr5-1F-m2z"/>
         <segue reference="hlb-Gu-8NE"/>
+        <segue reference="sRh-ga-WdX"/>
+        <segue reference="XUI-bk-ix8"/>
+        <segue reference="yqb-lQ-Rcd"/>
+        <segue reference="jb1-vU-m3R"/>
     </inferredMetricsTieBreakers>
 </document>
