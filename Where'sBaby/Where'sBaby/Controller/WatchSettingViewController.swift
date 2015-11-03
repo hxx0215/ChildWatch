@@ -50,6 +50,14 @@ class WatchSettingViewModel: NSObject{
     func powerText()->String{
         return data!["poweroff"].stringValue
     }
+    
+    func qrcode()->UIImage{
+        let qrcode = ChildDeviceManager.sharedManager().currentDeviceNo
+        guard let _ = qrcode else{
+            return UIImage()
+        }
+        return QRCodeGenerate.generateQRCode(qrcode, size: 80.0)
+    }
 }
 
 class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,WatchSettingTableDelegate,PowerSettingDelegate,WatchCallOffSettingDelegate,FindWatchDelegate{
@@ -80,7 +88,6 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         let deviceNo = ChildDeviceManager.sharedManager().currentDeviceNo
         let parameter = ["deviceno":deviceNo]
-        self.qrcodeImage.image = QRCodeGenerate.generateQRCode(deviceNo, size: 80.0)
         DeviceRequest.GetDeviceConfigInfoWithParameters(parameter, success: { (response) -> Void in
             let json = JSON(response)
             self.viewModel = WatchSettingViewModel(json: json)
@@ -105,6 +112,7 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
             self.strangeSwitch.selected = ((data["strangeoff"].stringValue) == "1")
             self.calloff.text = ""//data["calloff"].stringValue
             self.mode.text = vm.modeText()//data["mode"].stringValue
+            self.qrcodeImage.image = vm.qrcode()
             }) { (error) -> Void in
                 print(error)
         }

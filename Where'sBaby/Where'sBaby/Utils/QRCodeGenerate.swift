@@ -17,22 +17,33 @@ class QRCodeGenerate: NSObject {
         let qrFilter = CIFilter(name: "CIQRCodeGenerator")
         qrFilter?.setValue(data, forKey: "inputMessage")
         qrFilter?.setValue("M", forKey: "inputCorrectionLevel")
-        return qrFilter?.outputImage
+        
+        
+        guard let invert = CIFilter(name: "CIColorInvert") else { return nil }
+        invert.setDefaults()
+        invert.setValue(qrFilter?.outputImage, forKey: "inputImage")
+        
+        guard let maskFilter = CIFilter(name: "CIMaskToAlpha") else { return nil }
+        maskFilter.setDefaults()
+        maskFilter.setValue(invert.outputImage, forKey: "inputImage")
+        
+        invert.setValue(maskFilter.outputImage, forKey: "inputImage")
+        return invert.outputImage
     }
     private static func imageWithCIImage(ciimage: CIImage?,size: CGFloat)->UIImage{
         if let image = ciimage{
             let extent = CGRectIntegral(image.extent)
             let scale = min(size / extent.size.width, size / extent.size.height)
-            let width = extent.size.width * scale
-            let height = extent.size.height * scale
-            let cs = CGColorSpaceCreateDeviceGray()
-            let bitmapRef = CGBitmapContextCreate(nil, Int(width), Int(height), 8, 0, cs, CGImageAlphaInfo.None.rawValue)
             let context = CIContext(options: nil)
             let bitmapImage = context.createCGImage(image, fromRect: extent)
-            CGContextSetInterpolationQuality(bitmapRef, .None)
-            CGContextScaleCTM(bitmapRef,scale,scale)
-            CGContextDrawImage(bitmapRef,extent,bitmapImage)
-            if let scaledImage = CGBitmapContextCreateImage(bitmapRef){
+            UIGraphicsBeginImageContext(CGSizeMake(size, size))
+            let c = UIGraphicsGetCurrentContext()
+            CGContextSetInterpolationQuality(c, .None)
+            CGContextTranslateCTM(c, 0.0, size)
+            CGContextScaleCTM(c,scale,-scale)
+            CGContextDrawImage(c,extent,bitmapImage)
+            if let scaledImage = CGBitmapContextCreateImage(c){
+                UIGraphicsEndImageContext()
                 return UIImage(CGImage: scaledImage)
             }else{
                 return UIImage()
