@@ -25,6 +25,7 @@
 		B921D1CD1BDE6E6B00D1A903 /* QRCodeGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B921D1CC1BDE6E6B00D1A903 /* QRCodeGenerate.swift */; };
 		B92408E31BC6A54E0033C73C /* zhuce1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E11BC6A54E0033C73C /* zhuce1@2x.png */; };
 		B92408E41BC6A54F0033C73C /* zhuce1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B92408E21BC6A54E0033C73C /* zhuce1@3x.png */; };
+		B93130A41BE9892100C3253C /* EasyOptionalUnwrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93130A31BE9892100C3253C /* EasyOptionalUnwrapping.swift */; };
 		B95307901BB41896002B2162 /* UIButton+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = B953078F1BB41896002B2162 /* UIButton+Log.m */; };
 		B9545C1B1BD913BA00C945FC /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9545C1A1BD913BA00C945FC /* TimeSettingViewController.swift */; };
 		B95890311BA43BE900A2C03E /* WBWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95890301BA43BE900A2C03E /* WBWelcomeViewController.swift */; };
@@ -402,6 +403,7 @@
 		B921D1CC1BDE6E6B00D1A903 /* QRCodeGenerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeGenerate.swift; sourceTree = "<group>"; };
 		B92408E11BC6A54E0033C73C /* zhuce1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@2x.png"; sourceTree = "<group>"; };
 		B92408E21BC6A54E0033C73C /* zhuce1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuce1@3x.png"; sourceTree = "<group>"; };
+		B93130A31BE9892100C3253C /* EasyOptionalUnwrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyOptionalUnwrapping.swift; sourceTree = "<group>"; };
 		B953078E1BB41896002B2162 /* UIButton+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Log.h"; sourceTree = "<group>"; };
 		B953078F1BB41896002B2162 /* UIButton+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Log.m"; sourceTree = "<group>"; };
 		B9545C1A1BD913BA00C945FC /* TimeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
@@ -971,6 +973,7 @@
 				B9D392B31BB5709B0062DDD5 /* UIFont+ChangeFont.h */,
 				B9D392B41BB5709B0062DDD5 /* UIFont+ChangeFont.m */,
 				B921D1CC1BDE6E6B00D1A903 /* QRCodeGenerate.swift */,
+				B93130A31BE9892100C3253C /* EasyOptionalUnwrapping.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1838,6 +1841,7 @@
 				D3E734FD1BA5D12500618513 /* BaseHTTPRequestOperationManager.m in Sources */,
 				B910ADD71BDCAF9600B079F8 /* WatchCallOffSettingTableViewCell.swift in Sources */,
 				D3DF41A51BCFEA8D00A3A9D7 /* SafeListTableViewController.swift in Sources */,
+				B93130A41BE9892100C3253C /* EasyOptionalUnwrapping.swift in Sources */,
 				B9D1E43F1BA996ED0031D708 /* BindWatchViewController.swift in Sources */,
 				D36ECB2C1BD09F3200C79794 /* SearchTableViewCell.m in Sources */,
 				D33B2FFF1BC9606B0072FAF6 /* LocationViewController.m in Sources */,

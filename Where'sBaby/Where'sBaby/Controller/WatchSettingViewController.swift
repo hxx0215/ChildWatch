@@ -301,11 +301,14 @@ class WatchSettingViewController: UITableViewController ,VolumeSettingDelegate,W
             let vc = segue.destinationViewController as! WatchSettingTableViewController
             vc.type = .Mode
             vc.settingDelegate = self
-            if let index = Int((viewModel?.data!["mode"].stringValue)!){
-                vc.selected = index
-            }else{
-                vc.selected = 0
-            }
+            var index = 0
+            index ?= Int((viewModel?.data!["mode"].stringValue)!)
+            vc.selected = index
+//            if let index = Int((viewModel?.data!["mode"].stringValue)!){
+//                vc.selected = index
+//            }else{
+//                vc.selected = 0
+//            }
         }
         if segue.identifier == WatchSettingConstant.ringSegueIdentifier{
             let vc = segue.destinationViewController as! WatchSettingTableViewController
